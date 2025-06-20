@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 30
+const SPEED = 300
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -22,3 +22,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		self.velocity = Vector2.ZERO
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	z_index = 3;
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	z_index = 1;
