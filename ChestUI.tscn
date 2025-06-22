@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyibbcb7uv4xy"]
+
+[ext_resource type="Script" uid="uid://dtpw4d06ponjo" path="res://control.gd" id="1_oq838"]
+
+[node name="ChestUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 74.0
+offset_bottom = 77.0
+script = ExtResource("1_oq838")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 61.0
+offset_right = 373.0
+offset_bottom = 571.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/GridContainer"]
+layout_mode = 2
