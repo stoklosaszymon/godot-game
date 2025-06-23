@@ -1,32 +1,38 @@
 extends CharacterBody2D
 
 const SPEED = 300
+const STOP_DISTANCE = 4.0  # Distance threshold to stop
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
-func _process(_delta):
-	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if dir:
+var mouse_held := false
+var target_position := Vector2.ZERO
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			mouse_held = event.pressed  # true when pressed, false when released
+
+func _physics_process(delta: float) -> void:
+	if mouse_held:
+		target_position = get_global_mouse_position()
+		var to_target = target_position - global_position
+
+		if to_target.length() > STOP_DISTANCE:
+			var direction = to_target.normalized()
+			velocity = direction * SPEED
+
+			# Flip sprite based on movement direction
+			_animated_sprite.flip_h = direction.x < 0
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity = Vector2.ZERO
+
+	move_and_slide()
+
+	# Animation control
+	if velocity.length() > 0:
 		_animated_sprite.play("run")
 	else:
 		_animated_sprite.stop()
-		
-	if self.velocity.x != 0:
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-		
-
-func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if direction:
-		self.velocity = direction * SPEED
-	else:
-		self.velocity = Vector2.ZERO
-	move_and_slide()
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	z_index = 3;
-
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	z_index = 1;

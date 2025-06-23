@@ -31,6 +31,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerArea":
 		player_nearby = false
+		chest_ui.hide_ui()
+		sprite.play("closed")
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
