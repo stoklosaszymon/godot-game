@@ -20,7 +20,7 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 	get_tree().current_scene = new_scene
 	old_scene.queue_free()
 
-	await get_tree().process_frame  # Wait for the scene to be fully ready
+	await get_tree().process_frame
 
 	var spawn_node_name = player_return_node if use_return_point else player_spawn_node
 	var spawn_point = new_scene.get_node_or_null(spawn_node_name)

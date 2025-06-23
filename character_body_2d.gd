@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300
-const STOP_DISTANCE = 4.0  # Distance threshold to stop
+const SPEED = 500
+const STOP_DISTANCE = 4.0 
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -11,7 +11,7 @@ var target_position := Vector2.ZERO
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			mouse_held = event.pressed  # true when pressed, false when released
+			mouse_held = event.pressed 
 
 func _physics_process(delta: float) -> void:
 	if mouse_held:
@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 			var direction = to_target.normalized()
 			velocity = direction * SPEED
 
-			# Flip sprite based on movement direction
 			_animated_sprite.flip_h = direction.x < 0
 		else:
 			velocity = Vector2.ZERO
@@ -31,7 +30,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# Animation control
 	if velocity.length() > 0:
 		_animated_sprite.play("run")
 	else:
