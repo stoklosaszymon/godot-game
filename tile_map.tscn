@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://daj3x758bo7iv"]
+[gd_scene load_steps=13 format=3 uid="uid://daj3x758bo7iv"]
 
 [ext_resource type="Texture2D" uid="uid://jyeyygw0fn5p" path="res://Isometric Geo Pack v1.0/256x256 Tiles.png" id="1_1n30v"]
 [ext_resource type="Texture2D" uid="uid://fnuyfh58cxgw" path="res://Isometric Geo Pack v1.0/512x1024 Trees.png" id="2_35kre"]
 [ext_resource type="Texture2D" uid="uid://calnapgslp31m" path="res://Isometric Geo Pack v1.0/512x512 Rocks.png" id="3_35kre"]
 [ext_resource type="Texture2D" uid="uid://cjxkdmsvfw5cg" path="res://Isometric Geo Pack v1.0/1024x512 Objects01.png" id="4_03na7"]
 [ext_resource type="Texture2D" uid="uid://3poca5bbefu3" path="res://Isometric Geo Pack v1.0/256x256 SlopesAndStairs 05.png" id="5_xftlc"]
-[ext_resource type="Script" uid="uid://d15ey0y63viis" path="res://area_2d_2.gd" id="6_anah5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03na7"]
 texture = ExtResource("1_1n30v")
@@ -4679,15 +4678,3 @@ polygon = PackedVector2Array(-746, -1029, -291, -1025, -528, -917)
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(1587, 605)
 polygon = PackedVector2Array(-707, -1018, -381, -1015, -553, -932)
-
-[node name="Area2D2" type="Area2D" parent="."]
-script = ExtResource("6_anah5")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
-position = Vector2(-1224, 459)
-polygon = PackedVector2Array(-305, -19, -187, -193, 327, 59, 204, 241)
-
-[node name="PlayerReturnPoint" type="Marker2D" parent="."]
-position = Vector2(-1041, 307)
-
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

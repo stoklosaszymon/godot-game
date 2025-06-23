@@ -50,7 +50,7 @@ radius = 8.55862
 size = Vector2(30, 31.5)
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
+z_index = 3
 y_sort_enabled = true
 scale = Vector2(2, 2)
 script = ExtResource("1_ij6vw")

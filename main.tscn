@@ -1,17 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="PackedScene" uid="uid://daj3x758bo7iv" path="res://tile_map.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://dacgqbjh57ee7" path="res://character_body_2d.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cejg2nkyx6ymd" path="res://chest.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cyibbcb7uv4xy" path="res://ChestUI.tscn" id="4_1bvp3"]
 
 [node name="main" type="Node"]
+script = ExtResource("1_lquwl")
 
 [node name="TileMap" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(-27.9806, 83.8465)
-
-[node name="CharacterBody2D" parent="TileMap" instance=ExtResource("2_h2yge")]
-position = Vector2(-1328.02, -466.846)
 
 [node name="Chest" parent="TileMap" instance=ExtResource("3_h2yge")]
 position = Vector2(-1511.02, -595.846)
@@ -27,3 +25,17 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_vertical = 2
 size_flags_horizontal = 4
+
+[node name="PlayerReturnPoint" type="Marker2D" parent="."]
+position = Vector2(-1041, 307)
+
+[node name="PlayerStartPoint" type="Marker2D" parent="."]
+position = Vector2(-1041, -179)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1268, 532)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-278, -18, -182, -183, 339, 70, 217, 241)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
