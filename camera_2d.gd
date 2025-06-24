@@ -1,11 +1,14 @@
 extends Camera2D
 
-var min_zoom := Vector2(0.5, 0.5)
+# --- Zoom Properties ---
+var min_zoom := Vector2(1.5, 1.5)
 var max_zoom := Vector2(3.0, 3.0)
 var zoom_step := 0.2
 var zoom_speed := 5.0
 
 var target_zoom := Vector2(1, 1)
+
+var follow_speed := 10.0
 
 func _ready():
 	target_zoom = zoom
@@ -19,3 +22,6 @@ func _unhandled_input(event):
 
 func _process(delta):
 	zoom = zoom.move_toward(target_zoom, zoom_speed * delta)
+	var target_node = get_parent() # Assuming the player is the parent
+	if target_node:
+		position = position.move_toward(target_node.position, follow_speed * delta)

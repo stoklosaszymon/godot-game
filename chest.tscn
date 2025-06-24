@@ -59,7 +59,6 @@ script = ExtResource("1_8uwsg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.65014, 25.7192)
 rotation = 0.174533
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_day8l")
 animation = &"close"
 

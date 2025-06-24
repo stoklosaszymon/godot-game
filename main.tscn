@@ -20,23 +20,23 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="PlayerReturnPoint" type="Marker2D" parent="."]
-position = Vector2(-382, -33)
+position = Vector2(-327, -65)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="."]
 position = Vector2(121, -323)
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-481, 23)
+position = Vector2(-499, 41)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(9, -65)
 polygon = PackedVector2Array(-100, 71, -32, 0, 21, 23, 74, 60, 15, 131)
 
 [node name="MainMap" parent="." instance=ExtResource("3_1bvp3")]
-position = Vector2(-131, -166)
+position = Vector2(292, -269)
 
 [node name="Chest" parent="MainMap" instance=ExtResource("3_h2yge")]
 rotation = -0.174533
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
