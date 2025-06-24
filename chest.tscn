@@ -1,25 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://cejg2nkyx6ymd"]
+[gd_scene load_steps=7 format=3 uid="uid://cejg2nkyx6ymd"]
 
 [ext_resource type="Script" uid="uid://dml1rvvkmbffv" path="res://chest.gd" id="1_8uwsg"]
-[ext_resource type="Texture2D" uid="uid://cwasn6qjvvt7f" path="res://chest.png" id="2_bp1or"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_trlyu"]
-atlas = ExtResource("2_bp1or")
-region = Rect2(1500, 1500, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7mpe"]
-atlas = ExtResource("2_bp1or")
-region = Rect2(2500, 1500, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bv3sb"]
-atlas = ExtResource("2_bp1or")
-region = Rect2(2000, 1500, 500, 500)
+[ext_resource type="Texture2D" uid="uid://di17j86rvstmd" path="res://Assets/Treasure Chest/treasure0.png" id="2_x7mpe"]
+[ext_resource type="Texture2D" uid="uid://fg4g5kk2lpgb" path="res://Assets/Treasure Chest/treasure1.png" id="3_bv3sb"]
+[ext_resource type="Texture2D" uid="uid://dslfap5c67gr" path="res://Assets/Treasure Chest/treasure2.png" id="4_day8l"]
+[ext_resource type="Texture2D" uid="uid://c7ju5uo4vp6iu" path="res://Assets/Treasure Chest/treasure3.png" id="5_t3ekh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_day8l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_trlyu")
+"texture": ExtResource("5_t3ekh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_day8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bv3sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x7mpe")
+}],
+"loop": false,
+"name": &"close",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x7mpe")
 }],
 "loop": true,
 "name": &"closed",
@@ -27,45 +35,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x7mpe")
-}],
-"loop": true,
-"name": &"empty",
-"speed": 0.0
+"texture": ExtResource("2_x7mpe")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bv3sb")
+"texture": ExtResource("3_bv3sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_day8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t3ekh")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
-"speed": 0.0
+"speed": 8.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uwsg"]
-size = Vector2(264.973, 150.754)
 
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
+rotation = -0.174533
 scale = Vector2(0.5, 0.5)
 disable_mode = 1
 script = ExtResource("1_8uwsg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.65014, 25.7192)
+rotation = 0.174533
 sprite_frames = SubResource("SpriteFrames_day8l")
-animation = &"closed"
+animation = &"close"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(4, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(52.5341, 74.5178)
-rotation = -0.436332
-skew = -0.567232
-shape = SubResource("RectangleShape2D_8uwsg")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(77.2157, 0.104546)
+scale = Vector2(1.12871, 1.29599)
+polygon = PackedVector2Array(-227.011, 140.972, -86.6707, 222.79, 186.031, 227.581, 170.199, 74.7147, 54.6142, 41.2945, -191.572, 28.3168)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-126, 74, -14, 164, 166, 58, 70, -26)
+position = Vector2(-82, 98)
+polygon = PackedVector2Array(-132.084, 44.9972, -3.58273, 157.013, 338.312, 164.496, 232.29, 74.7217)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

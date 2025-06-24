@@ -8,7 +8,7 @@ var is_open := false
 var player_nearby := false
 var chest_clicked := false
 
-func _ready():
+func _ready() -> void:
 	sprite.play("closed")
 
 func toggle_chest():
@@ -21,7 +21,7 @@ func toggle_chest():
 			print("chest_ui is null!")
 	else:
 		chest_ui.hide_ui()
-		sprite.play("closed")
+		sprite.play("close")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerArea":
@@ -32,7 +32,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerArea":
 		player_nearby = false
 		chest_ui.hide_ui()
-		sprite.play("closed")
+		if is_open:
+			toggle_chest()
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
