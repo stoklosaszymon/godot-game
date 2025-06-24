@@ -21,8 +21,7 @@ func _physics_process(delta: float) -> void:
 		if to_target.length() > STOP_DISTANCE:
 			var direction = to_target.normalized()
 			velocity = direction * SPEED
-
-			_animated_sprite.flip_h = direction.x < 0
+			_play_directional_animation(direction)
 		else:
 			velocity = Vector2.ZERO
 	else:
@@ -30,7 +29,33 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if velocity.length() > 0:
-		_animated_sprite.play("run")
-	else:
+	if velocity.length() == 0:
 		_animated_sprite.stop()
+
+
+func _play_directional_animation(direction: Vector2) -> void:
+	var angle = direction.angle()
+	angle = wrapf(angle, -PI, PI)  # Ensure angle is within [-PI, PI]
+
+	# Convert angle to direction name
+	var anim_name := ""
+
+	if angle < -7 * PI / 8 or angle >= 7 * PI / 8:
+		anim_name = "left"
+	elif angle < -5 * PI / 8:
+		anim_name = "top-left"
+	elif angle < -3 * PI / 8:
+		anim_name = "top"
+	elif angle < -PI / 8:
+		anim_name = "top-right"
+	elif angle < PI / 8:
+		anim_name = "right"
+	elif angle < 3 * PI / 8:
+		anim_name = "down-right"
+	elif angle < 5 * PI / 8:
+		anim_name = "down"
+	elif angle < 7 * PI / 8:
+		anim_name = "down-left"
+
+	if _animated_sprite.animation != anim_name:
+		_animated_sprite.play(anim_name)
