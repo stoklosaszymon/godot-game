@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=6 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://drxdawjii078y" path="res://main_map.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cejg2nkyx6ymd" path="res://chest.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cyibbcb7uv4xy" path="res://ChestUI.tscn" id="4_1bvp3"]
@@ -20,23 +21,28 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="PlayerReturnPoint" type="Marker2D" parent="."]
-position = Vector2(-33, -98)
+position = Vector2(-263, 125)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="."]
-position = Vector2(121, -323)
+position = Vector2(-178, -107)
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-137, -34)
+position = Vector2(-349, 185)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(9, -65)
 polygon = PackedVector2Array(-100, 71, -32, 0, 21, 23, 74, 60, 15, 131)
 
 [node name="MainMap" parent="." instance=ExtResource("3_1bvp3")]
-position = Vector2(292, -269)
+position = Vector2(1, -14)
 
 [node name="Chest" parent="MainMap" instance=ExtResource("3_h2yge")]
+position = Vector2(-8.9407e-08, 6)
 rotation = -0.174533
 scale = Vector2(0.1, 0.1)
+
+[node name="Sun" parent="." instance=ExtResource("2_7mycd")]
+position = Vector2(636, 2)
+skew = -0.0349066
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

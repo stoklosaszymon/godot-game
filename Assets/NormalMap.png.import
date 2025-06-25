@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h6b0bvjy26bj"
-path="res://.godot/imported/grzyb_walking.png-3b52598dc3845f53ad13a1611e9c4739.ctex"
+uid="uid://cxohlw6w64ljy"
+path="res://.godot/imported/NormalMap.png-376072e02fed5a246c7490e0a6527c1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grzyb_walking.png"
-dest_files=["res://.godot/imported/grzyb_walking.png-3b52598dc3845f53ad13a1611e9c4739.ctex"]
+source_file="res://Assets/NormalMap.png"
+dest_files=["res://.godot/imported/NormalMap.png-376072e02fed5a246c7490e0a6527c1d.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cejg2nkyx6ymd"]
+[gd_scene load_steps=8 format=3 uid="uid://cejg2nkyx6ymd"]
 
 [ext_resource type="Script" uid="uid://dml1rvvkmbffv" path="res://chest.gd" id="1_8uwsg"]
 [ext_resource type="Texture2D" uid="uid://di17j86rvstmd" path="res://Assets/Treasure Chest/treasure0.png" id="2_x7mpe"]
@@ -51,6 +51,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x7mpe"]
+polygon = PackedVector2Array(-120, 66, -106, 208, 216, 230, 256, 100)
+
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
 scale = Vector2(0.5, 0.5)
@@ -73,6 +76,9 @@ polygon = PackedVector2Array(-227.011, 140.972, -86.6707, 222.79, 186.031, 227.5
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-82, 98)
 polygon = PackedVector2Array(-132.084, 44.9972, -3.58273, 157.013, 338.312, 164.496, 232.29, 74.7217)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_x7mpe")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
