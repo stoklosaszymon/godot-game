@@ -59,3 +59,38 @@ func _play_directional_animation(direction: Vector2) -> void:
 
 	if _animated_sprite.animation != anim_name:
 		_animated_sprite.play(anim_name)
+
+
+func leave_footprint():
+	if not is_on_sand(): return  
+	var footprint = preload("res://footprint.tscn").instantiate()
+
+	var pos = global_position
+
+	var dir = velocity.normalized()
+	if dir.length() == 0:
+		return 
+
+	var side = Vector2(-dir.y, dir.x) 
+
+	footprint.global_position = pos
+	footprint.rotation = dir.angle() + deg_to_rad(90)
+	footprint.scale = Vector2(0.05, 0.05)
+
+	get_parent().add_child(footprint)
+	
+func is_on_sand() -> bool:
+	var tilemap = get_node("../MainMap/Terrain")
+	var cell = tilemap.local_to_map(global_position)
+	var tile_data = tilemap.get_cell_tile_data(cell)
+	return tile_data != null and tile_data.get_custom_data("type") == "sand"
+
+var last_footprint_time = 0.0
+const FOOTPRINT_DELAY = 0.3  # seconds between steps
+
+func _process(delta):
+	if is_on_sand():
+		last_footprint_time += delta
+		if last_footprint_time >= FOOTPRINT_DELAY:
+			leave_footprint()
+			last_footprint_time = 0.0
