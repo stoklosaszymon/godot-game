@@ -2,15 +2,15 @@ extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var items: Array[String] = ["Potion", "Gold", "Apple"]
-@onready var chest_ui = get_node("/root/main/UI/ChestUI")
-
+@onready var chest_ui = get_node("/root/main/HUD/Chest")
+	
 var is_open := false
 var player_nearby := false
 var chest_clicked := false
 
 func _ready() -> void:
 	sprite.play("closed")
-
+	
 func toggle_chest():
 	is_open = !is_open
 	if is_open:

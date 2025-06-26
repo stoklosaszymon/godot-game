@@ -18,5 +18,5 @@ func _process(delta):
 	sun.rotation_degrees = angle_deg
 	sun.height = lerp(0.2, 0.9, t)
 	
-	var brightness = clamp(sin(deg_to_rad(angle_deg)), 0.2, 0.8)
+	var brightness = clamp(sin(deg_to_rad(angle_deg)), 0.0, 0.5)
 	sun.energy = brightness
