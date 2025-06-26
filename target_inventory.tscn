@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c834mwiwk3jc"]
+
+[ext_resource type="Script" uid="uid://cyyjhg5yvnwfl" path="res://target_inventory.gd" id="1_sgkf1"]
+[ext_resource type="PackedScene" uid="uid://cyibbcb7uv4xy" path="res://HUDGrid.tscn" id="2_6nqvs"]
+
+[node name="TargetInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_sgkf1")
+
+[node name="HUDGrid" parent="." instance=ExtResource("2_6nqvs")]
+
+[node name="ClaimAll" type="Button" parent="HUDGrid"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 529.0
+offset_right = 359.0
+offset_bottom = 560.0
+text = "Clam all"
+
+[connection signal="pressed" from="HUDGrid/ClaimAll" to="." method="_on_claim_all_pressed"]

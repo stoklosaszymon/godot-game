@@ -7,6 +7,10 @@ var is_inventory_open = false
 func _on_texture_button_pressed() -> void:
 	is_inventory_open = !is_inventory_open
 	if is_inventory_open:
-		inventory.show_items(PlayerState.inventory)
+		inventory.open()
 	else:
-		inventory.hide_ui();
+		inventory.close()
+
+func _on_target_inventory_reload() -> void:
+	$TargetInventory.close();
+	inventory.close()

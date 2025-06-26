@@ -27,7 +27,7 @@ polygon = PackedVector2Array(-100, 71, -32, 0, 21, 23, 74, 60, 15, 131)
 [node name="MainMap" parent="." instance=ExtResource("3_1bvp3")]
 position = Vector2(1, -14)
 
-[node name="Chest" parent="MainMap" instance=ExtResource("3_h2yge")]
+[node name="Chest" parent="MainMap" groups=["chests"] instance=ExtResource("3_h2yge")]
 position = Vector2(-8, -5)
 rotation = -0.174533
 scale = Vector2(0.1, 0.1)

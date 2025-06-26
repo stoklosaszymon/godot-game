@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqvlt6e27t3rr"]
+
+[ext_resource type="Script" uid="uid://c6wwni4l7qfey" path="res://invenotry.gd" id="1_psafj"]
+[ext_resource type="PackedScene" uid="uid://cyibbcb7uv4xy" path="res://HUDGrid.tscn" id="2_5tt2m"]
+
+[node name="Invenotry" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 725.0
+offset_top = 13.0
+offset_right = 765.0
+offset_bottom = 53.0
+script = ExtResource("1_psafj")
+
+[node name="HUDGrid" parent="." instance=ExtResource("2_5tt2m")]
+layout_mode = 1
