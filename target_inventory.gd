@@ -1,10 +1,10 @@
 extends Control
 
 @onready var grid = $HUDGrid
-var items: Array[String] = []
+var items: Array[Resource] = []
 signal reload
 
-func open(items: Array[String]):
+func open(items: Array[Resource]):
 	grid.show_items(items)
 	
 func close():

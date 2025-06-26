@@ -1,7 +1,9 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@export var items: Array[String] = ["Potion", "Gold", "Apple"]
+@export var items: Array[Resource] = [
+	preload("res://items/key.tres"),
+]
 @onready var chest_ui = get_node("/root/main/HUD/TargetInventory")
 @onready var inventory = get_node("/root/main/HUD/Inventory")
 	
