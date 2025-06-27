@@ -1,7 +1,7 @@
 extends Control
 
 @onready var grid = $Panel/GridContainer
-var slot_scene = preload("res://items/slot.tscn")
+var slot_scene = preload("res://slot.tscn")
 
 func clear_grid():
 	for child in grid.get_children():

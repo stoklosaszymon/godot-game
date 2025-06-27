@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yb3faesxg4vw"]
 
-[ext_resource type="Script" uid="uid://dr8ne8xut78dg" path="res://items/slot.gd" id="1_yoap4"]
+[ext_resource type="Script" uid="uid://dr8ne8xut78dg" path="res://slot.gd" id="1_yoap4"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_yoap4"]
 
