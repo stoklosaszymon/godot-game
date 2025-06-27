@@ -2,7 +2,7 @@ extends Control
 
 @onready var grid = $HUDGrid
 var target: Node = null
-var items: Array[Resource] = []
+var items: Array[ItemData] = []
 
 func open():
 	grid.show_items(items)

@@ -1,5 +1,5 @@
 extends Node
 
-var inventory: Array[Resource] = [
-	preload("res://key.tres"),
+var inventory: Array[ItemData] = [
+	preload("res://resources/key.tres"),
 ];

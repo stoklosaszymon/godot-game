@@ -1,23 +1,20 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@export var items: Array[Resource] = [
-	preload("res://key.tres"),
-	preload("res://key.tres"),
-	preload("res://key.tres"),
-	preload("res://key.tres"),
-	preload("res://key.tres"),
-]
+@export var items: Array[ItemData] = []
 @onready var hud = get_node("/root/main/HUD")
+@export var chest_id: String = ""
+@onready var chest_data = GameManager.chests_data.get(chest_id)
 
 var is_open := false
 var player_nearby := false
 var chest_clicked := false
 
 func clear():
-	items = []
-
+	chest_data = []
+		
 func _ready() -> void:
+	items = chest_data
 	sprite.play("closed")
 	
 func toggle_chest():
