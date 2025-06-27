@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyfk3j2645din"]
+[gd_scene load_steps=3 format=3 uid="uid://dyfk3j2645din"]
 
 [ext_resource type="Script" uid="uid://v0f6r3662ccd" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://cttpwr04efk12" path="res://Assets/UI/backpack.png" id="2_64ctp"]
-[ext_resource type="PackedScene" uid="uid://cqvlt6e27t3rr" path="res://inventory.tscn" id="4_640wx"]
-[ext_resource type="PackedScene" uid="uid://c834mwiwk3jc" path="res://target_inventory.tscn" id="4_a2258"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8sq4i")
@@ -14,8 +12,8 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -200.0
+offset_right = 200.0
 grow_vertical = 0
 
 [node name="TextureButton" type="TextureButton" parent="Backpack"]
@@ -25,9 +23,4 @@ offset_bottom = 500.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_64ctp")
 
-[node name="Inventory" parent="." instance=ExtResource("4_640wx")]
-
-[node name="TargetInventory" parent="." instance=ExtResource("4_a2258")]
-
 [connection signal="pressed" from="Backpack/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="reload" from="TargetInventory" to="." method="_on_target_inventory_reload"]

@@ -4,22 +4,32 @@
 
 [node name="HUDGrid" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 74.0
-offset_bottom = 77.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -328.5
+offset_right = 440.0
+offset_bottom = 328.5
+grow_vertical = 2
 script = ExtResource("1_oq838")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 76.0
-offset_top = 61.0
-offset_right = 373.0
-offset_bottom = 571.0
+custom_minimum_size = Vector2(350, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -255.0
+offset_right = 148.5
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Panel/GridContainer"]
-layout_mode = 2
+columns = 4

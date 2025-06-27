@@ -5,12 +5,23 @@
 
 [node name="TargetInventory" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -270.0
+offset_right = 365.0
+offset_bottom = 270.0
+grow_vertical = 2
 script = ExtResource("1_sgkf1")
 
 [node name="HUDGrid" parent="." instance=ExtResource("2_6nqvs")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_right = 220.0
+grow_horizontal = 2
 
 [node name="ClaimAll" type="Button" parent="HUDGrid"]
 layout_mode = 0

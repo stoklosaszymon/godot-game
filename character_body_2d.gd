@@ -9,9 +9,14 @@ var mouse_held := false
 var target_position := Vector2.ZERO
 
 func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			mouse_held = event.pressed 
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			if not get_viewport().gui_get_hovered_control():
+				mouse_held = true
+			else:
+				mouse_held = false
+		else:
+			mouse_held = false
 
 func _physics_process(delta: float) -> void:
 	if mouse_held:

@@ -1,16 +1,20 @@
 extends CanvasLayer
 
-@onready var inventory = $Inventory
-
 var is_inventory_open = false
 
 func _on_texture_button_pressed() -> void:
 	is_inventory_open = !is_inventory_open
 	if is_inventory_open:
-		inventory.open()
+		if GameManager.inventory == null:
+			instantiate_inventory()
 	else:
-		inventory.close()
+		if GameManager.inventory != null:
+			GameManager.inventory.close()
 
-func _on_target_inventory_reload() -> void:
-	$TargetInventory.close();
-	inventory.close()
+func instantiate_inventory():
+	GameManager.inventory = preload("res://inventory.tscn").instantiate()
+	add_child(GameManager.inventory)
+	
+func instantiate_target_inventory():
+	GameManager.target_inventory = preload("res://target_inventory.tscn").instantiate()
+	add_child(GameManager.target_inventory)

@@ -3,10 +3,13 @@ extends Node2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var items: Array[Resource] = [
 	preload("res://items/key.tres"),
+	preload("res://items/key.tres"),
+	preload("res://items/key.tres"),
+	preload("res://items/key.tres"),
+	preload("res://items/key.tres"),
 ]
-@onready var chest_ui = get_node("/root/main/HUD/TargetInventory")
-@onready var inventory = get_node("/root/main/HUD/Inventory")
-	
+@onready var hud = get_node("/root/main/HUD")
+
 var is_open := false
 var player_nearby := false
 var chest_clicked := false
@@ -19,17 +22,22 @@ func _ready() -> void:
 	
 func toggle_chest():
 	is_open = !is_open
+
 	if is_open:
-		chest_ui.items = items;
-		sprite.play("open")
-		if chest_ui:
-			chest_ui.open(items)
-			inventory.open()
-		else:
-			print("chest_ui is null!")
+		if GameManager.inventory == null:
+			hud.instantiate_inventory()
+			
+		if GameManager.target_inventory == null:
+			hud.instantiate_target_inventory()
+			GameManager.target_inventory.items = items
+			GameManager.target_inventory.target = self
+			GameManager.target_inventory.open();
+			sprite.play("open")
 	else:
-		chest_ui.close()
-		inventory.close()
+		if GameManager.inventory != null:
+			GameManager.inventory.close()
+		if GameManager.target_inventory != null:
+			GameManager.target_inventory.close()
 		sprite.play("close")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -40,8 +48,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerArea":
 		player_nearby = false
-		chest_ui.close()
-		inventory.close();
+		if GameManager.inventory != null:
+			GameManager.inventory.close()
+		if GameManager.target_inventory != null:
+			GameManager.target_inventory.close()
+		
 		if is_open:
 			toggle_chest()
 

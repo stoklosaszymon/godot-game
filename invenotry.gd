@@ -2,8 +2,8 @@ extends Control
 
 @onready var grid = $HUDGrid
 
-func open():
+func _ready():
 	grid.show_items(PlayerState.inventory)
 	
 func close():
-	grid.hide_ui();
+	self.queue_free()
