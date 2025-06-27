@@ -86,9 +86,12 @@ func leave_footprint():
 	
 func is_on_sand() -> bool:
 	var tilemap = get_node("../MainMap/Terrain")
-	var cell = tilemap.local_to_map(global_position)
-	var tile_data = tilemap.get_cell_tile_data(cell)
-	return tile_data != null and tile_data.get_custom_data("type") == "sand"
+	if tilemap:
+		var cell = tilemap.local_to_map(global_position)
+		var tile_data = tilemap.get_cell_tile_data(cell)
+		return tile_data != null and tile_data.get_custom_data("type") == "sand"
+	else:
+		return false
 
 var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  # seconds between steps
