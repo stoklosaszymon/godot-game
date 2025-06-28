@@ -33,6 +33,7 @@ func handle_item_drop(target_slot_node: Node, drag_data: Dictionary, ):
 	var target_container = target_slot_node.get_parent()
 	
 	var dragged_item = drag_data.item_data
+	
 
 	if name == "TargetInventoryGrid":
 		GameManager.add_item_to_chest(dragged_item)
@@ -40,5 +41,8 @@ func handle_item_drop(target_slot_node: Node, drag_data: Dictionary, ):
 	if name == "InventoryGrid":
 		GameManager.add_item_to_inventory(dragged_item)
 	
-	GameManager.target_inventory.open();
-	GameManager.inventory.open();
+	if GameManager.target_inventory != null:
+		GameManager.target_inventory.open();
+		
+	if GameManager.target_inventory != null:
+		GameManager.inventory.open();

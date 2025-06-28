@@ -390,14 +390,16 @@ radius = 23.5702
 size = Vector2(85.8333, 140)
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 3
-y_sort_enabled = true
+z_index = 1
+z_as_relative = false
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_ij6vw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_76bt2")
 animation = &"left"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.66666)

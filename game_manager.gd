@@ -9,7 +9,8 @@ var target_inventory_id = "";
 
 var chests_data = {
 	"chest_id_1": [
-		preload("res://resources/key.tres").duplicate()
+		preload("res://resources/key.tres").duplicate(),
+		preload("res://resources/torch.tres").duplicate()
 		],
 }
 

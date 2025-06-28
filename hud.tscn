@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyfk3j2645din"]
+[gd_scene load_steps=4 format=3 uid="uid://dyfk3j2645din"]
 
 [ext_resource type="Script" uid="uid://v0f6r3662ccd" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://cttpwr04efk12" path="res://Assets/UI/backpack.png" id="2_64ctp"]
+[ext_resource type="Script" uid="uid://euwydrac4x17" path="res://use_slot.gd" id="3_8sq4i"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8sq4i")
@@ -22,5 +23,12 @@ offset_right = 500.0
 offset_bottom = 500.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_64ctp")
+
+[node name="UseSlot" type="PanelContainer" parent="."]
+offset_left = 192.0
+offset_top = 539.0
+offset_right = 232.0
+offset_bottom = 579.0
+script = ExtResource("3_8sq4i")
 
 [connection signal="pressed" from="Backpack/TextureButton" to="." method="_on_texture_button_pressed"]

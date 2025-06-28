@@ -3,3 +3,4 @@ extends Resource
 class_name ItemData
 @export var item_name: String
 @export var icon: Texture2D
+@export var is_usable: bool

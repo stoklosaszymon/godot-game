@@ -7,4 +7,5 @@
 script = ExtResource("1_kl3ac")
 item_name = "Key"
 icon = ExtResource("1_rhp2r")
+is_usable = false
 metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

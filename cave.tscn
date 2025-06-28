@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://sqaa1cmoxddr"]
+[gd_scene load_steps=11 format=4 uid="uid://sqaa1cmoxddr"]
 
 [ext_resource type="Texture2D" uid="uid://jyeyygw0fn5p" path="res://Isometric Geo Pack v1.0/256x256 Tiles.png" id="1_ads45"]
 [ext_resource type="Texture2D" uid="uid://3poca5bbefu3" path="res://Isometric Geo Pack v1.0/256x256 SlopesAndStairs 05.png" id="2_shk3w"]
 [ext_resource type="Script" uid="uid://bnnuorj85vik3" path="res://cave.gd" id="3_shk3w"]
+[ext_resource type="PackedScene" uid="uid://dk7qw6ad6tlh7" path="res://resources/torch.tscn" id="4_23xot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23xot"]
 texture = ExtResource("1_ads45")
@@ -432,5 +433,12 @@ position = Vector2(964, -256)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(868, -410, 1311, -178, 1390, -233, 949, -473)
+
+[node name="Torch" parent="." instance=ExtResource("4_23xot")]
+position = Vector2(705, 120)
+scale = Vector2(0.1, 0.1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Torch"]
+color = Color(0, 0, 0, 0.862745)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

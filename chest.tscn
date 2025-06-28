@@ -56,27 +56,30 @@ polygon = PackedVector2Array(-120, 66, -106, 208, 216, 230, 256, 100)
 
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
+z_as_relative = false
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8uwsg")
 chest_id = "chest_id_1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
 position = Vector2(7.65014, 25.7192)
 rotation = 0.174533
 sprite_frames = SubResource("SpriteFrames_day8l")
 animation = &"close"
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 4
 position = Vector2(4, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(77.2157, 0.104546)
 scale = Vector2(1.12871, 1.29599)
-polygon = PackedVector2Array(-227.011, 140.972, -86.6707, 222.79, 186.031, 227.581, 170.199, 74.7147, 54.6142, 41.2945, -191.572, 28.3168)
+polygon = PackedVector2Array(-227.011, 140.972, -86.6707, 222.79, 220.415, 223.686, 80.4319, 84.7965, -157.007, 103.315)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-82, 98)
-polygon = PackedVector2Array(-132.084, 44.9972, -3.58273, 157.013, 338.312, 164.496, 232.29, 74.7217)
+polygon = PackedVector2Array(-170, 6, -22, 182, 362, 166, 308, -26)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_x7mpe")

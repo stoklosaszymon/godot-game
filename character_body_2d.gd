@@ -39,10 +39,13 @@ func _physics_process(delta: float) -> void:
 
 
 func _play_directional_animation(direction: Vector2) -> void:
-	var angle = direction.angle()
-	angle = wrapf(angle, -PI, PI)  # Ensure angle is within [-PI, PI]
+	if direction.length_squared() < 0.01:
+		_animated_sprite.stop()
+		return
 
-	# Convert angle to direction name
+	var angle = direction.angle()
+	angle = wrapf(angle, -PI, PI)
+
 	var anim_name := ""
 
 	if angle < -7 * PI / 8 or angle >= 7 * PI / 8:
@@ -62,7 +65,7 @@ func _play_directional_animation(direction: Vector2) -> void:
 	elif angle < 7 * PI / 8:
 		anim_name = "down-left"
 
-	if _animated_sprite.animation != anim_name:
+	if _animated_sprite.animation != anim_name or !_animated_sprite.is_playing():
 		_animated_sprite.play(anim_name)
 
 
@@ -102,3 +105,9 @@ func _process(delta):
 		if last_footprint_time >= FOOTPRINT_DELAY:
 			leave_footprint()
 			last_footprint_time = 0.0
+
+func equip_torch():
+	var torch_scene = preload("res://resources/torch.tscn")
+	var equipped_torch = torch_scene.instantiate()
+	add_child(equipped_torch)
+	equipped_torch.position = Vector2.ZERO  # or TorchAnchor.global_position
