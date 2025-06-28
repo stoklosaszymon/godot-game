@@ -26,18 +26,11 @@ func add_item_to_chest(item: ItemData):
 	if item in PlayerState.inventory:
 		PlayerState.inventory.erase(item)
 		chests_data[target_inventory_id].append(item)
-		print("Item moved from inventory to chest.")
-	else:
-		print("Item not found in player inventory.")
 
 func add_item_to_inventory(item: ItemData) -> void:
-	print("moving item to inventory")
 	if item in chests_data[target_inventory_id]:
 		chests_data[target_inventory_id].erase(item)
 		PlayerState.inventory.append(item)
-		print("Item moved from chest to inventory.")
-	else:
-		print("Item not found in chest.")
 
 func get_target_inventory():
 	return chests_data.get(target_inventory_id)

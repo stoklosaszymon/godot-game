@@ -15,5 +15,8 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	if get_parent().get_parent().name == "InventoryGrid":
 		GameManager.add_item_to_inventory(dragged_item)
 	
-	GameManager.target_inventory.open();
-	GameManager.inventory.open();
+	if GameManager.target_inventory != null:
+		GameManager.target_inventory.open();
+	
+	if GameManager.inventory != null:
+		GameManager.inventory.open();
