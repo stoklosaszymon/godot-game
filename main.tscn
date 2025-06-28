@@ -31,7 +31,6 @@ position = Vector2(1, -14)
 position = Vector2(-8, -5)
 rotation = -0.174533
 scale = Vector2(0.1, 0.1)
-chest_id = "chest_id_1"
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)

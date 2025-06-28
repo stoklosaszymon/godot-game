@@ -1,9 +1,12 @@
 extends Control
 
-@onready var grid = $HUDGrid
+@onready var grid = $InventoryGrid
 
 func _ready():
-	grid.show_items(PlayerState.inventory)
+	grid.show_player_items()
+	
+func open():
+	grid.show_player_items()
 	
 func close():
 	self.queue_free()

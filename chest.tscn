@@ -58,6 +58,7 @@ polygon = PackedVector2Array(-120, 66, -106, 208, 216, 230, 256, 100)
 z_index = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8uwsg")
+chest_id = "chest_id_1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.65014, 25.7192)
