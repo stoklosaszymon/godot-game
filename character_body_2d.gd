@@ -104,7 +104,7 @@ var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  
 
 func _process(delta):
-	if is_on_sand():
+	if has_node("../MainMap/Terrain") && is_on_sand():
 		last_footprint_time += delta
 		if last_footprint_time >= FOOTPRINT_DELAY:
 			leave_footprint()

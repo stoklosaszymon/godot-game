@@ -32,13 +32,11 @@ func toggle_chest():
 		sprite.play("close")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("area entered")
 	if area.name == "PlayerArea":
 		player_nearby = true
 	z_index = 0;
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	print("area left")
 	if area.name == "PlayerArea":
 		player_nearby = false
 		if GameManager.inventory != null:

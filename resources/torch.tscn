@@ -51,4 +51,4 @@ frame_progress = 0.249964
 color = Color(0.921569, 0.831373, 0, 1)
 energy = 1.2
 texture = ExtResource("8_ub4v1")
-texture_scale = 20.0
+texture_scale = 50.0

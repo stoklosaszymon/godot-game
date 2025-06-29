@@ -36,7 +36,6 @@ scale = Vector2(0.1, 0.1)
 [node name="ChestCommon" parent="MainMap" instance=ExtResource("6_7mycd")]
 position = Vector2(-200, 34)
 scale = Vector2(0.3, 0.3)
-skew = 0.305433
 chest_id = "chest_id_2"
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
