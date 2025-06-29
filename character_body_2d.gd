@@ -3,11 +3,25 @@ extends CharacterBody2D
 const SPEED = 50
 const STOP_DISTANCE = 4.0 
 
-@onready var _animated_sprite = $AnimatedSprite2D
+@onready var _animated_sprite = $Walk
+@onready var walk_sprite = $Walk
+@onready var torch_sprite = $TorchWalk
 @onready var item_marker = $ItemMarker
 
 var mouse_held := false
 var target_position := Vector2.ZERO
+var with_torch: bool = false
+
+var hand_offsets := {
+	"bottom": Vector2(10, -120),
+	"bottom-left": Vector2(-33, -113),
+	"bottom-right": Vector2(40, -133),
+	"left": Vector2(-60, -136),
+	"right": Vector2(40, -156),
+	"top": Vector2(-30, -183),
+	"top-left": Vector2(-56, -156),
+	"top-right": Vector2(13, -180),
+}
 
 func _init():
 	GameManager.player = self
@@ -63,14 +77,17 @@ func _play_directional_animation(direction: Vector2) -> void:
 	elif angle < PI / 8:
 		anim_name = "right"
 	elif angle < 3 * PI / 8:
-		anim_name = "down-right"
+		anim_name = "bottom-right"
 	elif angle < 5 * PI / 8:
-		anim_name = "down"
+		anim_name = "bottom"
 	elif angle < 7 * PI / 8:
-		anim_name = "down-left"
+		anim_name = "bottom-left"
 
 	if _animated_sprite.animation != anim_name or !_animated_sprite.is_playing():
 		_animated_sprite.play(anim_name)
+		
+	item_marker.position = hand_offsets[anim_name]
+
 
 
 func leave_footprint():
@@ -104,6 +121,7 @@ var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  
 
 func _process(delta):
+	use_walk_sprite()
 	if has_node("../MainMap/Terrain") && is_on_sand():
 		last_footprint_time += delta
 		if last_footprint_time >= FOOTPRINT_DELAY:
@@ -114,9 +132,22 @@ func equip():
 	if PlayerState.equipped_item != null:
 		var item_scene = load(PlayerState.equipped_item.resource)
 		PlayerState.equiped_item_node = item_scene.instantiate()
-		add_child(PlayerState.equiped_item_node)
-		PlayerState.equiped_item_node.position = item_marker.position
+		#add_child(PlayerState.equiped_item_node)
+		item_marker.add_child(PlayerState.equiped_item_node)
+		PlayerState.equiped_item_node.position = Vector2.ZERO
+		with_torch = true
 	
 func unequip():
 	if PlayerState.equiped_item_node != null:
-		remove_child(PlayerState.equiped_item_node)
+		item_marker.remove_child(PlayerState.equiped_item_node)
+		with_torch = false
+		
+func use_walk_sprite() -> void:
+	if with_torch:
+		walk_sprite.visible = false
+		torch_sprite.visible = true
+		_animated_sprite = torch_sprite
+	else:
+		torch_sprite.visible = false
+		walk_sprite.visible = true
+		_animated_sprite = walk_sprite

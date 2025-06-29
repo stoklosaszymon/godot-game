@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0jkcc5daoav7"]
+
+[ext_resource type="Texture2D" uid="uid://233vkbse33c4" path="res://Assets/Terrain/cave.png" id="1_inr30"]
+
+[node name="CaveEnterance" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_inr30")

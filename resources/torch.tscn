@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [node name="Torch" type="Node2D"]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 79)
@@ -51,4 +51,4 @@ frame_progress = 0.249964
 color = Color(0.916507, 0.824129, 0.379339, 1)
 energy = 1.2
 texture = ExtResource("8_ub4v1")
-texture_scale = 50.0
+texture_scale = 25.0

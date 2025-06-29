@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn4gl2e6y55ub"
-path="res://.godot/imported/grzyb3.png-20f227ea370bb16a17893dc6ed3840d9.ctex"
+uid="uid://b0ur874h75mnf"
+path="res://.godot/imported/torch_walk.png-d25de33c4115e6d996fcd58b6281c274.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grzyb3.png"
-dest_files=["res://.godot/imported/grzyb3.png-20f227ea370bb16a17893dc6ed3840d9.ctex"]
+source_file="res://Assets/Character/torch_walk.png"
+dest_files=["res://.godot/imported/torch_walk.png-d25de33c4115e6d996fcd58b6281c274.ctex"]
 
 [params]
 
