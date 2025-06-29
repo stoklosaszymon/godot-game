@@ -48,7 +48,7 @@ animation = &"flame"
 frame_progress = 0.249964
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.921569, 0.831373, 0, 1)
+color = Color(0.916507, 0.824129, 0.379339, 1)
 energy = 1.2
 texture = ExtResource("8_ub4v1")
 texture_scale = 50.0
