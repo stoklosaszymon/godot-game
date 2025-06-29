@@ -8,4 +8,6 @@ script = ExtResource("1_lvbrv")
 item_name = "torch"
 icon = ExtResource("1_uqk6k")
 is_usable = true
+is_equipable = true
+resource = "res://resources/torch.tscn"
 metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

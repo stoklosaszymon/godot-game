@@ -22,6 +22,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 			"item_data": item_data,
 			"source_slot_node": self
 		}
+		
+		if item_data.is_equipable:
+			drag_data["is_equipable"] = true
+			
 		return drag_data
 	return null
 

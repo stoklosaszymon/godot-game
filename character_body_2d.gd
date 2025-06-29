@@ -4,9 +4,13 @@ const SPEED = 50
 const STOP_DISTANCE = 4.0 
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var item_marker = $ItemMarker
 
 var mouse_held := false
 var target_position := Vector2.ZERO
+
+func _init():
+	GameManager.player = self
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -97,7 +101,7 @@ func is_on_sand() -> bool:
 		return false
 
 var last_footprint_time = 0.0
-const FOOTPRINT_DELAY = 0.3  # seconds between steps
+const FOOTPRINT_DELAY = 0.3  
 
 func _process(delta):
 	if is_on_sand():
@@ -106,8 +110,13 @@ func _process(delta):
 			leave_footprint()
 			last_footprint_time = 0.0
 
-func equip_torch():
-	var torch_scene = preload("res://resources/torch.tscn")
-	var equipped_torch = torch_scene.instantiate()
-	add_child(equipped_torch)
-	equipped_torch.position = Vector2.ZERO  # or TorchAnchor.global_position
+func equip():
+	if PlayerState.equipped_item != null:
+		var item_scene = load(PlayerState.equipped_item.resource)
+		PlayerState.equiped_item_node = item_scene.instantiate()
+		add_child(PlayerState.equiped_item_node)
+		PlayerState.equiped_item_node.position = item_marker.position
+	
+func unequip():
+	if PlayerState.equiped_item_node != null:
+		remove_child(PlayerState.equiped_item_node)

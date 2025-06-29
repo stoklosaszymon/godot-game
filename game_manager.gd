@@ -5,7 +5,7 @@ var previous_scene_path = "res://main.tscn"
 var directional_light: DirectionalLight2D = null;
 var inventory: Node = null;
 var target_inventory: Node = null;
-var target_inventory_id = "";
+var target_inventory_id = null;
 
 var chests_data = {
 	"chest_id_1": [
@@ -29,9 +29,10 @@ func add_item_to_chest(item: ItemData):
 		chests_data[target_inventory_id].append(item)
 
 func add_item_to_inventory(item: ItemData) -> void:
-	if item in chests_data[target_inventory_id]:
-		chests_data[target_inventory_id].erase(item)
-		PlayerState.inventory.append(item)
+	if target_inventory_id != null:
+		if item in chests_data[target_inventory_id]:
+			chests_data[target_inventory_id].erase(item)
+			PlayerState.inventory.append(item)
 
 func get_target_inventory():
 	return chests_data.get(target_inventory_id)

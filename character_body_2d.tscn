@@ -415,5 +415,8 @@ shape = SubResource("RectangleShape2D_6ct3r")
 position_smoothing_enabled = true
 script = ExtResource("10_1kp85")
 
+[node name="ItemMarker" type="Marker2D" parent="."]
+position = Vector2(23.3333, -16.6667)
+
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_area_2d_area_exited"]
