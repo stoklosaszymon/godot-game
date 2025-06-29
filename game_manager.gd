@@ -12,6 +12,9 @@ var chests_data = {
 		preload("res://resources/key.tres").duplicate(),
 		preload("res://resources/torch.tres").duplicate()
 		],
+	"chest_id_2": [
+		preload("res://resources/key.tres").duplicate(),
+	],	
 }
 
 func _init() -> void:

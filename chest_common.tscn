@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://xgyqpnjuj0do"]
+
+[ext_resource type="Texture2D" uid="uid://c65mj1uykik1v" path="res://Assets/Treasure Chest/chest_common.png" id="1_rvod8"]
+[ext_resource type="Script" uid="uid://dml1rvvkmbffv" path="res://chest.gd" id="1_ueqtk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueqtk"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2brv"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4bw2"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1xrk"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euu1a"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yfif"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aidm4"]
+atlas = ExtResource("1_rvod8")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rn85k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueqtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2brv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4bw2")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1xrk")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euu1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yfif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aidm4")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="ChestCommon" type="StaticBody2D"]
+z_index = 1
+script = ExtResource("1_ueqtk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_rn85k")
+animation = &"open"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-109, 22, -76, 5, 39, -32, 87, -12, 142, 13, -67, 116)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-107, 2, -62, 63, 83, 6, 34, -35)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

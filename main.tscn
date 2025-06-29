@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=7 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://drxdawjii078y" path="res://main_map.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cejg2nkyx6ymd" path="res://chest.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dyfk3j2645din" path="res://hud.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://xgyqpnjuj0do" path="res://chest_common.tscn" id="6_7mycd"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -31,6 +32,12 @@ position = Vector2(1, -14)
 position = Vector2(-8, -5)
 rotation = -0.174533
 scale = Vector2(0.1, 0.1)
+
+[node name="ChestCommon" parent="MainMap" instance=ExtResource("6_7mycd")]
+position = Vector2(-200, 34)
+scale = Vector2(0.3, 0.3)
+skew = 0.305433
+chest_id = "chest_id_2"
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)

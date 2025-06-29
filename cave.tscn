@@ -436,7 +436,6 @@ polygon = PackedVector2Array(868, -410, 1311, -178, 1390, -233, 949, -473)
 
 [node name="Torch" parent="." instance=ExtResource("4_23xot")]
 position = Vector2(705, 120)
-scale = Vector2(0.1, 0.1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Torch"]
 color = Color(0, 0, 0, 0.862745)
