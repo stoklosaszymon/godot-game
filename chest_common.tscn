@@ -82,10 +82,11 @@ animation = &"open"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-109, 22, -76, 5, 39, -32, 87, -12, 142, 13, -67, 116)
+position = Vector2(6, -8)
+polygon = PackedVector2Array(-117, 8, -72, -13, 52, -60, 51, -22, 69, 9, 142, 13, -64, 122, -65, 68)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-107, 2, -62, 63, 83, 6, 34, -35)
+polygon = PackedVector2Array(-127, -23, -62, 59, 88, 6, 89, -46, 54, -102)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

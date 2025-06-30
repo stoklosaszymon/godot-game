@@ -385,7 +385,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
-radius = 23.5702
+radius = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ct3r"]
 size = Vector2(85.8333, 140)
@@ -782,13 +782,13 @@ sprite_frames = SubResource("SpriteFrames_76bt2")
 animation = &"top-right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.66666)
+position = Vector2(-10, -46.6667)
 shape = SubResource("CircleShape2D_44cfe")
 
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2(3.75, -40)
+position = Vector2(-6.66667, -86.6667)
 shape = SubResource("RectangleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
