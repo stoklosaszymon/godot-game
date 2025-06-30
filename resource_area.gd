@@ -7,8 +7,10 @@ func _ready():
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		PlayerState.is_gathering = false;
 		if player_in_range:
 			PlayerState.is_gathering = true;
+			GameManager.curently_gathered = get_parent()
 
 func _on_body_entered(body):
 	if body.name == "Player":

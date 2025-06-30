@@ -6,6 +6,7 @@ var directional_light: DirectionalLight2D = null;
 var inventory: Node = null;
 var target_inventory: Node = null;
 var target_inventory_id = null;
+var curently_gathered: Node = null;
 
 var chests_data = {
 	"chest_id_1": [

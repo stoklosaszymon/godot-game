@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		target_position = get_global_mouse_position()
 		var to_target = target_position - global_position
 
-		if to_target.length() > STOP_DISTANCE:
+		if to_target.length() > STOP_DISTANCE && !PlayerState.is_gathering:
 			var direction = to_target.normalized()
 			velocity = direction * SPEED
 			_play_directional_animation(direction)
@@ -56,6 +56,8 @@ func _physics_process(delta: float) -> void:
 
 	if velocity.length() == 0 && !PlayerState.is_gathering:
 		_animated_sprite.stop()
+		
+
 
 
 func _play_directional_animation(direction: Vector2) -> void:
@@ -167,5 +169,6 @@ func _on_gathering_animation_finished() -> void:
 	PlayerState.inventory.append(
 		load("res://resources/iron_ore.tres")
 	)
+	GameManager.curently_gathered.take();
 	if GameManager.inventory != null:
 		GameManager.inventory.open()
