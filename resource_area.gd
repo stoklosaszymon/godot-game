@@ -1,0 +1,19 @@
+extends Area2D
+
+var player_in_range = null
+
+func _ready():
+	set_process_input(true)
+
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if player_in_range:
+			PlayerState.is_gathering = true;
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		player_in_range = body
+
+func _on_body_exited(body):
+	if body.name == "Player":
+		player_in_range = null

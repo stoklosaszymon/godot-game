@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=9 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dyfk3j2645din" path="res://hud.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://xgyqpnjuj0do" path="res://chest_common.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d0jkcc5daoav7" path="res://cave_enterance.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://ddomyk7qil1xt" path="res://resource.tscn" id="8_5vw27"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -17,7 +18,7 @@ script = ExtResource("1_lquwl")
 position = Vector2(-457, 41)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="."]
-position = Vector2(-178, -107)
+position = Vector2(77, -173)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-512, -15)
@@ -47,5 +48,8 @@ skew = -0.0349066
 position = Vector2(-642, -161)
 rotation = -0.0610865
 scale = Vector2(0.4, 0.4)
+
+[node name="Resource" parent="." instance=ExtResource("8_5vw27")]
+position = Vector2(-164, -127)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -12,4 +12,5 @@ var equipped_item: ItemData = null:
 			if equipped_item.is_usable:
 				GameManager.player.equip();
 
-var equiped_item_node:Node = null;
+var equiped_item_node:Node = null
+var is_gathering: bool = false

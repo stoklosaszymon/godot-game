@@ -6,11 +6,13 @@ const STOP_DISTANCE = 4.0
 @onready var _animated_sprite = $Walk
 @onready var walk_sprite = $Walk
 @onready var torch_sprite = $TorchWalk
+@onready var gathering_sprite = $Gathering
 @onready var item_marker = $ItemMarker
 
 var mouse_held := false
 var target_position := Vector2.ZERO
 var with_torch: bool = false
+var anim_name := "bottom"
 
 var hand_offsets := {
 	"bottom": Vector2(10, -120),
@@ -52,7 +54,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if velocity.length() == 0:
+	if velocity.length() == 0 && !PlayerState.is_gathering:
 		_animated_sprite.stop()
 
 
@@ -63,8 +65,6 @@ func _play_directional_animation(direction: Vector2) -> void:
 
 	var angle = direction.angle()
 	angle = wrapf(angle, -PI, PI)
-
-	var anim_name := ""
 
 	if angle < -7 * PI / 8 or angle >= 7 * PI / 8:
 		anim_name = "left"
@@ -87,8 +87,6 @@ func _play_directional_animation(direction: Vector2) -> void:
 		_animated_sprite.play(anim_name)
 		
 	item_marker.position = hand_offsets[anim_name]
-
-
 
 func leave_footprint():
 	if not is_on_sand(): return  
@@ -121,7 +119,10 @@ var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  
 
 func _process(delta):
-	use_walk_sprite()
+	if !PlayerState.is_gathering:
+		use_walk_sprite()
+	else: 
+		gather()
 	if has_node("../MainMap/Terrain") && is_on_sand():
 		last_footprint_time += delta
 		if last_footprint_time >= FOOTPRINT_DELAY:
@@ -146,8 +147,25 @@ func use_walk_sprite() -> void:
 	if with_torch:
 		walk_sprite.visible = false
 		torch_sprite.visible = true
+		gathering_sprite.visible = false
 		_animated_sprite = torch_sprite
-	else:
+	elif not with_torch:
 		torch_sprite.visible = false
 		walk_sprite.visible = true
+		gathering_sprite.visible = false
 		_animated_sprite = walk_sprite
+
+func gather():
+	gathering_sprite.visible = true
+	walk_sprite.visible = false
+	torch_sprite.visible = false
+	_animated_sprite = gathering_sprite
+	_animated_sprite.play(anim_name)
+	
+func _on_gathering_animation_finished() -> void:
+	PlayerState.is_gathering = false
+	PlayerState.inventory.append(
+		load("res://resources/iron_ore.tres")
+	)
+	if GameManager.inventory != null:
+		GameManager.inventory.open()
