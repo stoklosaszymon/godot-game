@@ -7,7 +7,6 @@ const STOP_DISTANCE = 4.0
 @onready var walk_sprite = $Walk
 @onready var torch_sprite = $TorchWalk
 @onready var gathering_sprite = $Gathering
-@onready var item_marker = $ItemMarker
 
 var mouse_held := false
 var target_position := Vector2.ZERO
@@ -88,7 +87,6 @@ func _play_directional_animation(direction: Vector2) -> void:
 	if _animated_sprite.animation != anim_name or !_animated_sprite.is_playing():
 		_animated_sprite.play(anim_name)
 		
-	item_marker.position = hand_offsets[anim_name]
 
 func leave_footprint():
 	if not is_on_sand(): return  
@@ -135,14 +133,15 @@ func equip():
 	if PlayerState.equipped_item != null:
 		var item_scene = load(PlayerState.equipped_item.resource)
 		PlayerState.equiped_item_node = item_scene.instantiate()
-		#add_child(PlayerState.equiped_item_node)
-		item_marker.add_child(PlayerState.equiped_item_node)
+		add_child(PlayerState.equiped_item_node)
 		PlayerState.equiped_item_node.position = Vector2.ZERO
-		with_torch = true
+		
+		if (PlayerState.equiped_item_node.name == "Torch"):
+			with_torch = true
 	
 func unequip():
 	if PlayerState.equiped_item_node != null:
-		item_marker.remove_child(PlayerState.equiped_item_node)
+		remove_child(PlayerState.equiped_item_node)
 		with_torch = false
 		
 func use_walk_sprite() -> void:

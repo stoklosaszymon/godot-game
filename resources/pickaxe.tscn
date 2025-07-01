@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dknwpcn17lk3e"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ke1lm"]
+load_path = "res://.godot/imported/pickaxe.png-13de3dc29143e48e4ef24466d317df5d.ctex"
+
+[node name="Pickaxe" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2
+offset_left = 14.0
+offset_top = -13.0
+offset_right = 254.0
+offset_bottom = 191.0
+rotation = 1.14319
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_ke1lm")
+expand_mode = 1

@@ -26,7 +26,8 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 func _drop_data(at_position: Vector2, data: Variant):
 	if PlayerState.equipped_item != null:
 		GameManager.player.unequip();
-		
+	
+	PlayerState.equipped_item = null
 	PlayerState.equipped_item = data.item_data as ItemData;
 	
 	for child in get_children():

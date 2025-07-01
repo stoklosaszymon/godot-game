@@ -1,51 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk7qw6ad6tlh7"]
+[gd_scene load_steps=2 format=3 uid="uid://dk7qw6ad6tlh7"]
 
-[ext_resource type="Texture2D" uid="uid://sujy5jpxtw2k" path="res://Assets/Items/torch/torch_1.png" id="1_qbvhe"]
-[ext_resource type="Texture2D" uid="uid://lkhytfoqy0m5" path="res://Assets/Items/torch/torch_2.png" id="2_ub4v1"]
-[ext_resource type="Texture2D" uid="uid://blvf3ujlqlpxs" path="res://Assets/Items/torch/torch_3.png" id="3_aqwgi"]
-[ext_resource type="Texture2D" uid="uid://2oillpcbqrf6" path="res://Assets/Items/torch/torch_4.png" id="4_gn8u3"]
-[ext_resource type="Texture2D" uid="uid://cgs5l6hbb15e8" path="res://Assets/Items/torch/torch_5.png" id="5_4w0dg"]
-[ext_resource type="Texture2D" uid="uid://csresaxc2kg5o" path="res://Assets/Items/torch/torch_7.png" id="6_4lnlu"]
-[ext_resource type="Texture2D" uid="uid://s63i1dec11gf" path="res://Assets/Items/torch/torch_6.png" id="7_6j5p2"]
 [ext_resource type="Texture2D" uid="uid://da8d3khj61jnj" path="res://Assets/Items/point_light.webp" id="8_ub4v1"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fqb8a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_qbvhe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ub4v1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_aqwgi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gn8u3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_4w0dg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4lnlu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_6j5p2")
-}],
-"loop": true,
-"name": &"flame",
-"speed": 5.0
-}]
 
 [node name="Torch" type="Node2D"]
 scale = Vector2(0.2, 0.2)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 79)
-sprite_frames = SubResource("SpriteFrames_fqb8a")
-animation = &"flame"
-frame_progress = 0.249964
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.916507, 0.824129, 0.379339, 1)

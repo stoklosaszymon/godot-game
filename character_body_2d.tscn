@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dday3u3ti7qy7" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://dsgfnokiaifbi" path="res://Assets/Character/walk.png" id="2_ghijl"]
-[ext_resource type="Texture2D" uid="uid://b0ur874h75mnf" path="res://Assets/Character/torch_walk.png" id="4_44cfe"]
+[ext_resource type="Texture2D" uid="uid://cmcyklyn64do1" path="res://Assets/Character/torch_walk.png" id="4_44cfe"]
 [ext_resource type="Texture2D" uid="uid://ll433eyyf661" path="res://Assets/Character/gather.png" id="5_dd465"]
 [ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="10_1kp85"]
 
@@ -2395,10 +2395,9 @@ scale = Vector2(0.3, 0.3)
 script = ExtResource("1_ij6vw")
 
 [node name="Walk" type="AnimatedSprite2D" parent="."]
-visible = false
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_76bt2")
-animation = &"top-right"
+animation = &"bottom"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, -46.6667)
@@ -2414,14 +2413,13 @@ shape = SubResource("RectangleShape2D_6ct3r")
 position_smoothing_enabled = true
 script = ExtResource("10_1kp85")
 
-[node name="ItemMarker" type="Marker2D" parent="."]
-position = Vector2(40, -123.333)
-
 [node name="TorchWalk" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_tv6gi")
-animation = &"bottom-right"
+animation = &"bottom-left"
 
 [node name="Gathering" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_3203r")
 animation = &"top-right"
 

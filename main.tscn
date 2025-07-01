@@ -36,7 +36,7 @@ rotation = -0.174533
 scale = Vector2(0.1, 0.1)
 
 [node name="ChestCommon" parent="MainMap" instance=ExtResource("6_7mycd")]
-position = Vector2(-200, 34)
+position = Vector2(-193, 16)
 scale = Vector2(0.3, 0.3)
 chest_id = "chest_id_2"
 
