@@ -3,14 +3,10 @@ extends CharacterBody2D
 const SPEED = 80
 const STOP_DISTANCE = 4.0 
 
-@onready var _animated_sprite = $Walk
-@onready var walk_sprite = $Walk
-@onready var torch_sprite = $TorchWalk
-@onready var gathering_sprite = $Gathering
+@onready var _animated_sprite = $MovementSprite
 
 var mouse_held := false
 var target_position := Vector2.ZERO
-var with_torch: bool = false
 var anim_name := "bottom"
 
 var hand_offsets := {
@@ -25,7 +21,10 @@ var hand_offsets := {
 }
 
 func _init():
-	GameManager.player = self
+	GameManager.player = self	
+	
+func _ready():
+	PlayerState.setWalkSprite()
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -56,8 +55,6 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() == 0 && !PlayerState.is_gathering:
 		_animated_sprite.stop()
 		
-
-
 
 func _play_directional_animation(direction: Vector2) -> void:
 	if direction.length_squared() < 0.01:
@@ -119,10 +116,6 @@ var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  
 
 func _process(delta):
-	if !PlayerState.is_gathering:
-		use_walk_sprite()
-	else: 
-		gather()
 	if has_node("../MainMap/Terrain") && is_on_sand():
 		last_footprint_time += delta
 		if last_footprint_time >= FOOTPRINT_DELAY:
@@ -131,43 +124,26 @@ func _process(delta):
 
 func equip():
 	if PlayerState.equipped_item != null:
-		var item_scene = load(PlayerState.equipped_item.resource)
-		PlayerState.equiped_item_node = item_scene.instantiate()
-		add_child(PlayerState.equiped_item_node)
-		PlayerState.equiped_item_node.position = Vector2.ZERO
-		
-		if (PlayerState.equiped_item_node.name == "Torch"):
-			with_torch = true
+		if PlayerState.equipped_item.unequip_effect:
+			ItemManager.call(PlayerState.equipped_item.equip_effect)
+			
+	PlayerState.setWalkSprite()
 	
 func unequip():
-	if PlayerState.equiped_item_node != null:
-		remove_child(PlayerState.equiped_item_node)
-		with_torch = false
+	if PlayerState.equipped_item.unequip_effect:
+		ItemManager.call(PlayerState.equipped_item.unequip_effect)
+			
+	PlayerState.equipped_item = null
+	PlayerState.setWalkSprite()
 		
-func use_walk_sprite() -> void:
-	if with_torch:
-		walk_sprite.visible = false
-		torch_sprite.visible = true
-		gathering_sprite.visible = false
-		_animated_sprite = torch_sprite
-	elif not with_torch:
-		torch_sprite.visible = false
-		walk_sprite.visible = true
-		gathering_sprite.visible = false
-		_animated_sprite = walk_sprite
-
-func gather():
-	gathering_sprite.visible = true
-	walk_sprite.visible = false
-	torch_sprite.visible = false
-	_animated_sprite = gathering_sprite
-	_animated_sprite.play(anim_name)
 	
-func _on_gathering_animation_finished() -> void:
-	PlayerState.is_gathering = false
-	PlayerState.inventory.append(
-		load("res://resources/iron_ore.tres")
-	)
-	GameManager.curently_gathered.take();
-	if GameManager.inventory != null:
-		GameManager.inventory.open()
+func _on_movement_sprite_animation_finished() -> void:
+	if PlayerState.is_gathering:
+		PlayerState.is_gathering = false
+		PlayerState.inventory.append(
+			load("res://resources/iron_ore.tres")
+		)
+		GameManager.curently_gathered.take();
+		if GameManager.inventory != null:
+			GameManager.inventory.open()
+		PlayerState.setWalkSprite()

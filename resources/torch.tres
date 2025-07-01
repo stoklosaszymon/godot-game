@@ -5,9 +5,10 @@
 
 [resource]
 script = ExtResource("1_lvbrv")
-item_name = "torch"
+item_name = "Torch"
 icon = ExtResource("1_uqk6k")
 is_usable = true
 is_equipable = true
-resource = "res://resources/torch.tscn"
+equip_effect = "torch_equiped"
+unequip_effect = "torch_removed"
 metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

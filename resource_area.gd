@@ -11,6 +11,7 @@ func _input_event(viewport, event, shape_idx):
 		if player_in_range:
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = get_parent()
+			PlayerState.gather()
 
 func _on_body_entered(body):
 	if body.name == "Player":

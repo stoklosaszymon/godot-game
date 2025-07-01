@@ -1,7 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dknwpcn17lk3e"]
+[gd_scene load_steps=2 format=3 uid="uid://cc7vji2hywbtr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ke1lm"]
-load_path = "res://.godot/imported/pickaxe.png-13de3dc29143e48e4ef24466d317df5d.ctex"
 
 [node name="Pickaxe" type="Node2D"]
 

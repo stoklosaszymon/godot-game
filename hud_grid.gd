@@ -26,13 +26,12 @@ func add_slot(item: ItemData):
 	slotItem.item_dropped_on_slot.connect(handle_item_drop)
 	grid.add_child(slotItem)
 	
-func handle_item_drop(target_slot_node: Node, drag_data: Dictionary, ):
+func handle_item_drop(target_slot_node: Node, drag_data: Dictionary):
 	var source_slot_node = drag_data.source_slot_node
 	var source_container = source_slot_node.get_parent()
 	var target_container = target_slot_node.get_parent()
 	
 	var dragged_item = drag_data.item_data
-	
 
 	if name == "TargetInventoryGrid":
 		GameManager.add_item_to_chest(dragged_item)
