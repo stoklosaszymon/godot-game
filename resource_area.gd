@@ -8,7 +8,7 @@ func _ready():
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		PlayerState.is_gathering = false;
-		if player_in_range:
+		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Pickaxe":
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = get_parent()
 			PlayerState.gather()

@@ -138,6 +138,7 @@ func unequip():
 		
 	
 func _on_movement_sprite_animation_finished() -> void:
+	print("anim end")
 	if PlayerState.is_gathering:
 		PlayerState.is_gathering = false
 		PlayerState.inventory.append(
