@@ -217,7 +217,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,7 +240,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +263,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -309,7 +309,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -332,7 +332,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,7 +355,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -383,5 +383,7 @@ animations = [{
 
 [node name="Walk" type="AnimatedSprite2D"]
 z_index = 1
+position = Vector2(0, 400)
 sprite_frames = SubResource("SpriteFrames_76bt2")
-animation = &"bottom"
+animation = &"top-left"
+frame_progress = 0.18545

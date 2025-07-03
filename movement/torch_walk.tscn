@@ -217,7 +217,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,7 +240,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +263,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,7 +286,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -309,7 +309,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -332,7 +332,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,7 +355,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -378,9 +378,9 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-right",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="TorchWalk" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_tv6gi")
-animation = &"bottom-left"
+animation = &"bottom"
