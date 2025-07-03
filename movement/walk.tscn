@@ -383,7 +383,6 @@ animations = [{
 
 [node name="Walk" type="AnimatedSprite2D"]
 z_index = 1
-position = Vector2(0, 400)
 sprite_frames = SubResource("SpriteFrames_76bt2")
 animation = &"top-left"
-frame_progress = 0.18545
+frame_progress = 0.759149
