@@ -2,7 +2,8 @@ extends Node
 
 var inventory: Array[ItemData] = [
 	preload("res://resources/key.tres"),
-	preload("res://resources/torch.tres").duplicate()
+	preload("res://resources/torch.tres").duplicate(),
+	preload("res://resources/axe.tres").duplicate()
 ];
 
 var equipped_item: ItemData = null:
@@ -23,7 +24,7 @@ func setWalkSprite():
 		walkSprite = load("res://movement/walk.tscn").instantiate()
 	elif equipped_item.item_name == "Torch":
 		walkSprite = load("res://movement/torch_walk.tscn").instantiate()
-	elif equipped_item.item_name == "Pickaxe":
+	elif equipped_item.item_name == "Pickaxe" || equipped_item.item_name == "Axe":
 		walkSprite = load("res://movement/pickaxe_walk.tscn").instantiate()
 		
 	if GameManager.player != null:
