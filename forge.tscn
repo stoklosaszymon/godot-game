@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl143fdly0nlm"]
+
+[ext_resource type="Texture2D" uid="uid://bynnxqu72djpi" path="res://Assets/Buildings/forge.png" id="1_ewbv2"]
+[ext_resource type="Script" uid="uid://dsxqdouoq2nik" path="res://forge.gd" id="1_lg3is"]
+
+[node name="Forge" type="StaticBody2D"]
+z_index = 1
+z_as_relative = false
+script = ExtResource("1_lg3is")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ewbv2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(185, 208)
+polygon = PackedVector2Array(-59, 47, -28, 36, 26, 14, 38, 28, 45, 41, 74, 36, 71, 22, 57, 1, 74, -26, 20, -53, -92, -29, -104, 11)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(166, 201)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-62, 0, 61, -14, 83, -16, 79, 14, 105, 8, 132, 48, 97, 106, 18, 115, -38, 74, -77, 48, -85, 2)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
