@@ -1,9 +1,6 @@
 extends Node
 
 var inventory: Array[ItemData] = [
-	preload("res://resources/key.tres"),
-	preload("res://resources/torch.tres").duplicate(),
-	preload("res://resources/axe.tres").duplicate()
 ];
 
 var equipped_item: ItemData = null:

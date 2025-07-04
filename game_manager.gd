@@ -10,11 +10,12 @@ var curently_gathered: Node = null;
 
 var chests_data = {
 	"chest_id_1": [
-		preload("res://resources/key.tres").duplicate(),
-		preload("res://resources/torch.tres").duplicate()
+		preload("res://resources/torch.tres").duplicate(),
+		preload("res://resources/pickaxe.tres").duplicate(),
+				preload("res://resources/axe.tres").duplicate()
 		],
 	"chest_id_2": [
-		preload("res://resources/pickaxe.tres").duplicate(),
+		preload("res://resources/key.tres").duplicate(),
 	],	
 }
 

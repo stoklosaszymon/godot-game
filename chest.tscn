@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://fg4g5kk2lpgb" path="res://Assets/Treasure Chest/treasure1.png" id="3_bv3sb"]
 [ext_resource type="Texture2D" uid="uid://dslfap5c67gr" path="res://Assets/Treasure Chest/treasure2.png" id="4_day8l"]
 [ext_resource type="Texture2D" uid="uid://c7ju5uo4vp6iu" path="res://Assets/Treasure Chest/treasure3.png" id="5_t3ekh"]
+[ext_resource type="Script" uid="uid://j78hdcxgkh6y" path="res://chest_control.gd" id="6_bv3sb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_day8l"]
 animations = [{
@@ -51,15 +52,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x7mpe"]
-polygon = PackedVector2Array(-120, 66, -106, 208, 216, 230, 256, 100)
-
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
 z_as_relative = false
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8uwsg")
 chest_id = "chest_id_1"
+is_locked = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -73,16 +72,22 @@ z_index = 4
 position = Vector2(4, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(77.2157, 0.104546)
+position = Vector2(70, -36)
 scale = Vector2(1.12871, 1.29599)
-polygon = PackedVector2Array(-227.011, 140.972, -75.4983, 214.427, 220.415, 223.686, 121.186, 169.674, -8.1648, 107.945)
+polygon = PackedVector2Array(-164.79, 165.125, -75.4983, 214.427, 132.895, 217.594, 120.492, 103.396, -79.737, 81.7907)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-82, 98)
-polygon = PackedVector2Array(-170, 6, -22, 182, 362, 166, 308, -26)
+polygon = PackedVector2Array(-170, 6, -22, 182, 362, 166, 324, -58)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_x7mpe")
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 94.0
+offset_top = 50.0
+offset_right = 180.0
+offset_bottom = 142.0
+script = ExtResource("6_bv3sb")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -3,17 +3,19 @@ extends Node2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hud = get_node("/root/main/HUD")
 @export var chest_id: String = ""
-
+@export var is_locked = false
 
 var is_open := false
 var player_nearby := false
 var chest_clicked := false
+
 		
 func _ready() -> void:
 	sprite.play("closed")
 	
 func toggle_chest():
-	is_open = !is_open
+	if !is_locked:
+		is_open = !is_open
 
 	if is_open:
 		if GameManager.inventory == null:
@@ -29,7 +31,7 @@ func toggle_chest():
 			GameManager.inventory.close()
 		if GameManager.target_inventory != null:
 			GameManager.target_inventory.close()
-		sprite.play("close")
+			sprite.play("close")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerArea":
