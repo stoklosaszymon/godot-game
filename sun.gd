@@ -2,10 +2,10 @@ extends Node2D
 
 @onready var sun: DirectionalLight2D = $DirectionalLight2D
 
-const START_ANGLE := -60.0  # sunrise
-const END_ANGLE := 240.0    # sunset
+const START_ANGLE := -60.0  
+const END_ANGLE := 240.0    
 
-@export var day_length: float = 30.0  # seconds for a full cycle
+@export var day_length: float = 30.0 
 
 var time_passed := 0.0
 
