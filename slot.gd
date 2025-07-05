@@ -40,8 +40,3 @@ func update_visuals():
 	if item_data:
 		$VBoxContainer/ItemImg.texture = item_data.icon
 		$VBoxContainer/ItemName.text = item_data.item_name
-		
-func _draw():
-	var rect_size = get_size() 
-	var border_rect = Rect2(Vector2.ZERO, rect_size)
-	draw_rect(border_rect, Color(0.0, 0.0, 0.0, 1.0), false, 1.0, true)
