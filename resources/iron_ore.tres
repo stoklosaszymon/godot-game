@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_7lbr2")
-item_name = "Iron Ore"
+item_name = "iron ore"
 icon = ExtResource("1_bopx0")
 is_usable = true
 is_equipable = false

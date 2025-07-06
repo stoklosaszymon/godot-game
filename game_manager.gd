@@ -45,3 +45,9 @@ func get_target_inventory():
 func claim_all():
 	PlayerState.inventory.append_array(chests_data[target_inventory_id])
 	chests_data[target_inventory_id] = []
+
+func remove_item_by_resource_path(path: String):
+	for i in PlayerState.inventory.size():
+		if PlayerState.inventory[i].resource_path == path:
+			PlayerState.inventory.remove_at(i)
+			return

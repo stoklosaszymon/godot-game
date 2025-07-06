@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c7bcdwetim6p1"]
+
+[ext_resource type="Texture2D" uid="uid://bn7sh1kur02bs" path="res://Assets/Items/ironbar_icon.png" id="1_v1qsb"]
+[ext_resource type="Script" uid="uid://c8xsh5qpp4hvj" path="res://item.gd" id="1_yncak"]
+
+[resource]
+script = ExtResource("1_yncak")
+item_name = "iron bar"
+icon = ExtResource("1_v1qsb")
+is_usable = false
+is_equipable = false
+equip_effect = ""
+unequip_effect = ""
+metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

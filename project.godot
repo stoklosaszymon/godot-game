@@ -21,6 +21,7 @@ GameManager="*res://game_manager.gd"
 SceneTransition="*res://scene_transition.gd"
 PlayerState="*res://player_state.gd"
 ItemManager="*res://item_manager.gd"
+CraftingManager="*res://crafting_manager.gd"
 
 [dotnet]
 

@@ -40,3 +40,6 @@ func update_visuals():
 	if item_data:
 		$VBoxContainer/ItemImg.texture = item_data.icon
 		$VBoxContainer/ItemName.text = item_data.item_name
+	else:
+		$VBoxContainer/ItemImg.texture = null
+		$VBoxContainer/ItemName.text = ""

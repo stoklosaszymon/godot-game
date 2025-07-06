@@ -3,7 +3,8 @@ extends StaticBody2D
 var is_open = false
 var panel: Control = null
 var player_nearby = false
-@onready var hud = get_node("../../HUD")
+
+@onready var hud = get_node("/root/main/HUD")
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerArea":
@@ -15,11 +16,14 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		player_nearby = false
 		area.get_parent().z_index = 1
 		if is_open:
+			GameManager.inventory.close()
 			toggle_panel()
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and player_nearby:
 		toggle_panel()
+		if GameManager.inventory == null:
+			hud.instantiate_inventory()
 			
 func toggle_panel():
 	is_open = !is_open

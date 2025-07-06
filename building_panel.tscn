@@ -15,10 +15,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = -95.0
-offset_right = 116.0
-offset_bottom = 95.0
+offset_left = -128.0
+offset_top = -97.5
+offset_right = 128.0
+offset_bottom = 97.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -42,3 +42,10 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+
+[node name="Craft" type="Button" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Craft"
+
+[connection signal="pressed" from="PanelContainer/Craft" to="." method="_on_craft_pressed"]
