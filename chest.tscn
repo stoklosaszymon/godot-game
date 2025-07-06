@@ -74,17 +74,17 @@ position = Vector2(4, 0)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(70, -36)
 scale = Vector2(1.12871, 1.29599)
-polygon = PackedVector2Array(-164.79, 165.125, -75.4983, 214.427, 132.895, 217.594, 120.492, 103.396, -79.737, 81.7907)
+polygon = PackedVector2Array(-127.579, 140.433, -75.4983, 214.427, 132.895, 217.594, 154.158, 104.939, -93.9125, 104.939)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-82, 98)
-polygon = PackedVector2Array(-170, 6, -22, 182, 362, 166, 324, -58)
+position = Vector2(-106, 86)
+polygon = PackedVector2Array(-140, -66, -160, 152, 2, 256, 440, 192, 338, -94)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 94.0
-offset_top = 50.0
+offset_left = 58.0
+offset_top = 30.0
 offset_right = 180.0
 offset_bottom = 142.0
 script = ExtResource("6_bv3sb")

@@ -25,12 +25,10 @@ func toggle_panel():
 	is_open = !is_open
 
 	if is_open:
-		print("open")
 		if panel == null:
 			panel = load("res://building_panel.tscn").instantiate()
 			hud.add_child(panel)
 	else:
-		print("close")
 		if panel != null and is_instance_valid(panel):
 			panel.queue_free()
 			panel = null

@@ -11,5 +11,3 @@ func handle_drop(drag_data, item_data):
 	if item_data.has("source_slot_node"):
 		drag_data.item_data = item_data.item_data
 		drag_data.update_visuals()
-	print(drag_data)
-	print(item_data)
