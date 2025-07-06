@@ -5,6 +5,8 @@ extends Control
 		item_data = new_item_data
 		update_visuals()
 		
+var dragged_item = null;
+		
 signal item_dropped_on_slot(drag_data, item_data)
 	
 func _get_drag_data(at_position: Vector2) -> Variant:
@@ -26,6 +28,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		if item_data.is_equipable:
 			drag_data["is_equipable"] = true
 			
+		dragged_item = item_data
 		return drag_data
 	return null
 
@@ -43,3 +46,16 @@ func update_visuals():
 	else:
 		$VBoxContainer/ItemImg.texture = null
 		$VBoxContainer/ItemName.text = ""
+		
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton and dragged_item != null:
+		if get_viewport().gui_get_hovered_control() != null:
+			print("pass")
+			return
+			
+		elif dragged_item != null:
+			var drop_pos = get_viewport().get_mouse_position()
+			GameManager.drop_item(dragged_item, drop_pos)
+			GameManager.inventory.open()
+			dragged_item = null
