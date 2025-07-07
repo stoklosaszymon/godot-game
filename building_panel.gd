@@ -27,5 +27,8 @@ func _on_craft_pressed() -> void:
 	PlayerState.inventory.erase(slot1.item_data)
 	slot1.item_data = null;
 	slot2.item_data = null;
-	PlayerState.inventory.append(output)
+	if output != null:
+		PlayerState.inventory.append(output)
+		output = null
+	
 	GameManager.inventory.open()

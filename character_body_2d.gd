@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 180
+const SPEED = 100
 const STOP_DISTANCE = 4.0
 
 @onready var _animated_sprite = $MovementSprite
