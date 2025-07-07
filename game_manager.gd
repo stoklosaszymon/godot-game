@@ -2,11 +2,12 @@ extends Node
 
 var player : Node = null
 var previous_scene_path = "res://main.tscn"
-var directional_light: DirectionalLight2D = null;
-var inventory: Node = null;
-var target_inventory: Node = null;
-var target_inventory_id = null;
-var curently_gathered: Node = null;
+var directional_light: DirectionalLight2D = null
+var inventory: Node = null
+var target_inventory: Node = null
+var target_inventory_id = null
+var curently_gathered: Node = null
+var hud: Node = null
 
 var chests_data = {
 	"chest_id_1": [
@@ -51,6 +52,6 @@ func drop_item(item_data: Resource, position: Vector2):
 	var dropped_instance = dropped_scene.instantiate()
 	dropped_instance.item_data = item_data
 	dropped_instance.global_position = player.global_position
-	get_tree().current_scene.get_node("/root/main/MainMap").add_child(dropped_instance)
+	get_tree().current_scene.add_child(dropped_instance)
 	dropped_instance.queue_redraw()
 	PlayerState.inventory.erase(item_data)

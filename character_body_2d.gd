@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	if not wall_tilemap:
 		return
 
-	var player_map_coords: Vector2i = GameManager.player.global_position + Vector2(0, 50)
+	var player_map_coords: Vector2i = GameManager.player.global_position + Vector2(0, 70)
 	var current_wall_tile_coords: Vector2i = wall_tilemap.local_to_map(wall_tilemap.to_local(player_map_coords))
 
 	if current_wall_tile_coords != last_transparent_wall_coords:

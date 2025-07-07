@@ -2,6 +2,13 @@ extends CanvasLayer
 
 var is_inventory_open = false
 
+func _init() -> void:
+	if GameManager.hud == null:
+		GameManager.hud = self
+	else:
+		GameManager.hud.queue_free()
+		GameManager.hud = self
+
 func _on_texture_button_pressed() -> void:
 	is_inventory_open = !is_inventory_open
 	if is_inventory_open:

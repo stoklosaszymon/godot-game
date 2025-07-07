@@ -14,7 +14,7 @@ size = Vector2(85.8333, 140)
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_ij6vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,6 +34,4 @@ script = ExtResource("10_1kp85")
 [node name="MovementSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ij6vw")
 
-[connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]
-[connection signal="area_exited" from="PlayerArea" to="." method="_on_area_2d_area_exited"]
 [connection signal="animation_finished" from="MovementSprite" to="." method="_on_movement_sprite_animation_finished"]
