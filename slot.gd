@@ -38,6 +38,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 func _drop_data(at_position: Vector2, data: Variant):
 	if data is Dictionary and data.has("item_data"):
 		item_dropped_on_slot.emit(self, data)
+
 		
 func update_visuals():
 	if item_data:
@@ -47,15 +48,3 @@ func update_visuals():
 		$VBoxContainer/ItemImg.texture = null
 		$VBoxContainer/ItemName.text = ""
 		
-
-func _unhandled_input(event):
-	if event is InputEventMouseButton and dragged_item != null:
-		if get_viewport().gui_get_hovered_control() != null:
-			print("pass")
-			return
-			
-		elif dragged_item != null:
-			var drop_pos = get_viewport().get_mouse_position()
-			GameManager.drop_item(dragged_item, drop_pos)
-			GameManager.inventory.open()
-			dragged_item = null

@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() == 0 && !PlayerState.is_gathering:
 		_animated_sprite.stop()
 
-	var wall_tilemap = $"../Ground/Wall1"
+	var wall_tilemap = get_node_or_null("../Ground/Wall1")
 	if not wall_tilemap:
 		return
 

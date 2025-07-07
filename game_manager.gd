@@ -47,7 +47,7 @@ func claim_all():
 	PlayerState.inventory.append_array(chests_data[target_inventory_id])
 	chests_data[target_inventory_id] = []
 			
-func drop_item(item_data: Resource, position: Vector2):
+func drop_item(item_data: Resource):
 	var dropped_scene = preload("res://dropped_item.tscn")
 	var dropped_instance = dropped_scene.instantiate()
 	dropped_instance.item_data = item_data
@@ -55,3 +55,4 @@ func drop_item(item_data: Resource, position: Vector2):
 	get_tree().current_scene.add_child(dropped_instance)
 	dropped_instance.queue_redraw()
 	PlayerState.inventory.erase(item_data)
+	GameManager.inventory.open()

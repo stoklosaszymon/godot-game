@@ -25,6 +25,8 @@ func add_slot(item: ItemData):
 	var slotItem = slot_scene.instantiate()
 	slotItem.item_data = item
 	slotItem.item_dropped_on_slot.connect(handle_item_drop)
+	if get_parent().name == "Invenotry":
+		slotItem.add_to_group("Inventory")
 	grid.add_child(slotItem)
 	
 func handle_item_drop(target_slot_node: Node, drag_data: Dictionary):
@@ -33,8 +35,6 @@ func handle_item_drop(target_slot_node: Node, drag_data: Dictionary):
 	var target_container = target_slot_node.get_parent()
 	
 	dragged_item = drag_data.item_data
-	
-	print("target", target_slot_node)
 
 	if name == "TargetInventoryGrid":
 		GameManager.add_item_to_chest(dragged_item)
