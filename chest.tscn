@@ -55,7 +55,7 @@ animations = [{
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
 z_as_relative = false
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, -1)
 script = ExtResource("1_8uwsg")
 chest_id = "chest_id_1"
 is_locked = true
@@ -72,13 +72,13 @@ z_index = 4
 position = Vector2(4, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(70, -36)
+position = Vector2(-32, -89)
 scale = Vector2(1.12871, 1.29599)
-polygon = PackedVector2Array(-127.579, 140.433, -75.4983, 214.427, 132.895, 217.594, 154.158, 104.939, -93.9125, 104.939)
+polygon = PackedVector2Array(-75.4983, 214.427, 209.974, 253.088, 248.957, 154.322, 193.141, 101.081, 111.632, 95.6797, -93.9125, 104.939)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-106, 86)
-polygon = PackedVector2Array(-140, -66, -160, 152, 2, 256, 440, 192, 338, -94)
+polygon = PackedVector2Array(-153, -134, -160, 152, 2, 256, 440, 192, 364, -131)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -92,3 +92,5 @@ script = ExtResource("6_bv3sb")
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

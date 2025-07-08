@@ -55,3 +55,12 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and player_nearby:
 		toggle_chest()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	if is_locked:
+		CursorManager.set_cursor_lock()
+
+
+func _on_area_2d_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)

@@ -7,6 +7,7 @@
 radius = 9.21954
 
 [node name="DroppedItem" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_1y2xd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -16,10 +17,12 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_qpxn3")
 expand_mode = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DroppedItemArea" type="Area2D" parent="."]
 position = Vector2(10, 10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppedItemArea"]
 shape = SubResource("CircleShape2D_1y2xd")
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="DroppedItemArea" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="DroppedItemArea" to="." method="_on_dropped_item_area_mouse_entered"]
+[connection signal="mouse_exited" from="DroppedItemArea" to="." method="_on_dropped_item_area_mouse_exited"]

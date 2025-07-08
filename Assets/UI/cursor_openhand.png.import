@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0bnwk0ba6ivi"
-path="res://.godot/imported/deep.png-20d9d7a00435f746f89644968924be66.ctex"
+uid="uid://bg0vabecbiw4u"
+path="res://.godot/imported/cursor_openhand.png-7b609f51aa642376432a6804efdd66a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrain/deep.png"
-dest_files=["res://.godot/imported/deep.png-20d9d7a00435f746f89644968924be66.ctex"]
+source_file="res://Assets/UI/cursor_openhand.png"
+dest_files=["res://.godot/imported/cursor_openhand.png-7b609f51aa642376432a6804efdd66a9.ctex"]
 
 [params]
 

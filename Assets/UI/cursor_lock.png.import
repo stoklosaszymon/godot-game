@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diicftbtnjlto"
-path="res://.godot/imported/shallow.png-3acb47ef13cf42f719284474025b0ccd.ctex"
+uid="uid://ci55gx7krwgtb"
+path="res://.godot/imported/cursor_lock.png-e8b0643301d20e6a0b283d6a2edb231b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrain/shallow.png"
-dest_files=["res://.godot/imported/shallow.png-3acb47ef13cf42f719284474025b0ccd.ctex"]
+source_file="res://Assets/UI/cursor_lock.png"
+dest_files=["res://.godot/imported/cursor_lock.png-e8b0643301d20e6a0b283d6a2edb231b.ctex"]
 
 [params]
 
