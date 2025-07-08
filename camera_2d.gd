@@ -1,8 +1,8 @@
 extends Camera2D
 
 # --- Zoom Properties ---
-var min_zoom := Vector2(0.5, 0.5)
-var max_zoom := Vector2(3.0, 3.0)
+var min_zoom := Vector2(1.0, 1.0)
+var max_zoom := Vector2(2.0, 2.0)
 var zoom_step := 0.2
 var zoom_speed := 5.0
 

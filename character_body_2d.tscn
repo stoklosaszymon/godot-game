@@ -14,7 +14,7 @@ size = Vector2(85.8333, 140)
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ij6vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

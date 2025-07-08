@@ -19,7 +19,7 @@ script = ExtResource("1_lquwl")
 position = Vector2(-457, 41)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="."]
-position = Vector2(77, -173)
+position = Vector2(201, -292)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-512, -15)
