@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="2_5hk42"]
 [ext_resource type="Texture2D" uid="uid://bagth6mcgw0qi" path="res://Assets/Terrain/sand_1.png" id="2_ob7o4"]
-[ext_resource type="Texture2D" uid="uid://2tuolcrrx6pc" path="res://Assets/Terrain/beach.png" id="4_qu338"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_km2bi"]
 texture = ExtResource("2_5hk42")
@@ -15,8 +14,11 @@ texture_region_size = Vector2i(512, 256)
 0:0/0 = 0
 0:0/0/custom_data_0 = "sand"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_km2bi"]
+load_path = "res://.godot/imported/beach.png-a202616cec3fbd3fd68611b47e9c5527.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ly05"]
-texture = ExtResource("4_qu338")
+texture = SubResource("CompressedTexture2D_km2bi")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 10)
