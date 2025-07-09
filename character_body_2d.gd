@@ -31,10 +31,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			if not get_viewport().gui_get_hovered_control():
-				mouse_held = true
-			else:
-				mouse_held = false
+			mouse_held = not get_viewport().gui_get_hovered_control()
 		else:
 			mouse_held = false
 
