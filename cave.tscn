@@ -78,9 +78,6 @@ polygon = PackedVector2Array(1058, -338, 1157, -278, 1222, -323, 1135, -391)
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(220, -287)
 
-[node name="Torch" parent="." instance=ExtResource("4_23xot")]
-position = Vector2(838, -261)
-
 [node name="Ground" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 position = Vector2(52, -64)
@@ -102,10 +99,12 @@ tile_map_data = PackedByteArray("AAD7//7/AAAAAAAAAAD7//3/AAAAAAAAAAD7//z/AAAAAAA
 tile_set = SubResource("TileSet_xifcx")
 
 [node name="Torch2" parent="." instance=ExtResource("4_23xot")]
-position = Vector2(-608, 202)
+position = Vector2(-522, 217)
+rotation = 0.349066
 
 [node name="Torch3" parent="." instance=ExtResource("4_23xot")]
-position = Vector2(-1807, -274)
+position = Vector2(-1802, -244)
+rotation = 0.349066
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(1015, -497)
