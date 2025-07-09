@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100
+const SPEED = 250
 const STOP_DISTANCE = 4.0
 
 @onready var _animated_sprite = $MovementSprite
@@ -56,35 +56,6 @@ func _physics_process(delta: float) -> void:
 
 	if velocity.length() == 0 && !PlayerState.is_gathering:
 		_animated_sprite.stop()
-
-	var wall_tilemap = get_node_or_null("../Ground/Wall1")
-	if not wall_tilemap:
-		return
-
-	var player_map_coords: Vector2i = GameManager.player.global_position + Vector2(0, 70)
-	var current_wall_tile_coords: Vector2i = wall_tilemap.local_to_map(wall_tilemap.to_local(player_map_coords))
-
-	if current_wall_tile_coords != last_transparent_wall_coords:
-		if last_transparent_wall_coords != Vector2i(-1, -1):
-			_apply_alpha_to_tile(wall_tilemap, last_transparent_wall_coords, 1.0)
-			
-		_apply_alpha_to_tile(wall_tilemap, current_wall_tile_coords, 0.4)
-		
-		last_transparent_wall_coords = current_wall_tile_coords
-
-func _apply_alpha_to_tile(tile_map, coords: Vector2i, alpha: float) -> void:
-	var tile_data: TileData = tile_map.get_cell_tile_data(coords)
-	
-	if tile_data:
-		tile_data.modulate = Color(1.0, 1.0, 1.0, alpha)
-		var source_id = tile_map.get_cell_source_id(coords)
-		var atlas_coords = tile_map.get_cell_atlas_coords(coords)
-		tile_map.set_cell(coords, source_id, atlas_coords, 0)
-	
-		if alpha == 0.4:
-			GameManager.player._animated_sprite.modulate = Color(1.0, 1.0, 1.0, 0.4)
-		elif alpha == 1.0:
-			GameManager.player._animated_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 func _play_directional_animation(direction: Vector2) -> void:
 	if direction.length_squared() < 0.01:

@@ -217,7 +217,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,7 +240,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-left",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +263,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-right",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,7 +286,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -309,7 +309,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -332,7 +332,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,7 +355,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-left",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -378,11 +378,10 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-right",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Walk" type="AnimatedSprite2D"]
-z_index = 1
+z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_76bt2")
-animation = &"bottom-left"
-frame_progress = 0.0429647
+animation = &"top-right"

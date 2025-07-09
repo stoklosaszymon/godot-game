@@ -1,20 +1,18 @@
 extends Camera2D
 
-# --- Zoom Properties ---
 var min_zoom := Vector2(1.0, 1.0)
-var max_zoom := Vector2(2.0, 2.0)
-var zoom_step := 0.2
+var max_zoom := Vector2(1.5, 1.5)
+var zoom_step := 2.5
 var zoom_speed := 5.0
+var target_zoom := Vector2(1.0, 1.0)
 
-var target_zoom := Vector2(1, 1)
-
-var isometric_offset_y := -16 
-
-var follow_speed := 10.0
+var isometric_offset_y := -16
 
 func _ready():
 	target_zoom = zoom
 	offset = Vector2(0, isometric_offset_y)
+	position_smoothing_enabled = true
+	position_smoothing_speed = 5.0 
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:

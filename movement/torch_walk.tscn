@@ -382,5 +382,6 @@ animations = [{
 }]
 
 [node name="TorchWalk" type="AnimatedSprite2D"]
+z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_tv6gi")
 animation = &"bottom"
