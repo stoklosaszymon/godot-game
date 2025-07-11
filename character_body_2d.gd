@@ -138,8 +138,9 @@ func unequip():
 func _on_movement_sprite_animation_finished() -> void:
 	if PlayerState.is_gathering:
 		PlayerState.is_gathering = false
-		PlayerState.inventory.append(
-			load("res://resources/iron_ore.tres")
+		GameManager.add_item_to_target(
+			load("res://resources/iron_ore.tres").duplicate(),
+			PlayerState.inventory
 		)
 		GameManager.curently_gathered.take();
 		if GameManager.inventory != null:

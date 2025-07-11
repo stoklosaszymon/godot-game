@@ -33,14 +33,14 @@ func handle_item_drop(target_slot_node: Node, drag_data: Dictionary):
 	var source_slot_node = drag_data.source_slot_node
 	var source_container = source_slot_node.get_parent()
 	var target_container = target_slot_node.get_parent()
-	
 	dragged_item = drag_data.item_data
-
 	if name == "TargetInventoryGrid":
-		GameManager.add_item_to_chest(dragged_item)
+		GameManager.remove_item_from_target(drag_data.item_data, PlayerState.inventory)
+		GameManager.add_item_to_target(dragged_item, GameManager.chests_data[GameManager.target_inventory_id])
 		
 	if name == "InventoryGrid":
-		GameManager.add_item_to_inventory(dragged_item)
+		GameManager.remove_item_from_target(drag_data.item_data, GameManager.chests_data[GameManager.target_inventory_id])
+		GameManager.add_item_to_target(dragged_item, PlayerState.inventory)
 	
 	if GameManager.target_inventory != null:
 		GameManager.target_inventory.open();

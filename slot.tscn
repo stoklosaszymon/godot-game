@@ -44,3 +44,10 @@ theme_override_font_sizes/font_size = 12
 text = "null"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ItemQuantity" type="Label" parent="."]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 49.0
+offset_right = 71.0
+offset_bottom = 72.0

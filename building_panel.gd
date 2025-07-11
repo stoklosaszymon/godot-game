@@ -2,6 +2,7 @@ extends Control
 
 @onready var slot1 = $PanelContainer/Slot
 @onready var slot2 = $PanelContainer/Slot2
+@onready var craft = $PanelContainer/Craft
 
 var input = null
 var output = null;
@@ -19,16 +20,21 @@ func handle_drop(drag_data, item):
 			drag_data.item_data = item.item_data
 			drag_data.update_visuals()
 			slot2.update_visuals()
+			can_craft();
 		else:
 			pass
 
+func can_craft():
+	if PlayerState.inventory.has(slot1.item_data): 
+		craft.disabled = false 
+	else: 
+		craft.disabled = true;
 
 func _on_craft_pressed() -> void:
-	PlayerState.inventory.erase(slot1.item_data)
-	slot1.item_data = null;
-	slot2.item_data = null;
+	GameManager.remove_x_of_item_from_target(slot1.item_data, PlayerState.inventory, 1)
+	slot1.update_visuals()
 	if output != null:
-		PlayerState.inventory.append(output)
-		output = null
+		GameManager.add_item_to_target(output, PlayerState.inventory)
 	
 	GameManager.inventory.open()
+	can_craft()

@@ -8,7 +8,7 @@ func _ready():
 	$TextureRect.set_anchors_preset(Control.PRESET_CENTER)
 
 func pick_up():
-	PlayerState.inventory.append(item_data)
+	GameManager.add_item_to_target(item_data, PlayerState.inventory)
 	if GameManager.inventory != null:
 		GameManager.inventory.open()
 	queue_free()

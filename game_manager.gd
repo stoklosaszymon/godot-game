@@ -9,11 +9,11 @@ var target_inventory_id = null
 var curently_gathered: Node = null
 var hud: Node = null
 
-var chests_data = {
+var chests_data: Dictionary[String, Array] = {
 	"chest_id_1": [
 		preload("res://resources/torch.tres").duplicate(),
 		preload("res://resources/pickaxe.tres").duplicate(),
-				preload("res://resources/axe.tres").duplicate()
+		preload("res://resources/axe.tres").duplicate()
 		],
 	"chest_id_2": [
 		preload("res://resources/key.tres").duplicate(),
@@ -28,23 +28,30 @@ func _init() -> void:
 			items.append(resource)
 		chests_data[key] = items
 
-
-func add_item_to_chest(item: ItemData):
-	if item in PlayerState.inventory:
-		PlayerState.inventory.erase(item)
-		chests_data[target_inventory_id].append(item)
-
-func add_item_to_inventory(item: ItemData) -> void:
-	if target_inventory_id != null:
-		if item in chests_data[target_inventory_id]:
-			chests_data[target_inventory_id].erase(item)
-			PlayerState.inventory.append(item)
+func add_item_to_target(item: ItemData, target: Array[ItemData]) -> void:
+	var found_item = find_item_by_name(item.item_name, target)
+	if (found_item != null):
+		found_item.quantity += 1
+	else:
+		target.append(item)
+			
+func remove_item_from_target(item: ItemData, target: Array[ItemData]) -> void:
+	if item in target:
+		target.erase(item)
+			
+func remove_x_of_item_from_target(item: ItemData, target: Array[ItemData], count: int) -> void:
+	if item in target:
+		if item.quantity > count:
+			item.quantity -= count
+		else:
+			remove_item_from_target(item, target)
 
 func get_target_inventory():
 	return chests_data.get(target_inventory_id)
 	
 func claim_all():
-	PlayerState.inventory.append_array(chests_data[target_inventory_id])
+	for item in chests_data[target_inventory_id]:
+		add_item_to_target(item, PlayerState.inventory)
 	chests_data[target_inventory_id] = []
 			
 func drop_item(item_data: Resource):
@@ -56,3 +63,9 @@ func drop_item(item_data: Resource):
 	dropped_instance.queue_redraw()
 	PlayerState.inventory.erase(item_data)
 	GameManager.inventory.open()
+
+func find_item_by_name(name: String, target: Array[ItemData]) -> ItemData:
+	for item in target:
+		if item.item_name == name:
+			return item
+	return null

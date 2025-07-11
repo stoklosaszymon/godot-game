@@ -8,6 +8,10 @@ extends Control
 var dragged_item = null;
 		
 signal item_dropped_on_slot(drag_data, item_data)
+
+func _ready() -> void:
+	if item_data != null && item_data.quantity > 1:
+		$ItemQuantity.text = str(item_data.quantity)
 	
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if item_data:
