@@ -11,7 +11,6 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body.name)
 	if body.name == "Player":
 		GameManager.player = body
 		SceneTransition.go_to("res://cave.tscn", false, "res://main.tscn")

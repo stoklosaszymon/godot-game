@@ -75,11 +75,11 @@ y_sort_enabled = true
 position = Vector2(-837, 135)
 
 [node name="Torch2" parent="." instance=ExtResource("4_23xot")]
-position = Vector2(-492, 228)
+position = Vector2(-713, 16)
 rotation = 0.349066
 
 [node name="Torch3" parent="." instance=ExtResource("4_23xot")]
-position = Vector2(-1802, -244)
+position = Vector2(-1291, -153)
 rotation = 0.349066
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
