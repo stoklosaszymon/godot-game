@@ -31,7 +31,7 @@ func _init() -> void:
 func add_item_to_target(item: ItemData, target: Array[ItemData]) -> void:
 	var found_item = find_item_by_name(item.item_name, target)
 	if (found_item != null):
-		found_item.quantity += 1
+		found_item.quantity += item.quantity
 	else:
 		target.append(item)
 			
