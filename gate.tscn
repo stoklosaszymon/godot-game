@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://mffap4tjkl2g"]
+
+[ext_resource type="Texture2D" uid="uid://n0v05c5vmx72" path="res://Assets/Terrain/gate/gate_5.png" id="1_1g733"]
+[ext_resource type="Script" uid="uid://c0koahb730u0n" path="res://door.gd" id="1_jhui3"]
+[ext_resource type="Texture2D" uid="uid://bhfav7lfntuhg" path="res://Assets/Terrain/gate/gate_4.png" id="2_jhui3"]
+[ext_resource type="Texture2D" uid="uid://c3qprckp0thxm" path="res://Assets/Terrain/gate/gate_3.png" id="3_6qcw8"]
+[ext_resource type="Texture2D" uid="uid://7sxa12ss5uce" path="res://Assets/Terrain/gate/gate_2.png" id="4_6ekym"]
+[ext_resource type="Texture2D" uid="uid://sldt2ucpa41d" path="res://Assets/Terrain/gate/gate_1.png" id="5_s3oi5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i1jse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1g733")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jhui3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6qcw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ekym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s3oi5")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s3oi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ekym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6qcw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jhui3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_1g733")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Gate" type="StaticBody2D"]
+script = ExtResource("1_jhui3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i1jse")
+animation = &"close"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4, -6)
+polygon = PackedVector2Array(-65, 85, -50, 93, 69, 26, 60, 13)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-29, 74, 43, 31, 46, -58, 28, -73, -4, -63, -33, -20)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
