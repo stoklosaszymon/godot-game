@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ussl5uvo4dlq"]
+
+[ext_resource type="Texture2D" uid="uid://cucdbgi6rcino" path="res://Assets/Terrain/lever.png" id="1_0ohsc"]
+[ext_resource type="Script" uid="uid://cy1m1kemtpo2y" path="res://lever.gd" id="1_1btnt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kj1s"]
+atlas = ExtResource("1_0ohsc")
+region = Rect2(0, 0, 69, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uavd"]
+atlas = ExtResource("1_0ohsc")
+region = Rect2(69, 0, 69, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soi7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kj1s")
+}],
+"loop": false,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uavd")
+}],
+"loop": false,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Lever" type="Node2D"]
+script = ExtResource("1_1btnt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_soi7j")
+animation = &"off"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-30, 11, -1, 31, 23, 14, 21, 0, -11, -24, -32, -7)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
