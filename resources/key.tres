@@ -11,4 +11,5 @@ is_usable = true
 is_equipable = false
 equip_effect = ""
 unequip_effect = ""
+quantity = 1
 metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

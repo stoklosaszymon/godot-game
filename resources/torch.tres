@@ -11,4 +11,5 @@ is_usable = true
 is_equipable = true
 equip_effect = "torch_equiped"
 unequip_effect = "torch_removed"
+quantity = 1
 metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"
