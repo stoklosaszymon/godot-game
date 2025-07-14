@@ -103,6 +103,8 @@ tile_map_data = PackedByteArray("AAAq/xYAAAAAAAAAAAD7/wgABwAAAAAAAAD7/woABwAAAAA
 tile_set = SubResource("TileSet_23xot")
 
 [node name="Ladder" parent="Ground/Walls" instance=ExtResource("7_c2qy3")]
+z_index = 1
+z_as_relative = false
 position = Vector2(-2566, -951)
 
 [node name="Floor" type="TileMapLayer" parent="Ground/Walls"]
