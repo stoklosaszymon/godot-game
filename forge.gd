@@ -16,7 +16,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		player_nearby = false
 		area.get_parent().z_index = 1
 		if is_open:
-			GameManager.inventory.close()
+			if GameManager.inventory != null:
+				GameManager.inventory.close()
 			toggle_panel()
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

@@ -16,19 +16,41 @@ script = ExtResource("1_sgkf1")
 
 [node name="TargetInventoryGrid" parent="." instance=ExtResource("2_6nqvs")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -220.0
-offset_right = 220.0
+anchors_preset = 15
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 
 [node name="ClaimAll" type="Button" parent="TargetInventoryGrid"]
-layout_mode = 0
-offset_left = 289.0
-offset_top = 529.0
-offset_right = 359.0
-offset_bottom = 560.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = 9.0
+offset_right = -1.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Clam all"
 
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 8.0
+offset_right = -6.0
+offset_bottom = 39.0
+grow_horizontal = 0
+text = "X"
+
 [connection signal="pressed" from="TargetInventoryGrid/ClaimAll" to="." method="_on_claim_all_pressed"]
+[connection signal="pressed" from="Close" to="." method="close"]

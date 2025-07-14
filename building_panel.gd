@@ -9,6 +9,9 @@ var output = null;
 
 func _ready() -> void:
 	slot1.connect("item_dropped_on_slot", handle_drop)
+	
+func close():
+	self.queue_free()
 
 func handle_drop(drag_data, item):
 	if item.has("source_slot_node"):

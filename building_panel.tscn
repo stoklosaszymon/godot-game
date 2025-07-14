@@ -48,4 +48,15 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Craft"
 
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "X"
+
 [connection signal="pressed" from="PanelContainer/Craft" to="." method="_on_craft_pressed"]
+[connection signal="pressed" from="Close" to="." method="close"]
