@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://r422wmaa0ybb"]
+
+[ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_nny2b"]
+[ext_resource type="PackedScene" uid="uid://dyfk3j2645din" path="res://hud.tscn" id="2_4nvwa"]
+[ext_resource type="PackedScene" uid="uid://drxdawjii078y" path="res://main_map.tscn" id="3_8plce"]
+[ext_resource type="PackedScene" uid="uid://cejg2nkyx6ymd" path="res://chest.tscn" id="4_kji3r"]
+[ext_resource type="PackedScene" uid="uid://xgyqpnjuj0do" path="res://chest_common.tscn" id="5_jueuh"]
+[ext_resource type="PackedScene" uid="uid://bl143fdly0nlm" path="res://forge.tscn" id="6_nuqta"]
+[ext_resource type="PackedScene" uid="uid://ddomyk7qil1xt" path="res://resource.tscn" id="7_0bwrd"]
+[ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="8_v82s7"]
+[ext_resource type="PackedScene" uid="uid://d0jkcc5daoav7" path="res://cave_enterance.tscn" id="9_vwixx"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_nny2b")
+
+[node name="HUD" parent="." instance=ExtResource("2_4nvwa")]
+
+[node name="PlayerReturnPoint" type="Marker2D" parent="."]
+position = Vector2(-564, -26)
+
+[node name="PlayerStartPoint" type="Marker2D" parent="."]
+position = Vector2(-17, -100)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-873, -208)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(10, -48)
+polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
+
+[node name="MainMap" parent="." instance=ExtResource("3_8plce")]
+position = Vector2(1, -14)
+
+[node name="Chest" parent="MainMap" groups=["chests"] instance=ExtResource("4_kji3r")]
+position = Vector2(148, -428)
+rotation = -0.174533
+scale = Vector2(0.3, 0.3)
+
+[node name="ChestCommon" parent="MainMap" instance=ExtResource("5_jueuh")]
+position = Vector2(-411, -213)
+scale = Vector2(0.7, 0.7)
+chest_id = "chest_id_2"
+
+[node name="Forge" parent="MainMap" instance=ExtResource("6_nuqta")]
+position = Vector2(-583, -838)
+scale = Vector2(2, 2)
+
+[node name="Resource" parent="MainMap" instance=ExtResource("7_0bwrd")]
+position = Vector2(375, -234)
+scale = Vector2(2.1, 2.1)
+
+[node name="Sun" parent="." instance=ExtResource("8_v82s7")]
+position = Vector2(636, 4)
+skew = -0.0349066
+
+[node name="CaveEnterance" parent="." instance=ExtResource("9_vwixx")]
+position = Vector2(-1364, -792)
+rotation = -0.0610865
+scale = Vector2(1.5, 1.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

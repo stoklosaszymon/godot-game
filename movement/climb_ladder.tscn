@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd4up0v6qn0fl"]
+
+[ext_resource type="Texture2D" uid="uid://dhg40m8hd7y5m" path="res://Assets/Character/climb_ladder.png" id="1_6nttb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h1hd"]
+atlas = ExtResource("1_6nttb")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgsym"]
+atlas = ExtResource("1_6nttb")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsy0j"]
+atlas = ExtResource("1_6nttb")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xsg3"]
+atlas = ExtResource("1_6nttb")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iiyky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h1hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgsym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsy0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xsg3")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="ClimbLadder" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_iiyky")
+animation = &"up"
+frame_progress = 0.0783591

@@ -4,6 +4,7 @@ const SPEED = 250
 const STOP_DISTANCE = 4.0
 
 @onready var _animated_sprite = $MovementSprite
+@onready var colision = $CollisionShape2D
 
 var mouse_held := false
 var target_position := Vector2.ZERO
@@ -40,18 +41,25 @@ func _physics_process(delta: float) -> void:
 		target_position = get_global_mouse_position()
 		var to_target = target_position - global_position
 
-		if to_target.length() > STOP_DISTANCE && !PlayerState.is_gathering:
+		if to_target.length() > STOP_DISTANCE && !PlayerState.is_gathering && !PlayerState.is_climbing:
 			var direction = to_target.normalized()
 			velocity = direction * SPEED
 			_play_directional_animation(direction)
 		else:
 			velocity = Vector2.ZERO
 	else:
-		velocity = Vector2.ZERO
+		if PlayerState.is_climbing:
+			if PlayerState.is_upladder:
+				velocity = Vector2(5.0, 50.0)
+			else:
+				velocity = Vector2(-5.0, -50.0)
+		else:
+			velocity = Vector2.ZERO
+			_animated_sprite.stop()
 
 	move_and_slide()
 
-	if velocity.length() == 0 && !PlayerState.is_gathering:
+	if velocity.length() == 0 && !PlayerState.is_gathering && !PlayerState.is_climbing:
 		_animated_sprite.stop()
 
 func _play_directional_animation(direction: Vector2) -> void:

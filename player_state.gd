@@ -15,7 +15,8 @@ var equipped_item: ItemData = null:
 			equipped_item = null
 
 var is_gathering: bool = false
-
+var is_climbing: bool = false
+var is_upladder: bool = false
 
 func setWalkSprite():
 	var walkSprite = null
@@ -33,7 +34,17 @@ func setWalkSprite():
 
 		if frames != null:
 			frames.sprite_frames = walkSprite.sprite_frames
-	
+
+func climb_ladder():
+	var walkSprite = load("res://movement/climb_ladder.tscn").instantiate()
+	if GameManager.player != null:
+		var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
+
+		if frames != null:
+			frames.sprite_frames = walkSprite.sprite_frames
+			is_climbing = true
+		frames.play("up")
+
 func gather():
 	var gathering = load("res://movement/gathering.tscn").instantiate()
 	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
