@@ -42,4 +42,4 @@ animations = [{
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_iiyky")
 animation = &"up"
-frame_progress = 0.261082
+frame_progress = 0.203579

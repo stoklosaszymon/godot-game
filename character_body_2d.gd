@@ -55,7 +55,6 @@ func _physics_process(delta: float) -> void:
 				velocity = Vector2(-5.0, -50.0)
 		else:
 			velocity = Vector2.ZERO
-			_animated_sprite.stop()
 
 	move_and_slide()
 

@@ -62,10 +62,3 @@ frame_progress = 1.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-4, -6)
 polygon = PackedVector2Array(-65, 85, -50, 93, 69, 26, 60, 13)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-29, 74, 43, 31, 46, -58, 28, -73, -4, -63, -33, -20)
-
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

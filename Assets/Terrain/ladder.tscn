@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ci8ai0tb888pj" path="res://ladder.gd" id="1_lqhsa"]
 
 [node name="Ladder" type="Node2D"]
+z_as_relative = false
 script = ExtResource("1_lqhsa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
