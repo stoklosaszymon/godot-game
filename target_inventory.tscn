@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c834mwiwk3jc"]
+[gd_scene load_steps=5 format=3 uid="uid://c834mwiwk3jc"]
 
 [ext_resource type="Script" uid="uid://cyyjhg5yvnwfl" path="res://target_inventory.gd" id="1_sgkf1"]
 [ext_resource type="PackedScene" uid="uid://cyibbcb7uv4xy" path="res://HUDGrid.tscn" id="2_6nqvs"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_sgkf1"]
+action = &"close"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_6nqvs"]
+events = [SubResource("InputEventAction_sgkf1")]
 
 [node name="TargetInventory" type="Control"]
 layout_mode = 3
@@ -50,6 +57,7 @@ offset_top = 8.0
 offset_right = -6.0
 offset_bottom = 39.0
 grow_horizontal = 0
+shortcut = SubResource("Shortcut_6nqvs")
 text = "X"
 
 [connection signal="pressed" from="TargetInventoryGrid/ClaimAll" to="." method="_on_claim_all_pressed"]

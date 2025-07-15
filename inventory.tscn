@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqvlt6e27t3rr"]
+[gd_scene load_steps=6 format=3 uid="uid://cqvlt6e27t3rr"]
 
 [ext_resource type="Script" uid="uid://c6wwni4l7qfey" path="res://invenotry.gd" id="1_psafj"]
 [ext_resource type="PackedScene" uid="uid://cyibbcb7uv4xy" path="res://HUDGrid.tscn" id="2_5tt2m"]
 [ext_resource type="Script" uid="uid://bma3xfsfavhfq" path="res://drop_zone.gd" id="3_5tt2m"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5tt2m"]
+action = &"close"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_mrqgh"]
+events = [SubResource("InputEventAction_5tt2m")]
 
 [node name="Invenotry" type="Control"]
 layout_mode = 3
@@ -61,6 +68,7 @@ anchor_right = 1.0
 offset_left = -18.0
 offset_bottom = 31.0
 grow_horizontal = 0
+shortcut = SubResource("Shortcut_mrqgh")
 text = "X"
 
 [connection signal="pressed" from="Close" to="." method="close"]
