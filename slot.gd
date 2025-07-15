@@ -37,7 +37,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	return null
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return data is Dictionary and data.has("item_data") and data.has("source_slot_node")
+	return data is Dictionary and data.has("item_data") and data.has("source_slot_node") and data.source_slot_node not in get_parent().get_children()
 
 func _drop_data(at_position: Vector2, data: Variant):
 	if data is Dictionary and data.has("item_data"):

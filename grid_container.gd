@@ -6,6 +6,9 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var dragged_item = data.item_data
 	
+	if data.source_slot_node in get_children():
+		return 
+		
 	if get_parent().get_parent().name == "TargetInventoryGrid":
 		if GameManager.target_inventory_id != null:
 			GameManager.add_item_to_target(dragged_item, GameManager.chests_data[GameManager.target_inventory_id] as Array[ItemData])
