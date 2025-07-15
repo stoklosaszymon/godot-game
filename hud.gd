@@ -14,13 +14,10 @@ func _ready() -> void:
 	$Map.texture = get_parent().get_node("MiniMap").get_texture()
 
 func _on_texture_button_pressed() -> void:
-	is_inventory_open = !is_inventory_open
-	if is_inventory_open:
-		if GameManager.inventory == null:
-			instantiate_inventory()
+	if GameManager.inventory == null:
+		instantiate_inventory()
 	else:
-		if GameManager.inventory != null:
-			GameManager.inventory.close()
+		GameManager.inventory.close()
 
 func instantiate_inventory():
 	GameManager.inventory = preload("res://inventory.tscn").instantiate()
