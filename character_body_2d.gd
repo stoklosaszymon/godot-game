@@ -32,7 +32,11 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			mouse_held = not get_viewport().gui_get_hovered_control()
+			var hovered_colntrol = get_viewport().gui_get_hovered_control()
+			if hovered_colntrol != null:
+				mouse_held = get_viewport().gui_get_hovered_control().name == "TextureRect"
+			else:
+				mouse_held = true
 		else:
 			mouse_held = false
 
