@@ -54,9 +54,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		if PlayerState.is_climbing:
 			if PlayerState.is_upladder:
-				velocity = Vector2(5.0, 50.0)
+				velocity = Vector2(0.0, 50.0)
 			else:
-				velocity = Vector2(-5.0, -50.0)
+				velocity = Vector2(0.0, -50.0)
 		else:
 			velocity = Vector2.ZERO
 

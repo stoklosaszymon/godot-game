@@ -37,10 +37,14 @@ sources/2 = SubResource("TileSetAtlasSource_wkdm5")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78gyg"]
 texture = ExtResource("3_xtwoi")
 texture_region_size = Vector2i(128, 194)
-0:0/next_alternative_id = 3
+0:0/next_alternative_id = 4
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 50)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-61.7286, -1.1357, -32.4211, 15.7894, 28.0747, -17.9627, 0, -32)
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/texture_origin = Vector2i(0, 50)
+0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(-26.0877, -18.9561, 0, -32, 61.7286, -1.1357, 34.5322, 14.7339)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xtwoi"]
 texture = ExtResource("3_xtwoi")
@@ -58,7 +62,7 @@ sources/9 = SubResource("TileSetAtlasSource_xtwoi")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2qy3"]
 texture = ExtResource("1_23xot")
-texture_region_size = Vector2i(128, 81)
+texture_region_size = Vector2i(128, 80)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -7)
 
@@ -71,7 +75,7 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_3ayon"]
 tile_shape = 1
 tile_layout = 5
-tile_size = Vector2i(128, 64)
+tile_size = Vector2i(128, 62)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c2qy3")
 sources/1 = SubResource("TileSetAtlasSource_3ayon")
@@ -88,7 +92,7 @@ scale = Vector2(1.13643, 1.06692)
 polygon = PackedVector2Array(1072.66, -341.169, 1092.02, -312.113, 1173.85, -354.291, 1146.57, -377.723)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(271, -329)
+position = Vector2(425, -319)
 
 [node name="Map" type="TileMapLayer" parent="."]
 clip_children = 1
@@ -100,12 +104,11 @@ script = ExtResource("2_shk3w")
 
 [node name="Walls" type="TileMapLayer" parent="Map"]
 z_index = 2
-tile_map_data = PackedByteArray("AAAq/xYAAAAAAAAAAAD7/wgABwAAAAAAAAD7/woABwAAAAAAAAD7/wkACQAAAAAAAADq/wUABwAAAAAAAADq/wgABwAAAAAAAADd/wUABwAAAAAAAADd/wYABwAAAAAAAADd/wcABwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAq/xYAAAAAAAAAAAD7/wgABwAAAAAAAAD7/woABwAAAAAAAAD7/wkACQAAAAAAAADq/wUABwAAAAAAAADq/wgABwAAAAAAAADd/wUABwAAAAAAAADd/wYABwAAAAAAAADd/wcABwAAAAAAAADk/wQABwAAAAAAAwDj/wQABwAAAAAAAwDl/wQABwAAAAAAAwDm/wQABwAAAAAAAwDi/wQABwAAAAAAAwDh/wQABwAAAAAAAwA=")
 tile_set = SubResource("TileSet_23xot")
 
 [node name="Floor" type="TileMapLayer" parent="Map/Walls"]
-position = Vector2(30, 10)
-tile_map_data = PackedByteArray("AADa/wUAAAAAAAAAAADa/wQAAAAAAAAAAADa/wMAAAAAAAAAAADZ/wUAAAAAAAAAAADZ/wQAAAAAAAAAAADZ/wMAAAAAAAAAAADZ/wIAAAAAAAAAAADY/wMAAAAAAAAAAADX/wMAAAAAAAAAAADX/wQAAAAAAAAAAADX/wUAAAAAAAAAAADY/wUAAAAAAAAAAADY/wQAAAAAAAAAAADX/wIAAAAAAAAAAADY/wIAAAAAAAAAAADa/wYAAAAAAAAAAADZ/wYAAAAAAAAAAADY/wYAAAAAAAAAAADX/wYAAAAAAAAAAADa/wIAAAAAAAAAAADa/wcAAQAAAAAAAADZ/wcAAQAAAAAAAADY/wcAAQAAAAAAAADX/wcAAQAAAAAAAADW/wcAAQAAAAAAAADW/wYAAQAAAAAAAADW/wUAAQAAAAAAAADW/wQAAQAAAAAAAADW/wMAAQAAAAAAAADW/wIAAQAAAAAAAADW/wEAAQAAAAAAAADX/wEAAQAAAAAAAADY/wEAAQAAAAAAAADZ/wEAAQAAAAAAAADa/wEAAQAAAAAAAADb/wcAAQAAAAAAAADb/wYAAQAAAAAAAADb/wMAAQAAAAAAAADb/wIAAQAAAAAAAADb/wUAAQAAAAAAAADb/wQAAQAAAAAAAADb/wEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADa/wUAAAAAAAAAAADa/wQAAAAAAAAAAADa/wMAAAAAAAAAAADZ/wUAAAAAAAAAAADZ/wQAAAAAAAAAAADZ/wMAAAAAAAAAAADZ/wIAAAAAAAAAAADY/wMAAAAAAAAAAADX/wMAAAAAAAAAAADX/wQAAAAAAAAAAADX/wUAAAAAAAAAAADY/wUAAAAAAAAAAADY/wQAAAAAAAAAAADX/wIAAAAAAAAAAADY/wIAAAAAAAAAAADa/wYAAAAAAAAAAADZ/wYAAAAAAAAAAADY/wYAAAAAAAAAAADX/wYAAAAAAAAAAADa/wIAAAAAAAAAAADa/wcAAQAAAAAAAADZ/wcAAQAAAAAAAADY/wcAAQAAAAAAAADX/wcAAQAAAAAAAADW/wcAAQAAAAAAAADW/wYAAQAAAAAAAADW/wUAAQAAAAAAAADW/wQAAQAAAAAAAADW/wMAAQAAAAAAAADW/wIAAQAAAAAAAADW/wEAAQAAAAAAAADX/wEAAQAAAAAAAADY/wEAAQAAAAAAAADZ/wEAAQAAAAAAAADa/wEAAQAAAAAAAADb/wcAAQAAAAAAAADb/wYAAQAAAAAAAADb/wMAAQAAAAAAAADb/wIAAQAAAAAAAADb/wUAAQAAAAAAAADb/wQAAQAAAAAAAADb/wEAAQAAAAAAAADg/wEAAAAAAAAAAADh/wEAAAAAAAAAAADi/wEAAAAAAAAAAADj/wEAAAAAAAAAAADj/wAAAAAAAAAAAADj////AAAAAAAAAADj//7/AAAAAAAAAADi//7/AAAAAAAAAADh//7/AAAAAAAAAADg//7/AAAAAAAAAADg////AAAAAAAAAADg/wAAAAAAAAAAAADh/wAAAAAAAAAAAADi/wAAAAAAAAAAAADi////AAAAAAAAAADh////AAAAAAAAAADf/wEAAAAAAAAAAADf/wAAAAAAAAAAAADf////AAAAAAAAAADf//7/AAAAAAAAAADf//3/AAAAAAAAAADf//z/AAAAAAAAAADg//z/AAAAAAAAAADh//z/AAAAAAAAAADi//z/AAAAAAAAAADj//z/AAAAAAAAAADk//z/AAAAAAAAAADk//3/AAAAAAAAAADk//7/AAAAAAAAAADk////AAAAAAAAAADk/wEAAAAAAAAAAADk/wAAAAAAAAAAAADj//3/AAAAAAAAAADi//3/AAAAAAAAAADh//3/AAAAAAAAAADg//3/AAAAAAAAAADg/wIAAQAAAAAAAADf/wIAAQAAAAAAAADe/wIAAQAAAAAAAADe/wEAAQAAAAAAAADe/wAAAQAAAAAAAADe////AQAAAAAAAADe//7/AQAAAAAAAADe//3/AQAAAAAAAADe//z/AQAAAAAAAADe//v/AQAAAAAAAADf//v/AQAAAAAAAADg//v/AQAAAAAAAADh//v/AQAAAAAAAADi//v/AQAAAAAAAADj//v/AQAAAAAAAADk//v/AQAAAAAAAADl//v/AQAAAAAAAADl//z/AQAAAAAAAADl//3/AQAAAAAAAADl//7/AQAAAAAAAADl////AQAAAAAAAADl/wAAAQAAAAAAAADl/wEAAQAAAAAAAADl/wIAAQAAAAAAAADk/wIAAQAAAAAAAADj/wIAAQAAAAAAAADi/wIAAQAAAAAAAADh/wIAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_3ayon")
 script = ExtResource("6_xifcx")
 
@@ -125,6 +128,11 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-849, 133)
 
+[node name="CaveEnterance" parent="Map" instance=ExtResource("11_3ayon")]
+position = Vector2(149, -577)
+scale = Vector2(0.6, 0.6)
+skew = -0.0139626
+
 [node name="Lever" parent="Map" instance=ExtResource("9_wkdm5")]
 position = Vector2(-573, -659)
 
@@ -132,10 +140,10 @@ position = Vector2(-573, -659)
 z_index = 1
 position = Vector2(-2566, -951)
 
-[node name="CaveEnterance" parent="Map" instance=ExtResource("11_3ayon")]
-position = Vector2(140, -588)
-scale = Vector2(0.6, 0.6)
-skew = -0.0139626
+[node name="Ladder2" parent="Map" instance=ExtResource("7_c2qy3")]
+z_index = 2
+position = Vector2(-2031, -818)
+flip = true
 
 [node name="Torch" parent="." instance=ExtResource("4_23xot")]
 position = Vector2(-713, 16)
