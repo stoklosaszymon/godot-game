@@ -12,3 +12,6 @@ func set_cursor_arrow():
 
 func set_cursor_open_hand():
 	Input.set_custom_mouse_cursor(cursor_openhand)
+	
+func set_cursor_hand():
+	Input.set_default_cursor_shape(Input.CursorShape.CURSOR_POINTING_HAND)

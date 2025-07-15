@@ -8,6 +8,7 @@
 script = ExtResource("1_8sq4i")
 
 [node name="Backpack" type="Control" parent="."]
+z_as_relative = false
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 3
 anchors_preset = 2
@@ -26,10 +27,16 @@ texture_normal = ExtResource("2_64ctp")
 
 [node name="UseSlot" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(60, 60)
-offset_left = 192.0
-offset_top = 539.0
-offset_right = 232.0
-offset_bottom = 579.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -110.0
+offset_right = 260.0
+offset_bottom = -50.0
+grow_vertical = 0
+size_flags_vertical = 8
 script = ExtResource("3_8sq4i")
 
+[connection signal="mouse_entered" from="Backpack" to="." method="_on_backpack_mouse_entered"]
 [connection signal="pressed" from="Backpack/TextureButton" to="." method="_on_texture_button_pressed"]

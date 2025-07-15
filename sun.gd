@@ -11,8 +11,8 @@ const END_ANGLE := 240.0
 var time_passed := 0.0
 
 const COLOR_NIGHT := Color(0.1, 0.1, 0.2, 1.0)
-const COLOR_SUNRISE_SUNSET := Color(0.8, 0.4, 0.1, 1.0)
-const COLOR_DAY := Color(1.0, 1.0, 0.9, 1.0)
+const COLOR_SUNRISE_SUNSET := Color(0.5, 0.2, 0.1, 1.0)
+const COLOR_DAY := Color(0.8, 0.4, 0.5, 1.0)
 
 func _ready():
 	sun.rotation_degrees = START_ANGLE

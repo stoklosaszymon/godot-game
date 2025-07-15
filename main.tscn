@@ -16,7 +16,7 @@ script = ExtResource("1_lquwl")
 [node name="HUD" parent="." instance=ExtResource("5_lquwl")]
 
 [node name="PlayerReturnPoint" type="Marker2D" parent="."]
-position = Vector2(-564, -26)
+position = Vector2(-747, -75)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="."]
 position = Vector2(-17, -100)

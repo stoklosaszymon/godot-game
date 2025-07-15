@@ -1,5 +1,7 @@
 extends Node2D
 
+var player_nearby = false
+
 func _on_bottom_area_entered(area: Area2D) -> void:
 	if PlayerState.is_upladder == true:
 		PlayerState.is_climbing = false
@@ -15,7 +17,7 @@ func _on_top_area_entered(area: Area2D) -> void:
 		GameManager.player.colision.set_deferred("disabled", false)
 
 func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1 and player_nearby:
 		GameManager.player.z_index = 5;
 		PlayerState.climb_ladder()
 		if PlayerState.is_upladder:
@@ -24,3 +26,11 @@ func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			GameManager.player.global_position = Vector2(global_position.x + 10, global_position.y + 60)
 
 		GameManager.player.colision.set_deferred("disabled", true)
+
+
+func _on_ladder_area_entered(area: Area2D) -> void:
+	player_nearby = true
+
+
+func _on_ladder_area_exited(area: Area2D) -> void:
+	player_nearby = false

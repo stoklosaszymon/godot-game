@@ -53,7 +53,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and player_nearby:
+	if event is InputEventMouseButton and event.pressed and player_nearby and event.button_index == 1:
 		toggle_chest()
 
 

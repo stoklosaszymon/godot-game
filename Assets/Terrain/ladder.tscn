@@ -32,4 +32,6 @@ polygon = PackedVector2Array(-5, 66, 14, 54, 8, -70, -11, -64)
 
 [connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
 [connection signal="area_entered" from="Bottom" to="." method="_on_bottom_area_entered"]
+[connection signal="area_entered" from="Ladder" to="." method="_on_ladder_area_entered"]
+[connection signal="area_exited" from="Ladder" to="." method="_on_ladder_area_exited"]
 [connection signal="input_event" from="Ladder" to="." method="_on_ladder_input_event"]
