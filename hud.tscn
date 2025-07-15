@@ -55,5 +55,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_8sq4i")
 
-[connection signal="mouse_entered" from="Backpack" to="." method="_on_backpack_mouse_entered"]
+[connection signal="mouse_entered" from="Backpack/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Backpack/TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Backpack/TextureButton" to="." method="_on_texture_button_pressed"]

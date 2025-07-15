@@ -8,10 +8,10 @@ func set_cursor_lock():
 	Input.set_custom_mouse_cursor(cursor_lock)
 
 func set_cursor_arrow():
-	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(null)
 
 func set_cursor_open_hand():
 	Input.set_custom_mouse_cursor(cursor_openhand)
 	
 func set_cursor_hand():
-	Input.set_default_cursor_shape(Input.CursorShape.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_POINTING_HAND)

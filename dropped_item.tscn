@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://blads4wxouvm5"]
+[gd_scene load_steps=3 format=3 uid="uid://blads4wxouvm5"]
 
 [ext_resource type="Script" uid="uid://clae03fyoin4k" path="res://dropped_item.gd" id="1_1y2xd"]
-[ext_resource type="Texture2D" uid="uid://ck5samgd8adl8" path="res://Assets/Terrain/resource.png" id="2_qpxn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1y2xd"]
 radius = 9.21954
@@ -11,10 +10,9 @@ y_sort_enabled = true
 script = ExtResource("1_1y2xd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
+offset_right = 60.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_qpxn3")
 expand_mode = 1
 
 [node name="DroppedItemArea" type="Area2D" parent="."]

@@ -27,6 +27,9 @@ func instantiate_target_inventory():
 	GameManager.target_inventory = preload("res://target_inventory.tscn").instantiate()
 	add_child(GameManager.target_inventory)
 
-func _on_backpack_mouse_entered() -> void:
-	print("mouse over")
-	#CursorManager.set_cursor_hand()
+func _on_texture_button_mouse_entered() -> void:
+	CursorManager.set_cursor_hand()
+
+
+func _on_texture_button_mouse_exited() -> void:
+	CursorManager.set_cursor_arrow()
