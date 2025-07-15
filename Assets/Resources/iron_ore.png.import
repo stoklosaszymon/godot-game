@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dslfap5c67gr"
-path="res://.godot/imported/treasure2.png-7ed12c86a8a42153e014d5d2b97060a9.ctex"
+uid="uid://c85xo8s8mga0j"
+path="res://.godot/imported/iron_ore.png-708ef641110867702f731d5edae2c8da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Treasure Chest/treasure2.png"
-dest_files=["res://.godot/imported/treasure2.png-7ed12c86a8a42153e014d5d2b97060a9.ctex"]
+source_file="res://Assets/Resources/iron_ore.png"
+dest_files=["res://.godot/imported/iron_ore.png-708ef641110867702f731d5edae2c8da.ctex"]
 
 [params]
 

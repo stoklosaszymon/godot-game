@@ -40,10 +40,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 			GameManager.inventory.close()
 		if GameManager.target_inventory != null:
 			GameManager.target_inventory.close()
-		
-		if GameManager.target_inventory != null:
-			toggle_chest()
-			
 		z_index = 3;
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

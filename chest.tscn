@@ -1,26 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://cejg2nkyx6ymd"]
+[gd_scene load_steps=12 format=3 uid="uid://cejg2nkyx6ymd"]
 
 [ext_resource type="Script" uid="uid://dml1rvvkmbffv" path="res://chest.gd" id="1_8uwsg"]
-[ext_resource type="Texture2D" uid="uid://di17j86rvstmd" path="res://Assets/Treasure Chest/treasure0.png" id="2_x7mpe"]
-[ext_resource type="Texture2D" uid="uid://fg4g5kk2lpgb" path="res://Assets/Treasure Chest/treasure1.png" id="3_bv3sb"]
-[ext_resource type="Texture2D" uid="uid://dslfap5c67gr" path="res://Assets/Treasure Chest/treasure2.png" id="4_day8l"]
-[ext_resource type="Texture2D" uid="uid://c7ju5uo4vp6iu" path="res://Assets/Treasure Chest/treasure3.png" id="5_t3ekh"]
+[ext_resource type="Texture2D" uid="uid://bc05ymgd2iq1u" path="res://Assets/Treasure Chest/chest.png" id="2_bp1or"]
 [ext_resource type="Script" uid="uid://j78hdcxgkh6y" path="res://chest_control.gd" id="6_bv3sb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trlyu"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7mpe"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv3sb"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_day8l"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ekh"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6u83"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ow6"]
+atlas = ExtResource("2_bp1or")
+region = Rect2(0, 512, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_day8l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_t3ekh")
+"texture": SubResource("AtlasTexture_trlyu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_day8l")
+"texture": SubResource("AtlasTexture_x7mpe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_bv3sb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_x7mpe")
+"texture": SubResource("AtlasTexture_bv3sb")
 }],
 "loop": false,
 "name": &"close",
@@ -28,7 +50,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x7mpe")
+"texture": SubResource("AtlasTexture_day8l")
 }],
 "loop": true,
 "name": &"closed",
@@ -36,16 +58,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x7mpe")
+"texture": SubResource("AtlasTexture_t3ekh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_bv3sb")
+"texture": SubResource("AtlasTexture_x6u83")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_day8l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_t3ekh")
+"texture": SubResource("AtlasTexture_v4ow6")
 }],
 "loop": false,
 "name": &"open",
@@ -55,7 +74,6 @@ animations = [{
 [node name="Chest" type="StaticBody2D"]
 z_index = 1
 z_as_relative = false
-position = Vector2(0, -1)
 script = ExtResource("1_8uwsg")
 chest_id = "chest_id_1"
 is_locked = true
@@ -63,9 +81,10 @@ is_locked = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 position = Vector2(7.65014, 25.7192)
-rotation = 0.174533
 sprite_frames = SubResource("SpriteFrames_day8l")
 animation = &"close"
+frame = 2
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 4
@@ -74,19 +93,20 @@ position = Vector2(4, 0)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-32, -89)
 scale = Vector2(1.12871, 1.29599)
-polygon = PackedVector2Array(-75.4983, 214.427, 209.974, 253.088, 248.957, 154.322, 193.141, 101.081, 111.632, 95.6797, -93.9125, 104.939)
+polygon = PackedVector2Array(10.6316, 172.069, 21.2632, 190.588, 136.439, 141.205, 82.3949, 54.0128, -25.693, 94.1365)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-106, 86)
-polygon = PackedVector2Array(-153, -134, -160, 152, 2, 256, 440, 192, 364, -131)
+polygon = PackedVector2Array(13, -52, 78, 45, 231, -33, 159, -157)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 58.0
-offset_top = 30.0
-offset_right = 180.0
-offset_bottom = 142.0
+offset_left = -44.0
+offset_top = 29.0
+offset_right = 82.0
+offset_bottom = 99.0
+rotation = -0.471239
 script = ExtResource("6_bv3sb")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

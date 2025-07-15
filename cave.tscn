@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mffap4tjkl2g" path="res://gate.tscn" id="4_78gyg"]
 [ext_resource type="PackedScene" uid="uid://bqj1tpieukkd7" path="res://door.tscn" id="4_xtwoi"]
 [ext_resource type="Script" uid="uid://dq4ebdfawkqg4" path="res://floor.gd" id="6_xifcx"]
-[ext_resource type="PackedScene" uid="uid://bjinsht335m44" path="res://Assets/Terrain/ladder.tscn" id="7_c2qy3"]
+[ext_resource type="PackedScene" uid="uid://bjinsht335m44" path="res://ladder.tscn" id="7_c2qy3"]
 [ext_resource type="PackedScene" uid="uid://ussl5uvo4dlq" path="res://lever.tscn" id="9_wkdm5"]
 [ext_resource type="PackedScene" uid="uid://d0jkcc5daoav7" path="res://cave_enterance.tscn" id="11_3ayon"]
 
