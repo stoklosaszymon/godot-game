@@ -90,7 +90,7 @@ polygon = PackedVector2Array(1072.66, -341.169, 1092.02, -312.113, 1173.85, -354
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(271, -329)
 
-[node name="Ground" type="TileMapLayer" parent="."]
+[node name="Map" type="TileMapLayer" parent="."]
 clip_children = 1
 z_as_relative = false
 position = Vector2(44, -65)
@@ -98,27 +98,55 @@ tile_map_data = PackedByteArray("AAD9//n/AAAAAAAAAAD+//n/AAAAAAAAAAD8//j/AAAAAAA
 tile_set = SubResource("TileSet_wkdm5")
 script = ExtResource("2_shk3w")
 
-[node name="Walls" type="TileMapLayer" parent="Ground"]
+[node name="Walls" type="TileMapLayer" parent="Map"]
 z_index = 2
 tile_map_data = PackedByteArray("AAAq/xYAAAAAAAAAAAD7/wgABwAAAAAAAAD7/woABwAAAAAAAAD7/wkACQAAAAAAAADq/wUABwAAAAAAAADq/wgABwAAAAAAAADd/wUABwAAAAAAAADd/wYABwAAAAAAAADd/wcABwAAAAAAAAA=")
 tile_set = SubResource("TileSet_23xot")
 
-[node name="Floor" type="TileMapLayer" parent="Ground/Walls"]
+[node name="Floor" type="TileMapLayer" parent="Map/Walls"]
 position = Vector2(30, 10)
 tile_map_data = PackedByteArray("AADa/wUAAAAAAAAAAADa/wQAAAAAAAAAAADa/wMAAAAAAAAAAADZ/wUAAAAAAAAAAADZ/wQAAAAAAAAAAADZ/wMAAAAAAAAAAADZ/wIAAAAAAAAAAADY/wMAAAAAAAAAAADX/wMAAAAAAAAAAADX/wQAAAAAAAAAAADX/wUAAAAAAAAAAADY/wUAAAAAAAAAAADY/wQAAAAAAAAAAADX/wIAAAAAAAAAAADY/wIAAAAAAAAAAADa/wYAAAAAAAAAAADZ/wYAAAAAAAAAAADY/wYAAAAAAAAAAADX/wYAAAAAAAAAAADa/wIAAAAAAAAAAADa/wcAAQAAAAAAAADZ/wcAAQAAAAAAAADY/wcAAQAAAAAAAADX/wcAAQAAAAAAAADW/wcAAQAAAAAAAADW/wYAAQAAAAAAAADW/wUAAQAAAAAAAADW/wQAAQAAAAAAAADW/wMAAQAAAAAAAADW/wIAAQAAAAAAAADW/wEAAQAAAAAAAADX/wEAAQAAAAAAAADY/wEAAQAAAAAAAADZ/wEAAQAAAAAAAADa/wEAAQAAAAAAAADb/wcAAQAAAAAAAADb/wYAAQAAAAAAAADb/wMAAQAAAAAAAADb/wIAAQAAAAAAAADb/wUAAQAAAAAAAADb/wQAAQAAAAAAAADb/wEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_3ayon")
 script = ExtResource("6_xifcx")
 
-[node name="Torch4" parent="Ground/Walls/Floor" instance=ExtResource("4_23xot")]
+[node name="Torch4" parent="Map/Walls/Floor" instance=ExtResource("4_23xot")]
 position = Vector2(-2691, -1234)
 rotation = 0.349066
 
-[node name="Torch2" parent="." instance=ExtResource("4_23xot")]
+[node name="Gate" parent="Map" instance=ExtResource("4_78gyg")]
+z_index = 3
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-1770, -519)
+
+[node name="Door" parent="Map" instance=ExtResource("4_xtwoi")]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-849, 133)
+
+[node name="Lever" parent="Map" instance=ExtResource("9_wkdm5")]
+position = Vector2(-573, -659)
+
+[node name="Ladder" parent="Map" instance=ExtResource("7_c2qy3")]
+z_index = 1
+position = Vector2(-2566, -951)
+
+[node name="CaveEnterance" parent="Map" instance=ExtResource("11_3ayon")]
+position = Vector2(140, -588)
+scale = Vector2(0.6, 0.6)
+skew = -0.0139626
+
+[node name="Torch" parent="." instance=ExtResource("4_23xot")]
 position = Vector2(-713, 16)
 rotation = 0.349066
 
-[node name="Torch3" parent="." instance=ExtResource("4_23xot")]
+[node name="Torch1" parent="." instance=ExtResource("4_23xot")]
 position = Vector2(-1626, -641)
+rotation = 0.349066
+
+[node name="Torch2" parent="." instance=ExtResource("4_23xot")]
+position = Vector2(331, -277)
 rotation = 0.349066
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -140,21 +168,6 @@ position = Vector2(-1710, -489)
 position = Vector2(15, 11)
 polygon = PackedVector2Array(-110, 33, 131, -102, 146, -91, -92, 43)
 
-[node name="Gate" parent="." instance=ExtResource("4_78gyg")]
-z_index = 3
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(-1726, -584)
-
-[node name="Door" parent="." instance=ExtResource("4_xtwoi")]
-z_index = 2
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(-805, 68)
-
-[node name="Lever" parent="." instance=ExtResource("9_wkdm5")]
-position = Vector2(-529, -724)
-
 [node name="WallDetector3" type="Area2D" parent="."]
 position = Vector2(-2509, -931)
 
@@ -162,20 +175,7 @@ position = Vector2(-2509, -931)
 position = Vector2(34, -2)
 polygon = PackedVector2Array(-110, 33, 70, -69, 90, -59, -92, 43)
 
-[node name="Ladder" parent="." instance=ExtResource("7_c2qy3")]
-z_index = 1
-position = Vector2(-2522, -1016)
-
-[node name="Torch4" parent="." instance=ExtResource("4_23xot")]
-position = Vector2(331, -277)
-rotation = 0.349066
-
-[node name="CaveEnterance" parent="." instance=ExtResource("11_3ayon")]
-position = Vector2(184, -653)
-scale = Vector2(0.6, 0.6)
-skew = -0.0139626
-
-[connection signal="body_entered" from="Area2D" to="Ground" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Map" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="WallDetector" to="." method="_on_wall_detector_area_entered"]
 [connection signal="area_exited" from="WallDetector" to="." method="_on_wall_detector_area_exited"]
 [connection signal="area_entered" from="WallDetector2" to="." method="_on_wall_detector_area_entered"]

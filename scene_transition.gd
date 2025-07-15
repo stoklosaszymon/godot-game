@@ -25,6 +25,11 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 	var spawn_node_name = player_return_node if use_return_point else player_spawn_node
 	var spawn_point = new_scene.get_node_or_null(spawn_node_name)
 
+	if GameManager.minimap == null:
+		var minimap = load("res://mini_map.tscn").instantiate()
+		GameManager.minimap = minimap
+		new_scene.add_child(minimap)
+
 	if GameManager.hud == null:
 		var hud = load("res://hud.tscn").instantiate()
 		GameManager.hud = hud

@@ -8,6 +8,7 @@ var target_inventory: Node = null
 var target_inventory_id = null
 var curently_gathered: Node = null
 var hud: Node = null
+var minimap: Node = null
 
 var chests_data: Dictionary[String, Array] = {
 	"chest_id_1": [
@@ -69,3 +70,7 @@ func find_item_by_name(name: String, target: Array[ItemData]) -> ItemData:
 		if item.item_name == name:
 			return item
 	return null
+
+func togggle_map():
+	var minimap = get_tree().get_current_scene().get_node("HUD/Map")
+	minimap.visible = !minimap.visible

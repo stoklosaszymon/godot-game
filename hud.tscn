@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyfk3j2645din"]
+[gd_scene load_steps=5 format=3 uid="uid://dyfk3j2645din"]
 
 [ext_resource type="Script" uid="uid://v0f6r3662ccd" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://cttpwr04efk12" path="res://Assets/UI/backpack.png" id="2_64ctp"]
 [ext_resource type="Script" uid="uid://euwydrac4x17" path="res://use_slot.gd" id="3_8sq4i"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8sq4i"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8sq4i")
@@ -37,6 +39,21 @@ offset_bottom = -50.0
 grow_vertical = 0
 size_flags_vertical = 8
 script = ExtResource("3_8sq4i")
+
+[node name="Map" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -86.5
+offset_right = 99.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8sq4i")
 
 [connection signal="mouse_entered" from="Backpack" to="." method="_on_backpack_mouse_entered"]
 [connection signal="pressed" from="Backpack/TextureButton" to="." method="_on_texture_button_pressed"]

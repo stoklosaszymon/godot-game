@@ -4,7 +4,7 @@ var is_open = false
 var panel: Control = null
 var player_nearby = false
 
-@onready var hud = get_node("/root/main/HUD")
+@onready var hud = GameManager.hud
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerArea":

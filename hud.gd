@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var is_inventory_open = false
+var minimap = "MiniMap"
 
 func _init() -> void:
 	if GameManager.hud == null:
@@ -8,6 +9,9 @@ func _init() -> void:
 	else:
 		GameManager.hud.queue_free()
 		GameManager.hud = self
+		
+func _ready() -> void:
+	$Map.texture = get_parent().get_node("MiniMap").get_texture()
 
 func _on_texture_button_pressed() -> void:
 	is_inventory_open = !is_inventory_open

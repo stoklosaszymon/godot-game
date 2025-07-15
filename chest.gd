@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hud = get_node("/root/main/HUD")
 @export var chest_id: String = ""
 @export var is_locked = false
 
@@ -14,6 +13,7 @@ func _ready() -> void:
 	sprite.play("closed")
 	
 func toggle_chest():
+	var hud = GameManager.hud
 	if !is_locked:
 		is_open = !is_open
 
