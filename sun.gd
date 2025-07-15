@@ -1,12 +1,12 @@
 extends Node2D
 
 @onready var sun: DirectionalLight2D = $DirectionalLight2D
-@onready var world_environment_node: WorldEnvironment = $"Path/To/Your/WorldEnvironment" # <-- Corrected line
+@onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 const START_ANGLE := -60.0
 const END_ANGLE := 240.0
 
-@export var day_length: float = 30.0
+@export var day_length: float = 300.0
 
 var time_passed := 0.0
 
@@ -15,7 +15,10 @@ const COLOR_SUNRISE_SUNSET := Color(0.5, 0.2, 0.1, 1.0)
 const COLOR_DAY := Color(0.8, 0.4, 0.5, 1.0)
 
 func _ready():
-	sun.rotation_degrees = START_ANGLE
+	var start_time_percent := 0.25
+	time_passed = day_length * start_time_percent
+	var angle_deg = lerp(START_ANGLE, END_ANGLE, start_time_percent)
+	sun.rotation_degrees = angle_deg
 
 func _process(delta):
 	time_passed += delta
@@ -47,10 +50,7 @@ func _process(delta):
 		sun_color = COLOR_SUNRISE_SUNSET.lerp(COLOR_NIGHT, progress)
 
 	sun.color = sun_color
-
-	if world_environment_node:
-		var environment_resource: Environment = world_environment_node.environment
-
-		if environment_resource:
-			environment_resource.ambient_light_energy = brightness * 0.5
-			environment_resource.ambient_light_color = sun_color.darkened(0.5).lerp(COLOR_NIGHT, 1.0 - brightness)
+	
+	if canvas_modulate:
+		var modulate_color = COLOR_NIGHT.lerp(Color(1, 1, 1), brightness)
+		canvas_modulate.color = modulate_color
