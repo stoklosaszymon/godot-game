@@ -1,11 +1,8 @@
 extends StaticBody2D
 
-var is_open = false
 var panel: Control = null
 var player_nearby = false
 
-@onready var hud = GameManager.hud
-	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerArea":
 		player_nearby = true
@@ -15,7 +12,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerArea":
 		player_nearby = false
 		area.get_parent().z_index = 1
-		if is_open:
+		if panel != null:
 			if GameManager.inventory != null:
 				GameManager.inventory.close()
 			toggle_panel()
@@ -24,16 +21,12 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if event is InputEventMouseButton and event.pressed and player_nearby and event.button_index == 1:
 		toggle_panel()
 		if GameManager.inventory == null:
-			hud.instantiate_inventory()
+			GameManager.hud.instantiate_inventory()
 			
 func toggle_panel():
-	is_open = !is_open
-
-	if is_open:
-		if panel == null:
-			panel = load("res://building_panel.tscn").instantiate()
-			hud.add_child(panel)
-	else:
-		if panel != null and is_instance_valid(panel):
-			panel.queue_free()
-			panel = null
+	if  panel == null:
+		panel = load("res://building_panel.tscn").instantiate()
+		GameManager.hud.add_child(panel)
+	elif panel != null and is_instance_valid(panel):
+		panel.queue_free()
+		panel = null
