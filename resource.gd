@@ -1,6 +1,14 @@
 extends StaticBody2D
 
 @export var amount = 3;
+@export var resource_type: String = "iron_ore"
+@onready var texture_rect: TextureRect = $TextureRect
+
+func _ready():
+	if resource_type in GameManager.resource_textures:
+		texture_rect.texture = GameManager.resource_textures[resource_type]
+	else:
+		print("Unknown resource type:", resource_type)
 
 func _process(delta: float) -> void:
 	if amount == 0:

@@ -74,3 +74,8 @@ func find_item_by_name(name: String, target: Array[ItemData]) -> ItemData:
 func togggle_map():
 	var minimap = get_tree().get_current_scene().get_node("HUD/Map")
 	minimap.visible = !minimap.visible
+
+var resource_textures := {
+	"iron_ore": preload("res://Assets/Resources/iron_ore.png"),
+	"gold_ore": preload("res://Assets/Resources/gold_ore.png"),
+}

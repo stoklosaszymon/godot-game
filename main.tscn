@@ -28,6 +28,10 @@ polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
 [node name="Map" parent="." instance=ExtResource("3_1bvp3")]
 position = Vector2(1, -14)
 
+[node name="Resource2" parent="Map" instance=ExtResource("8_5vw27")]
+scale = Vector2(2.1, 2.1)
+resource_type = "gold_ore"
+
 [node name="Chest" parent="Map" groups=["chests"] instance=ExtResource("3_h2yge")]
 position = Vector2(148, -428)
 scale = Vector2(0.7, 0.7)

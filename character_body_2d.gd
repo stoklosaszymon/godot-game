@@ -144,13 +144,18 @@ func unequip():
 			
 	PlayerState.equipped_item = null
 	PlayerState.setWalkSprite()
-		
-	
+
+func face_target(target_position: Vector2) -> void:
+	var direction = (target_position - global_position).normalized()
+	_play_directional_animation(direction)
+	velocity = Vector2.ZERO
+
 func _on_movement_sprite_animation_finished() -> void:
 	if PlayerState.is_gathering:
 		PlayerState.is_gathering = false
+		var resource_type = GameManager.curently_gathered.resource_type
 		GameManager.add_item_to_target(
-			load("res://resources/iron_ore.tres").duplicate(),
+			load("res://resources/" + resource_type + ".tres").duplicate(),
 			PlayerState.inventory
 		)
 		GameManager.curently_gathered.take();
