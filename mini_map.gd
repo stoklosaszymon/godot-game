@@ -1,9 +1,11 @@
 extends SubViewport
 
+@onready var player_marker = $"PlayerMarker"
+
 func _ready() -> void:
 	var map = get_parent().get_node("Map").duplicate()
-	map.modulate = Color(1, 1, 1, 0.6)
+	map.modulate = Color(1, 1, 1, 1)
 	add_child(map)
 
-func _process(delta):
-	$Camera2D.position = GameManager.player.position
+func _process(delta: float) -> void:
+	player_marker.global_position = GameManager.player.global_position
