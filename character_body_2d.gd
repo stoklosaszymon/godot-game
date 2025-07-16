@@ -108,7 +108,7 @@ func leave_footprint():
 
 	footprint.global_position = pos
 	footprint.rotation = dir.angle() + deg_to_rad(90)
-	footprint.scale = Vector2(0.15, 0.15)
+	footprint.scale = Vector2(0.10, 0.10)
 
 	get_parent().add_child(footprint)
 	
