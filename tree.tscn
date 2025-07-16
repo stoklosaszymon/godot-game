@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5rt8ff5prfdn"]
+
+[ext_resource type="Texture2D" uid="uid://bw0tkorer42da" path="res://Assets/Resources/oak.png" id="1_brfkd"]
+[ext_resource type="Script" uid="uid://6y2fevwiq1xx" path="res://tree.gd" id="1_nnvrw"]
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_nnvrw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_brfkd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+z_index = 2
+polygon = PackedVector2Array(-33, 136, 4, 169, 42, 130, 21, 11, -11, 11)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = 1
+polygon = PackedVector2Array(-43, 129, -18, 168, 34, 160, 56, 125, -3, 98)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

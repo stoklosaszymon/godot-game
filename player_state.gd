@@ -3,7 +3,8 @@ extends Node
 var inventory: Array[ItemData] = [
 	preload("res://resources/iron_ore.tres").duplicate(),
 	preload("res://resources/torch.tres").duplicate(),
-	preload("res://resources/pickaxe.tres").duplicate()
+	preload("res://resources/pickaxe.tres").duplicate(),
+	preload("res://resources/axe.tres").duplicate()
 ];
 
 var equipped_item: ItemData = null:
@@ -48,6 +49,13 @@ func climb_ladder():
 
 func gather():
 	var gathering = load("res://movement/gathering.tscn").instantiate()
+	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
+	if frames != null:
+		frames.sprite_frames = gathering.sprite_frames
+		frames.play()
+
+func chop():
+	var gathering = load("res://movement/chop.tscn").instantiate()
 	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
