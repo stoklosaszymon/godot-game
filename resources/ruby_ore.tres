@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://mwanoolbawbd"]
+
+[ext_resource type="Texture2D" uid="uid://dadhxlnl813jq" path="res://Assets/Items/ruby_ore_icon.png" id="1_d4qqn"]
+[ext_resource type="Script" uid="uid://c8xsh5qpp4hvj" path="res://item.gd" id="2_5hhbj"]
+
+[resource]
+script = ExtResource("2_5hhbj")
+item_name = "ruby ore"
+icon = ExtResource("1_d4qqn")
+is_usable = true
+is_equipable = false
+equip_effect = ""
+unequip_effect = ""
+quantity = 1
+metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

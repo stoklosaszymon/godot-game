@@ -78,4 +78,6 @@ func togggle_map():
 var resource_textures := {
 	"iron_ore": preload("res://Assets/Resources/iron_ore.png"),
 	"gold_ore": preload("res://Assets/Resources/gold_ore.png"),
+	"ruby_ore": preload("res://Assets/Resources/ruby_ore.png"),
+	"coal_ore": preload("res://Assets/Resources/coal_ore.png"),
 }

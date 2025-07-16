@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brhidkh43ssgk"
-path="res://.godot/imported/iron_ore.png-708ef641110867702f731d5edae2c8da.ctex"
+uid="uid://c5cvwq2orhc07"
+path="res://.godot/imported/coal_ore_icon.png-802d157e54f764e869746b8dff55b0be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Resources/iron_ore.png"
-dest_files=["res://.godot/imported/iron_ore.png-708ef641110867702f731d5edae2c8da.ctex"]
+source_file="res://Assets/Items/coal_ore_icon.png"
+dest_files=["res://.godot/imported/coal_ore_icon.png-802d157e54f764e869746b8dff55b0be.ctex"]
 
 [params]
 

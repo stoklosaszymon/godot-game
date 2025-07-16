@@ -28,7 +28,7 @@ polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
 [node name="Map" parent="." instance=ExtResource("3_1bvp3")]
 position = Vector2(1, -14)
 
-[node name="Resource2" parent="Map" instance=ExtResource("8_5vw27")]
+[node name="Gold_Ore" parent="Map" instance=ExtResource("8_5vw27")]
 scale = Vector2(2.1, 2.1)
 resource_type = "gold_ore"
 
@@ -45,7 +45,7 @@ chest_id = "chest_id_2"
 position = Vector2(-583, -838)
 scale = Vector2(2, 2)
 
-[node name="Resource" parent="Map" instance=ExtResource("8_5vw27")]
+[node name="Iron_Ore" parent="Map" instance=ExtResource("8_5vw27")]
 position = Vector2(375, -234)
 scale = Vector2(2.1, 2.1)
 
@@ -53,6 +53,16 @@ scale = Vector2(2.1, 2.1)
 position = Vector2(-1365, -778)
 rotation = -0.0610865
 scale = Vector2(1.5, 1.5)
+
+[node name="Coal_Ore" parent="Map" instance=ExtResource("8_5vw27")]
+position = Vector2(622, -81)
+scale = Vector2(2.1, 2.1)
+resource_type = "coal_ore"
+
+[node name="Ruby_Ore" parent="Map" instance=ExtResource("8_5vw27")]
+position = Vector2(365, 31)
+scale = Vector2(2.1, 2.1)
+resource_type = "ruby_ore"
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
