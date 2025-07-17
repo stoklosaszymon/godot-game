@@ -7,26 +7,30 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2g23"]
 shader = ExtResource("2_gvmkm")
 shader_parameter/sway_strength = 5.0
-shader_parameter/sway_speed = 1.5
+shader_parameter/sway_speed = 3.5
 shader_parameter/sway_frequency = 8.0
 
 [node name="Tree" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_nnvrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_d2g23")
+position = Vector2(-1.5, -130)
 texture = ExtResource("1_brfkd")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1.5, -130)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 z_index = 2
-polygon = PackedVector2Array(-33, 136, 4, 169, 42, 130, 21, 11, -11, 11)
+polygon = PackedVector2Array(-33, 179, 29, 177, 54, 133, 21, 11, -11, 11, -46, 135)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 z_index = 1
+position = Vector2(-1.5, -130)
 polygon = PackedVector2Array(-43, 129, -18, 168, 34, 160, 56, 125, -3, 98)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
