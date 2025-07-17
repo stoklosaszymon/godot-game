@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=11 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://d0jkcc5daoav7" path="res://cave_enterance.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://ddomyk7qil1xt" path="res://resource.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c5rt8ff5prfdn" path="res://tree.tscn" id="9_kek77"]
+
+[sub_resource type="Environment" id="Environment_kek77"]
+glow_enabled = true
 
 [node name="main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -73,5 +76,8 @@ position = Vector2(670, -405)
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
 skew = -0.0349066
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kek77")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

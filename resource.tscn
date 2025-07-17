@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddomyk7qil1xt"]
+[gd_scene load_steps=7 format=3 uid="uid://ddomyk7qil1xt"]
 
 [ext_resource type="Script" uid="uid://m3rbiafpk4ov" path="res://resource_area.gd" id="1_cpix3"]
 [ext_resource type="Script" uid="uid://dgj0adj87142m" path="res://resource.gd" id="1_psx28"]
+[ext_resource type="Texture2D" uid="uid://da8d3khj61jnj" path="res://Assets/Items/point_light.webp" id="3_psx28"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpix3"]
 radius = 31.1448
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpix3"]
 size = Vector2(49, 24)
+
+[sub_resource type="Curve" id="Curve_cpix3"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.497537, 26.0142), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Resource" type="StaticBody2D"]
 z_index = 1
@@ -25,17 +31,37 @@ script = ExtResource("1_cpix3")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cpix3")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="Sprite2D" parent="."]
 z_index = 2
-offset_left = -29.0
-offset_top = -31.0
-offset_right = 31.0
-offset_bottom = 25.0
-expand_mode = 1
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_cpix3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 3
+position = Vector2(0, -27)
+amount = 6
+lifetime = 0.3
+speed_scale = 0.3
+emission_shape = 2
+emission_sphere_radius = 25.72
+gravity = Vector2(0, -980)
+angular_velocity_max = 720.0
+linear_accel_max = 100.0
+radial_accel_max = 100.0
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+tangential_accel_curve = SubResource("Curve_cpix3")
+damping_max = 11.23
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(0.74902, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("3_psx28")
+texture_scale = 0.6
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
