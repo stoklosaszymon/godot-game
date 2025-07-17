@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5rt8ff5prfdn"]
+[gd_scene load_steps=5 format=3 uid="uid://c5rt8ff5prfdn"]
 
 [ext_resource type="Texture2D" uid="uid://bw0tkorer42da" path="res://Assets/Resources/oak.png" id="1_brfkd"]
 [ext_resource type="Script" uid="uid://6y2fevwiq1xx" path="res://tree.gd" id="1_nnvrw"]
+[ext_resource type="Shader" uid="uid://bhi7vvy3v62wi" path="res://tree.gdshader" id="2_gvmkm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2g23"]
+shader = ExtResource("2_gvmkm")
+shader_parameter/sway_strength = 5.0
+shader_parameter/sway_speed = 1.5
+shader_parameter/sway_frequency = 8.0
 
 [node name="Tree" type="StaticBody2D"]
 script = ExtResource("1_nnvrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
+material = SubResource("ShaderMaterial_d2g23")
 texture = ExtResource("1_brfkd")
 
 [node name="Area2D" type="Area2D" parent="."]
