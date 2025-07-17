@@ -71,7 +71,16 @@ resource_type = "ruby_ore"
 [node name="Tree" parent="Map" instance=ExtResource("9_kek77")]
 z_index = 1
 z_as_relative = false
-position = Vector2(670, -405)
+position = Vector2(537, -509)
+
+[node name="Tree2" parent="Map" instance=ExtResource("9_kek77")]
+position = Vector2(763, -744)
+
+[node name="Tree3" parent="Map" instance=ExtResource("9_kek77")]
+position = Vector2(313, -734)
+
+[node name="Tree4" parent="Map" instance=ExtResource("9_kek77")]
+position = Vector2(995, -518)
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
