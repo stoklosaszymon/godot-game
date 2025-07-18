@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5rt8ff5prfdn"]
+[gd_scene load_steps=16 format=3 uid="uid://c5rt8ff5prfdn"]
 
 [ext_resource type="Texture2D" uid="uid://bw0tkorer42da" path="res://Assets/Resources/oak.png" id="1_brfkd"]
 [ext_resource type="Script" uid="uid://6y2fevwiq1xx" path="res://tree.gd" id="1_nnvrw"]
 [ext_resource type="Shader" uid="uid://bhi7vvy3v62wi" path="res://tree.gdshader" id="2_gvmkm"]
+[ext_resource type="Texture2D" uid="uid://kbdnn2xewfrs" path="res://Assets/Resources/falling-tree/fall_1.png" id="3_bgygo"]
+[ext_resource type="Texture2D" uid="uid://bucc2n0hifnka" path="res://Assets/Resources/falling-tree/cut.png" id="3_mkgly"]
+[ext_resource type="Texture2D" uid="uid://btsyvhrusx67h" path="res://Assets/Resources/falling-tree/fall_2.png" id="4_oph6y"]
+[ext_resource type="Texture2D" uid="uid://cv3kh4r4mhaj" path="res://Assets/Resources/falling-tree/fall_3.png" id="5_hy4hq"]
+[ext_resource type="Texture2D" uid="uid://dieid5s8oqpj1" path="res://Assets/Resources/falling-tree/fall_4.png" id="6_s00bo"]
+[ext_resource type="Texture2D" uid="uid://02vj4sbns7yy" path="res://Assets/Resources/falling-tree/fall_5.png" id="7_mkgly"]
+[ext_resource type="Texture2D" uid="uid://cbxj16vroyp7i" path="res://Assets/Resources/falling-tree/fall_6.png" id="8_fkc4b"]
+[ext_resource type="Texture2D" uid="uid://byob1uyqio64r" path="res://Assets/Resources/falling-tree/fall_7.png" id="9_s00bo"]
+[ext_resource type="Texture2D" uid="uid://h08mq3pqkhgj" path="res://Assets/Resources/falling-tree/fall_8.png" id="10_mkgly"]
+[ext_resource type="Texture2D" uid="uid://b1iptpi2muw8c" path="res://Assets/Resources/falling-tree/fall_9.png" id="11_fkc4b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2g23"]
 shader = ExtResource("2_gvmkm")
@@ -10,16 +20,68 @@ shader_parameter/sway_strength = 5.0
 shader_parameter/sway_speed = 3.5
 shader_parameter/sway_frequency = 8.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvmkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mkgly")
+}],
+"loop": true,
+"name": &"cut",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bgygo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oph6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hy4hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s00bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mkgly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fkc4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s00bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mkgly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fkc4b")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_brfkd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="Tree" type="StaticBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_nnvrw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_d2g23")
-position = Vector2(-1.5, -130)
-texture = ExtResource("1_brfkd")
+position = Vector2(-2, -130)
+sprite_frames = SubResource("SpriteFrames_gvmkm")
+animation = &"cut"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-1.5, -130)

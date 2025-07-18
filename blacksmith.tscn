@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://b8glnff6edefg"]
+[gd_scene load_steps=70 format=3 uid="uid://b8glnff6edefg"]
 
 [ext_resource type="Texture2D" uid="uid://btf7dfd4mprvf" path="res://Assets/Npcs/blacksmith/idle.png" id="1_lbl4c"]
 [ext_resource type="Script" uid="uid://dx8psmkl4ss0g" path="res://blacksmith.gd" id="1_v6gen"]
@@ -264,62 +264,6 @@ region = Rect2(512, 2048, 512, 512)
 atlas = ExtResource("3_e28hf")
 region = Rect2(1024, 2048, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pdkci"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(1536, 2048, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5xr4"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(2048, 2048, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1m0pw"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(2560, 2048, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3a1ji"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(3072, 2048, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wgn00"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(0, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_132au"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(512, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqif3"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(1024, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjvc3"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(1536, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bci0s"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(2048, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o5fh0"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(2560, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jwy5c"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(3072, 2560, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bmkjy"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(0, 3072, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cytc0"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(512, 3072, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_23540"]
-atlas = ExtResource("3_e28hf")
-region = Rect2(1024, 3072, 512, 512)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_uu2yr"]
 animations = [{
 "frames": [{
@@ -427,7 +371,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -522,52 +466,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nlkyw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pdkci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r5xr4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1m0pw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3a1ji")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wgn00")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_132au")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xqif3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qjvc3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bci0s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o5fh0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jwy5c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bmkjy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cytc0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_23540")
 }],
-"loop": true,
+"loop": false,
 "name": &"streching",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="Blacksmith" type="CharacterBody2D"]
@@ -575,12 +477,10 @@ script = ExtResource("1_v6gen")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uu2yr")
-animation = &"streching"
-frame = 28
-frame_progress = 0.0237533
+animation = &"idle"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 9.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

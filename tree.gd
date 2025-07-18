@@ -4,15 +4,13 @@ var player_in_range = null
 @export var resource_type: String = "log"
 @export var amount = 3;
 
-func _process(delta: float) -> void:
-	if amount == 0:
-		GameManager.curently_gathered = null;
-		queue_free()
-		
+func _ready() -> void:
+	$Sprite2D.play("idle")
+
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		PlayerState.is_gathering = false;
-		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Axe":
+		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Axe" and amount > 0:
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = self
 			PlayerState.chop()
@@ -29,3 +27,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func take():
 	amount -= 1
+	if amount == 0:
+		$Sprite2D.play("cut")
+		GameManager.curently_gathered = null;
