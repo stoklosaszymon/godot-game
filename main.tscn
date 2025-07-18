@@ -31,6 +31,7 @@ position = Vector2(10, -48)
 polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
 
 [node name="Map" parent="." instance=ExtResource("3_1bvp3")]
+y_sort_enabled = true
 position = Vector2(1, -14)
 
 [node name="Gold_Ore" parent="Map" instance=ExtResource("8_5vw27")]
@@ -69,23 +70,21 @@ position = Vector2(365, 31)
 scale = Vector2(2.1, 2.1)
 resource_type = "ruby_ore"
 
-[node name="CanvasGroup" type="CanvasGroup" parent="Map"]
-y_sort_enabled = true
-position = Vector2(350, 314)
-
-[node name="Tree" parent="Map/CanvasGroup" instance=ExtResource("9_kek77")]
-z_index = 1
+[node name="Tree" parent="Map" instance=ExtResource("9_kek77")]
 z_as_relative = false
-position = Vector2(530, -568)
+position = Vector2(880, -254)
 
-[node name="Tree2" parent="Map/CanvasGroup" instance=ExtResource("9_kek77")]
-position = Vector2(746, -803)
+[node name="Tree2" parent="Map" instance=ExtResource("9_kek77")]
+z_as_relative = false
+position = Vector2(1096, -489)
 
-[node name="Tree3" parent="Map/CanvasGroup" instance=ExtResource("9_kek77")]
-position = Vector2(212, -864)
+[node name="Tree3" parent="Map" instance=ExtResource("9_kek77")]
+z_as_relative = false
+position = Vector2(562, -550)
 
-[node name="Tree4" parent="Map/CanvasGroup" instance=ExtResource("9_kek77")]
-position = Vector2(328, -1006)
+[node name="Tree4" parent="Map" instance=ExtResource("9_kek77")]
+z_as_relative = false
+position = Vector2(678, -692)
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
