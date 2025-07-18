@@ -92,7 +92,7 @@ scale = Vector2(1.13643, 1.06692)
 polygon = PackedVector2Array(1072.66, -341.169, 1092.02, -312.113, 1173.85, -354.291, 1146.57, -377.723)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(375, -291)
+position = Vector2(263, -213)
 
 [node name="Map" type="TileMapLayer" parent="."]
 clip_children = 1

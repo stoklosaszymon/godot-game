@@ -18,12 +18,11 @@ func _ready():
 		var hud = load("res://hud.tscn").instantiate()
 		add_child(hud)
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		GameManager.player = body
-		SceneTransition.go_to("res://cave.tscn", false, "res://main.tscn")
-		
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("toggle_minimap"):
 		GameManager.togggle_map()
+
+func _on_enter_dungeon_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		GameManager.player = body
+		SceneTransition.go_to("res://cave.tscn", false, "res://main.tscn")

@@ -16,6 +16,9 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 		previous_scene_path = return_path
 
 	var new_scene = load(scene_path).instantiate()
+	
+	await get_tree().process_frame
+	
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene = new_scene
 	old_scene.queue_free()

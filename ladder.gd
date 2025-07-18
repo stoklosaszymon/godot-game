@@ -6,7 +6,7 @@ var player_nearby = false
 func _ready() -> void:
 	$Sprite2D.flip_h = flip
 
-func _on_bottom_area_entered(area: Area2D) -> void:
+func _on_bottom_area_entered(_area: Area2D) -> void:
 	if PlayerState.is_upladder == true:
 		PlayerState.is_climbing = false
 		PlayerState.setWalkSprite()
@@ -15,7 +15,7 @@ func _on_bottom_area_entered(area: Area2D) -> void:
 		if flip:
 			GameManager.player._animated_sprite.flip_h = false
 
-func _on_top_area_entered(area: Area2D) -> void:
+func _on_top_area_entered(_area: Area2D) -> void:
 	if PlayerState.is_upladder == false:
 		PlayerState.is_climbing = false
 		PlayerState.setWalkSprite()
@@ -24,7 +24,7 @@ func _on_top_area_entered(area: Area2D) -> void:
 		if flip:
 			GameManager.player._animated_sprite.flip_h = false
 
-func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_ladder_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1 and player_nearby:
 		GameManager.player.z_index = 5;
 		PlayerState.climb_ladder()
@@ -41,9 +41,9 @@ func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 		GameManager.player.colision.set_deferred("disabled", true)
 
 
-func _on_ladder_area_entered(area: Area2D) -> void:
+func _on_ladder_area_entered(_area: Area2D) -> void:
 	player_nearby = true
 
 
-func _on_ladder_area_exited(area: Area2D) -> void:
+func _on_ladder_area_exited(_area: Area2D) -> void:
 	player_nearby = false
