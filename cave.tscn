@@ -110,6 +110,22 @@ tile_map_data = PackedByteArray("AADa/wUAAAAAAAAAAADa/wQAAAAAAAAAAADa/wMAAAAAAAA
 tile_set = SubResource("TileSet_3ayon")
 script = ExtResource("6_xifcx")
 
+[node name="Torch4" parent="Map/Walls/Floor" instance=ExtResource("4_23xot")]
+position = Vector2(-2686, -1192)
+rotation = 0.349066
+
+[node name="Torch" parent="Map/Walls" instance=ExtResource("4_23xot")]
+position = Vector2(-757, 81)
+rotation = 0.349066
+
+[node name="Torch1" parent="Map/Walls" instance=ExtResource("4_23xot")]
+position = Vector2(-1670, -576)
+rotation = 0.349066
+
+[node name="Torch2" parent="Map/Walls" instance=ExtResource("4_23xot")]
+position = Vector2(287, -212)
+rotation = 0.349066
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(1015, -497)
 scale = Vector2(0.2, 0.2)
@@ -166,22 +182,6 @@ position = Vector2(-2522, -1016)
 z_index = 2
 position = Vector2(-1987, -883)
 flip = true
-
-[node name="Torch" parent="GameObjects" instance=ExtResource("4_23xot")]
-position = Vector2(-713, 16)
-rotation = 0.349066
-
-[node name="Torch1" parent="GameObjects" instance=ExtResource("4_23xot")]
-position = Vector2(-1626, -641)
-rotation = 0.349066
-
-[node name="Torch2" parent="GameObjects" instance=ExtResource("4_23xot")]
-position = Vector2(331, -277)
-rotation = 0.349066
-
-[node name="Torch4" parent="GameObjects" instance=ExtResource("4_23xot")]
-position = Vector2(-2647, -1299)
-rotation = 0.349066
 
 [connection signal="body_entered" from="LeaveCave" to="." method="_on_leave_cave_body_entered"]
 [connection signal="area_entered" from="WallDetector" to="." method="_on_wall_detector_area_entered"]
