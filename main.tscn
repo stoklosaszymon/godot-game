@@ -27,57 +27,72 @@ position = Vector2(-17, -100)
 y_sort_enabled = true
 position = Vector2(1, -14)
 
-[node name="Gold_Ore" parent="Map" instance=ExtResource("8_5vw27")]
+[node name="EnterDungeon" type="Area2D" parent="."]
+position = Vector2(-882, -202)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnterDungeon"]
+position = Vector2(10, -48)
+polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
+
+[node name="GameObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Blacksmith" parent="GameObjects" instance=ExtResource("10_4c57u")]
+z_index = 3
+position = Vector2(-186, -352)
+
+[node name="Gold_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
+position = Vector2(1, -14)
 scale = Vector2(2.1, 2.1)
 resource_type = "gold_ore"
 
-[node name="Chest" parent="Map" groups=["chests"] instance=ExtResource("3_h2yge")]
+[node name="Chest" parent="GameObjects" groups=["chests"] instance=ExtResource("3_h2yge")]
 z_as_relative = true
-position = Vector2(148, -428)
+position = Vector2(149, -442)
 scale = Vector2(0.7, 0.7)
 
-[node name="ChestCommon" parent="Map" instance=ExtResource("6_7mycd")]
+[node name="ChestCommon" parent="GameObjects" instance=ExtResource("6_7mycd")]
 z_as_relative = true
-position = Vector2(-411, -213)
+position = Vector2(-410, -227)
 scale = Vector2(0.7, 0.7)
 chest_id = "chest_id_2"
 
-[node name="Forge" parent="Map" instance=ExtResource("6_kek77")]
+[node name="Forge" parent="GameObjects" instance=ExtResource("6_kek77")]
 z_as_relative = true
-position = Vector2(-583, -838)
+position = Vector2(-582, -852)
 scale = Vector2(2, 2)
 
-[node name="Iron_Ore" parent="Map" instance=ExtResource("8_5vw27")]
-position = Vector2(375, -234)
+[node name="Iron_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
+position = Vector2(376, -248)
 scale = Vector2(2.1, 2.1)
 
-[node name="CaveEnterance" parent="Map" instance=ExtResource("7_272bh")]
+[node name="CaveEnterance" parent="GameObjects" instance=ExtResource("7_272bh")]
 z_as_relative = true
-position = Vector2(-1365, -778)
+position = Vector2(-1364, -792)
 rotation = -0.0610865
 scale = Vector2(1.5, 1.5)
 
-[node name="Coal_Ore" parent="Map" instance=ExtResource("8_5vw27")]
-position = Vector2(622, -81)
+[node name="Coal_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
+position = Vector2(623, -95)
 scale = Vector2(2.1, 2.1)
 resource_type = "coal_ore"
 
-[node name="Ruby_Ore" parent="Map" instance=ExtResource("8_5vw27")]
-position = Vector2(365, 31)
+[node name="Ruby_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
+position = Vector2(366, 17)
 scale = Vector2(2.1, 2.1)
 resource_type = "ruby_ore"
 
-[node name="Tree" parent="Map" instance=ExtResource("9_kek77")]
-position = Vector2(880, -254)
+[node name="Tree" parent="GameObjects" instance=ExtResource("9_kek77")]
+position = Vector2(881, -268)
 
-[node name="Tree2" parent="Map" instance=ExtResource("9_kek77")]
-position = Vector2(1096, -489)
+[node name="Tree2" parent="GameObjects" instance=ExtResource("9_kek77")]
+position = Vector2(1097, -503)
 
-[node name="Tree3" parent="Map" instance=ExtResource("9_kek77")]
-position = Vector2(562, -550)
+[node name="Tree3" parent="GameObjects" instance=ExtResource("9_kek77")]
+position = Vector2(563, -564)
 
-[node name="Tree4" parent="Map" instance=ExtResource("9_kek77")]
-position = Vector2(678, -692)
+[node name="Tree4" parent="GameObjects" instance=ExtResource("9_kek77")]
+position = Vector2(679, -706)
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
@@ -85,16 +100,5 @@ skew = -0.0349066
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kek77")
-
-[node name="Blacksmith" parent="." instance=ExtResource("10_4c57u")]
-z_index = 3
-position = Vector2(-186, -352)
-
-[node name="EnterDungeon" type="Area2D" parent="."]
-position = Vector2(-882, -202)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnterDungeon"]
-position = Vector2(10, -48)
-polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
 
 [connection signal="body_entered" from="EnterDungeon" to="." method="_on_enter_dungeon_body_entered"]

@@ -43,7 +43,7 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 	else:
 		print("⚠️ Spawn point not found in new scene: ", spawn_node_name)
 
-	new_scene.get_node("Map").add_child(GameManager.player)
+	new_scene.get_node("GameObjects").add_child(GameManager.player)
 
 func go_back():
 	if previous_scene_path == "":

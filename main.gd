@@ -7,7 +7,7 @@ func _ready():
 		var player = player_scene.instantiate()
 		var start_point = $PlayerStartPoint.global_position
 		player.global_position = start_point
-		add_child(player)
+		$GameObjects.add_child(player)
 		
 	if GameManager.minimap == null:
 		var minimap = load("res://mini_map.tscn").instantiate()

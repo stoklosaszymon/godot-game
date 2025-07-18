@@ -12,3 +12,8 @@ func _on_wall_detector_area_exited(area: Area2D) -> void:
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("toggle_minimap"):
 		GameManager.togggle_map()
+
+
+func _on_leave_cave_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		SceneTransition.go_back()
