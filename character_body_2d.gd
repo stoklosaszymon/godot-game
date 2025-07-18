@@ -24,7 +24,7 @@ var hand_offsets := {
 }
 
 func _init():
-	GameManager.player = self	
+	GameManager.player = self
 	
 func _ready():
 	PlayerState.setWalkSprite()
@@ -40,7 +40,7 @@ func _input(event):
 		else:
 			mouse_held = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if mouse_held:
 		target_position = get_global_mouse_position()
 		var to_target = target_position - global_position
@@ -104,8 +104,6 @@ func leave_footprint():
 	if dir.length() == 0:
 		return 
 
-	var side = Vector2(-dir.y, dir.x) 
-
 	footprint.global_position = pos
 	footprint.rotation = dir.angle() + deg_to_rad(90)
 	footprint.scale = Vector2(0.10, 0.10)
@@ -145,8 +143,8 @@ func unequip():
 	PlayerState.equipped_item = null
 	PlayerState.setWalkSprite()
 
-func face_target(target_position: Vector2) -> void:
-	var direction = (target_position - global_position).normalized()
+func face_target(t_position: Vector2) -> void:
+	var direction = (t_position - global_position).normalized()
 	_play_directional_animation(direction)
 	velocity = Vector2.ZERO
 

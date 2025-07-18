@@ -7,7 +7,7 @@ var player_in_range = null
 func _ready() -> void:
 	$Sprite2D.play("idle")
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		PlayerState.is_gathering = false;
 		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Axe" and amount > 0:

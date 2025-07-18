@@ -1,9 +1,9 @@
 extends GridContainer
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is Dictionary and data.has("item_data") and data.has("source_slot_node") || data.has("equiped_item") 
 	
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var dragged_item = data.item_data
 	if data.source_slot_node in get_children():
 		return 

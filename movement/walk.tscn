@@ -384,4 +384,5 @@ animations = [{
 [node name="Walk" type="AnimatedSprite2D"]
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_76bt2")
-animation = &"top-right"
+animation = &"bottom"
+offset = Vector2(0, 40)

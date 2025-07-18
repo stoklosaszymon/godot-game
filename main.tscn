@@ -39,15 +39,18 @@ scale = Vector2(2.1, 2.1)
 resource_type = "gold_ore"
 
 [node name="Chest" parent="Map" groups=["chests"] instance=ExtResource("3_h2yge")]
+z_as_relative = true
 position = Vector2(148, -428)
 scale = Vector2(0.7, 0.7)
 
 [node name="ChestCommon" parent="Map" instance=ExtResource("6_7mycd")]
+z_as_relative = true
 position = Vector2(-411, -213)
 scale = Vector2(0.7, 0.7)
 chest_id = "chest_id_2"
 
 [node name="Forge" parent="Map" instance=ExtResource("6_kek77")]
+z_as_relative = true
 position = Vector2(-583, -838)
 scale = Vector2(2, 2)
 
@@ -56,6 +59,7 @@ position = Vector2(375, -234)
 scale = Vector2(2.1, 2.1)
 
 [node name="CaveEnterance" parent="Map" instance=ExtResource("7_272bh")]
+z_as_relative = true
 position = Vector2(-1365, -778)
 rotation = -0.0610865
 scale = Vector2(1.5, 1.5)
@@ -71,19 +75,15 @@ scale = Vector2(2.1, 2.1)
 resource_type = "ruby_ore"
 
 [node name="Tree" parent="Map" instance=ExtResource("9_kek77")]
-z_as_relative = false
 position = Vector2(880, -254)
 
 [node name="Tree2" parent="Map" instance=ExtResource("9_kek77")]
-z_as_relative = false
 position = Vector2(1096, -489)
 
 [node name="Tree3" parent="Map" instance=ExtResource("9_kek77")]
-z_as_relative = false
 position = Vector2(562, -550)
 
 [node name="Tree4" parent="Map" instance=ExtResource("9_kek77")]
-z_as_relative = false
 position = Vector2(678, -692)
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]

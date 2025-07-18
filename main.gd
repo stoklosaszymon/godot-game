@@ -7,7 +7,7 @@ func _ready():
 		var player = player_scene.instantiate()
 		var start_point = $PlayerStartPoint.global_position
 		player.global_position = start_point
-		$Map.add_child(player)
+		add_child(player)
 		
 	if GameManager.minimap == null:
 		var minimap = load("res://mini_map.tscn").instantiate()
@@ -24,6 +24,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		GameManager.player = body
 		SceneTransition.go_to("res://cave.tscn", false, "res://main.tscn")
 		
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("toggle_minimap"):
 		GameManager.togggle_map()

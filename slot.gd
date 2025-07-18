@@ -13,7 +13,7 @@ func _ready() -> void:
 	if item_data != null && item_data.quantity > 1:
 		$ItemQuantity.text = str(item_data.quantity)
 	
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	if item_data:
 		var preview = Control.new()
 		var texture_rect = TextureRect.new()
@@ -36,10 +36,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		return drag_data
 	return null
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is Dictionary and data.has("item_data") and data.has("source_slot_node") and data.source_slot_node not in get_parent().get_children()
 
-func _drop_data(at_position: Vector2, data: Variant):
+func _drop_data(_at_position: Vector2, data: Variant):
 	if data is Dictionary and data.has("item_data"):
 		item_dropped_on_slot.emit(self, data)
 

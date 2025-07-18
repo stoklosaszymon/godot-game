@@ -1,6 +1,6 @@
 extends PanelContainer
 
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	if PlayerState.equipped_item:
 		var preview = Control.new()
 		var texture_rect = TextureRect.new()
@@ -20,10 +20,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		return drag_data
 	return null
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is Dictionary and data.has("item_data") and data.has("is_equipable")
 
-func _drop_data(at_position: Vector2, data: Variant):
+func _drop_data(_at_position: Vector2, data: Variant):
 	if PlayerState.equipped_item != null:
 		GameManager.player.unequip();
 	
@@ -33,16 +33,16 @@ func _drop_data(at_position: Vector2, data: Variant):
 	for child in get_children():
 		child.queue_free()
 		
-	set_icon(data.item_data)
+	set_icon()
 
-func set_icon(item):
+func set_icon():
 	var itemImg = TextureRect.new()
 	itemImg.texture = PlayerState.equipped_item.icon
 	add_child(itemImg)
 
 func _ready():
 	if PlayerState.equipped_item != null:
-		set_icon(PlayerState.equipped_item)
+		set_icon()
 		
 func clear():
 	for child in get_children():

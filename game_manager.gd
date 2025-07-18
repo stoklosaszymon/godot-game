@@ -65,15 +65,15 @@ func drop_item(item_data: Resource):
 	PlayerState.inventory.erase(item_data)
 	GameManager.inventory.open()
 
-func find_item_by_name(name: String, target: Array[ItemData]) -> ItemData:
+func find_item_by_name(i_name: String, target: Array[ItemData]) -> ItemData:
 	for item in target:
-		if item.item_name == name:
+		if item.item_name == i_name:
 			return item
 	return null
 
 func togggle_map():
-	var minimap = get_tree().get_current_scene().get_node("HUD/Map")
-	minimap.visible = !minimap.visible
+	var map = get_tree().get_current_scene().get_node("HUD/Map")
+	map.visible = !map.visible
 
 var resource_textures := {
 	"iron_ore": preload("res://Assets/Resources/iron_ore.png"),

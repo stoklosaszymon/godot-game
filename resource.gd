@@ -17,7 +17,7 @@ func _ready():
 		particles.emitting = false
 		light.enabled = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if amount == 0:
 		GameManager.curently_gathered = null;
 		queue_free()

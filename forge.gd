@@ -17,7 +17,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 				GameManager.inventory.close()
 			toggle_panel()
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and player_nearby and event.button_index == 1:
 		toggle_panel()
 		if GameManager.inventory == null:

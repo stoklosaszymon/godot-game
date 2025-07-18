@@ -7,7 +7,7 @@ func _ready() -> void:
 	map.modulate = Color(1, 1, 1, 1)
 	add_child(map)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var offset = Vector2(0.0, -350.0)
 	player_marker.global_position = GameManager.player.global_position
 	player_marker.global_position += offset
