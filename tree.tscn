@@ -81,7 +81,7 @@ y_sort_enabled = true
 material = SubResource("ShaderMaterial_d2g23")
 position = Vector2(-2, -130)
 sprite_frames = SubResource("SpriteFrames_gvmkm")
-animation = &"cut"
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-1.5, -130)

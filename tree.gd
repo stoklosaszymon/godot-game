@@ -29,4 +29,6 @@ func take():
 	amount -= 1
 	if amount == 0:
 		$Sprite2D.play("cut")
+		$Sprite2D.material = null
 		GameManager.curently_gathered = null;
+		
