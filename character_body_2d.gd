@@ -111,7 +111,7 @@ func leave_footprint():
 	get_parent().add_child(footprint)
 	
 func is_on_sand() -> bool:
-	var tilemap = get_node("../Map/Terrain")
+	var tilemap = get_node("../../Map/Terrain")
 	if tilemap:
 		var cell = tilemap.local_to_map(global_position)
 		var tile_data = tilemap.get_cell_tile_data(cell)
@@ -123,7 +123,7 @@ var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  
 
 func _process(delta):
-	if has_node("../Map/Terrain") && is_on_sand():
+	if has_node("../../Map/Terrain") && is_on_sand():
 		last_footprint_time += delta
 		if last_footprint_time >= FOOTPRINT_DELAY:
 			leave_footprint()
