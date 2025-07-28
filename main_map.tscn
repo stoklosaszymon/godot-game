@@ -125,8 +125,10 @@ tile_set = SubResource("TileSet_hio4h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
+z_as_relative = false
 offset_left = -15034.0
 offset_top = -9543.0
 offset_right = 13711.0
 offset_bottom = 9561.0
+mouse_filter = 2
 color = Color(0.176471, 0.435294, 0.470588, 1)

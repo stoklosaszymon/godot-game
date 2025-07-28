@@ -20,10 +20,10 @@ void fragment() {
 
     vec4 static_color = texture(TEXTURE, UV);
     vec4 flow_color = texture(TEXTURE, flow_uv);
-	
+
     float blue_amount = static_color.b - max(static_color.r, static_color.g);
     float mask = smoothstep(blue_threshold, blue_threshold, blue_amount);
-	
+
 	float brightness = max(flow_color.r, max(flow_color.g, flow_color.b));
 	float black_mask = smoothstep(0.05, 0.1, brightness); // Increase to soften edge
 
