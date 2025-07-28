@@ -60,3 +60,10 @@ func chop():
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
 		frames.play()
+		
+func idle():
+	var gathering = load("res://movement/idle.tscn").instantiate()
+	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
+	if frames != null:
+		frames.sprite_frames = gathering.sprite_frames
+		frames.play()

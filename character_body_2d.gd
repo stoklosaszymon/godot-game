@@ -10,7 +10,7 @@ var mouse_held := false
 var target_position := Vector2.ZERO
 var anim_name := "bottom"
 var last_transparent_wall_coords: Vector2i = Vector2i(-1, -1)
-
+var is_idling: bool = false
 
 var hand_offsets := {
 	"bottom": Vector2(10, -120),
@@ -44,9 +44,8 @@ func _physics_process(_delta: float) -> void:
 	if mouse_held:
 		target_position = get_global_mouse_position()
 		var to_target = target_position - global_position
-
+		var direction = to_target.normalized()
 		if to_target.length() > STOP_DISTANCE && !PlayerState.is_gathering && !PlayerState.is_climbing:
-			var direction = to_target.normalized()
 			velocity = direction * SPEED
 			_play_directional_animation(direction)
 		else:
@@ -62,8 +61,13 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-	if velocity.length() == 0 && !PlayerState.is_gathering && !PlayerState.is_climbing:
-		_animated_sprite.stop()
+	if velocity.length() == 0 :
+		if !is_idling and !PlayerState.is_gathering and !PlayerState.is_climbing:
+			is_idling = true
+			PlayerState.idle()
+	else:
+		is_idling = false
+		PlayerState.setWalkSprite()
 
 func _play_directional_animation(direction: Vector2) -> void:
 	if direction.length_squared() < 0.01:
