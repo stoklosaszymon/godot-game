@@ -65,6 +65,8 @@ func _physics_process(_delta: float) -> void:
 		if !is_idling and !PlayerState.is_gathering and !PlayerState.is_climbing:
 			is_idling = true
 			PlayerState.idle()
+	elif PlayerState.is_climbing:
+		pass
 	else:
 		is_idling = false
 		PlayerState.setWalkSprite()
