@@ -25,7 +25,7 @@ position = Vector2(-17, -100)
 
 [node name="Map" parent="." instance=ExtResource("3_1bvp3")]
 y_sort_enabled = true
-position = Vector2(1, -14)
+position = Vector2(28, -7)
 
 [node name="EnterDungeon" type="Area2D" parent="."]
 position = Vector2(-882, -202)

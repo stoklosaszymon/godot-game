@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cg3w66i64f0ue" path="res://Assets/Terrain/turn.png" id="4_1ns3a"]
 [ext_resource type="Texture2D" uid="uid://bfojcqpwkr7k3" path="res://Assets/Terrain/river-1.png" id="5_1ns3a"]
 [ext_resource type="Shader" uid="uid://bw4gs0j08x3vo" path="res://river.gdshader" id="5_qu338"]
-[ext_resource type="Texture2D" uid="uid://b2hdtux0bkcts" path="res://Assets/Terrain/caustics.png" id="6_hio4h"]
 [ext_resource type="Texture2D" uid="uid://3gffsymu4qpr" path="res://Assets/Terrain/bridge.png" id="6_v4mvp"]
+[ext_resource type="Texture2D" uid="uid://b2mai08x2bu1g" path="res://Assets/Terrain/generated_caustics_fallback.png" id="7_hio4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_km2bi"]
 texture = ExtResource("2_5hk42")
@@ -38,25 +38,29 @@ texture_region_size = Vector2i(511, 256)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hio4h"]
 shader = ExtResource("5_qu338")
-shader_parameter/noise_texture = ExtResource("6_hio4h")
-shader_parameter/speed = 1.0
-shader_parameter/direction = Vector2(1, 1)
-shader_parameter/tiling = 1.0
-shader_parameter/blue_threshold = 0.01
-shader_parameter/flow_strength = 1.0
-shader_parameter/distortion_intensity = 1.0
-shader_parameter/noise_scale = 1.0
+shader_parameter/base_texture = ExtResource("5_1ns3a")
+shader_parameter/noise_texture = ExtResource("7_hio4h")
+shader_parameter/time_speed = 0.5
+shader_parameter/distortion_strength = 0.03
+shader_parameter/shimmer_intensity = 0.04
+shader_parameter/shimmer_speed = 3.0
+shader_parameter/flow_direction = Vector2(1, 1)
+shader_parameter/noise_scale = Vector2(2, 2)
+shader_parameter/diagonal_width = 0.15
+shader_parameter/diagonal_softness = 0.05
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qu338"]
 shader = ExtResource("5_qu338")
-shader_parameter/noise_texture = ExtResource("6_hio4h")
-shader_parameter/speed = 1.0
-shader_parameter/direction = Vector2(1, 1)
-shader_parameter/tiling = 1.0
-shader_parameter/blue_threshold = 0.01
-shader_parameter/flow_strength = 1.0
-shader_parameter/distortion_intensity = 1.0
-shader_parameter/noise_scale = 1.0
+shader_parameter/base_texture = ExtResource("5_1ns3a")
+shader_parameter/noise_texture = ExtResource("7_hio4h")
+shader_parameter/time_speed = 0.5
+shader_parameter/distortion_strength = 0.05
+shader_parameter/shimmer_intensity = 0.02
+shader_parameter/shimmer_speed = 3.0
+shader_parameter/flow_direction = Vector2(1, 0)
+shader_parameter/noise_scale = Vector2(2, 2)
+shader_parameter/diagonal_width = 0.15
+shader_parameter/diagonal_softness = 0.05
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4mvp"]
 texture = ExtResource("5_1ns3a")
@@ -122,13 +126,3 @@ tile_set = SubResource("TileSet_t3ofs")
 z_index = 1
 tile_map_data = PackedByteArray("AAAEAPv/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_hio4h")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-z_as_relative = false
-offset_left = -15034.0
-offset_top = -9543.0
-offset_right = 13711.0
-offset_bottom = 9561.0
-mouse_filter = 2
-color = Color(0.176471, 0.435294, 0.470588, 1)

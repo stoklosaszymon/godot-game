@@ -1,39 +1,41 @@
 shader_type canvas_item;
 
+uniform sampler2D base_texture;
 uniform sampler2D noise_texture;
-uniform float speed = 1.0;
-uniform vec2 direction = vec2(1.0, 1.0);
-uniform float tiling = 0.5;
-uniform float blue_threshold = 1.0;
-uniform float flow_strength = 0.5;
-uniform float distortion_intensity = 1.1;
-uniform float noise_scale = 1.0;
+
+uniform float time_speed = 0.5;
+uniform float distortion_strength = 0.05;
+uniform float shimmer_intensity = 0.02;
+uniform float shimmer_speed = 3.0;
+uniform vec2 flow_direction = vec2(1.0, 0.0);
+uniform vec2 noise_scale = vec2(2.0, 2.0);
+
+// Controls the diagonal band of the river
+uniform float diagonal_width = 0.15; // Thickness of the diagonal river
+uniform float diagonal_softness = 0.05; // Feathering on edges
 
 void fragment() {
-    vec2 flow_dir = normalize(direction);
-    vec2 noise_uv = UV * noise_scale;
-    float distortion = texture(noise_texture, noise_uv).r;
-    vec2 offset = flow_dir * TIME * speed + distortion * distortion_intensity;
+    // Animate noise UV
+    vec2 scroll = flow_direction * TIME * time_speed;
+    vec2 noise_uv = UV * noise_scale + scroll;
+    vec2 noise_val = texture(noise_texture, noise_uv).rg;
 
-    // Safe UVs using epsilon to avoid sampling edges
-    vec2 flow_uv = fract(UV * tiling + offset) * 0.998 + 0.001;
+    // Use RG channels for distortion direction
+    vec2 distortion = (noise_val - 0.5) * 2.0 * distortion_strength;
+    vec2 final_uv = UV + distortion;
 
-    vec4 static_color = texture(TEXTURE, UV);
-    vec4 flow_color = texture(TEXTURE, flow_uv);
+    // Base and distorted color
+    vec4 base_color = texture(base_texture, UV);
+    vec4 distorted_color = texture(base_texture, final_uv);
 
-    float blue_amount = static_color.b - max(static_color.r, static_color.g);
-    float mask = smoothstep(blue_threshold, blue_threshold, blue_amount);
+    // Add shimmer effect
+    float shimmer = sin((UV.x + UV.y) * 20.0 + TIME * shimmer_speed) * shimmer_intensity;
+    distorted_color.rgb += shimmer;
 
-	float brightness = max(flow_color.r, max(flow_color.g, flow_color.b));
-	float black_mask = smoothstep(0.05, 0.1, brightness); // Increase to soften edge
+    // Diagonal mask logic
+    float diag_center = UV.x - UV.y; // Diagonal line (UV.x == UV.y)
+    float diag_mask = 1.0 - smoothstep(diagonal_width, diagonal_width + diagonal_softness, abs(diag_center));
 
-	COLOR = mix(static_color, flow_color, mask * flow_strength * black_mask);
-
-	vec3 target_color = vec3(45.0, 111.0, 120.0) / 255.0;
-	float tolerance = 0.01;
-
-	if (distance(COLOR.rgb, target_color) < tolerance) {
-    	discard;
-	}
-    //COLOR = mix(static_color, flow_color, mask * flow_strength);
+    // Blend effect based on mask
+    COLOR = mix(base_color, distorted_color, diag_mask);
 }
