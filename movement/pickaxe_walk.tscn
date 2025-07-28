@@ -384,4 +384,4 @@ animations = [{
 [node name="PickaxeWalk" type="AnimatedSprite2D"]
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_y05hd")
-animation = &"top-right"
+animation = &"bottom-right"
