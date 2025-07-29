@@ -83,12 +83,12 @@ sources/1 = SubResource("TileSetAtlasSource_3ayon")
 script = ExtResource("1_dnhvd")
 
 [node name="LeaveCave" type="Area2D" parent="."]
-position = Vector2(380, -404)
+position = Vector2(347, -381)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeaveCave"]
-position = Vector2(-1286, 366)
+position = Vector2(-1265, 374)
 scale = Vector2(1.13643, 1.06692)
-polygon = PackedVector2Array(1072.66, -341.169, 1092.02, -312.113, 1173.85, -354.291, 1146.57, -377.723)
+polygon = PackedVector2Array(1092.9, -356.165, 1104.34, -326.173, 1165.05, -352.416, 1123.69, -365.538)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(343, -261)

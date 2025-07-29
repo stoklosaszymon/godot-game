@@ -1,26 +1,30 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0jkcc5daoav7"]
 
-[ext_resource type="Texture2D" uid="uid://233vkbse33c4" path="res://Assets/Terrain/cave.png" id="1_inr30"]
 [ext_resource type="Script" uid="uid://cyx4apvfal7q3" path="res://cave_enterance.gd" id="1_smkwp"]
+[ext_resource type="Texture2D" uid="uid://b83qt41y4v1gp" path="res://Assets/Terrain/cave-1.png" id="2_smkwp"]
 
 [node name="CaveEnterance" type="StaticBody2D"]
-z_index = 1
 z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-279, -376)
+scale = Vector2(2, 2)
 script = ExtResource("1_smkwp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 2
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_inr30")
+texture = ExtResource("2_smkwp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(220, 469, 86, 338, 273, 253, 436, 392, 363, 417, 323, 383, 251, 410, 275, 439)
+position = Vector2(-70, 64)
+polygon = PackedVector2Array(275.5, 429.5, 86, 338, 278, 240, 458, 335, 405, 379.5, 337.5, 341.5, 279.5, 366.5, 312.5, 402)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(35, 368, 84, 344, 217, 471, 421, 388, 457, 434, 180, 540)
+position = Vector2(-72, 59.5)
+polygon = PackedVector2Array(35, 368, 84, 344, 283, 435, 461, 333, 503.5, 398.5, 234, 503)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

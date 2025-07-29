@@ -18,20 +18,20 @@ glow_enabled = true
 script = ExtResource("1_lquwl")
 
 [node name="PlayerReturnPoint" type="Marker2D" parent="."]
-position = Vector2(-740, -48)
+position = Vector2(1343, -1684)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="."]
-position = Vector2(-17, -100)
+position = Vector2(1495, -1566)
 
 [node name="Map" parent="." instance=ExtResource("3_1bvp3")]
 position = Vector2(-1823, -685)
 
 [node name="EnterDungeon" type="Area2D" parent="."]
-position = Vector2(-882, -202)
+position = Vector2(1121, -1895)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnterDungeon"]
-position = Vector2(10, -48)
-polygon = PackedVector2Array(-71, 56, 38, 7, 79, 41, -62, 109)
+position = Vector2(-6, -33)
+polygon = PackedVector2Array(-38, 49, 31, 15, 123, 64, 13, 125)
 
 [node name="GameObjects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -66,8 +66,8 @@ position = Vector2(376, -248)
 scale = Vector2(2.1, 2.1)
 
 [node name="CaveEnterance" parent="GameObjects" instance=ExtResource("7_272bh")]
-z_as_relative = true
-position = Vector2(-1364, -792)
+z_index = 2
+position = Vector2(733, -2486)
 rotation = -0.0610865
 scale = Vector2(1.5, 1.5)
 
