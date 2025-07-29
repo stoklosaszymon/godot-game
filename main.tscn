@@ -24,8 +24,7 @@ position = Vector2(-740, -48)
 position = Vector2(-17, -100)
 
 [node name="Map" parent="." instance=ExtResource("3_1bvp3")]
-y_sort_enabled = true
-position = Vector2(28, -7)
+position = Vector2(-1823, -685)
 
 [node name="EnterDungeon" type="Area2D" parent="."]
 position = Vector2(-882, -202)
@@ -86,7 +85,7 @@ resource_type = "ruby_ore"
 position = Vector2(881, -268)
 
 [node name="Tree2" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(1097, -503)
+position = Vector2(1013, -564)
 
 [node name="Tree3" parent="GameObjects" instance=ExtResource("9_kek77")]
 position = Vector2(203, -931)
@@ -95,22 +94,22 @@ position = Vector2(203, -931)
 position = Vector2(679, -706)
 
 [node name="Tree5" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(1213, -906)
+position = Vector2(-79, -671)
 
 [node name="Tree6" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(1877, -548)
+position = Vector2(1191, 24)
 
 [node name="Tree7" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(1648, -84)
+position = Vector2(1789, -148)
 
 [node name="Tree8" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(2781, -686)
+position = Vector2(1688, 259)
 
 [node name="Tree9" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(753, -1137)
+position = Vector2(383, -431)
 
 [node name="Tree10" parent="GameObjects" instance=ExtResource("9_kek77")]
-position = Vector2(2643, -121)
+position = Vector2(1402, -367)
 
 [node name="Sun" parent="." instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
