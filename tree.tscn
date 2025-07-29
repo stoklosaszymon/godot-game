@@ -77,7 +77,8 @@ script = ExtResource("1_nnvrw")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_d2g23")
-position = Vector2(-2, -130)
+position = Vector2(-2, -328)
+scale = Vector2(2.30169, 2.35526)
 sprite_frames = SubResource("SpriteFrames_gvmkm")
 animation = &"idle"
 
@@ -86,12 +87,12 @@ position = Vector2(-1.5, -130)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 z_index = 2
-polygon = PackedVector2Array(-33, 179, 29, 177, 54, 133, 21, 11, -11, 11, -46, 135)
+polygon = PackedVector2Array(-42.5, 205, 63.5, 202, 102.5, 113, 38.5, -21, -21.5, -29, -94.5, 124)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 z_index = 1
-position = Vector2(-1.5, -130)
-polygon = PackedVector2Array(-43, 129, -18, 168, 34, 160, 56, 125, -3, 98)
+position = Vector2(-1, -131)
+polygon = PackedVector2Array(-90, 135, -17.5, 208, 70, 177, 85, 112, 0, 70)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
