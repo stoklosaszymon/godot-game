@@ -150,7 +150,7 @@ func unequip():
 	PlayerState.setWalkSprite()
 
 func face_target(t_position: Vector2) -> void:
-	var direction = (t_position - global_position).normalized()
+	var direction = (get_global_mouse_position() - global_position).normalized()
 	_play_directional_animation(direction)
 	velocity = Vector2.ZERO
 

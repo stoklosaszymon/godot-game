@@ -17,13 +17,13 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("1_ij6vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, -46.6667)
+position = Vector2(-10, -11.4286)
 shape = SubResource("CircleShape2D_44cfe")
 
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2(-6.66667, -86.6667)
+position = Vector2(-7.14286, -54.2857)
 shape = SubResource("RectangleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]

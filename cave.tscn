@@ -91,7 +91,7 @@ scale = Vector2(1.13643, 1.06692)
 polygon = PackedVector2Array(1072.66, -341.169, 1092.02, -312.113, 1173.85, -354.291, 1146.57, -377.723)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(263, -213)
+position = Vector2(-2161, -774)
 
 [node name="Map" type="TileMapLayer" parent="."]
 clip_children = 1
@@ -175,7 +175,7 @@ skew = -0.0139626
 position = Vector2(-529, -724)
 
 [node name="Ladder" parent="GameObjects" instance=ExtResource("7_c2qy3")]
-z_index = 1
+z_index = 2
 position = Vector2(-2522, -1016)
 
 [node name="Ladder2" parent="GameObjects" instance=ExtResource("7_c2qy3")]

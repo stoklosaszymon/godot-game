@@ -25,16 +25,16 @@ func _on_top_area_entered(_area: Area2D) -> void:
 			GameManager.player._animated_sprite.flip_h = false
 
 func _on_ladder_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == 1 and player_nearby:
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1 and player_nearby and !PlayerState.is_climbing:
 		GameManager.player.z_index = 5;
 		PlayerState.climb_ladder()
 		if PlayerState.is_upladder:
 			GameManager.player.global_position = Vector2(global_position.x, global_position.y - 60)
 		else:
 			if flip:
-				GameManager.player.global_position = Vector2(global_position.x, global_position.y + 60)
+				GameManager.player.global_position = Vector2(global_position.x, global_position.y + 80)
 			else:	
-				GameManager.player.global_position = Vector2(global_position.x + 10, global_position.y + 60)
+				GameManager.player.global_position = Vector2(global_position.x, global_position.y + 60)
 		if flip:
 			GameManager.player._animated_sprite.flip_h = true
 

@@ -1729,7 +1729,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1884,7 +1884,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-left",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2039,7 +2039,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bottom-right",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2194,7 +2194,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2349,7 +2349,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2504,7 +2504,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2659,7 +2659,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-left",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2814,10 +2814,10 @@ animations = [{
 }],
 "loop": true,
 "name": &"top-right",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [node name="Idle" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_e7htd")
-animation = &"bottom"
-frame_progress = 0.709378
+animation = &"top-right"
+frame_progress = 0.449681

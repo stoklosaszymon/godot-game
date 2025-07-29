@@ -5,30 +5,35 @@
 
 [node name="Ladder" type="Node2D"]
 z_as_relative = false
+position = Vector2(15, 0)
 script = ExtResource("1_lqhsa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-18, -2)
+scale = Vector2(1.47059, 1)
+skew = -0.0349066
 texture = ExtResource("1_cq4ai")
 
 [node name="Top" type="Area2D" parent="."]
-position = Vector2(-7, -133)
+position = Vector2(-46, -156)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Top"]
-position = Vector2(3, 69)
+position = Vector2(26, 71)
+scale = Vector2(1.02989, 1)
 polygon = PackedVector2Array(-11, -62, -15, -85, 7, -91, 8, -69)
 
 [node name="Bottom" type="Area2D" parent="."]
-position = Vector2(7, 109)
+position = Vector2(-28, 109)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom"]
-position = Vector2(-2, -40)
+position = Vector2(15, -41)
 polygon = PackedVector2Array(-7, 21, -5, 68, 14, 57, 12, 13)
 
 [node name="Ladder" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ladder"]
-position = Vector2(-2, 1)
-polygon = PackedVector2Array(-5, 66, 14, 54, 8, -70, -11, -64)
+position = Vector2(-18, -1)
+polygon = PackedVector2Array(-5, 66, 17, 57, 14, -69, -11, -64)
 
 [connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
 [connection signal="area_entered" from="Bottom" to="." method="_on_bottom_area_entered"]
