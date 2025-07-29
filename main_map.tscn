@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://drxdawjii078y"]
+[gd_scene load_steps=28 format=4 uid="uid://drxdawjii078y"]
 
 [ext_resource type="Texture2D" uid="uid://biry3kwje60qu" path="res://Assets/Terrain/road.png" id="1_ob7o4"]
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="2_5hk42"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://3gffsymu4qpr" path="res://Assets/Terrain/bridge.png" id="6_v4mvp"]
 [ext_resource type="Texture2D" uid="uid://b2mai08x2bu1g" path="res://Assets/Terrain/generated_caustics_fallback.png" id="7_hio4h"]
 [ext_resource type="Texture2D" uid="uid://jxu5b86o7pkx" path="res://Assets/Terrain/mountain-1.png" id="9_286o7"]
+[ext_resource type="Texture2D" uid="uid://dv2pcq1i5ouq2" path="res://Assets/Terrain/mountain03.png" id="11_t3ofs"]
+[ext_resource type="Texture2D" uid="uid://hxjss12gtmdc" path="res://Assets/Terrain/mountain-4.png" id="12_dt6kx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t3ofs"]
 shader = ExtResource("5_qu338")
@@ -103,10 +105,9 @@ texture = ExtResource("9_286o7")
 texture_region_size = Vector2i(951, 963)
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 250)
+0:0/0/texture_origin = Vector2i(0, 310)
+0:0/0/z_index = 4
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-541.379, -35.664, -7.84607, 258.207, 494.303, 1.42654, -0.713257, -313.843)
-0:1/0 = 0
-0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qu338"]
 texture = ExtResource("6_v4mvp")
@@ -116,6 +117,20 @@ texture_region_size = Vector2i(332, 252)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-164.585, 42.7077, 54.2872, -97.8564, 0, -125, -250, 0)
 0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-60.9128, 94.5436, 145.097, -52.4513, 250, 0, 0, 125)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4yi8"]
+texture = ExtResource("11_t3ofs")
+texture_region_size = Vector2i(1020, 1250)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 410)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-489.783, -56.3929, -326.87, 112.786, 13.576, 192.153, 435.478, 43.8611, 466.808, -56.3929, 38.6395, -363.421)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1k36j"]
+texture = ExtResource("12_dt6kx")
+texture_region_size = Vector2i(1010, 1230)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 430)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35.611, 181.501, -460.646, 34.4623, -469.836, -55.1397, 24.1237, -326.243, 506.596, -62.0322, 462.944, 43.6522, 161.973, 179.204)
+
 [sub_resource type="TileSet" id="TileSet_hio4h"]
 tile_shape = 1
 tile_layout = 5
@@ -123,6 +138,8 @@ tile_size = Vector2i(500, 250)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_qu338")
 sources/0 = SubResource("TileSetAtlasSource_t3ofs")
+sources/3 = SubResource("TileSetAtlasSource_i4yi8")
+sources/4 = SubResource("TileSetAtlasSource_1k36j")
 
 [node name="MainMap" type="Node2D"]
 
@@ -133,5 +150,5 @@ tile_set = SubResource("TileSet_t3ofs")
 
 [node name="Objects" type="TileMapLayer" parent="Terrain"]
 z_index = 1
-tile_map_data = PackedByteArray("AAAEAPv/AQAAAAAAAAD4//n/AAAAAAAAAAD4//f/AAAAAAAAAAD4//X/AAAAAAAAAAD6//X/AAAAAAAAAAD6//P/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAPv/AQAAAAAAAAD4//f/BAAAAAAAAAD5//X/BAAAAAAAAAD4//n/AAAAAAAAAAD6//r/AAAAAAAAAAD6//f/AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_hio4h")
