@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=14 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddomyk7qil1xt" path="res://resource.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c5rt8ff5prfdn" path="res://tree.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://b8glnff6edefg" path="res://blacksmith.tscn" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://bwsfivl5y7esp" path="res://environment.gd" id="11_dg77c"]
 [ext_resource type="PackedScene" uid="uid://ctlps1r44actj" path="res://rain.tscn" id="11_efxa6"]
 
 [sub_resource type="Environment" id="Environment_kek77"]
@@ -121,8 +122,10 @@ skew = -0.0349066
 environment = SubResource("Environment_kek77")
 
 [node name="Environment" type="CanvasLayer" parent="."]
+script = ExtResource("11_dg77c")
 
 [node name="Rain" parent="Environment" instance=ExtResource("11_efxa6")]
 z_index = 5
+emitting = false
 
 [connection signal="body_entered" from="GameObjects/CaveEnterance/EnterDungeon" to="." method="_on_enter_dungeon_body_entered"]
