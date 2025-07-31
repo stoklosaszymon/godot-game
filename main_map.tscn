@@ -87,11 +87,11 @@ texture_region_size = Vector2i(1010, 1230)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np7p1"]
 texture = ExtResource("8_t3ofs")
-texture_region_size = Vector2i(420, 400)
+texture_region_size = Vector2i(590, 400)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 40)
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-146.267, 51.8667, -121.308, -14.6154, -32.0718, -108.964, 43.359, -125.692, -4.38461, -150.051, -184.641, 15.5897)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-19, 102.308, -14.1282, 31.1795, 33.6154, -37.0256, 90.1282, -71.1282, 153.462, -83.7948, 173.923, -70.1538, 179.769, -8.76923, 5.35898, 132.513)
+0:0/0/texture_origin = Vector2i(0, 60)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-247, 32.1539, -195.359, -72.1025, -119.359, -125.692, -11.2051, -161.744, 47.2564, -157.846, -26.7949, -221.179, -291.82, -63.3333, -291.82, -3.89743)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-53.1025, 124.718, -47.2564, 61.3846, -5.35895, -12.6667, 55.0513, -51.641, 148.59, -84.7692, 202.179, -86.7179, 285, -45.7949, 299.615, -6.82051, 290.846, 50.6667, 86.2308, 147.128, -46.282, 128.615)
 
 [sub_resource type="TileSet" id="TileSet_hio4h"]
 tile_shape = 1
