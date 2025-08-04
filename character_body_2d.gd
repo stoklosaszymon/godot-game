@@ -141,6 +141,7 @@ func equip():
 			ItemManager.call(PlayerState.equipped_item.equip_effect)
 			
 	PlayerState.setWalkSprite()
+	PlayerState.idle()
 	
 func unequip():
 	if PlayerState.equipped_item.unequip_effect:
@@ -148,6 +149,7 @@ func unequip():
 			
 	PlayerState.equipped_item = null
 	PlayerState.setWalkSprite()
+	PlayerState.idle()
 
 func face_target(t_position: Vector2) -> void:
 	var direction = (get_global_mouse_position() - global_position).normalized()

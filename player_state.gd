@@ -57,8 +57,12 @@ func chop():
 		frames.play()
 		
 func idle():
-	var gathering = load("res://movement/idle.tscn").instantiate()
+	var idleSprite = null
+	if equipped_item != null && equipped_item.item_name == "Torch":
+		idleSprite = load("res://movement/torch_idle.tscn").instantiate()
+	else:
+		idleSprite = load("res://movement/idle.tscn").instantiate()
 	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 	if frames != null:
-		frames.sprite_frames = gathering.sprite_frames
+		frames.sprite_frames = idleSprite.sprite_frames
 		frames.play()
