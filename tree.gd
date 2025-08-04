@@ -13,7 +13,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Axe" and amount > 0:
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = self
-			PlayerState.chop()
+			AnimationManager.chop()
 			GameManager.player.face_target(global_position)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

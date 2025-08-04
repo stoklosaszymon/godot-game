@@ -27,7 +27,7 @@ func _init():
 	GameManager.player = self
 	
 func _ready():
-	PlayerState.setWalkSprite()
+	AnimationManager.setWalkSprite()
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -45,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 		target_position = get_global_mouse_position()
 		var to_target = target_position - global_position
 		var direction = to_target.normalized()
-		if to_target.length() > STOP_DISTANCE && !PlayerState.is_gathering && !PlayerState.is_climbing:
+		if to_target.length() > STOP_DISTANCE && !PlayerState.is_gathering && !PlayerState.is_climbing && !PlayerState.is_fishing:
 			velocity = direction * SPEED
 			_play_directional_animation(direction)
 		else:
@@ -62,14 +62,14 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if velocity.length() == 0 :
-		if !is_idling and !PlayerState.is_gathering and !PlayerState.is_climbing:
+		if !is_idling and !PlayerState.is_gathering and !PlayerState.is_climbing and !PlayerState.is_fishing:
 			is_idling = true
-			PlayerState.idle()
+			AnimationManager.idle()
 	elif PlayerState.is_climbing:
 		pass
 	else:
 		is_idling = false
-		PlayerState.setWalkSprite()
+		AnimationManager.setWalkSprite()
 
 func _play_directional_animation(direction: Vector2) -> void:
 	if direction.length_squared() < 0.01:
@@ -125,6 +125,15 @@ func is_on_sand() -> bool:
 	else:
 		return false
 
+func is_next_to_river() -> bool:
+	var tilemap = get_node("../../Map/River")
+	if tilemap:
+		var cell = tilemap.local_to_map(global_position)
+		var tile_data = tilemap.get_cell_tile_data(cell)
+		return tile_data != null and tile_data.get_custom_data("type") == "river"
+	else:
+		return false
+
 var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3  
 
@@ -140,16 +149,16 @@ func equip():
 		if PlayerState.equipped_item.unequip_effect:
 			ItemManager.call(PlayerState.equipped_item.equip_effect)
 			
-	PlayerState.setWalkSprite()
-	PlayerState.idle()
+	AnimationManager.setWalkSprite()
+	AnimationManager.idle()
 	
 func unequip():
 	if PlayerState.equipped_item.unequip_effect:
 		ItemManager.call(PlayerState.equipped_item.unequip_effect)
 			
 	PlayerState.equipped_item = null
-	PlayerState.setWalkSprite()
-	PlayerState.idle()
+	AnimationManager.setWalkSprite()
+	AnimationManager.idle()
 
 func face_target(t_position: Vector2) -> void:
 	var direction = (get_global_mouse_position() - global_position).normalized()
@@ -157,14 +166,4 @@ func face_target(t_position: Vector2) -> void:
 	velocity = Vector2.ZERO
 
 func _on_movement_sprite_animation_finished() -> void:
-	if PlayerState.is_gathering:
-		PlayerState.is_gathering = false
-		var resource_type = GameManager.curently_gathered.resource_type
-		GameManager.add_item_to_target(
-			load("res://resources/" + resource_type + ".tres").duplicate(),
-			PlayerState.inventory
-		)
-		GameManager.curently_gathered.take();
-		if GameManager.inventory != null:
-			GameManager.inventory.open()
-		PlayerState.setWalkSprite()
+	AnimationManager.on_finish()

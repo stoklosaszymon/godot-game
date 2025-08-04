@@ -22,6 +22,7 @@ PlayerState="*res://player_state.gd"
 ItemManager="*res://item_manager.gd"
 CraftingManager="*res://crafting_manager.gd"
 CursorManager="*res://cursor_manager.gd"
+AnimationManager="*res://animation_manager.gd"
 
 [dotnet]
 

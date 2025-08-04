@@ -11,7 +11,7 @@ func _input_event(_viewport, event, _shape_idx):
 		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Pickaxe":
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = get_parent()
-			PlayerState.gather()
+			AnimationManager.gather()
 			GameManager.player.face_target(global_position)
 
 func _on_body_entered(body):

@@ -27,7 +27,7 @@ func _on_top_area_entered(_area: Area2D) -> void:
 func _on_ladder_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1 and player_nearby and !PlayerState.is_climbing:
 		GameManager.player.z_index = 5;
-		PlayerState.climb_ladder()
+		AnimationManager.climb_ladder()
 		if PlayerState.is_upladder:
 			GameManager.player.global_position = Vector2(global_position.x, global_position.y - 60)
 		else:
