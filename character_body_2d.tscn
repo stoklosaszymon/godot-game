@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="10_1kp85"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
-radius = 28.1267
+radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ct3r"]
 size = Vector2(85.8333, 140)
@@ -17,13 +17,14 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("1_ij6vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, -11.4286)
+position = Vector2(1.42857, -2.85714)
 shape = SubResource("CircleShape2D_44cfe")
 
 [node name="PlayerArea" type="Area2D" parent="."]
+position = Vector2(8.57143, 98.5714)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2(-7.14286, -54.2857)
+position = Vector2(-7.14286, -168.571)
 shape = SubResource("RectangleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -22,15 +22,10 @@ var is_upladder: bool = false
 
 func setWalkSprite():
 	var walkSprite = null
-	if equipped_item == null:
-		walkSprite = load("res://movement/walk.tscn").instantiate()
-	elif equipped_item.item_name == "Torch":
+	walkSprite = load("res://movement/walk.tscn").instantiate()
+	if equipped_item != null && equipped_item.item_name == "Torch":
 		walkSprite = load("res://movement/torch_walk.tscn").instantiate()
-	elif equipped_item.item_name == "Pickaxe":
-		walkSprite = load("res://movement/pickaxe_walk.tscn").instantiate()
-	elif equipped_item.item_name == "Axe":
-		walkSprite = load("res://movement/axe_walk.tscn").instantiate()
-		
+
 	if GameManager.player != null:
 		var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 

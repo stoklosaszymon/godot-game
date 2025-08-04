@@ -1,1605 +1,1606 @@
 [gd_scene load_steps=403 format=3 uid="uid://hkwhda05dfqq"]
 
-[ext_resource type="Texture2D" uid="uid://pyjri0du5wl6" path="res://Assets/Character/NEW/idle.png" id="1_ry5gp"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3khc5"]
+load_path = "res://.godot/imported/idle.png-147899d2bb5e67c150b49713ecfb55c1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbky2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ry5gp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xv65"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhlry"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4uumf"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjjp0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfq66"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe3jw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0bwax"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m61rh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nslqn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6p25n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ho6oy"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxfpx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tng37"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gnvpl"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5f1n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lpkq6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpjdw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ai8it"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nci8b"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7bpjo"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0051"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_anh82"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ydw6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwxau"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xek2k"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy6o1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2fa8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6vsn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t70de"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrjp0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lr14q"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isfnm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gk275"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om6ay"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x865e"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhssg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qt27"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnhbw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evs88"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fbla"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_helnr"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jdlg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2db6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0dkc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyis8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gkhmn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1rdxv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5u6w"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmvya"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm0dd"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5osdw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dabpn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhvw0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1hff"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdunm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey8f6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcmk6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqi2u"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s48yw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wppxg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdj6x"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uuy8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ckede"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjgya"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lc1n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hwp0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp5nl"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vsdi"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tu3qf"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_242wb"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51jvn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j853o"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_523gq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2awp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcff1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syy45"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 8704, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w5kgq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gk7p"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cb8mh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_deoyl"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tko4w"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ev6r4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_duv72"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6syap"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smrw6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjsgv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7d8g"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04f6t"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sj2y5"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbr7c"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3wlv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxh82"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mpi6d"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px7m6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjmng"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iely"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbm8d"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 9216, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k3rom"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 9728, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdvk1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m27l7"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnj8k"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_378xi"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjpfb"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqhcg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iujr5"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h11xp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfdc2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipc5x"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qo0o"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjun3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjhe1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yk22"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfnxu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkorw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1qkd"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8o0w"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkmup"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s41lx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h00d"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oap6x"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mses"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qeulq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bpobh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcubx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5dnev"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pq843"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j28hp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pnrk"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlggy"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhe5n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxtb4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgijs"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 1536, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wfet"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrxr8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xs1vp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy6do"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1uw4j"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxple"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkal6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ogfx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhpm2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p76dq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbot8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfpj2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eudh5"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpvl2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6srb2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rki67"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ieswu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydd8h"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hcwc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nlk3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2apin"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8q8wp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk86m"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4tci"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xkqx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0frug"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8evgn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tu0ed"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1l7eh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgffa"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dakw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m33lf"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rhot"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6r10v"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ae4vm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syxtk"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sotkn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iknid"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nj4ax"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1qs8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1w4n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4tf8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_708tc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syi0h"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aeos0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g67sb"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vvip6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2pdd"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tl8jn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djsfm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_li6rv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nb68o"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 7680, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcgq8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68gqk"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3er8m"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kod8e"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_056sx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8qpe"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7o1u3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1qfs"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_etovv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncofg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w2cuq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwphg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ihun"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyhok"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 8192, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wde5"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gnaxa"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd0ty"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0waim"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3x7s6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 2048, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jobyn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quknq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5brc8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_beh55"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwk7p"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mesqf"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m60eu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tv4ue"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2psfh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_las6q"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubrsl"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hgeq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs2p6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7aikx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jr5sk"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qle2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcvs1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2y5lc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0u5x4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiaj4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wykx7"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 2560, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r82gk"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wm82j"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxcvg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx4na"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5eys"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5scw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3h4ba"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqfsj"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmrh0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3k5ic"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scm8t"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0rlq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3lvv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fi0k5"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_angd6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gl7eq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmc15"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8a4wc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7f6s"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpkeo"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7emc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 3072, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhajf"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c288i"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkvvx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ar300"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbgiq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxudo"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0apey"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0b5c"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4bw4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8plet"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4rmp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjerx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o411o"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfpb2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qn5e7"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vi27m"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xftcp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6dy42"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlinc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwp4c"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnm8r"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcc68"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8w1iu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi50h"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6gfu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jx44"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1kis"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwdlg"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07alb"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvhsh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_11ts1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tstft"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ll2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pah6e"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 5120, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p802q"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx37y"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djd0a"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puqbn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2ck8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_am0ti"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sn1yh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8k1q"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a13ke"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5slwa"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tqtp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqy1y"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8f7d"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6s228"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8dhm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjst3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dc6y"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btxkc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noc1x"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfrbp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mw6ao"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 5632, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8uif"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hauvw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y3ny"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovjwu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njdp0"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hyim"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcxfy"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dd6o"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqmv4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nb1ax"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mptu"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihun6"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ub7qi"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so7rm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67t4l"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quotp"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdfum"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsjrh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cj1co"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqxec"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4ho5"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 6144, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hffre"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f45o3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06jc2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewtpx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md14y"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qg7vx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j6n4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwphr"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpd3g"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppebm"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyx5f"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whbek"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgh8n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bcgy"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw1ix"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2wxt"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vggsw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fb0n"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2r0u"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rn0wr"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cmxn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 6656, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1e7iv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwol1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1suo"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l51pn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rx222"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reu2f"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 7168, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gr8nh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih2id"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pj4pb"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ne4a1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ciwga"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ue86e"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qc62"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hw71"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wbmw"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aihsc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x2x3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdyx4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_28w2j"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lirmj"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_anf33"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h64lj"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovqs3"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_komck"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 3584, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvhfd"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yl6st"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ndq1"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47g5h"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shjsf"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bm5yr"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4wl2"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ga2g"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vejno"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua1wn"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hm1j"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vi2nx"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5632, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qrwf7"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6144, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vn2qt"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(6656, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkirv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7168, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcomv"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(7680, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83d7a"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8192, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrtwo"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(8704, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r68kc"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9216, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lralq"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(9728, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jv2t7"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(10240, 4096, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwasr"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(0, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnp4s"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(512, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sfh8"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1024, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kfya"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(1536, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsgfo"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2048, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7brgh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(2560, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5vjd"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3072, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kn5rh"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(3584, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7htd"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4096, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuac4"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(4608, 4608, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjaay"]
-atlas = ExtResource("1_ry5gp")
+atlas = SubResource("CompressedTexture2D_3khc5")
 region = Rect2(5120, 4608, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7htd"]
