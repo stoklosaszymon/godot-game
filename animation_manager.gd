@@ -1,10 +1,9 @@
 extends Node
 
+var frames: AnimatedSprite2D = null
+
 func _on_fishing_finished():
 	if PlayerState.is_fishing:
-		var fishing = load("res://movement/fishing_cast.tscn").instantiate()
-		var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
-
 		GameManager.add_item_to_target(
 			load("res://resources/coal_ore.tres").duplicate(),
 			PlayerState.inventory
@@ -12,8 +11,6 @@ func _on_fishing_finished():
 		PlayerState.is_fishing = false
 
 func on_gathering_finished():
-	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
-
 	PlayerState.is_gathering = false
 	var resource_type = GameManager.curently_gathered.resource_type
 	GameManager.add_item_to_target(
@@ -31,7 +28,6 @@ func reset():
 func fishing():
 	PlayerState.is_fishing = true
 	var fishing = load("res://movement/fishing_cast.tscn").instantiate()
-	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 	if frames != null:
 		frames.sprite_frames = fishing.sprite_frames
 		frames.play()
@@ -39,8 +35,6 @@ func fishing():
 func climb_ladder():
 	var walkSprite = load("res://movement/climb_ladder.tscn").instantiate()
 	if GameManager.player != null:
-		var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
-
 		if frames != null:
 			frames.sprite_frames = walkSprite.sprite_frames
 			PlayerState.is_climbing = true
@@ -48,14 +42,12 @@ func climb_ladder():
 
 func gather():
 	var gathering = load("res://movement/gathering.tscn").instantiate()
-	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
 		frames.play()
 
 func chop():
 	var gathering = load("res://movement/chop.tscn").instantiate()
-	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
 		frames.play()
@@ -66,7 +58,6 @@ func idle():
 		idleSprite = load("res://movement/torch_idle.tscn").instantiate()
 	else:
 		idleSprite = load("res://movement/idle.tscn").instantiate()
-	var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
 	if frames != null:
 		frames.sprite_frames = idleSprite.sprite_frames
 		frames.play()
@@ -77,11 +68,8 @@ func setWalkSprite():
 	if PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Torch":
 		walkSprite = load("res://movement/torch_walk.tscn").instantiate()
 
-	if GameManager.player != null:
-		var frames = GameManager.player.get_node("MovementSprite") as AnimatedSprite2D
-
-		if frames != null:
-			frames.sprite_frames = walkSprite.sprite_frames
+	if frames != null:
+		frames.sprite_frames = walkSprite.sprite_frames
 
 func on_finish():
 	if PlayerState.is_gathering:

@@ -27,6 +27,7 @@ func _init():
 	GameManager.player = self
 	
 func _ready():
+	AnimationManager.frames = _animated_sprite
 	AnimationManager.setWalkSprite()
 
 func _input(event):
