@@ -33,7 +33,7 @@ polygon = PackedVector2Array(-7, 21, -5, 68, 14, 57, 12, 13)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ladder"]
 position = Vector2(-18, -1)
-polygon = PackedVector2Array(-5, 66, 17, 57, 14, -69, -11, -64)
+polygon = PackedVector2Array(-9, 68, 24, 55, 12, -76, -21, -65)
 
 [connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
 [connection signal="area_entered" from="Bottom" to="." method="_on_bottom_area_entered"]

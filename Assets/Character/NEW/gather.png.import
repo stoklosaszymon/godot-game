@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbh6fcvrb1noy"
-path="res://.godot/imported/gather.png-705189153757e4b62ac278cf14fde8a5.ctex"
+uid="uid://cb52skpvtfai3"
+path="res://.godot/imported/gather.png-06e7113059a459bcbf429457a0f026aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/gather.png"
-dest_files=["res://.godot/imported/gather.png-705189153757e4b62ac278cf14fde8a5.ctex"]
+source_file="res://Assets/Character/NEW/gather.png"
+dest_files=["res://.godot/imported/gather.png-06e7113059a459bcbf429457a0f026aa.ctex"]
 
 [params]
 

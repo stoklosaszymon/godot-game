@@ -181,6 +181,7 @@ position = Vector2(-2522, -1016)
 [node name="Ladder2" parent="GameObjects" instance=ExtResource("7_c2qy3")]
 z_index = 2
 position = Vector2(-1987, -883)
+scale = Vector2(1.2, 1.2)
 flip = true
 
 [connection signal="body_entered" from="LeaveCave" to="." method="_on_leave_cave_body_entered"]
