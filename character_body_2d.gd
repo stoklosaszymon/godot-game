@@ -151,15 +151,6 @@ func is_on_sand() -> bool:
 	else:
 		return false
 
-func is_next_to_river() -> bool:
-	var tilemap = get_node("../../Map/River")
-	if tilemap:
-		var cell = tilemap.local_to_map(global_position)
-		var tile_data = tilemap.get_cell_tile_data(cell)
-		return tile_data != null and tile_data.get_custom_data("type") == "river"
-	else:
-		return false
-
 var last_footprint_time = 0.0
 const FOOTPRINT_DELAY = 0.3
 

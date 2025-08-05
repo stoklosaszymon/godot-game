@@ -343,7 +343,8 @@ script = ExtResource("1_wg27y")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u681i")
 animation = &"top-right"
-frame_progress = 0.984751
+frame = 2
+frame_progress = 0.161774
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 4

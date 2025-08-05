@@ -7,7 +7,7 @@
 radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ct3r"]
-size = Vector2(85.8333, 140)
+size = Vector2(85.8333, 164.286)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ij6vw"]
 
@@ -26,10 +26,11 @@ position = Vector2(1.42857, -2.85714)
 shape = SubResource("CircleShape2D_44cfe")
 
 [node name="PlayerArea" type="Area2D" parent="."]
-position = Vector2(8.57143, 98.5714)
+position = Vector2(1.42857, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2(-7.14286, -168.571)
+position = Vector2(-4.76837e-07, -15)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
