@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c74q8klibj0ge"]
+
+[ext_resource type="Texture2D" uid="uid://ds1mk8vcmm7hw" path="res://Assets/Items/fishing/fishes-1.png" id="1_cm6o8"]
+[ext_resource type="Script" uid="uid://c8xsh5qpp4hvj" path="res://item.gd" id="2_36573"]
+
+[resource]
+script = ExtResource("2_36573")
+item_name = "Fish-1"
+icon = ExtResource("1_cm6o8")
+is_usable = false
+is_equipable = false
+equip_effect = ""
+unequip_effect = ""
+quantity = 1
+metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

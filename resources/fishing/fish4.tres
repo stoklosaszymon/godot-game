@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dgsxnui5gdw2k"]
+
+[ext_resource type="Texture2D" uid="uid://bwaf5u7dm3mvt" path="res://Assets/Items/fishing/fishes-4.png" id="1_myrap"]
+[ext_resource type="Script" uid="uid://c8xsh5qpp4hvj" path="res://item.gd" id="2_b0hts"]
+
+[resource]
+script = ExtResource("2_b0hts")
+item_name = "Fish-4"
+icon = ExtResource("1_myrap")
+is_usable = false
+is_equipable = false
+equip_effect = ""
+unequip_effect = ""
+quantity = 1
+metadata/_custom_type_script = "uid://c8xsh5qpp4hvj"

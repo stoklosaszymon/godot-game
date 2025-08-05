@@ -4,10 +4,12 @@ var frames: AnimatedSprite2D = null
 
 func _on_fishing_finished():
 	if PlayerState.is_fishing:
-		GameManager.add_item_to_target(
-			load("res://resources/coal_ore.tres").duplicate(),
-			PlayerState.inventory
-		)
+		var miss_chance = 0.3
+		if randf() > miss_chance:
+			GameManager.add_item_to_target(
+				ItemManager.get_random_fish().duplicate(),
+				PlayerState.inventory
+			)
 		PlayerState.is_fishing = false
 
 func on_gathering_finished():
