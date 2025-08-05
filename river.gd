@@ -24,7 +24,6 @@ func _is_river(cell: Vector2) -> bool:
 	return tile_data != null and tile_data.get_custom_data("type") == "river"
 
 func _unhandled_input(event):
-	print(is_player_next_to_river())
 	if event is InputEventMouseButton and event.pressed:
 		var mouse_pos = get_global_mouse_position()
 		var cell = local_to_map(mouse_pos)
