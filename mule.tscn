@@ -337,17 +337,16 @@ animations = [{
 radius = 30.0
 
 [node name="Mule" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_wg27y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u681i")
 animation = &"top-right"
-frame_progress = 0.869914
+frame_progress = 0.984751
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
-debug_use_custom = true
-debug_path_custom_color = Color(1, 0, 0, 1)
+navigation_layers = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wg27y")

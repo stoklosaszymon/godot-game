@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dacgqbjh57ee7"]
+[gd_scene load_steps=7 format=3 uid="uid://dacgqbjh57ee7"]
 
 [ext_resource type="Script" uid="uid://dday3u3ti7qy7" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="10_1kp85"]
@@ -10,6 +10,11 @@ radius = 40.0
 size = Vector2(85.8333, 140)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ij6vw"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ij6vw"]
+vertices = PackedVector2Array(28.8906, 7.82812, 7.70312, 23.7188, -14.5938, 8.64844, 4.89844, -16.75)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-29, 11, 8, 36, 44, 9, 4, -32)])
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -33,5 +38,10 @@ script = ExtResource("10_1kp85")
 
 [node name="MovementSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ij6vw")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-2.85714, -2.85714)
+navigation_polygon = SubResource("NavigationPolygon_ij6vw")
+navigation_layers = 4
 
 [connection signal="animation_finished" from="MovementSprite" to="." method="_on_movement_sprite_animation_finished"]
