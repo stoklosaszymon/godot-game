@@ -8,6 +8,9 @@ func _ready():
 		var start_point = $PlayerStartPoint.global_position
 		player.global_position = start_point
 		$GameObjects.add_child(player)
+		var mule = preload("res://mule.tscn").instantiate()
+		mule.global_position = start_point
+		$GameObjects.add_child(mule)
 		
 	if GameManager.minimap == null:
 		var minimap = load("res://mini_map.tscn").instantiate()
