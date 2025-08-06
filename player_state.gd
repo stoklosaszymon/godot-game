@@ -1,11 +1,10 @@
 extends Node
 
 var inventory: Array[ItemData] = [
-	preload("res://resources/iron_ore.tres").duplicate(),
-	preload("res://resources/torch.tres").duplicate(),
-	preload("res://resources/pickaxe.tres").duplicate(),
-	preload("res://resources/axe.tres").duplicate(),
-	preload("res://resources/pole.tres").duplicate()
+	ItemManager.tools["axe"].duplicate(),
+	ItemManager.tools["pole"].duplicate(),
+	ItemManager.tools["pickaxe"].duplicate(),
+	ItemManager.tools["key"].duplicate(),
 ];
 
 var equipped_item: ItemData = null:

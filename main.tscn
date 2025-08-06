@@ -30,12 +30,12 @@ y_sort_enabled = true
 
 [node name="Chest" parent="GameObjects" groups=["chests"] instance=ExtResource("3_h2yge")]
 z_as_relative = true
-position = Vector2(-412, -60.9999)
+position = Vector2(-2.99998, -249)
 scale = Vector2(0.7, 0.7)
 
 [node name="ChestCommon" parent="GameObjects" instance=ExtResource("6_7mycd")]
 z_as_relative = true
-position = Vector2(734, -1113)
+position = Vector2(-193, -128)
 scale = Vector2(0.7, 0.7)
 chest_id = "chest_id_2"
 

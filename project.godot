@@ -18,8 +18,8 @@ config/features=PackedStringArray("4.4", "Mobile")
 
 GameManager="*res://game_manager.gd"
 SceneTransition="*res://scene_transition.gd"
-PlayerState="*res://player_state.gd"
 ItemManager="*res://item_manager.gd"
+PlayerState="*res://player_state.gd"
 CraftingManager="*res://crafting_manager.gd"
 CursorManager="*res://cursor_manager.gd"
 AnimationManager="*res://animation_manager.gd"

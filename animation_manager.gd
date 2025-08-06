@@ -16,7 +16,7 @@ func on_gathering_finished():
 	PlayerState.is_gathering = false
 	var resource_type = GameManager.curently_gathered.resource_type
 	GameManager.add_item_to_target(
-		load("res://resources/" + resource_type + ".tres").duplicate(),
+		ItemManager.resources[resource_type].duplicate(),
 		PlayerState.inventory
 	)
 	GameManager.curently_gathered.take();

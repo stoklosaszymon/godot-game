@@ -49,6 +49,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 func _on_area_2d_mouse_entered() -> void:
 	if is_locked:
 		CursorManager.set_cursor_lock()
+	else:
+		CursorManager.set_cursor_hand()
 
 func _on_area_2d_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)

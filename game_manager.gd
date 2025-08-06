@@ -12,12 +12,12 @@ var minimap: Node = null
 
 var chests_data: Dictionary[String, Array] = {
 	"chest_id_1": [
-		preload("res://resources/torch.tres").duplicate(),
-		preload("res://resources/pickaxe.tres").duplicate(),
-		preload("res://resources/axe.tres").duplicate()
+		preload("res://resources/tools/torch.tres").duplicate(),
+		preload("res://resources/tools/pickaxe.tres").duplicate(),
+		preload("res://resources/tools/axe.tres").duplicate()
 		],
 	"chest_id_2": [
-		preload("res://resources/key.tres").duplicate(),
+		preload("res://resources/tools/key.tres").duplicate(),
 	],	
 }
 

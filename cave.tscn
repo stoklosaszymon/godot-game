@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://by7ulwgtedfad" path="res://cave.gd" id="1_dnhvd"]
 [ext_resource type="Texture2D" uid="uid://oobrrx8pxbim" path="res://Assets/Terrain/empty.png" id="3_djsbv"]
 [ext_resource type="Texture2D" uid="uid://10jpnh473r7h" path="res://Assets/Terrain/cave_wall_1_91.png" id="3_xtwoi"]
-[ext_resource type="PackedScene" uid="uid://dk7qw6ad6tlh7" path="res://resources/torch.tscn" id="4_23xot"]
+[ext_resource type="PackedScene" uid="uid://dk7qw6ad6tlh7" path="res://resources/tools/torch.tscn" id="4_23xot"]
 [ext_resource type="PackedScene" uid="uid://mffap4tjkl2g" path="res://gate.tscn" id="4_78gyg"]
 [ext_resource type="PackedScene" uid="uid://bqj1tpieukkd7" path="res://door.tscn" id="4_xtwoi"]
 [ext_resource type="Script" uid="uid://dq4ebdfawkqg4" path="res://floor.gd" id="6_xifcx"]

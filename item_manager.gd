@@ -10,6 +10,23 @@ var fish_data = [
 	{ "resource": load("res://resources/fishing/fish7.tres"), "probability": 0.05 },
 ]
 
+var resources = {
+	"iron_ore" : load("res://resources/mining/iron_ore.tres"),
+	"gold_ore" : load("res://resources/mining/gold_ore.tres"),
+	"coal_ore" : load("res://resources/mining/coal_ore.tres"),
+	"ruby_ore" : load("res://resources/mining/ruby_ore.tres"),
+	"iron_bar" : load("res://resources/mining/iron_bar.tres"),
+	"log" : load("res://resources/wood/log.tres"),
+}
+
+var tools = {
+	"axe" : load("res://resources/tools/axe.tres"),
+	"pickaxe" : load("res://resources/tools/pickaxe.tres"),
+	"key" : load("res://resources/tools/key.tres"),
+	"pole" : load("res://resources/tools/pole.tres"),
+	"torch" : load("res://resources/tools/torch.tres"),
+}
+
 func get_random_fish() -> Resource:
 	var total_weight = 0.0
 

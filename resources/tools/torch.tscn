@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dk7qw6ad6tlh7"]
 
-[ext_resource type="Script" uid="uid://dyox4j02hpytb" path="res://resources/torch.gd" id="1_aqwgi"]
+[ext_resource type="Script" uid="uid://dyox4j02hpytb" path="res://resources/tools/torch.gd" id="1_aqwgi"]
 [ext_resource type="Texture2D" uid="uid://dy4pto67dxfq7" path="res://Assets/Items/torch/torch_1.png" id="2_ub4v1"]
 [ext_resource type="Texture2D" uid="uid://b2bm3c65kqmup" path="res://Assets/Items/torch/torch_2.png" id="3_aqwgi"]
 [ext_resource type="Texture2D" uid="uid://ic72q4o82moa" path="res://Assets/Items/torch/torch_3.png" id="4_gn8u3"]
