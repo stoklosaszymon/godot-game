@@ -6,24 +6,26 @@
 [node name="CaveEnterance" type="StaticBody2D"]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(-279, -376)
 scale = Vector2(2, 2)
 script = ExtResource("1_smkwp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 2
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_smkwp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-70, 64)
+position = Vector2(-276.5, -250)
 polygon = PackedVector2Array(275.5, 429.5, 86, 338, 278, 240, 458, 335, 405, 379.5, 337.5, 341.5, 279.5, 366.5, 312.5, 402)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-72, 59.5)
+position = Vector2(-284.5, -240.5)
 polygon = PackedVector2Array(35, 368, 84, 344, 283, 435, 461, 333, 503.5, 398.5, 234, 503)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

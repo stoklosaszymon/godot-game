@@ -12,7 +12,7 @@ func _input_event(_viewport, event, _shape_idx):
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = get_parent()
 			AnimationManager.gather()
-			GameManager.player.face_target(global_position)
+			GameManager.player.face_target()
 
 func _on_body_entered(body):
 	if body.name == "Player":

@@ -30,7 +30,6 @@ position = Vector2(1.42857, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2(-4.76837e-07, -15)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]

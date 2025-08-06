@@ -14,7 +14,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = self
 			AnimationManager.chop()
-			GameManager.player.face_target(global_position)
+			GameManager.player.face_target()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

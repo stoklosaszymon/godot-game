@@ -175,7 +175,7 @@ func unequip():
 	AnimationManager.setWalkSprite()
 	AnimationManager.idle()
 
-func face_target(t_position: Vector2) -> void:
+func face_target() -> void:
 	var direction = (get_global_mouse_position() - global_position).normalized()
 	_play_directional_animation(direction)
 	velocity = Vector2.ZERO

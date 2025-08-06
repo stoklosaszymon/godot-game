@@ -13,8 +13,7 @@ func is_player_next_to_river() -> bool:
 		return false
 	
 	var player_pos = GameManager.player.global_position
-	var adjusted_pos = player_pos + Vector2(0, 90) 
-	var cell = local_to_map(adjusted_pos)
+	var cell = local_to_map(player_pos)
 	var tile_data = get_cell_tile_data(cell)
 	
 	return tile_data != null and tile_data.get_custom_data("type") == "river"
@@ -29,3 +28,4 @@ func _unhandled_input(event):
 		var cell = local_to_map(mouse_pos)
 		if _is_river(cell) and is_player_next_to_river():
 			AnimationManager.fishing()
+			GameManager.player.face_target()
