@@ -83,7 +83,7 @@ sources/1 = SubResource("TileSetAtlasSource_3ayon")
 script = ExtResource("1_dnhvd")
 
 [node name="LeaveCave" type="Area2D" parent="."]
-position = Vector2(347, -381)
+position = Vector2(327, -423)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeaveCave"]
 position = Vector2(-1265, 374)
@@ -167,7 +167,7 @@ y_sort_enabled = true
 position = Vector2(-805, 68)
 
 [node name="CaveEnterance" parent="GameObjects" instance=ExtResource("11_3ayon")]
-position = Vector2(193, -642)
+position = Vector2(299, -494)
 scale = Vector2(0.6, 0.6)
 skew = -0.0139626
 

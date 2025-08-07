@@ -30,3 +30,11 @@ func toggle_panel():
 	elif panel != null and is_instance_valid(panel):
 		panel.queue_free()
 		panel = null
+		
+func _process(delta):
+	if !GameManager.player:
+		return
+
+	var shader_mat := $TextureRect.material as ShaderMaterial
+	if shader_mat:
+		shader_mat.set_shader_parameter("screen_size", get_viewport().get_visible_rect().size)

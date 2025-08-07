@@ -4,7 +4,7 @@ var frames: AnimatedSprite2D = null
 
 var animations = {
 	"chop" : load("res://movement/chop.tscn"),
-	"gather" : load("res://movement/gathering.tscn"),
+	"mining" : load("res://movement/gathering.tscn"),
 	"fishing_cast" : load("res://movement/fishing_cast.tscn"),
 	"fishing_idle" : load("res://movement/fishing_idle.tscn"),
 	"walk" : load("res://movement/walk.tscn"),
@@ -54,7 +54,7 @@ func climb_ladder():
 		frames.play("up")
 
 func gather():
-	var gathering = animations.gathering.instantiate()
+	var gathering = animations.mining.instantiate()
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
 		frames.play()

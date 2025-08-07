@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5rt8ff5prfdn"]
+[gd_scene load_steps=18 format=3 uid="uid://c5rt8ff5prfdn"]
 
 [ext_resource type="Texture2D" uid="uid://bw0tkorer42da" path="res://Assets/Resources/oak.png" id="1_brfkd"]
 [ext_resource type="Script" uid="uid://6y2fevwiq1xx" path="res://tree.gd" id="1_nnvrw"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://byob1uyqio64r" path="res://Assets/Resources/falling-tree/fall_7.png" id="9_s00bo"]
 [ext_resource type="Texture2D" uid="uid://h08mq3pqkhgj" path="res://Assets/Resources/falling-tree/fall_8.png" id="10_mkgly"]
 [ext_resource type="Texture2D" uid="uid://b1iptpi2muw8c" path="res://Assets/Resources/falling-tree/fall_9.png" id="11_fkc4b"]
+[ext_resource type="Texture2D" uid="uid://nvwqsmpj1o4h" path="res://Assets/Resources/tree_2.png" id="13_fkc4b"]
+[ext_resource type="Texture2D" uid="uid://dmmkyelndv7kk" path="res://Assets/Resources/apple-tree.png" id="15_nl04x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2g23"]
 shader = ExtResource("2_gvmkm")
@@ -69,9 +71,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_fkc4b")
+}, {
+"duration": 1.0,
 "texture": ExtResource("1_brfkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nl04x")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -86,6 +94,8 @@ position = Vector2(-2, -328)
 scale = Vector2(2.30169, 2.35526)
 sprite_frames = SubResource("SpriteFrames_gvmkm")
 animation = &"idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-1.5, -130)

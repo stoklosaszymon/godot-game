@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl143fdly0nlm"]
+[gd_scene load_steps=5 format=3 uid="uid://bl143fdly0nlm"]
 
 [ext_resource type="Texture2D" uid="uid://bynnxqu72djpi" path="res://Assets/Buildings/forge.png" id="1_ewbv2"]
 [ext_resource type="Script" uid="uid://dsxqdouoq2nik" path="res://forge.gd" id="1_lg3is"]
+[ext_resource type="Shader" uid="uid://c0icp1vawad6p" path="res://fade.gdshader" id="1_tpr0r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpr0r"]
+shader = ExtResource("1_tpr0r")
+shader_parameter/fade_enabled = false
+shader_parameter/screen_size = Vector2(0, 0)
+shader_parameter/radius = 48.0
+shader_parameter/softness = 16.0
+shader_parameter/fade_alpha = 0.3
 
 [node name="Forge" type="StaticBody2D"]
 z_index = 1
@@ -10,6 +19,7 @@ script = ExtResource("1_lg3is")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 2
+material = SubResource("ShaderMaterial_tpr0r")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_ewbv2")
