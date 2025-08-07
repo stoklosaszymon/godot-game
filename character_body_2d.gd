@@ -14,6 +14,8 @@ var last_direction = null
 var last_transparent_wall_coords: Vector2i = Vector2i(-1, -1)
 var is_idling: bool = false
 
+@onready var camera = $Camera2D
+
 var hand_offsets := {
 	"bottom": Vector2(10, -120),
 	"bottom-left": Vector2(-33, -113),

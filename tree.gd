@@ -8,6 +8,9 @@ var player_overlapped = false
 
 func _ready() -> void:
 	$Sprite2D.play("idle")
+	var mat = $Sprite2D.material
+	if mat:
+		$Sprite2D.material = mat.duplicate()
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -23,11 +26,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_in_range = true
 
 func _process(delta):
-	if not is_instance_valid(GameManager.player):
+	if !GameManager.player:
 		return
 
-	var player_behind = GameManager.player.global_position.y < global_position.y
-	modulate.a = fade_alpha if player_behind and player_overlapped else 1.0
+	var shader_mat := $Sprite2D.material as ShaderMaterial
+	if shader_mat:
+		shader_mat.set_shader_parameter("fade_enabled", player_overlapped)
+		shader_mat.set_shader_parameter("screen_size", get_viewport().get_visible_rect().size)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dacgqbjh57ee7"]
 
 [ext_resource type="Script" uid="uid://dday3u3ti7qy7" path="res://character_body_2d.gd" id="1_ij6vw"]
+[ext_resource type="PackedScene" uid="uid://d1r2njjjhux5e" path="res://movement/walk.tscn" id="3_ghijl"]
 [ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="10_1kp85"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
@@ -8,8 +9,6 @@ radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ct3r"]
 size = Vector2(85.8333, 164.286)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ij6vw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ij6vw"]
 vertices = PackedVector2Array(28.8906, 7.82812, 7.70312, 23.7188, -14.5938, 8.64844, 4.89844, -16.75)
@@ -36,12 +35,11 @@ shape = SubResource("RectangleShape2D_6ct3r")
 position_smoothing_enabled = true
 script = ExtResource("10_1kp85")
 
-[node name="MovementSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ij6vw")
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-2.85714, -2.85714)
 navigation_polygon = SubResource("NavigationPolygon_ij6vw")
 navigation_layers = 4
+
+[node name="MovementSprite" parent="." instance=ExtResource("3_ghijl")]
 
 [connection signal="animation_finished" from="MovementSprite" to="." method="_on_movement_sprite_animation_finished"]

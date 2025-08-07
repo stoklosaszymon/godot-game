@@ -19,6 +19,11 @@ shader = ExtResource("2_gvmkm")
 shader_parameter/sway_strength = 2.0
 shader_parameter/sway_speed = 3.5
 shader_parameter/sway_frequency = 8.0
+shader_parameter/fade_enabled = false
+shader_parameter/screen_size = Vector2(0, 0)
+shader_parameter/radius = 180.0
+shader_parameter/softness = 64.0
+shader_parameter/fade_alpha = 0.1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvmkm"]
 animations = [{
