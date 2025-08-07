@@ -41,5 +41,6 @@ navigation_polygon = SubResource("NavigationPolygon_ij6vw")
 navigation_layers = 4
 
 [node name="MovementSprite" parent="." instance=ExtResource("3_ghijl")]
+z_as_relative = true
 
 [connection signal="animation_finished" from="MovementSprite" to="." method="_on_movement_sprite_animation_finished"]
