@@ -1,8 +1,10 @@
 extends StaticBody2D
 
-var player_in_range = null
+var player_in_range = false
+var player_overlapped = false
 @export var resource_type: String = "log"
 @export var amount = 3;
+@export_range(0.0, 1.0) var fade_alpha: float = 0.4
 
 func _ready() -> void:
 	$Sprite2D.play("idle")
@@ -20,6 +22,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_in_range = true
 
+func _process(delta):
+	if not is_instance_valid(GameManager.player):
+		return
+
+	var player_behind = GameManager.player.global_position.y < global_position.y
+	modulate.a = fade_alpha if player_behind and player_overlapped else 1.0
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
@@ -31,4 +39,11 @@ func take():
 		$Sprite2D.play("cut")
 		$Sprite2D.material = null
 		GameManager.curently_gathered = null;
-		
+
+func _on_overlap_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		player_overlapped = true
+
+func _on_overlap_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		player_overlapped = false

@@ -32,7 +32,6 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cpix3")
 
 [node name="TextureRect" type="Sprite2D" parent="."]
-z_index = 2
 scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,8 +62,6 @@ color = Color(0.74902, 0, 0, 1)
 texture = ExtResource("3_psx28")
 texture_scale = 0.6
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="ResourceArea" to="ResourceArea" method="_on_body_entered"]
 [connection signal="body_exited" from="ResourceArea" to="ResourceArea" method="_on_body_exited"]
 [connection signal="input_event" from="ResourceArea" to="ResourceArea" method="_on_input_event"]

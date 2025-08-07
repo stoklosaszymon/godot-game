@@ -80,7 +80,7 @@ material = SubResource("ShaderMaterial_d2g23")
 position = Vector2(-2, -328)
 scale = Vector2(2.30169, 2.35526)
 sprite_frames = SubResource("SpriteFrames_gvmkm")
-animation = &"cut"
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-1.5, -130)
@@ -94,6 +94,13 @@ z_index = 1
 position = Vector2(-1, -131)
 polygon = PackedVector2Array(-90, 135, -17.5, 208, 70, 177, 85, 112, 0, 70)
 
+[node name="Overlap" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Overlap"]
+polygon = PackedVector2Array(-34, -60, 46, -61, 97, -175, 215, -168, 269, -304, 242, -404, 335, -443, 289, -595, -3, -716, -299, -560, -328, -385, -291, -230, -29, -166)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="body_entered" from="Overlap" to="." method="_on_overlap_body_entered"]
+[connection signal="body_exited" from="Overlap" to="." method="_on_overlap_body_exited"]

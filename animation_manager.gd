@@ -2,6 +2,17 @@ extends Node
 
 var frames: AnimatedSprite2D = null
 
+var animations = {
+	"chop" : load("res://movement/chop.tscn"),
+	"gather" : load("res://movement/gathering.tscn"),
+	"fishing_cast" : load("res://movement/fishing_cast.tscn"),
+	"fishing_idle" : load("res://movement/fishing_idle.tscn"),
+	"walk" : load("res://movement/walk.tscn"),
+	"torch_walk" : load("res://movement/torch_walk.tscn"),
+	"idle" : load("res://movement/idle.tscn"),
+	"torch_idle" : load("res://movement/torch_idle.tscn"),
+}
+
 func _on_fishing_finished():
 	if PlayerState.is_fishing:
 		var miss_chance = 0.3
@@ -29,7 +40,7 @@ func reset():
 
 func fishing():
 	PlayerState.is_fishing = true
-	var fishing = load("res://movement/fishing_cast.tscn").instantiate()
+	var fishing = animations.fishing_cast.instantiate()
 	if frames != null:
 		frames.sprite_frames = fishing.sprite_frames
 		frames.play()
@@ -43,13 +54,13 @@ func climb_ladder():
 		frames.play("up")
 
 func gather():
-	var gathering = load("res://movement/gathering.tscn").instantiate()
+	var gathering = animations.gathering.instantiate()
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
 		frames.play()
 
 func chop():
-	var gathering = load("res://movement/chop.tscn").instantiate()
+	var gathering = animations.chop.instantiate()
 	if frames != null:
 		frames.sprite_frames = gathering.sprite_frames
 		frames.play()
@@ -57,18 +68,18 @@ func chop():
 func idle():
 	var idleSprite = null
 	if PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Torch":
-		idleSprite = load("res://movement/torch_idle.tscn").instantiate()
+		idleSprite = animations.torch_idle.instantiate()
 	else:
-		idleSprite = load("res://movement/idle.tscn").instantiate()
+		idleSprite = animations.idle.instantiate()
 	if frames != null:
 		frames.sprite_frames = idleSprite.sprite_frames
 		frames.play()
 
 func setWalkSprite():
 	var walkSprite = null
-	walkSprite = load("res://movement/walk.tscn").instantiate()
+	walkSprite = animations.walk.instantiate()
 	if PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Torch":
-		walkSprite = load("res://movement/torch_walk.tscn").instantiate()
+		walkSprite = animations.torch_walk.tscn.instantiate()
 
 	if frames != null:
 		frames.sprite_frames = walkSprite.sprite_frames
