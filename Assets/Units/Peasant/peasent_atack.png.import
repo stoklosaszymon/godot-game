@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsyvhrusx67h"
-path="res://.godot/imported/fall_2.png-b4a24bcd0417c878e7d9f03ff1bf9355.ctex"
+uid="uid://2moftm1q3qi5"
+path="res://.godot/imported/peasent_atack.png-c267d616ae77b2f79cf2731a086a3866.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Resources/falling-tree/fall_2.png"
-dest_files=["res://.godot/imported/fall_2.png-b4a24bcd0417c878e7d9f03ff1bf9355.ctex"]
+source_file="res://Assets/Units/Peasant/peasent_atack.png"
+dest_files=["res://.godot/imported/peasent_atack.png-c267d616ae77b2f79cf2731a086a3866.ctex"]
 
 [params]
 

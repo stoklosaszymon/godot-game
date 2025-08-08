@@ -94,21 +94,21 @@ position = Vector2(-1233, 493)
 [node name="Tree10" parent="GameObjects" instance=ExtResource("9_kek77")]
 position = Vector2(1874, -5.99988)
 
-[node name="Iron_Ore" parent="." instance=ExtResource("8_5vw27")]
+[node name="Iron_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
 position = Vector2(-1552, 491)
 scale = Vector2(2.1, 2.1)
 
-[node name="Gold_Ore" parent="." instance=ExtResource("8_5vw27")]
+[node name="Gold_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
 position = Vector2(414, 1389)
 scale = Vector2(2.1, 2.1)
 resource_type = "gold_ore"
 
-[node name="Coal_Ore" parent="." instance=ExtResource("8_5vw27")]
+[node name="Coal_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
 position = Vector2(2203, -376)
 scale = Vector2(2.1, 2.1)
 resource_type = "coal_ore"
 
-[node name="Ruby_Ore" parent="." instance=ExtResource("8_5vw27")]
+[node name="Ruby_Ore" parent="GameObjects" instance=ExtResource("8_5vw27")]
 position = Vector2(1976, -1755)
 scale = Vector2(2.1, 2.1)
 resource_type = "ruby_ore"

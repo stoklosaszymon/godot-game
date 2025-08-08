@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv3kh4r4mhaj"
-path="res://.godot/imported/fall_3.png-0eda137c5e93ba192cff2d52e2d01822.ctex"
+uid="uid://cajnaofhbn2jq"
+path="res://.godot/imported/peasant_walk.png-658c217cf2653a32da6dbb6394fc0507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Resources/falling-tree/fall_3.png"
-dest_files=["res://.godot/imported/fall_3.png-0eda137c5e93ba192cff2d52e2d01822.ctex"]
+source_file="res://Assets/Units/Peasant/peasant_walk.png"
+dest_files=["res://.godot/imported/peasant_walk.png-658c217cf2653a32da6dbb6394fc0507.ctex"]
 
 [params]
 
