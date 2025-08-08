@@ -79,7 +79,7 @@ func setWalkSprite():
 	var walkSprite = null
 	walkSprite = animations.walk.instantiate()
 	if PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Torch":
-		walkSprite = animations.torch_walk.tscn.instantiate()
+		walkSprite = animations.torch_walk.instantiate()
 
 	if frames != null:
 		frames.sprite_frames = walkSprite.sprite_frames
