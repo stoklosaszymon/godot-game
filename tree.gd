@@ -15,7 +15,7 @@ func _ready() -> void:
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		PlayerState.is_gathering = false;
-		if player_in_range && PlayerState.equipped_item != null && PlayerState.equipped_item.item_name == "Axe" and amount > 0:
+		if player_in_range && PlayerState.has_tool("Axe") and amount > 0:
 			PlayerState.is_gathering = true;
 			GameManager.curently_gathered = self
 			AnimationManager.chop()

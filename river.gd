@@ -26,6 +26,6 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		var mouse_pos = get_global_mouse_position()
 		var cell = local_to_map(mouse_pos)
-		if _is_river(cell) and is_player_next_to_river():
+		if _is_river(cell) and is_player_next_to_river() and PlayerState.has_tool("Pole") and !PlayerState.is_fishing:
 			AnimationManager.fishing()
 			GameManager.player.face_target()

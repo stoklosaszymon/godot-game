@@ -20,3 +20,6 @@ var is_gathering: bool = false
 var is_climbing: bool = false
 var is_upladder: bool = false
 var is_fishing: bool = false
+
+func has_tool(tool: String):
+	return inventory.any(func(item): return item.item_name == tool)
