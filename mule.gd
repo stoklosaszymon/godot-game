@@ -13,18 +13,13 @@ var last_direction: Vector2 = Vector2.ZERO
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-func _ready():
-	player = GameManager.player
-	if player:
-		call_deferred("set_target")
-
 func set_target():
-	if player:
-		navigation_agent.target_position = player.global_position
+	if GameManager.player:
+		navigation_agent.target_position = GameManager.player.global_position
 
 func _process(delta):
-	if player:
-		navigation_agent.target_position = player.global_position
+	if GameManager.player:
+		set_target()
 
 func _physics_process(delta):
 	var player_distance = global_position.distance_to(player.global_position) if player else INF

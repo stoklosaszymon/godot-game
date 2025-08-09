@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
+@export var team = ""
 @onready var walk_sprite = $Walk
 @onready var attack_sprite = $Attack
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 const TILE_WIDTH := 500
 const TILE_HEIGHT := 250
@@ -11,45 +14,78 @@ var grid_position: Vector2i
 var target_grid_position: Vector2i
 var target_position: Vector2
 var is_attacking := false
-var team = ""
-var direction = Vector2i(0, -1)
+
+var direction = Vector2.ZERO
 
 var hp = 15
 var dmg = 5
 var target: Node
 
 func _ready():
-	team = get_parent().name
 	grid_position = iso_to_grid(global_position)
-	direction = Vector2i(0, -1) if team == "PlayerUnits" else Vector2i(0, 1)
-	target_grid_position = grid_position + direction
+	direction = Vector2(0, -1) if team == "player" else Vector2(0, 1)
+	target_grid_position = grid_position + Vector2i(direction.x, direction.y)
 	target_position = grid_to_iso(target_grid_position)
 	global_position = grid_to_iso(grid_position)
-	update_walk_animation()
+	update_walk_animation_with_direction(direction)
+	set_closest_enemy_target()
+
+func set_closest_enemy_target():
+	var enemies = get_parent().get_children()
+	
+	var closest_enemy = null
+	var closest_dist = INF
+	
+	for enemy in enemies:
+		if enemy == self or not is_instance_valid(enemy):
+			continue
+		var enemy_team = enemy.get("team")
+		if enemy_team == null:
+			continue
+		if enemy_team != team:
+			var dist = global_position.distance_to(enemy.global_position)
+			if dist < closest_dist:
+				closest_dist = dist
+				closest_enemy = enemy
+	
+	if closest_enemy:
+		target = closest_enemy
+		navigation_agent.target_position = closest_enemy.global_position
+		is_attacking = false
+		print(name, "targeting", closest_enemy.name)
 
 func _process(delta: float) -> void:
-	#print(name + ": ", hp)
 	if hp <= 0:
 		die()
 
 func _physics_process(delta):
 	if is_attacking:
 		velocity = Vector2.ZERO
+		direction = (target.global_position - global_position).normalized()
 		update_attack_animation()
 		return
 	
-	if global_position.distance_to(target_position) < 2.0:
-		grid_position = target_grid_position
-		target_grid_position += direction
-		target_position = grid_to_iso(target_grid_position)
-		update_walk_animation()
+	if not target or not is_instance_valid(target):
+		set_closest_enemy_target()
+		return
+	
+	navigation_agent.target_position = target.global_position
+	
+	if navigation_agent.is_navigation_finished():
+		print("target reached")
+		#s_attacking = true
+		#velocity = Vector2.ZERO
+		#update_attack_animation()
+	else:
+		var next_path_position = navigation_agent.get_next_path_position()
+		var move_dir = (next_path_position - global_position).normalized()
+		velocity = move_dir * SPEED
+		move_and_slide()
+		
+		direction = move_dir
+		update_walk_animation_with_direction(direction)
 
-	var dir_vector = (target_position - global_position).normalized()
-	velocity = dir_vector * SPEED
-	move_and_slide()
-
-func update_walk_animation():
-	var world_dir = grid_dir_to_world_dir(direction)
+func update_walk_animation_with_direction(world_dir: Vector2) -> void:
 	var dir_name = get_direction_name(world_dir)
 	walk_sprite.show()
 	attack_sprite.hide()
@@ -57,8 +93,7 @@ func update_walk_animation():
 		walk_sprite.play(dir_name)
 
 func update_attack_animation():
-	var world_dir = grid_dir_to_world_dir(direction)
-	var dir_name = get_direction_name(world_dir)
+	var dir_name = get_direction_name(direction)
 	walk_sprite.hide()
 	attack_sprite.show()
 	if not attack_sprite.is_playing() or attack_sprite.animation != dir_name:
@@ -106,19 +141,17 @@ func get_direction_name(dir: Vector2) -> String:
 		return "NE"
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.name)
 	if area.get_parent().team != team:
 		target = area.get_parent()
 		is_attacking = true
 
 func _on_attack_animation_finished() -> void:
-	print("finished animation")
 	if is_instance_valid(target):
+		print(name, "attacked", target.name)
 		target.hp -= dmg
-	
+
 func die():
 	queue_free()
-
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	is_attacking = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://6b5f847tqj26"]
+[gd_scene load_steps=6 format=4 uid="uid://6b5f847tqj26"]
 
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="1_ldkyl"]
 [ext_resource type="PackedScene" uid="uid://01dlgs0emepg" path="res://unit.tscn" id="2_7bvfo"]
@@ -8,8 +8,6 @@ texture = ExtResource("1_ldkyl")
 texture_region_size = Vector2i(511, 250)
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/1 = 1
-0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-250, 0, 0, -125, 240.195, 4.90257, 0, 125)
 
 [sub_resource type="TileSet" id="TileSet_65fx5"]
 tile_shape = 1
@@ -18,30 +16,40 @@ tile_size = Vector2i(500, 250)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7bvfo")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7bvfo"]
+vertices = PackedVector2Array(2862.68, -311.812, 373.047, 961.742, -1333.07, 69.1797, 1125.04, -1164.83)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1355, 69, 373, 973, 2885, -312, 1125, -1176)])
+
 [node name="BattleArea" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAAMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD+//z/AAAAAAAAAQD///z/AAAAAAAAAQAAAPz/AAAAAAAAAQABAPz/AAAAAAAAAQACAAQAAAAAAAAAAQACAAMAAAAAAAAAAQACAAIAAAAAAAAAAQACAAEAAAAAAAAAAQACAAAAAAAAAAAAAQACAP//AAAAAAAAAQACAP7/AAAAAAAAAQACAP3/AAAAAAAAAQACAPz/AAAAAAAAAQD9/wQAAAAAAAAAAQD9/wMAAAAAAAAAAQD9/wIAAAAAAAAAAQD9/wEAAAAAAAAAAQD9/wAAAAAAAAAAAQD9////AAAAAAAAAQD9//7/AAAAAAAAAQD9//3/AAAAAAAAAQD9//z/AAAAAAAAAQD9/wUAAAAAAAAAAQD+/wUAAAAAAAAAAQD//wUAAAAAAAAAAQAAAAUAAAAAAAAAAQABAAUAAAAAAAAAAQACAAUAAAAAAAAAAQA=")
+position = Vector2(-44, 44)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAAMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAAAAAAAAAD9/wQAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAD9//z/AAAAAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_65fx5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.32, 0.32)
+position = Vector2(-1091, 650)
+zoom = Vector2(0.7, 0.7)
 
-[node name="PlayerUnits" type="Node2D" parent="."]
+[node name="Units" type="Node2D" parent="."]
+position = Vector2(-677, 354)
 
-[node name="Unit" parent="PlayerUnits" instance=ExtResource("2_7bvfo")]
-position = Vector2(-941, 419)
+[node name="Unit" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(-731, 256)
+team = "player"
 
-[node name="Unit3" parent="PlayerUnits" instance=ExtResource("2_7bvfo")]
-position = Vector2(-965, 423)
+[node name="Unit4" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(-443, 420)
+team = "player"
 
-[node name="Unit2" parent="PlayerUnits" instance=ExtResource("2_7bvfo")]
-position = Vector2(-649, 776)
+[node name="Unit2" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(-374, 151)
+team = "enemy"
 
-[node name="EnemyUnits" type="Node2D" parent="."]
+[node name="Unit3" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(1135, -1072)
+team = "enemy"
 
-[node name="Unit2" parent="EnemyUnits" instance=ExtResource("2_7bvfo")]
-position = Vector2(-920, 393)
-
-[node name="Unit3" parent="EnemyUnits" instance=ExtResource("2_7bvfo")]
-position = Vector2(1202, -126)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Units"]
+navigation_polygon = SubResource("NavigationPolygon_7bvfo")
