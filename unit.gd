@@ -1,102 +1,165 @@
 extends CharacterBody2D
 
-@export var team = ""
-@onready var walk_sprite = $Walk
-@onready var attack_sprite = $Attack
+@export var team: String = ""
+@export var hp: int = 15
+@export var dmg: int = 5
+@export var attack_range: float = 200.0  
+@export var speed: float = 200.0        
+@export var separation_distance: float = 400.0 
+@export var separation_strength: float = 100.0 
+
+@export var stuck_time_limit: float = 1.5     
+@export var stuck_distance_threshold: float = 1.0
+
+@onready var walk_sprite: AnimatedSprite2D = $Walk
+@onready var attack_sprite: AnimatedSprite2D = $Attack
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hp_label: Label = $HP
 
 const TILE_WIDTH := 500
 const TILE_HEIGHT := 250
-const SPEED := 200
 
 var grid_position: Vector2i
-var target_grid_position: Vector2i
-var target_position: Vector2
-var is_attacking := false
+var target: Node = null
+var is_attacking: bool = false
+var direction: Vector2 = Vector2.ZERO
 
-var direction = Vector2.ZERO
-
-var hp = 15
-var dmg = 5
-var target: Node
+var stuck_timer: float = 0.0
+var last_position: Vector2
 
 func _ready():
 	grid_position = iso_to_grid(global_position)
-	direction = Vector2(0, -1) if team == "player" else Vector2(0, 1)
-	target_grid_position = grid_position + Vector2i(direction.x, direction.y)
-	target_position = grid_to_iso(target_grid_position)
 	global_position = grid_to_iso(grid_position)
-	update_walk_animation_with_direction(direction)
+	
+	navigation_agent.avoidance_enabled = true
+	navigation_agent.radius = 16
+	navigation_agent.max_neighbors = 8
+	navigation_agent.time_horizon = 1.0
+	
+	if team == "player":
+		set_collision_mask_value(1, false)
+	elif team == "enemy":
+		set_collision_mask_value(2, false)
+	
+	last_position = global_position
 	set_closest_enemy_target()
 
-func set_closest_enemy_target():
-	var enemies = get_parent().get_children()
-	
-	var closest_enemy = null
-	var closest_dist = INF
-	
-	for enemy in enemies:
-		if enemy == self or not is_instance_valid(enemy):
-			continue
-		var enemy_team = enemy.get("team")
-		if enemy_team == null:
-			continue
-		if enemy_team != team:
-			var dist = global_position.distance_to(enemy.global_position)
-			if dist < closest_dist:
-				closest_dist = dist
-				closest_enemy = enemy
-	
-	if closest_enemy:
-		target = closest_enemy
-		navigation_agent.target_position = closest_enemy.global_position
-		is_attacking = false
-		print(name, "targeting", closest_enemy.name)
-
 func _process(delta: float) -> void:
-	if hp <= 0:
-		die()
+	hp_label.text = str(hp) + "/15"
 
-func _physics_process(delta):
-	if is_attacking:
-		velocity = Vector2.ZERO
-		direction = (target.global_position - global_position).normalized()
-		update_attack_animation()
-		return
-	
-	if not target or not is_instance_valid(target):
+
+func _physics_process(delta: float) -> void:
+	if not is_instance_valid(target):
+		is_attacking = false
 		set_closest_enemy_target()
 		return
 	
-	navigation_agent.target_position = target.global_position
+	check_if_stuck(delta)
+	
+	var dist_to_target = global_position.distance_to(target.global_position)
+	if dist_to_target <= attack_range:
+		start_attack()
+	else:
+		move_towards_target(delta)
+
+func check_if_stuck(delta: float):
+	var movement = global_position.distance_to(last_position)
+	last_position = global_position
+	
+	if movement < stuck_distance_threshold:
+		stuck_timer += delta
+	else:
+		stuck_timer = 0.0
+	
+	if stuck_timer >= stuck_time_limit:
+		print(name, " is stuck, retargeting...")
+		stuck_timer = 0.0
+		set_closest_enemy_target()
+
+func set_closest_enemy_target(skip = null):
+	var closest_enemy: Node = null
+	var closest_dist: float = INF
+	
+	for child in get_parent().get_children():
+		if child == self:
+			continue
+		if not is_instance_valid(child):
+			continue
+		if child == skip:
+			continue
+		if not child.get("team") or child.team == team:
+			continue
+		
+		var dist = global_position.distance_to(child.global_position)
+		if dist < closest_dist:
+			closest_dist = dist
+			closest_enemy = child
+	
+	if closest_enemy:
+		target = closest_enemy
+		navigation_agent.target_position = find_attack_position()
+		print(name, " targeting ", closest_enemy.name)
+
+func move_towards_target(delta: float) -> void:
+	is_attacking = false
+	navigation_agent.target_position = find_attack_position()
 	
 	if navigation_agent.is_navigation_finished():
-		print("target reached")
-		#s_attacking = true
-		#velocity = Vector2.ZERO
-		#update_attack_animation()
+		velocity = Vector2.ZERO
 	else:
 		var next_path_position = navigation_agent.get_next_path_position()
 		var move_dir = (next_path_position - global_position).normalized()
-		velocity = move_dir * SPEED
-		move_and_slide()
 		
+		move_dir += separate_from_allies() * (separation_strength / speed)
+		move_dir = move_dir.normalized()
+		
+		velocity = move_dir * speed
+		move_and_slide()
 		direction = move_dir
 		update_walk_animation_with_direction(direction)
+
+func start_attack():
+	is_attacking = true
+	velocity = Vector2.ZERO
+	direction = (target.global_position - global_position).normalized()
+	update_attack_animation()
+
+func find_attack_position() -> Vector2:
+	if not is_instance_valid(target):
+		return global_position
+	
+	var dir_to_target = (target.global_position - global_position).normalized()
+	var side_offset = dir_to_target.rotated(randf_range(-PI / 4, PI / 4)) * 30
+	return target.global_position - dir_to_target * (attack_range * 0.8) + side_offset
+
+func separate_from_allies() -> Vector2:
+	var push = Vector2.ZERO
+	for ally in get_parent().get_children():
+		if ally == self:
+			continue
+		if not is_instance_valid(ally):
+			continue
+		if not ally.get("team") or ally.team != team:
+			continue
+		
+		var to_self = global_position - ally.global_position
+		var dist = to_self.length()
+		if dist > 0 and dist < separation_distance:
+			push += to_self.normalized() * ((separation_distance - dist) / separation_distance)
+	return push.normalized()
 
 func update_walk_animation_with_direction(world_dir: Vector2) -> void:
 	var dir_name = get_direction_name(world_dir)
 	walk_sprite.show()
 	attack_sprite.hide()
-	if not walk_sprite.is_playing() or walk_sprite.animation != dir_name:
+	if walk_sprite.animation != dir_name or not walk_sprite.is_playing():
 		walk_sprite.play(dir_name)
 
 func update_attack_animation():
 	var dir_name = get_direction_name(direction)
 	walk_sprite.hide()
 	attack_sprite.show()
-	if not attack_sprite.is_playing() or attack_sprite.animation != dir_name:
+	if attack_sprite.animation != dir_name or not attack_sprite.is_playing():
 		attack_sprite.play(dir_name)
 
 func grid_to_iso(grid: Vector2i) -> Vector2:
@@ -110,16 +173,10 @@ func iso_to_grid(pos: Vector2) -> Vector2i:
 	var y = ((pos.y / (TILE_HEIGHT / 2)) - (pos.x / (TILE_WIDTH / 2))) / 2
 	return Vector2i(round(x), round(y))
 
-func grid_dir_to_world_dir(grid_dir: Vector2i) -> Vector2:
-	var world_dir = Vector2(
-		(grid_dir.x - grid_dir.y) * TILE_WIDTH / 2,
-		(grid_dir.x + grid_dir.y) * TILE_HEIGHT / 2
-	)
-	return world_dir.normalized()
-
 func get_direction_name(dir: Vector2) -> String:
-	var angle = dir.angle()
-	var degrees = rad_to_deg(angle)
+	if dir == Vector2.ZERO:
+		return "S"
+	var degrees = rad_to_deg(dir.angle())
 	if degrees < 0:
 		degrees += 360
 
@@ -140,18 +197,19 @@ func get_direction_name(dir: Vector2) -> String:
 	else:
 		return "NE"
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().team != team:
-		target = area.get_parent()
-		is_attacking = true
-
 func _on_attack_animation_finished() -> void:
+	is_attacking = false
+
+func apply_attack_damage():
 	if is_instance_valid(target):
-		print(name, "attacked", target.name)
 		target.hp -= dmg
+		
+		if target.hp <= 0:
+			target.die()
 
 func die():
 	queue_free()
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	is_attacking = false
+func _on_attack_frame_changed() -> void:
+		if attack_sprite.frame == 7:
+			apply_attack_damage()

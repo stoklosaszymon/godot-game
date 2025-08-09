@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://6b5f847tqj26"]
+[gd_scene load_steps=7 format=4 uid="uid://6b5f847tqj26"]
 
+[ext_resource type="Script" uid="uid://ctww27l6xf2m2" path="res://battle_area.gd" id="1_65fx5"]
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="1_ldkyl"]
 [ext_resource type="PackedScene" uid="uid://01dlgs0emepg" path="res://unit.tscn" id="2_7bvfo"]
 
@@ -11,17 +12,17 @@ texture_region_size = Vector2i(511, 250)
 
 [sub_resource type="TileSet" id="TileSet_65fx5"]
 tile_shape = 1
-tile_layout = 5
 tile_size = Vector2i(500, 250)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7bvfo")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7bvfo"]
-vertices = PackedVector2Array(2862.68, -311.812, 373.047, 961.742, -1333.07, 69.1797, 1125.04, -1164.83)
+vertices = PackedVector2Array(2877.92, -693.18, 2869.07, 548.969, -848.719, 540.023, -813.273, -760.812)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1355, 69, 373, 973, 2885, -312, 1125, -1176)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-823, -771, -859, 550, 2879, 559, 2888, -703)])
 
 [node name="BattleArea" type="Node2D"]
+script = ExtResource("1_65fx5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-44, 44)
@@ -29,27 +30,39 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAA
 tile_set = SubResource("TileSet_65fx5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1091, 650)
-zoom = Vector2(0.7, 0.7)
+position = Vector2(342, 274)
+zoom = Vector2(0.5, 0.5)
 
 [node name="Units" type="Node2D" parent="."]
 position = Vector2(-677, 354)
 
 [node name="Unit" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(-731, 256)
-team = "player"
-
-[node name="Unit4" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(-443, 420)
+position = Vector2(-439, -74)
 team = "player"
 
 [node name="Unit2" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(-374, 151)
+position = Vector2(2418, -38)
 team = "enemy"
 
-[node name="Unit3" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(1135, -1072)
-team = "enemy"
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Units"]
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-677, 354)
 navigation_polygon = SubResource("NavigationPolygon_7bvfo")
