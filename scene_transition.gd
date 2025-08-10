@@ -61,6 +61,7 @@ func start_battle(enemy):
 
 	if GameManager.player:
 		GameManager.player.visible = false
+		GameManager.player.camera.enabled = false
 
 	if battle_scene:
 		GameManager.battle_instance = battle_scene.instantiate()
@@ -78,6 +79,7 @@ func finish_battle(is_win: bool):
 
 	if GameManager.player:
 		GameManager.player.visible = true
+		GameManager.player.camera.enabled = true
 	
 	if is_win:
 		current_enemy.defeat()
