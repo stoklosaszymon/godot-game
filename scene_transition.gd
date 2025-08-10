@@ -3,7 +3,9 @@ extends Node
 var previous_scene_path: String = ""
 var player_spawn_node: String = "PlayerSpawnPoint"
 var player_return_node: String = "PlayerReturnPoint"
-
+var battle_scene: PackedScene = load("res://battle_area.tscn")
+var current_enemy: Node = null;
+	
 func go_to(scene_path: String, use_return_point := false, return_path := "") -> void:
 	if GameManager.player == null:
 		push_error("Player not set in GameManager.")
@@ -51,3 +53,32 @@ func go_back():
 		return
 
 	go_to(previous_scene_path, true)
+
+func start_battle(enemy):
+	current_enemy = enemy
+	if GameManager.main_map:
+		GameManager.main_map.visible = false
+
+	if GameManager.player:
+		GameManager.player.visible = false
+
+	if battle_scene:
+		GameManager.battle_instance = battle_scene.instantiate()
+		get_tree().current_scene.add_child(GameManager.battle_instance)
+		GameManager.battle_instance.global_position = Vector2.ZERO
+
+func finish_battle(is_win: bool):
+	print("battle result: ", is_win)
+	if is_instance_valid(GameManager.battle_instance):
+		GameManager.battle_instance.queue_free()
+		GameManager.battle_instance = null
+
+	if GameManager.main_map:
+		GameManager.main_map.visible = true
+
+	if GameManager.player:
+		GameManager.player.visible = true
+	
+	if is_win:
+		current_enemy.defeat()
+		current_enemy = null

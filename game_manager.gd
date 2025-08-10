@@ -1,6 +1,9 @@
 extends Node
 
 var player : Node = null
+var main_map : Node = null
+var battle_instance: Node = null
+
 var previous_scene_path = "res://main.tscn"
 var directional_light: DirectionalLight2D = null
 var inventory: Node = null

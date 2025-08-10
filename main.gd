@@ -5,9 +5,9 @@ extends Node
 func _ready():
 	if GameManager.player == null:
 		var player = player_scene.instantiate()
-		var start_point = $PlayerStartPoint.global_position
+		var start_point = $MainScene/PlayerStartPoint.global_position
 		player.global_position = start_point
-		$GameObjects.add_child(player)
+		$MainScene/GameObjects.add_child(player)
 		
 		#var mule = preload("res://mule.tscn").instantiate()
 		#mule.global_position = start_point

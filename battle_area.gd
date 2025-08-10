@@ -13,3 +13,11 @@ func _process(delta: float) -> void:
 			enemy_units += 1
 			
 	label.text = str(player_units) + " | " +  str(enemy_units)
+	
+	if player_units == 0:
+		battle_finished(false)
+	elif enemy_units == 0:
+		battle_finished(true)
+
+func battle_finished(is_win: bool):
+	SceneTransition.finish_battle(is_win)
