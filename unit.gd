@@ -13,6 +13,7 @@ extends CharacterBody2D
 
 @onready var walk_sprite: AnimatedSprite2D = $Walk
 @onready var attack_sprite: AnimatedSprite2D = $Attack
+@onready var idle_sprite: AnimatedSprite2D = $Idle
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var hp_label: Label = $HP
 
@@ -28,7 +29,7 @@ var stuck_timer: float = 0.0
 var last_position: Vector2
 
 var last_dir_name := "S"
-var direction_change_cooldown := 0.05
+var direction_change_cooldown := 0.1
 var direction_change_timer := 0.0
 
 func _ready():
@@ -50,11 +51,16 @@ func _ready():
 
 func _process(delta: float) -> void:
 	hp_label.text = str(hp) + "/15"
+	if !is_instance_valid(target) and is_attacking:
+		print("asdasdsada")
+		is_attacking = false
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(target):
 		is_attacking = false
 		set_closest_enemy_target()
+		if velocity == Vector2.ZERO and !is_instance_valid(target):
+			update_idle_animation()
 		return
 	
 	if !is_attacking:
@@ -65,6 +71,7 @@ func _physics_process(delta: float) -> void:
 		start_attack()
 	else:
 		move_towards_target(delta)
+
 
 func check_if_stuck(delta: float):
 	var movement = global_position.distance_to(last_position)
@@ -116,12 +123,11 @@ func move_towards_target(delta: float) -> void:
 		
 		move_dir += separate_from_allies() * (separation_strength / speed)
 		move_dir = move_dir.normalized()
+		move_dir = eight_dir_snap(move_dir)
 		
 		velocity = move_dir * speed
 		move_and_slide()
 
-	# Animation direction from velocity
-	if velocity.length() > 5: # Only update facing when moving enough
 		direction = velocity.normalized()
 		update_walk_animation_with_direction(direction)
 
@@ -129,6 +135,7 @@ func start_attack():
 	is_attacking = true
 	velocity = Vector2.ZERO
 	direction = (target.global_position - global_position).normalized()
+	direction = eight_dir_snap(direction)
 	update_attack_animation()
 
 func find_attack_position() -> Vector2:
@@ -155,6 +162,14 @@ func separate_from_allies() -> Vector2:
 			push += to_self.normalized() * ((separation_distance - dist) / separation_distance)
 	return push.normalized()
 
+func eight_dir_snap(dir: Vector2) -> Vector2:
+	if dir == Vector2.ZERO:
+		return Vector2.ZERO
+	
+	var angle_step = PI / 4
+	var snapped_angle = round(dir.angle() / angle_step) * angle_step
+	return Vector2.RIGHT.rotated(snapped_angle).normalized()
+
 func update_walk_animation_with_direction(world_dir: Vector2) -> void:
 	if world_dir == Vector2.ZERO:
 		return
@@ -171,13 +186,22 @@ func update_walk_animation_with_direction(world_dir: Vector2) -> void:
 	
 	walk_sprite.show()
 	attack_sprite.hide()
+	idle_sprite.hide()
 	if walk_sprite.animation != last_dir_name or not walk_sprite.is_playing():
 		walk_sprite.play(last_dir_name)
 
+func update_idle_animation():
+	idle_sprite.show()
+	attack_sprite.hide()
+	walk_sprite.hide()
+	if idle_sprite.animation != last_dir_name or not idle_sprite.is_playing():
+		idle_sprite.play(last_dir_name)
+
 func update_attack_animation():
 	var dir_name = get_direction_name(direction)
-	last_dir_name = dir_name # Keep facing same way after attack
+	last_dir_name = dir_name
 	walk_sprite.hide()
+	idle_sprite.hide()
 	attack_sprite.show()
 	if attack_sprite.animation != dir_name or not attack_sprite.is_playing():
 		attack_sprite.play(dir_name)
@@ -226,6 +250,8 @@ func apply_attack_damage():
 		
 		if target.hp <= 0:
 			target.die()
+			
+	is_attacking = false
 
 func die():
 	queue_free()
