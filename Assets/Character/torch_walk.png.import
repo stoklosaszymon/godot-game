@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb52skpvtfai3"
-path="res://.godot/imported/gather.png-06e7113059a459bcbf429457a0f026aa.ctex"
+uid="uid://ymf23aykc6ek"
+path="res://.godot/imported/torch_walk.png-d25de33c4115e6d996fcd58b6281c274.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/NEW/gather.png"
-dest_files=["res://.godot/imported/gather.png-06e7113059a459bcbf429457a0f026aa.ctex"]
+source_file="res://Assets/Character/torch_walk.png"
+dest_files=["res://.godot/imported/torch_walk.png-d25de33c4115e6d996fcd58b6281c274.ctex"]
 
 [params]
 

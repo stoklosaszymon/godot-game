@@ -53,30 +53,20 @@ func _physics_process(_delta: float) -> void:
 		var to_target = target_position - global_position
 		var direction = to_target.normalized()
 
-		if to_target.length() > STOP_DISTANCE and not PlayerState.is_gathering and not PlayerState.is_climbing and not PlayerState.is_fishing:
+		if to_target.length() > STOP_DISTANCE and not PlayerState.is_gathering and not PlayerState.is_fishing:
 			_play_directional_animation(direction)
 			anim_name = _animated_sprite.animation
 			var aligned_direction = get_direction_from_anim(anim_name)
 			velocity = aligned_direction * SPEED
-		else:
-			velocity = Vector2.ZERO
 	else:
-		if PlayerState.is_climbing:
-			if PlayerState.is_upladder:
-				velocity = Vector2(0.0, 50.0)
-			else:
-				velocity = Vector2(0.0, -50.0)
-		else:
-			velocity = Vector2.ZERO
+		velocity = Vector2.ZERO
 
 	move_and_slide()
 
 	if velocity.length() == 0:
-		if not is_idling and not PlayerState.is_gathering and not PlayerState.is_climbing and not PlayerState.is_fishing:
+		if not is_idling and not PlayerState.is_gathering and not PlayerState.is_fishing:
 			is_idling = true
 			AnimationManager.idle()
-	elif PlayerState.is_climbing:
-		pass
 	else:
 		is_idling = false
 		AnimationManager.setWalkSprite()

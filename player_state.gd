@@ -17,7 +17,6 @@ var equipped_item: ItemData = null:
 			equipped_item = null
 
 var is_gathering: bool = false
-var is_climbing: bool = false
 var is_upladder: bool = false
 var is_fishing: bool = false
 

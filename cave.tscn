@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://sqaa1cmoxddr"]
+[gd_scene load_steps=20 format=4 uid="uid://sqaa1cmoxddr"]
 
 [ext_resource type="Texture2D" uid="uid://cj6rg8w0dmb76" path="res://Assets/Terrain/cave_tile.png" id="1_23xot"]
 [ext_resource type="Script" uid="uid://by7ulwgtedfad" path="res://cave.gd" id="1_dnhvd"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://mffap4tjkl2g" path="res://gate.tscn" id="4_78gyg"]
 [ext_resource type="PackedScene" uid="uid://bqj1tpieukkd7" path="res://door.tscn" id="4_xtwoi"]
 [ext_resource type="Script" uid="uid://dq4ebdfawkqg4" path="res://floor.gd" id="6_xifcx"]
-[ext_resource type="PackedScene" uid="uid://bjinsht335m44" path="res://ladder.tscn" id="7_c2qy3"]
 [ext_resource type="PackedScene" uid="uid://ussl5uvo4dlq" path="res://lever.tscn" id="9_wkdm5"]
 [ext_resource type="PackedScene" uid="uid://d0jkcc5daoav7" path="res://cave_enterance.tscn" id="11_3ayon"]
 
@@ -173,16 +172,6 @@ skew = -0.0139626
 
 [node name="Lever" parent="GameObjects" instance=ExtResource("9_wkdm5")]
 position = Vector2(-529, -724)
-
-[node name="Ladder" parent="GameObjects" instance=ExtResource("7_c2qy3")]
-z_index = 2
-position = Vector2(-2522, -1016)
-
-[node name="Ladder2" parent="GameObjects" instance=ExtResource("7_c2qy3")]
-z_index = 2
-position = Vector2(-1987, -883)
-scale = Vector2(1.2, 1.2)
-flip = true
 
 [connection signal="body_entered" from="LeaveCave" to="." method="_on_leave_cave_body_entered"]
 [connection signal="area_entered" from="WallDetector" to="." method="_on_wall_detector_area_entered"]

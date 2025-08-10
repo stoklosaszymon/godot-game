@@ -1,7 +1,7 @@
 [gd_scene load_steps=992 format=3 uid="uid://5d4waao12pox"]
 
-[ext_resource type="Texture2D" uid="uid://dl5wy1vrl3md1" path="res://Assets/Character/NEW/fishing_cast.png" id="1_inb3w"]
-[ext_resource type="Texture2D" uid="uid://b7860ruqc01mh" path="res://Assets/Character/NEW/fishing_idle.png" id="2_ejvbt"]
+[ext_resource type="Texture2D" uid="uid://dl5wy1vrl3md1" path="res://Assets/Character/fishing_cast.png" id="1_inb3w"]
+[ext_resource type="Texture2D" uid="uid://b7860ruqc01mh" path="res://Assets/Character/fishing_idle.png" id="2_ejvbt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejvbt"]
 atlas = ExtResource("1_inb3w")

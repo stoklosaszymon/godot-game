@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://docledsymqb3f"
-path="res://.godot/imported/torch_idle.png-865185a0891ccbf8ba19eaa6c25702bd.ctex"
+uid="uid://26gg75m6vul5"
+path="res://.godot/imported/chop.png-e94001cfb20426b4eb628c367f1a3c84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/NEW/torch_idle.png"
-dest_files=["res://.godot/imported/torch_idle.png-865185a0891ccbf8ba19eaa6c25702bd.ctex"]
+source_file="res://Assets/Character/chop.png"
+dest_files=["res://.godot/imported/chop.png-e94001cfb20426b4eb628c367f1a3c84.ctex"]
 
 [params]
 

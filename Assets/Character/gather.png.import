@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7860ruqc01mh"
-path="res://.godot/imported/fishing_idle.png-964372ea4c0280b4de7e8adde9e72a25.ctex"
+uid="uid://cb52skpvtfai3"
+path="res://.godot/imported/gather.png-705189153757e4b62ac278cf14fde8a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/NEW/fishing_idle.png"
-dest_files=["res://.godot/imported/fishing_idle.png-964372ea4c0280b4de7e8adde9e72a25.ctex"]
+source_file="res://Assets/Character/gather.png"
+dest_files=["res://.godot/imported/gather.png-705189153757e4b62ac278cf14fde8a5.ctex"]
 
 [params]
 

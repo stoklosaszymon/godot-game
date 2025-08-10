@@ -45,14 +45,6 @@ func fishing():
 		frames.sprite_frames = fishing.sprite_frames
 		frames.play()
 
-func climb_ladder():
-	var walkSprite = load("res://movement/climb_ladder.tscn").instantiate()
-	if GameManager.player != null:
-		if frames != null:
-			frames.sprite_frames = walkSprite.sprite_frames
-			PlayerState.is_climbing = true
-		frames.play("up")
-
 func gather():
 	var gathering = animations.mining.instantiate()
 	if frames != null:

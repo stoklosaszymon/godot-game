@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26gg75m6vul5"
-path="res://.godot/imported/chop.png-68757d95ff69e82876b523ba420d8618.ctex"
+uid="uid://b23d07r3bbi2s"
+path="res://.godot/imported/idle.png-6f08cb239a67719b96653dc321f4b67f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/NEW/chop.png"
-dest_files=["res://.godot/imported/chop.png-68757d95ff69e82876b523ba420d8618.ctex"]
+source_file="res://Assets/Character/idle.png"
+dest_files=["res://.godot/imported/idle.png-6f08cb239a67719b96653dc321f4b67f.ctex"]
 
 [params]
 

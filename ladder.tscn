@@ -1,18 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjinsht335m44"]
+[gd_scene load_steps=2 format=3 uid="uid://ck4eh1ldvo0km"]
 
-[ext_resource type="Texture2D" uid="uid://v2llqmykkv5f" path="res://Assets/Terrain/ladder.png" id="1_cq4ai"]
-[ext_resource type="Script" uid="uid://ci8ai0tb888pj" path="res://ladder.gd" id="1_lqhsa"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qe38t"]
+load_path = "res://.godot/imported/ladder.png-8468d46725319119437f3fc47f03407d.ctex"
 
 [node name="Ladder" type="Node2D"]
 z_as_relative = false
 position = Vector2(15, 0)
-script = ExtResource("1_lqhsa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-18, -2)
 scale = Vector2(1.47059, 1)
 skew = -0.0349066
-texture = ExtResource("1_cq4ai")
+texture = SubResource("CompressedTexture2D_qe38t")
 
 [node name="Top" type="Area2D" parent="."]
 position = Vector2(-46, -156)
