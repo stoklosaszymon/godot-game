@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctww27l6xf2m2" path="res://battle_area.gd" id="1_65fx5"]
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="1_ldkyl"]
 [ext_resource type="PackedScene" uid="uid://01dlgs0emepg" path="res://unit.tscn" id="2_7bvfo"]
-[ext_resource type="Script" uid="uid://cju4kju6vkchl" path="res://battle_camera.gd" id="3_icpp5"]
+[ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="3_icpp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bvfo"]
 texture = ExtResource("1_ldkyl")
@@ -36,6 +36,7 @@ tile_set = SubResource("TileSet_65fx5")
 position = Vector2(211, -15)
 zoom = Vector2(0.35, 0.35)
 script = ExtResource("3_icpp5")
+min_zoom = Vector2(0.3, 0.3)
 
 [node name="Units" type="Node2D" parent="."]
 position = Vector2(-677, 354)
@@ -72,6 +73,24 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 
+[node name="Button" type="Button" parent="Canvas"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Start"
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-732, 317)
 navigation_polygon = SubResource("NavigationPolygon_7bvfo")
+
+[connection signal="pressed" from="Canvas/Button" to="." method="_on_button_pressed"]

@@ -121,6 +121,9 @@ resource_type = "ruby_ore"
 [node name="WorldEnemy" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
 position = Vector2(2291, 111)
 
+[node name="WorldEnemy2" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
+position = Vector2(2750, -207)
+
 [node name="Sun" parent="MainScene" instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)
 skew = -0.0349066

@@ -1656,11 +1656,13 @@ radius = 89.0
 script = ExtResource("1_davkp")
 
 [node name="Walk" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_3xom8")
 animation = &"NE"
 frame_progress = 0.303588
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_wlp6l")
 animation = &"W"
 frame = 16

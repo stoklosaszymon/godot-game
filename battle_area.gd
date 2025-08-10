@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var label = $Canvas/Label
 
+func _ready() -> void:
+	get_tree().paused = true
+
 func _process(delta: float) -> void:
 	var player_units = 0
 	var enemy_units = 0
@@ -21,3 +24,7 @@ func _process(delta: float) -> void:
 
 func battle_finished(is_win: bool):
 	SceneTransition.finish_battle(is_win)
+
+func _on_button_pressed() -> void:
+	get_tree().paused = false
+	$Canvas/Button.visible = false

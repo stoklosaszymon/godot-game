@@ -25,6 +25,7 @@ position = Vector2(1.42857, -2.85714)
 shape = SubResource("CircleShape2D_44cfe")
 
 [node name="PlayerArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(1.42857, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]

@@ -42,14 +42,11 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 
 	if spawn_point:
 		GameManager.player.global_position = spawn_point.global_position
-	else:
-		print("⚠️ Spawn point not found in new scene: ", spawn_node_name)
 
 	new_scene.get_node("GameObjects").add_child(GameManager.player)
 
 func go_back():
 	if previous_scene_path == "":
-		push_error("No previous scene path stored!")
 		return
 
 	go_to(previous_scene_path, true)
@@ -60,6 +57,8 @@ func start_battle(enemy):
 		GameManager.main_map.visible = false
 
 	if GameManager.player:
+		GameManager.player.set_process_input(false)
+		GameManager.player.set_physics_process(false)
 		GameManager.player.visible = false
 		GameManager.player.camera.enabled = false
 
@@ -78,6 +77,8 @@ func finish_battle(is_win: bool):
 		GameManager.main_map.visible = true
 
 	if GameManager.player:
+		GameManager.player.set_process_input(true)
+		GameManager.player.set_physics_process(true)
 		GameManager.player.visible = true
 		GameManager.player.camera.enabled = true
 	
