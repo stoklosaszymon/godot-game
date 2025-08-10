@@ -27,6 +27,10 @@ var direction: Vector2 = Vector2.ZERO
 var stuck_timer: float = 0.0
 var last_position: Vector2
 
+var last_dir_name := "S"
+var direction_change_cooldown := 0.05
+var direction_change_timer := 0.0
+
 func _ready():
 	grid_position = iso_to_grid(global_position)
 	global_position = grid_to_iso(grid_position)
@@ -47,14 +51,14 @@ func _ready():
 func _process(delta: float) -> void:
 	hp_label.text = str(hp) + "/15"
 
-
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(target):
 		is_attacking = false
 		set_closest_enemy_target()
 		return
 	
-	check_if_stuck(delta)
+	if !is_attacking:
+		check_if_stuck(delta)
 	
 	var dist_to_target = global_position.distance_to(target.global_position)
 	if dist_to_target <= attack_range:
@@ -115,7 +119,10 @@ func move_towards_target(delta: float) -> void:
 		
 		velocity = move_dir * speed
 		move_and_slide()
-		direction = move_dir
+
+	# Animation direction from velocity
+	if velocity.length() > 5: # Only update facing when moving enough
+		direction = velocity.normalized()
 		update_walk_animation_with_direction(direction)
 
 func start_attack():
@@ -149,14 +156,27 @@ func separate_from_allies() -> Vector2:
 	return push.normalized()
 
 func update_walk_animation_with_direction(world_dir: Vector2) -> void:
+	if world_dir == Vector2.ZERO:
+		return
+	
 	var dir_name = get_direction_name(world_dir)
+	
+	if dir_name != last_dir_name:
+		direction_change_timer += get_physics_process_delta_time()
+		if direction_change_timer >= direction_change_cooldown:
+			last_dir_name = dir_name
+			direction_change_timer = 0.0
+	else:
+		direction_change_timer = 0.0
+	
 	walk_sprite.show()
 	attack_sprite.hide()
-	if walk_sprite.animation != dir_name or not walk_sprite.is_playing():
-		walk_sprite.play(dir_name)
+	if walk_sprite.animation != last_dir_name or not walk_sprite.is_playing():
+		walk_sprite.play(last_dir_name)
 
 func update_attack_animation():
 	var dir_name = get_direction_name(direction)
+	last_dir_name = dir_name # Keep facing same way after attack
 	walk_sprite.hide()
 	attack_sprite.show()
 	if attack_sprite.animation != dir_name or not attack_sprite.is_playing():
@@ -175,7 +195,7 @@ func iso_to_grid(pos: Vector2) -> Vector2i:
 
 func get_direction_name(dir: Vector2) -> String:
 	if dir == Vector2.ZERO:
-		return "S"
+		return last_dir_name
 	var degrees = rad_to_deg(dir.angle())
 	if degrees < 0:
 		degrees += 360
@@ -211,5 +231,5 @@ func die():
 	queue_free()
 
 func _on_attack_frame_changed() -> void:
-		if attack_sprite.frame == 7:
-			apply_attack_damage()
+	if attack_sprite.frame == 7:
+		apply_attack_damage()

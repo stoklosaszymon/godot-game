@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var label = $Control/Label
+@onready var label = $Canvas/Label
 
 func _process(delta: float) -> void:
 	var player_units = 0
