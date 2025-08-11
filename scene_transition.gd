@@ -77,7 +77,6 @@ func finish_battle(is_win: bool):
 		GameManager.player.visible = true
 		GameManager.player.camera.enabled = true
 	
-	print("battle result: ", is_win)
 	if is_instance_valid(GameManager.battle_instance):
 		GameManager.battle_instance.queue_free()
 		GameManager.battle_instance = null
@@ -87,5 +86,4 @@ func finish_battle(is_win: bool):
 		current_enemy = null
 	else:
 		var spawn_point = get_tree().current_scene.get_node_or_null("MainScene/PlayerStartPoint")
-		print("spawn: ", spawn_point)
 		GameManager.player.global_position = spawn_point.global_position

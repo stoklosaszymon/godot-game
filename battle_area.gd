@@ -23,8 +23,14 @@ func _process(_delta: float) -> void:
 		battle_finished(true)
 
 func battle_finished(is_win: bool):
+	clean_up_battle_area()
 	SceneTransition.finish_battle(is_win)
 
 func _on_button_pressed() -> void:
 	get_tree().paused = false
 	$Canvas/Button.visible = false
+
+func clean_up_battle_area():
+	for projectile in get_tree().get_nodes_in_group("projectiles"):
+		if is_instance_valid(projectile):
+			projectile.queue_free()
