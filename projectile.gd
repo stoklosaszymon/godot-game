@@ -39,7 +39,10 @@ func _physics_process(delta: float) -> void:
 	#if t >= 5.0:
 		#queue_free()
 
+func is_target_valid(target):
+	return is_instance_valid(target) and target.get("hp") and target.get("team")
+
 func _on_body_entered(body: Node) -> void:
-	if body.get("hp") and is_instance_valid(body) and body != who_sent and body.team != who_sent.team:
+	if is_target_valid(body) and is_target_valid(who_sent) and body != who_sent and body.team != who_sent.team:
 		body.hp -= dmg
 		queue_free()
