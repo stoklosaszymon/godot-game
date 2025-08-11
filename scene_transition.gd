@@ -68,11 +68,6 @@ func start_battle(enemy):
 		GameManager.battle_instance.global_position = Vector2.ZERO
 
 func finish_battle(is_win: bool):
-	print("battle result: ", is_win)
-	if is_instance_valid(GameManager.battle_instance):
-		GameManager.battle_instance.queue_free()
-		GameManager.battle_instance = null
-
 	if GameManager.main_map:
 		GameManager.main_map.visible = true
 
@@ -81,6 +76,11 @@ func finish_battle(is_win: bool):
 		GameManager.player.set_physics_process(true)
 		GameManager.player.visible = true
 		GameManager.player.camera.enabled = true
+	
+	print("battle result: ", is_win)
+	if is_instance_valid(GameManager.battle_instance):
+		GameManager.battle_instance.queue_free()
+		GameManager.battle_instance = null
 	
 	if is_win and is_instance_valid(current_enemy):
 		current_enemy.defeat()

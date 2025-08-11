@@ -5,10 +5,10 @@ extends CharacterBody2D
 @export var dmg: int = 5
 @export var attack_range: float = 200.0  
 @export var speed: float = 200.0        
-@export var separation_distance: float = 400.0 
+@export var separation_distance: float = 200.0 
 @export var separation_strength: float = 100.0 
 
-@export var stuck_time_limit: float = 1.5     
+@export var stuck_time_limit: float = 2.0     
 @export var stuck_distance_threshold: float = 1.0
 
 @onready var walk_sprite: AnimatedSprite2D = $Walk
@@ -20,6 +20,7 @@ extends CharacterBody2D
 const TILE_WIDTH := 500
 const TILE_HEIGHT := 250
 
+var max_hp = 0
 var grid_position: Vector2i
 var target: Node = null
 var is_attacking: bool = false
@@ -32,7 +33,9 @@ var last_dir_name := "S"
 var direction_change_cooldown := 0.1
 var direction_change_timer := 0.0
 
+
 func _ready():
+	max_hp = hp
 	grid_position = iso_to_grid(global_position)
 	global_position = grid_to_iso(grid_position)
 	
@@ -50,7 +53,7 @@ func _ready():
 	set_closest_enemy_target()
 
 func _process(_delta: float) -> void:
-	hp_label.text = str(hp) + "/15"
+	hp_label.text = str(hp) + "/" + str(max_hp)
 	if !is_instance_valid(target) and is_attacking:
 		is_attacking = false
 	if hp <= 0:
@@ -107,7 +110,7 @@ func set_closest_enemy_target(skip = null):
 			closest_dist = dist
 			closest_enemy = child
 	
-	if closest_enemy:
+	if closest_enemy and closest_enemy != target:
 		target = closest_enemy
 		navigation_agent.target_position = find_attack_position()
 		print(name, " targeting ", closest_enemy.name)
@@ -258,7 +261,7 @@ func die():
 	queue_free()
 
 func _on_attack_frame_changed() -> void:
-	if attack_sprite.frame == 5:
+	if attack_sprite.frame == 7:
 		apply_attack_damage()
 		attack_effect()
 

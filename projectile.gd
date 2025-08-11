@@ -36,10 +36,10 @@ func _physics_process(delta: float) -> void:
 	position = ground_pos
 	sprite.rotation = atan2(direction.y, direction.x)
 
-	if t >= 1.0:
-		queue_free()
+	#if t >= 5.0:
+		#queue_free()
 
 func _on_body_entered(body: Node) -> void:
-	if body != who_sent:
+	if body.get("hp") and is_instance_valid(body) and body != who_sent and body.team != who_sent.team:
 		body.hp -= dmg
 		queue_free()

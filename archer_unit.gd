@@ -13,3 +13,8 @@ func attack_effect():
 
 func apply_attack_damage():
 	pass
+
+func _on_attack_frame_changed() -> void:
+	if attack_sprite.frame == 5:
+		apply_attack_damage()
+		attack_effect()

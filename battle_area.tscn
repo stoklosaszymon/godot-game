@@ -42,11 +42,35 @@ script = ExtResource("3_njtdy")
 position = Vector2(-677, 354)
 
 [node name="Unit" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(75, 138)
+position = Vector2(214, 210)
 team = "player"
 
+[node name="Unit7" parent="Units" instance=ExtResource("5_njtdy")]
+position = Vector2(527, 341)
+team = "player"
+
+[node name="Unit3" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(-495, -198)
+team = "player"
+
+[node name="Unit8" parent="Units" instance=ExtResource("5_njtdy")]
+position = Vector2(-118, 9)
+team = "player"
+
+[node name="Unit2" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(1226, -1029)
+team = "enemy"
+
 [node name="Unit6" parent="Units" instance=ExtResource("5_njtdy")]
-position = Vector2(1650, -802)
+position = Vector2(1450, -924)
+team = "enemy"
+
+[node name="Unit4" parent="Units" instance=ExtResource("2_7bvfo")]
+position = Vector2(2068, -557)
+team = "enemy"
+
+[node name="Unit9" parent="Units" instance=ExtResource("5_njtdy")]
+position = Vector2(1872, -705)
 team = "enemy"
 
 [node name="Canvas" type="CanvasLayer" parent="."]
