@@ -82,6 +82,10 @@ func finish_battle(is_win: bool):
 		GameManager.player.visible = true
 		GameManager.player.camera.enabled = true
 	
-	if is_win:
+	if is_win and is_instance_valid(current_enemy):
 		current_enemy.defeat()
 		current_enemy = null
+	else:
+		var spawn_point = get_tree().current_scene.get_node_or_null("MainScene/PlayerStartPoint")
+		print("spawn: ", spawn_point)
+		GameManager.player.global_position = spawn_point.global_position

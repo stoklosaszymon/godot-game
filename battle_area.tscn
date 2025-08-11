@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctww27l6xf2m2" path="res://battle_area.gd" id="1_65fx5"]
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="1_ldkyl"]
 [ext_resource type="PackedScene" uid="uid://01dlgs0emepg" path="res://unit.tscn" id="2_7bvfo"]
-[ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="3_icpp5"]
+[ext_resource type="Script" uid="uid://c0uwps3t0yu7x" path="res://battle_camera.gd" id="3_njtdy"]
 [ext_resource type="PackedScene" uid="uid://b42ebxs57sd3p" path="res://archer_unit.tscn" id="5_njtdy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bvfo"]
@@ -36,8 +36,7 @@ tile_set = SubResource("TileSet_65fx5")
 [node name="BattleCamera" type="Camera2D" parent="."]
 position = Vector2(211, -15)
 zoom = Vector2(0.35, 0.35)
-script = ExtResource("3_icpp5")
-min_zoom = Vector2(0.3, 0.3)
+script = ExtResource("3_njtdy")
 
 [node name="Units" type="Node2D" parent="."]
 position = Vector2(-677, 354)
@@ -45,11 +44,9 @@ position = Vector2(-677, 354)
 [node name="Unit" parent="Units" instance=ExtResource("2_7bvfo")]
 position = Vector2(75, 138)
 team = "player"
-hp = 100
-speed = 1.0
 
 [node name="Unit6" parent="Units" instance=ExtResource("5_njtdy")]
-position = Vector2(1116, -644)
+position = Vector2(1650, -802)
 team = "enemy"
 
 [node name="Canvas" type="CanvasLayer" parent="."]

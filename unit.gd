@@ -130,13 +130,15 @@ func move_towards_target(_delta: float) -> void:
 		move_and_slide()
 
 		direction = velocity.normalized()
+		
 		update_walk_animation_with_direction(direction)
 
 func start_attack():
-	is_attacking = true
 	velocity = Vector2.ZERO
-	direction = (target.global_position - global_position).normalized()
-	direction = eight_dir_snap(direction)
+	if !is_attacking:
+		direction = (target.global_position - global_position).normalized()
+		direction = eight_dir_snap(direction)
+	is_attacking = true
 	update_attack_animation()
 
 
