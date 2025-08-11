@@ -40,9 +40,9 @@ func reset():
 
 func fishing():
 	PlayerState.is_fishing = true
-	var fishing = animations.fishing_cast.instantiate()
+	var fishing_animation = animations.fishing_cast.instantiate()
 	if frames != null:
-		frames.sprite_frames = fishing.sprite_frames
+		frames.sprite_frames = fishing_animation.sprite_frames
 		frames.play()
 
 func gather():

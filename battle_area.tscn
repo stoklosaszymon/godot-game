@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://6b5f847tqj26"]
+[gd_scene load_steps=9 format=4 uid="uid://6b5f847tqj26"]
 
 [ext_resource type="Script" uid="uid://ctww27l6xf2m2" path="res://battle_area.gd" id="1_65fx5"]
 [ext_resource type="Texture2D" uid="uid://ikw8k0htj4mm" path="res://Assets/Terrain/grass.png" id="1_ldkyl"]
 [ext_resource type="PackedScene" uid="uid://01dlgs0emepg" path="res://unit.tscn" id="2_7bvfo"]
 [ext_resource type="Script" uid="uid://c5jfseomqrrj0" path="res://camera_2d.gd" id="3_icpp5"]
+[ext_resource type="PackedScene" uid="uid://b42ebxs57sd3p" path="res://archer_unit.tscn" id="5_njtdy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7bvfo"]
 texture = ExtResource("1_ldkyl")
@@ -44,21 +45,11 @@ position = Vector2(-677, 354)
 [node name="Unit" parent="Units" instance=ExtResource("2_7bvfo")]
 position = Vector2(75, 138)
 team = "player"
+hp = 100
+speed = 1.0
 
-[node name="Unit5" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(323, 313)
-team = "player"
-
-[node name="Unit4" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(-656, -217)
-team = "player"
-
-[node name="Unit2" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(2234, -525)
-team = "enemy"
-
-[node name="Unit3" parent="Units" instance=ExtResource("2_7bvfo")]
-position = Vector2(1095, -812)
+[node name="Unit6" parent="Units" instance=ExtResource("5_njtdy")]
+position = Vector2(1116, -644)
 team = "enemy"
 
 [node name="Canvas" type="CanvasLayer" parent="."]

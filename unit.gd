@@ -49,11 +49,12 @@ func _ready():
 	last_position = global_position
 	set_closest_enemy_target()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	hp_label.text = str(hp) + "/15"
 	if !is_instance_valid(target) and is_attacking:
-		print("asdasdsada")
 		is_attacking = false
+	if hp <= 0:
+		die()
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(target):
@@ -111,7 +112,7 @@ func set_closest_enemy_target(skip = null):
 		navigation_agent.target_position = find_attack_position()
 		print(name, " targeting ", closest_enemy.name)
 
-func move_towards_target(delta: float) -> void:
+func move_towards_target(_delta: float) -> void:
 	is_attacking = false
 	navigation_agent.target_position = find_attack_position()
 	
@@ -137,6 +138,7 @@ func start_attack():
 	direction = (target.global_position - global_position).normalized()
 	direction = eight_dir_snap(direction)
 	update_attack_animation()
+
 
 func find_attack_position() -> Vector2:
 	if not is_instance_valid(target):
@@ -247,9 +249,6 @@ func _on_attack_animation_finished() -> void:
 func apply_attack_damage():
 	if is_instance_valid(target):
 		target.hp -= dmg
-		
-		if target.hp <= 0:
-			target.die()
 			
 	is_attacking = false
 
@@ -257,5 +256,9 @@ func die():
 	queue_free()
 
 func _on_attack_frame_changed() -> void:
-	if attack_sprite.frame == 7:
+	if attack_sprite.frame == 5:
 		apply_attack_damage()
+		attack_effect()
+
+func attack_effect():
+	pass

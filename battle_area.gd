@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	get_tree().paused = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var player_units = 0
 	var enemy_units = 0
 	var units = $Units.get_children()

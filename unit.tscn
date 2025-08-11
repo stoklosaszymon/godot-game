@@ -1664,9 +1664,7 @@ frame_progress = 0.303588
 [node name="Attack" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_wlp6l")
-animation = &"W"
-frame = 16
-frame_progress = 1.0
+animation = &"N"
 
 [node name="Idle" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2chy1")
