@@ -13,8 +13,8 @@ var who_sent: Node2D = null
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-func launch(from_pos: Vector2, enemy: Node2D, owner: Node2D):
-	who_sent = owner
+func launch(from_pos: Vector2, enemy: Node2D, own: Node2D):
+	who_sent = own
 	start_pos = from_pos + Vector2(0, -70)
 	target_pos = enemy.global_position + Vector2(0, -70)
 	position = start_pos

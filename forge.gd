@@ -31,7 +31,7 @@ func toggle_panel():
 		panel.queue_free()
 		panel = null
 		
-func _process(delta):
+func _process(_delta):
 	if !GameManager.player:
 		return
 

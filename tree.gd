@@ -25,7 +25,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_in_range = true
 
-func _process(delta):
+func _process(_delta):
 	if !GameManager.player:
 		return
 
