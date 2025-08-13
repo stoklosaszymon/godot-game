@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var walk_sprite: AnimatedSprite2D = $Walk
 @onready var attack_sprite: AnimatedSprite2D = $Attack
 @onready var idle_sprite: AnimatedSprite2D = $Idle
+@onready var death_sprite: AnimatedSprite2D = $Death
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var hp_label: Label = $HP
 
@@ -32,7 +33,7 @@ var last_position: Vector2
 var last_dir_name := "S"
 var direction_change_cooldown := 0.1
 var direction_change_timer := 0.0
-
+var is_dead = false
 
 func _ready():
 	max_hp = hp
@@ -53,13 +54,22 @@ func _ready():
 	set_closest_enemy_target()
 
 func _process(_delta: float) -> void:
+	if is_dead:
+		return
+
+	if target.is_dead:
+		set_closest_enemy_target()
+
 	hp_label.text = str(hp) + "/" + str(max_hp)
 	if !is_instance_valid(target) and is_attacking:
 		is_attacking = false
-	if hp <= 0:
+	if hp <= 0 and !is_dead:
 		die()
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+		
 	if not is_instance_valid(target):
 		is_attacking = false
 		set_closest_enemy_target()
@@ -102,7 +112,7 @@ func set_closest_enemy_target(skip = null):
 			continue
 		if child == skip:
 			continue
-		if not child.get("team") or child.team == team:
+		if not child.get("team") or child.team == team or child.is_dead == true:
 			continue
 		
 		var dist = global_position.distance_to(child.global_position)
@@ -213,6 +223,14 @@ func update_attack_animation():
 	if attack_sprite.animation != dir_name or not attack_sprite.is_playing():
 		attack_sprite.play(dir_name)
 
+func update_death_animation():
+	idle_sprite.hide()
+	attack_sprite.hide()
+	walk_sprite.hide()
+	death_sprite.show()
+	if death_sprite.animation != last_dir_name or not death_sprite.is_playing():
+		death_sprite.play(last_dir_name)
+
 func grid_to_iso(grid: Vector2i) -> Vector2:
 	return Vector2(
 		float(grid.x - grid.y) * TILE_WIDTH / 2,
@@ -258,11 +276,14 @@ func _on_attack_animation_finished() -> void:
 func apply_attack_damage():
 	if is_instance_valid(target):
 		target.hp -= dmg
-			
 	is_attacking = false
 
 func die():
-	queue_free()
+	is_dead = true
+	update_death_animation()
+	$CollisionShape2D.disabled = true
+	$Area2D/CollisionShape2D.disabled = true
+	#queue_free()
 
 func _on_attack_frame_changed() -> void:
 	if attack_sprite.frame == 7:

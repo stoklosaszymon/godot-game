@@ -10,10 +10,12 @@ func _process(_delta: float) -> void:
 	var enemy_units = 0
 	var units = $Units.get_children()
 	for unit in units:
-		if  unit.get("team") && unit.team == 'player':
-			player_units += 1
+		if unit.get("team") && unit.team == 'player':
+			if !unit.is_dead:
+				player_units += 1
 		else:
-			enemy_units += 1
+			if !unit.is_dead:
+				enemy_units += 1
 			
 	label.text = str(player_units) + " | " +  str(enemy_units)
 	
