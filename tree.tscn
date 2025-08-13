@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bw0tkorer42da" path="res://Assets/Resources/oak.png" id="1_brfkd"]
 [ext_resource type="Script" uid="uid://6y2fevwiq1xx" path="res://tree.gd" id="1_nnvrw"]
 [ext_resource type="Shader" uid="uid://bhi7vvy3v62wi" path="res://tree.gdshader" id="2_gvmkm"]
-[ext_resource type="Texture2D" uid="uid://bucc2n0hifnka" path="res://Assets/Resources/falling-tree/cut.png" id="3_mkgly"]
+[ext_resource type="Texture2D" uid="uid://bucc2n0hifnka" path="res://Assets/Resources/cut.png" id="3_mkgly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2g23"]
 shader = ExtResource("2_gvmkm")
