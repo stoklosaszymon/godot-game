@@ -2425,6 +2425,8 @@ radius = 40.0125
 radius = 89.0
 
 [node name="Unit" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_davkp")
 
 [node name="Walk" type="AnimatedSprite2D" parent="."]
@@ -2451,6 +2453,8 @@ animation = &"E"
 shape = SubResource("CircleShape2D_davkp")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5wnup")
@@ -2471,5 +2475,3 @@ offset_bottom = -130.0
 
 [connection signal="animation_finished" from="Attack" to="." method="_on_attack_animation_finished"]
 [connection signal="frame_changed" from="Attack" to="." method="_on_attack_frame_changed"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

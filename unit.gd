@@ -47,9 +47,9 @@ func _ready():
 	navigation_agent.time_horizon = 1.0
 	
 	if team == "player":
-		set_collision_mask_value(1, false)
+		set_collision_mask_value(3, true)
 	elif team == "enemy":
-		set_collision_mask_value(2, false)
+		set_collision_mask_value(2, true)
 	
 	last_position = global_position
 	set_closest_enemy_target()
@@ -73,13 +73,9 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
-		
-	if not is_instance_valid(target):
-		is_attacking = false
-		set_closest_enemy_target()
-		if velocity == Vector2.ZERO and !is_instance_valid(target):
-			update_idle_animation()
-		return
+
+	if velocity == Vector2.ZERO and !is_instance_valid(target):
+		update_idle_animation()
 	
 	if !is_attacking:
 		check_if_stuck(delta)
@@ -288,7 +284,7 @@ func die():
 	update_death_animation()
 	$CollisionShape2D.disabled = true
 	$Area2D/CollisionShape2D.disabled = true
-	queue_free()
+	#queue_free()
 
 func _on_attack_frame_changed() -> void:
 	if attack_sprite and attack_sprite.frame in hit_frames:
