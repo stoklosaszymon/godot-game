@@ -52,6 +52,9 @@ func go_back():
 	go_to(previous_scene_path, true)
 
 func start_battle(enemy):
+	if current_enemy != null:
+		return
+		
 	current_enemy = enemy
 	if GameManager.main_map:
 		GameManager.main_map.visible = false
@@ -83,7 +86,9 @@ func finish_battle(is_win: bool):
 	
 	if is_win and is_instance_valid(current_enemy):
 		current_enemy.defeat()
-		current_enemy = null
+
 	else:
 		var spawn_point = get_tree().current_scene.get_node_or_null("MainScene/PlayerStartPoint")
 		GameManager.player.global_position = spawn_point.global_position
+	
+	current_enemy = null

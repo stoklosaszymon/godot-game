@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var dmg: int = 5
 @export var attack_range: float = 200.0  
 @export var speed: float = 200.0        
-@export var separation_distance: float = 200.0 
 @export var separation_strength: float = 100.0 
+@export var separation_distance: float = 100.0
 
 @export var stuck_time_limit: float = 2.0     
 @export var stuck_distance_threshold: float = 1.0
@@ -26,9 +26,10 @@ var grid_position: Vector2i
 var target: Node = null
 var is_attacking: bool = false
 var direction: Vector2 = Vector2.ZERO
-
+var hit_frames = [7]
 var stuck_timer: float = 0.0
 var last_position: Vector2
+
 
 var last_dir_name := "S"
 var direction_change_cooldown := 0.1
@@ -41,8 +42,8 @@ func _ready():
 	global_position = grid_to_iso(grid_position)
 	
 	navigation_agent.avoidance_enabled = true
-	navigation_agent.radius = 16
-	navigation_agent.max_neighbors = 8
+	navigation_agent.radius = 100
+	navigation_agent.max_neighbors = 10
 	navigation_agent.time_horizon = 1.0
 	
 	if team == "player":
@@ -57,14 +58,17 @@ func _process(_delta: float) -> void:
 	if is_dead:
 		return
 
-	if target.is_dead:
+	if hp <= 0 and !is_dead:
+		die()
+
+	if !is_instance_valid(target) or target.is_dead:
 		set_closest_enemy_target()
 
 	hp_label.text = str(hp) + "/" + str(max_hp)
+
 	if !is_instance_valid(target) and is_attacking:
 		is_attacking = false
-	if hp <= 0 and !is_dead:
-		die()
+
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -80,11 +84,12 @@ func _physics_process(delta: float) -> void:
 	if !is_attacking:
 		check_if_stuck(delta)
 	
-	var dist_to_target = global_position.distance_to(target.global_position)
-	if dist_to_target <= attack_range:
-		start_attack()
-	else:
-		move_towards_target(delta)
+	if target:
+		var dist_to_target = global_position.distance_to(target.global_position)
+		if dist_to_target <= attack_range:
+			start_attack()
+		else:
+			move_towards_target(delta)
 
 
 func check_if_stuck(delta: float):
@@ -99,7 +104,7 @@ func check_if_stuck(delta: float):
 	if stuck_timer >= stuck_time_limit:
 		print(name, " is stuck, retargeting...")
 		stuck_timer = 0.0
-		set_closest_enemy_target()
+		set_closest_enemy_target(target)
 
 func set_closest_enemy_target(skip = null):
 	var closest_enemy: Node = null
@@ -283,10 +288,10 @@ func die():
 	update_death_animation()
 	$CollisionShape2D.disabled = true
 	$Area2D/CollisionShape2D.disabled = true
-	#queue_free()
+	queue_free()
 
 func _on_attack_frame_changed() -> void:
-	if attack_sprite.frame == 7:
+	if attack_sprite and attack_sprite.frame in hit_frames:
 		apply_attack_damage()
 		attack_effect()
 

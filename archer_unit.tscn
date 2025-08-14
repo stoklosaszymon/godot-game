@@ -866,6 +866,9 @@ animations = [{
 script = ExtResource("2_8t4tj")
 hp = 5
 attack_range = 800.0
+speed = 125.0
+separation_strength = 50.0
+separation_distance = 50.0
 
 [node name="Walk" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_rheic")
