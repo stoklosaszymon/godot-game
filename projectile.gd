@@ -9,7 +9,8 @@ var travel_time := 0.0
 var elapsed := 0.0
 var direction: Vector2
 var dmg = 5.0
-var who_sent: Node2D = null                   
+var who_sent: Node2D = null
+var in_air = false                 
 
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -21,7 +22,7 @@ func launch(from_pos: Vector2, enemy: Node2D, own: Node2D):
 	elif who_sent.team == "enemy":
 		set_collision_layer_value(3, true)
 		set_collision_mask_value(3, true)
-		
+	in_air = true
 	start_pos = from_pos + Vector2(0, -60)
 	target_pos = enemy.global_position + Vector2(0, -60)
 	position = start_pos
@@ -38,11 +39,14 @@ func _physics_process(delta: float) -> void:
 	var ground_pos = start_pos.lerp(target_pos, t)
 	position = ground_pos
 	sprite.rotation = atan2(direction.y, direction.x)
+	
+	if t >= 1.0:
+		in_air = false
 
 func is_target_valid(target):
 	return is_instance_valid(target) and target.get("hp") and target.get("team")
 
 func _on_body_entered(body: Node) -> void:
-	if is_target_valid(body) and is_target_valid(who_sent) and body != who_sent and body.team != who_sent.team:
+	if is_target_valid(body) and is_target_valid(who_sent) and body != who_sent and body.team != who_sent.team and in_air:
 		body.hp -= dmg
 		queue_free()

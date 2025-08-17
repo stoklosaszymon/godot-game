@@ -19,5 +19,6 @@ func apply_attack_damage():
 	pass
 
 func _on_attack_frame_changed() -> void:
-	if attack_sprite.frame in hit_frames:
+	if attack_sprite.frame in hit_frames and not is_dead:
 		fire_at_enemy()
+		apply_attack_damage()
