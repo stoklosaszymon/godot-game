@@ -25,10 +25,8 @@ func _process(_delta: float) -> void:
 		battle_finished(true)
 
 func battle_finished(is_win: bool):
-	pass
-	#clean_up_battle_area()
-	#get_tree().paused = true
-	#SceneTransition.finish_battle(is_win)
+	clean_up_battle_area()
+	SceneTransition.finish_battle(is_win)
 
 func _on_button_pressed() -> void:
 	get_tree().paused = false

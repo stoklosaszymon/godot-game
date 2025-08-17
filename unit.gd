@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-### --- CONFIGURATION ---
 @export var team: String = ""
 @export var hp: int = 15
 @export var dmg: int = 5
@@ -15,7 +14,6 @@ const TILE_WIDTH := 500
 const TILE_HEIGHT := 250
 var hit_frames := [7]
 
-### --- NODES ---
 @onready var walk_sprite: AnimatedSprite2D = $Walk
 @onready var attack_sprite: AnimatedSprite2D = $Attack
 @onready var idle_sprite: AnimatedSprite2D = $Idle
@@ -23,7 +21,6 @@ var hit_frames := [7]
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var hp_label: Label = $HP
 
-### --- STATE ---
 var max_hp := 0
 var target: Node = null
 var is_attacking := false
@@ -103,7 +100,6 @@ func set_closest_enemy_target(skip: Node = null):
 	if closest_enemy and closest_enemy != target:
 		target = closest_enemy
 		navigation_agent.target_position = find_attack_position()
-		print(name, " targeting ", closest_enemy.name)
 
 
 func is_valid_enemy(node: Node, skip: Node) -> bool:
@@ -142,7 +138,6 @@ func check_if_stuck(delta: float):
 	stuck_timer = stuck_timer + delta if (movement < stuck_distance_threshold) else 0.0
 	
 	if stuck_timer >= stuck_time_limit:
-		print(name, " is stuck, retargeting...")
 		stuck_timer = 0.0
 		set_closest_enemy_target(target)
 
