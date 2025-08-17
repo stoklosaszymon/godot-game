@@ -48,8 +48,10 @@ func _ready():
 	
 	if team == "player":
 		set_collision_mask_value(3, true)
+		set_collision_layer_value(3, true)
 	elif team == "enemy":
 		set_collision_mask_value(2, true)
+		set_collision_layer_value(2, true)
 	
 	last_position = global_position
 	set_closest_enemy_target()

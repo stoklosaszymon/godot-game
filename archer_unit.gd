@@ -20,5 +20,4 @@ func apply_attack_damage():
 
 func _on_attack_frame_changed() -> void:
 	if attack_sprite.frame in hit_frames:
-		apply_attack_damage()
-		attack_effect()
+		fire_at_enemy()

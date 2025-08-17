@@ -15,8 +15,15 @@ var who_sent: Node2D = null
 
 func launch(from_pos: Vector2, enemy: Node2D, own: Node2D):
 	who_sent = own
-	start_pos = from_pos + Vector2(0, -70)
-	target_pos = enemy.global_position + Vector2(0, -70)
+	if who_sent.team == "player":
+		set_collision_layer_value(2, true)
+		set_collision_mask_value(2, true)
+	elif who_sent.team == "enemy":
+		set_collision_layer_value(3, true)
+		set_collision_mask_value(3, true)
+		
+	start_pos = from_pos + Vector2(0, -60)
+	target_pos = enemy.global_position + Vector2(0, -60)
 	position = start_pos
 
 	var distance = (target_pos - start_pos).length()
