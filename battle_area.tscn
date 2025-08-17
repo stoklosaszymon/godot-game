@@ -35,6 +35,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAA
 tile_set = SubResource("TileSet_65fx5")
 
 [node name="BattleCamera" type="Camera2D" parent="."]
+process_mode = 3
 position = Vector2(211, -15)
 zoom = Vector2(0.35, 0.35)
 script = ExtResource("3_njtdy")
