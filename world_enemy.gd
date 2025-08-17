@@ -2,6 +2,12 @@ extends Node2D
 
 @export_enum("S", "SE", "E","NE", "N", "NW","W", "SW") var dir: String = "S"
 
+@export var units = [
+	load("res://archer_unit.tscn").duplicate(),
+	load("res://unit.tscn").duplicate(),
+	load("res://squire_unit.tscn").duplicate()
+]
+
 func _ready() -> void:
 	$Idle.play(dir)
 

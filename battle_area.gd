@@ -1,32 +1,79 @@
 extends Node2D
 
 @onready var label = $Canvas/Label
+@onready var units = $Units
 
+@export var enemy_units = []
+
+	
 func _ready() -> void:
+	place_units()
+	place_enemy_units()
 	get_tree().paused = true
 
+
+func place_units():
+	var tile_offset_player := Vector2i(0, 8)
+	
+	for unit_data in PlayerState.units:
+		var unit = unit_data.instantiate()
+		unit.original_scene = unit_data
+		unit.team = "player"
+		
+		var rand_x = randi_range(-3, 3)
+		var rand_y = randi_range(-2, 2)
+		
+		if unit.team == "player":
+			var grid_pos = tile_offset_player + Vector2i(rand_x, rand_y)
+			unit.global_position = Utility.grid_to_iso(grid_pos)
+		
+		units.add_child(unit)
+
+func place_enemy_units():
+	var tile_offset_enemy := Vector2i(0, -8)
+	
+	for unit_data in enemy_units:
+		var unit = unit_data.instantiate()
+		unit.team = "enemy"
+		
+		var rand_x = randi_range(-3, 3)
+		var rand_y = randi_range(-2, 2)
+		
+		var grid_pos = tile_offset_enemy + Vector2i(rand_x, rand_y)
+		unit.global_position = Utility.grid_to_iso(grid_pos)
+		
+		units.add_child(unit)
+
 func _process(_delta: float) -> void:
-	var player_units = 0
-	var enemy_units = 0
-	var units = $Units.get_children()
+	var player_left_units = 0
+	var enemy_left_units = 0
+	var units = units.get_children()
 	for unit in units:
 		if unit.get("team") && unit.team == 'player':
 			if !unit.is_dead:
-				player_units += 1
+				player_left_units += 1
 		else:
 			if !unit.is_dead:
-				enemy_units += 1
+				enemy_left_units += 1
 			
-	label.text = str(player_units) + " | " +  str(enemy_units)
+	label.text = str(player_left_units) + " | " +  str(enemy_left_units)
 	
-	if player_units == 0:
+	if player_left_units == 0:
 		battle_finished(false)
-	elif enemy_units == 0:
+	elif enemy_left_units == 0:
 		battle_finished(true)
 
 func battle_finished(is_win: bool):
+	save_remaining_units()
 	clean_up_battle_area()
 	SceneTransition.finish_battle(is_win)
+
+func save_remaining_units():
+	PlayerState.units.clear()
+	for unit in units.get_children():
+		if not unit.is_dead and unit.original_scene:
+			PlayerState.units.append(unit.original_scene)
+		unit.queue_free()
 
 func _on_button_pressed() -> void:
 	get_tree().paused = false

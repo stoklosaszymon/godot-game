@@ -31,6 +31,7 @@ var direction_change_timer := 0.0
 var last_position: Vector2
 var stuck_timer: float = 0.0
 
+var original_scene: PackedScene = null
 
 func _ready():
 	max_hp = hp
@@ -60,6 +61,7 @@ func _process(_delta: float) -> void:
 
 	update_ui()
 	validate_target()
+	set_closest_enemy_target()
 
 
 func _physics_process(delta: float) -> void:
@@ -183,7 +185,7 @@ func die():
 	update_death_animation()
 	$CollisionShape2D.disabled = true
 	$Area2D/CollisionShape2D.disabled = true
-	#queue_free()
+	queue_free()
 
 
 func update_ui():

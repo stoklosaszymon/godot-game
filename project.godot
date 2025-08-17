@@ -23,6 +23,7 @@ PlayerState="*res://player_state.gd"
 CraftingManager="*res://crafting_manager.gd"
 CursorManager="*res://cursor_manager.gd"
 AnimationManager="*res://animation_manager.gd"
+Utility="*res://utility.gd"
 
 [dotnet]
 

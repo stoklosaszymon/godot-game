@@ -2461,8 +2461,9 @@ shape = SubResource("CircleShape2D_5wnup")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 1.0
-path_max_distance = 300.0
+path_max_distance = 1000.0
 max_speed = 200.0
+debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 debug_path_custom_line_width = 1.0

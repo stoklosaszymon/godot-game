@@ -7,6 +7,13 @@ var inventory: Array[ItemData] = [
 	ItemManager.tools["key"].duplicate(),
 ];
 
+var units: = [
+	load("res://archer_unit.tscn").duplicate(),
+	load("res://unit.tscn").duplicate(),
+	load("res://squire_unit.tscn").duplicate(),
+	load("res://squire_unit.tscn").duplicate()
+]
+
 var equipped_item: ItemData = null:
 	set(value):
 		if value != null:
