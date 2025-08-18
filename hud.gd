@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var is_inventory_open = false
 var minimap = "MiniMap"
+@onready var day = $Time/Day;
+@onready var time = $Time/Time
 
 func _init() -> void:
 	if GameManager.hud == null:
@@ -9,9 +11,13 @@ func _init() -> void:
 	else:
 		GameManager.hud.queue_free()
 		GameManager.hud = self
-		
+
 func _ready() -> void:
 	$Map.texture = get_parent().get_node("MiniMap").get_texture()
+
+func _process(_delta: float) -> void:
+	day.text = str(GameManager.current_day)
+	time.text = str(GameManager.current_hour) + ":" + str(GameManager.current_minutes)
 
 func _on_texture_button_pressed() -> void:
 	if GameManager.inventory == null:

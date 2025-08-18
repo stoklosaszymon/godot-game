@@ -16,7 +16,7 @@ const COLOR_DAY := Color(0.8, 0.4, 0.5, 1.0)
 var day_count := 0
 
 func _ready():
-	var start_time_percent := 0.95
+	var start_time_percent := 0.25
 	time_passed = day_length * start_time_percent
 	var angle_deg = lerp(START_ANGLE, END_ANGLE, start_time_percent)
 	sun.rotation_degrees = angle_deg
@@ -29,7 +29,11 @@ func _process(delta):
 		day_count += 1
 		new_day()
 
+	var day_index = int(time_passed / day_length)
 	var t = fmod(time_passed, day_length) / day_length
+	var hour = int(t * 24.0)
+	var minutes = int((t * 24.0 - hour) * 60.0)
+	GameManager.update_time(day_index, hour, minutes)
 
 	var angle_deg = lerp(START_ANGLE, END_ANGLE, t)
 	sun.rotation_degrees = angle_deg

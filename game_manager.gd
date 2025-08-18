@@ -12,6 +12,9 @@ var target_inventory_id = null
 var curently_gathered: Node = null
 var hud: Node = null
 var minimap: Node = null
+var current_day = 0;
+var current_hour = 0;
+var current_minutes = 0;
 
 var chests_data: Dictionary[String, Array] = {
 	"chest_id_1": [
@@ -107,3 +110,8 @@ var recruitment_buildings: Dictionary[String, int] = {
 	"recruit_id_1": 2,
 	"recruit_id_2": 3,
 }
+
+func update_time(day_index, hour, minutes):
+	current_day = day_index
+	current_hour = hour
+	current_minutes = minutes
