@@ -15,9 +15,10 @@ func _ready() -> void:
 		sprite.play(dir)
 	unit_instance.queue_free()
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	GameManager.player.mouse_held = false
-	SceneTransition.start_battle(self)
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "PlayerArea":
+		GameManager.player.mouse_held = false
+		SceneTransition.start_battle(self)
 
 func defeat():
 	queue_free()

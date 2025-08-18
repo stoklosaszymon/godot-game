@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 @export var dir: String = "SE"
+@export var recruit_id = "recruit_id_1"
 var player_nearby = false
 var panel = null
 var panel_scene: PackedScene = preload("res://recruit_panel.tscn")
@@ -27,6 +28,7 @@ func toggle_panel():
 	if  panel == null:
 		panel = panel_scene.instantiate()
 		panel.unit = unit
+		panel.building_id = recruit_id
 		GameManager.hud.add_child(panel)
 	elif panel != null and is_instance_valid(panel):
 		panel.queue_free()

@@ -27,7 +27,7 @@ script = ExtResource("2_w48qg")
 position = Vector2(1098, -1378)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="MainScene"]
-position = Vector2(-343, 378)
+position = Vector2(-557, 568)
 
 [node name="Map" parent="MainScene" instance=ExtResource("3_1bvp3")]
 
@@ -123,6 +123,10 @@ resource_type = "ruby_ore"
 [node name="WorldEnemy" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
 position = Vector2(2291, 111)
 
+[node name="WorldEnemy3" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
+position = Vector2(769, -370)
+enemy_id = "enemy_id_3"
+
 [node name="WorldEnemy2" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
 position = Vector2(2750, -207)
 enemy_id = "enemy_id_2"
@@ -138,6 +142,7 @@ position = Vector2(738, -668)
 rotation = -0.139626
 scale = Vector2(1.5, 1.5)
 dir = "SW"
+recruit_id = "recruit_id_2"
 unit = ExtResource("13_2cqfq")
 
 [node name="Sun" parent="MainScene" instance=ExtResource("2_7mycd")]

@@ -35,6 +35,11 @@ var world_enemy_data: Dictionary[String, Array] = {
 		load("res://archer_unit.tscn").duplicate(),
 		load("res://unit.tscn").duplicate(),
 	],
+	"enemy_id_3": [
+		load("res://unit.tscn").duplicate(),
+		load("res://unit.tscn").duplicate(),
+		load("res://unit.tscn").duplicate(),
+	],
 }
 
 func _init() -> void:
@@ -96,4 +101,9 @@ var resource_textures := {
 	"gold_ore": preload("res://Assets/Resources/gold_ore.png"),
 	"ruby_ore": preload("res://Assets/Resources/ruby_ore.png"),
 	"coal_ore": preload("res://Assets/Resources/coal_ore.png"),
+}
+
+var recruitment_buildings: Dictionary[String, int] = {
+	"recruit_id_1": 2,
+	"recruit_id_2": 3,
 }

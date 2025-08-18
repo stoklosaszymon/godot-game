@@ -13,15 +13,21 @@ var time_passed := 0.0
 const COLOR_NIGHT := Color(0.1, 0.1, 0.2, 1.0)
 const COLOR_SUNRISE_SUNSET := Color(0.5, 0.2, 0.1, 1.0)
 const COLOR_DAY := Color(0.8, 0.4, 0.5, 1.0)
+var day_count := 0
 
 func _ready():
-	var start_time_percent := 0.25
+	var start_time_percent := 0.95
 	time_passed = day_length * start_time_percent
 	var angle_deg = lerp(START_ANGLE, END_ANGLE, start_time_percent)
 	sun.rotation_degrees = angle_deg
 
 func _process(delta):
+	var prev_time = time_passed
 	time_passed += delta
+	
+	if int(prev_time / day_length) < int(time_passed / day_length):
+		day_count += 1
+		new_day()
 
 	var t = fmod(time_passed, day_length) / day_length
 
@@ -54,3 +60,8 @@ func _process(delta):
 	if canvas_modulate:
 		var modulate_color = COLOR_NIGHT.lerp(Color(1, 1, 1), brightness)
 		canvas_modulate.color = modulate_color
+
+func new_day():
+	var keys = GameManager.recruitment_buildings.keys()
+	for key in keys:
+		GameManager.recruitment_buildings[key] += 1
