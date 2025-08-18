@@ -49,6 +49,7 @@ size = Vector2(174.343, 170.715)
 script = ExtResource("1_k1owq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_5xt7a")
 animation = &"SW"
 
