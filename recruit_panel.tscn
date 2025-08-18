@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://urlgnhlmipp3"]
+
+[ext_resource type="Script" uid="uid://b6eh21ujj3yht" path="res://recruit_panel.gd" id="1_rrt0y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrt0y"]
+
+[node name="RecruitPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.5
+offset_top = -169.5
+offset_right = 262.5
+offset_bottom = 169.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rrt0y")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Unit" type="AnimatedSprite2D" parent="PanelContainer/Control"]
+position = Vector2(-6.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_rrt0y")
+
+[node name="Label" type="Label" parent="PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = 92.5
+offset_right = 28.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Avaliable: "
+
+[node name="Button" type="Button" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Recruit"
+
+[connection signal="pressed" from="PanelContainer/Button" to="." method="_on_button_pressed"]

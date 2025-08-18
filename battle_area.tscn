@@ -38,6 +38,7 @@ zoom = Vector2(0.35, 0.35)
 script = ExtResource("3_njtdy")
 
 [node name="Units" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-677, 354)
 
 [node name="Canvas" type="CanvasLayer" parent="."]

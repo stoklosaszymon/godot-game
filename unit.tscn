@@ -2442,7 +2442,7 @@ animation = &"N"
 
 [node name="Idle" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2chy1")
-animation = &"SW"
+animation = &"S"
 
 [node name="Death" type="AnimatedSprite2D" parent="."]
 visible = false

@@ -1,6 +1,6 @@
 extends "res://unit.gd"
 
-var projectile_scene = preload("res://Projectile.tscn")
+var projectile_scene = preload("res://projectile.tscn")
 
 func _ready() -> void:
 	super._ready()
