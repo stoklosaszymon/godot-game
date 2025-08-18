@@ -1,15 +1,19 @@
 extends Node2D
 
 @export_enum("S", "SE", "E","NE", "N", "NW","W", "SW") var dir: String = "S"
+@onready var sprite = $Idle
+@export var enemy_id = "enemy_id_1"
 
-@export var units = [
-	load("res://archer_unit.tscn").duplicate(),
-	load("res://unit.tscn").duplicate(),
-	load("res://squire_unit.tscn").duplicate()
-]
+var units = []
 
 func _ready() -> void:
-	$Idle.play(dir)
+	units = GameManager.world_enemy_data[enemy_id].duplicate()
+	var unit_instance = units[0].instantiate()
+	var unit_sprite = unit_instance.get_node("Idle") as AnimatedSprite2D
+	if unit_sprite:
+		sprite.sprite_frames = unit_sprite.sprite_frames.duplicate()
+		sprite.play(dir)
+	unit_instance.queue_free()
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	GameManager.player.mouse_held = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=17 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bwsfivl5y7esp" path="res://environment.gd" id="11_dg77c"]
 [ext_resource type="PackedScene" uid="uid://ctlps1r44actj" path="res://rain.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="12_vivmo"]
+[ext_resource type="PackedScene" uid="uid://b42ebxs57sd3p" path="res://archer_unit.tscn" id="13_2cqfq"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -124,12 +125,20 @@ position = Vector2(2291, 111)
 
 [node name="WorldEnemy2" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
 position = Vector2(2750, -207)
+enemy_id = "enemy_id_2"
 
 [node name="BaseBarracks" parent="MainScene/GameObjects" instance=ExtResource("12_vivmo")]
 position = Vector2(1022, -521)
 rotation = -0.139626
 scale = Vector2(1.5, 1.5)
 dir = "SW"
+
+[node name="BaseBarracks2" parent="MainScene/GameObjects" instance=ExtResource("12_vivmo")]
+position = Vector2(738, -668)
+rotation = -0.139626
+scale = Vector2(1.5, 1.5)
+dir = "SW"
+unit = ExtResource("13_2cqfq")
 
 [node name="Sun" parent="MainScene" instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)

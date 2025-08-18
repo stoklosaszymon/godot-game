@@ -24,6 +24,19 @@ var chests_data: Dictionary[String, Array] = {
 	],	
 }
 
+var world_enemy_data: Dictionary[String, Array] = {
+	"enemy_id_1": [
+		load("res://unit.tscn").duplicate(),
+		load("res://unit.tscn").duplicate(),
+		load("res://unit.tscn").duplicate(),
+	],
+	"enemy_id_2": [
+		load("res://archer_unit.tscn").duplicate(),
+		load("res://archer_unit.tscn").duplicate(),
+		load("res://unit.tscn").duplicate(),
+	],
+}
+
 func _init() -> void:
 	for key in chests_data:
 		var resources = chests_data[key]

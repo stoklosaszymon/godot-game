@@ -35,10 +35,7 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 		GameManager.minimap = minimap
 		new_scene.add_child(minimap)
 
-	if GameManager.hud == null:
-		var hud = load("res://hud.tscn").instantiate()
-		GameManager.hud = hud
-		new_scene.add_child(hud)
+
 
 	if spawn_point:
 		GameManager.player.global_position = spawn_point.global_position

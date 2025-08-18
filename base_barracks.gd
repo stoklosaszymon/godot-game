@@ -4,6 +4,7 @@ extends StaticBody2D
 var player_nearby = false
 var panel = null
 var panel_scene: PackedScene = preload("res://recruit_panel.tscn")
+@export var unit: PackedScene = preload("res://unit.tscn")
 
 func _ready() -> void:
 	$AnimatedSprite2D.play(dir)
@@ -25,8 +26,16 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func toggle_panel():
 	if  panel == null:
 		panel = panel_scene.instantiate()
+		panel.unit = unit
 		GameManager.hud.add_child(panel)
 	elif panel != null and is_instance_valid(panel):
 		panel.queue_free()
 		panel = null
-		
+
+
+func _on_area_2d_mouse_entered() -> void:
+	CursorManager.set_cursor_hand()
+
+
+func _on_area_2d_mouse_exited() -> void:
+	CursorManager.set_cursor_arrow()
