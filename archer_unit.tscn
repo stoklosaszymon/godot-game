@@ -862,11 +862,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Unit" instance=ExtResource("1_n7rqw")]
+[node name="Archer" instance=ExtResource("1_n7rqw")]
 script = ExtResource("2_8t4tj")
 hp = 5
 attack_range = 800.0
-speed = 125.0
+speed = 175.0
 separation_strength = 50.0
 separation_distance = 50.0
 

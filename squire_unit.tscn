@@ -3483,8 +3483,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Unit" instance=ExtResource("1_3vo5h")]
+[node name="Squire" instance=ExtResource("1_3vo5h")]
 script = ExtResource("2_4jlb2")
+hp = 20
+attack_range = 150.0
 speed = 250.0
 
 [node name="Walk" parent="." index="0"]
