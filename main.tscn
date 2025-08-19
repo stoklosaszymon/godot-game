@@ -136,6 +136,10 @@ enemy_id = "enemy_id_2"
 position = Vector2(1906, -1620)
 enemy_id = "enemy_id_4"
 
+[node name="WorldEnemy5" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
+position = Vector2(-129, -818)
+enemy_id = "enemy_id_5"
+
 [node name="BaseBarracks" parent="MainScene/GameObjects" instance=ExtResource("12_vivmo")]
 position = Vector2(1022, -521)
 rotation = -0.139626

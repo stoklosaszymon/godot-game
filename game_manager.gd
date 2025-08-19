@@ -52,6 +52,11 @@ var world_enemy_data: Dictionary[String, Array] = {
 		load("res://squire_unit.tscn").duplicate(),
 		load("res://squire_unit.tscn").duplicate(),
 	],
+	"enemy_id_5": [
+		load("res://knight_unit.tscn").duplicate(),
+		load("res://knight_unit.tscn").duplicate(),
+		load("res://knight_unit.tscn").duplicate(),
+	],
 }
 
 func _init() -> void:

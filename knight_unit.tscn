@@ -1,4 +1,4 @@
-[gd_scene load_steps=313 format=3 uid="uid://b4jdu73a2c2nc"]
+[gd_scene load_steps=322 format=3 uid="uid://b4jdu73a2c2nc"]
 
 [ext_resource type="PackedScene" uid="uid://01dlgs0emepg" path="res://unit.tscn" id="1_hkllg"]
 [ext_resource type="Script" uid="uid://dhxgmnjwvq2w4" path="res://knight_unit.gd" id="2_64afy"]
@@ -1380,6 +1380,105 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0unkc"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgje6"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkq6h"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2uda"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk07g"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twohk"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o27fo"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 3584, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc1w0"]
+atlas = ExtResource("2_h4gyt")
+region = Rect2(1536, 3072, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0unkc")
+}],
+"loop": true,
+"name": &"E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgje6")
+}],
+"loop": true,
+"name": &"N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkq6h")
+}],
+"loop": true,
+"name": &"NE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2uda")
+}],
+"loop": true,
+"name": &"NW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk07g")
+}],
+"loop": true,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twohk")
+}],
+"loop": true,
+"name": &"SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o27fo")
+}],
+"loop": true,
+"name": &"SW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc1w0")
+}],
+"loop": true,
+"name": &"W",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhdxu"]
 atlas = ExtResource("4_vqia1")
 region = Rect2(4096, 1024, 512, 512)
@@ -2273,13 +2372,18 @@ speed = 150.0
 [node name="Walk" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_vhdxu")
 animation = &"SW"
-frame_progress = 0.823885
+frame = 3
+frame_progress = 0.0
 
 [node name="Attack" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_mp5sa")
 animation = &"E"
 frame = 2
 frame_progress = 0.479979
+
+[node name="Idle" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_v5wex")
+animation = &"SW"
 
 [node name="Death" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_0unkc")
