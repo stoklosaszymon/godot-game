@@ -41,6 +41,7 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 		new_scene.add_child(hud)
 	
 	var sun = load("res://sun.tscn").instantiate()
+	sun.hide_sun()
 	new_scene.add_child(sun)
 
 	if spawn_point:

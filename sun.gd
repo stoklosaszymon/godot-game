@@ -71,3 +71,7 @@ func new_day():
 	var keys = GameManager.recruitment_buildings.keys()
 	for key in keys:
 		GameManager.recruitment_buildings[key] += 1
+
+func hide_sun():
+	$DirectionalLight2D.enabled = false
+	$CanvasModulate.visible = false
