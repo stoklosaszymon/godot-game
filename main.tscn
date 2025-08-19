@@ -27,7 +27,7 @@ script = ExtResource("2_w48qg")
 position = Vector2(1098, -1378)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="MainScene"]
-position = Vector2(1039, -1120)
+position = Vector2(-73, -495)
 
 [node name="Map" parent="MainScene" instance=ExtResource("3_1bvp3")]
 

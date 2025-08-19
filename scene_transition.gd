@@ -63,11 +63,7 @@ func start_battle(enemy):
 	if GameManager.main_map:
 		GameManager.main_map.visible = false
 
-	if GameManager.player:
-		GameManager.player.set_process_input(false)
-		GameManager.player.set_physics_process(false)
-		GameManager.player.visible = false
-		GameManager.player.camera.enabled = false
+	show_player(false)
 
 	if battle_scene:
 		GameManager.battle_instance = battle_scene.instantiate()
@@ -80,11 +76,7 @@ func finish_battle(is_win: bool):
 	if GameManager.main_map:
 		GameManager.main_map.visible = true
 
-	if GameManager.player:
-		GameManager.player.set_process_input(true)
-		GameManager.player.set_physics_process(true)
-		GameManager.player.visible = true
-		GameManager.player.camera.enabled = true
+	show_player(true)
 	
 	if is_instance_valid(GameManager.battle_instance):
 		GameManager.battle_instance.queue_free()
@@ -100,3 +92,10 @@ func finish_battle(is_win: bool):
 		GameManager.player.global_position = spawn_point.global_position
 	
 	current_enemy = null
+
+func show_player(hide):
+	if GameManager.player:
+		GameManager.player.set_process_input(hide)
+		GameManager.player.set_physics_process(hide)
+		GameManager.player.visible = hide
+		GameManager.player.camera.enabled = hide

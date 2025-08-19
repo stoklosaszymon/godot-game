@@ -55,12 +55,7 @@ var world_enemy_data: Dictionary[String, Array] = {
 }
 
 func _init() -> void:
-	for key in chests_data:
-		var resources = chests_data[key]
-		var items: Array[ItemData] = []
-		for resource in resources:
-			items.append(resource)
-		chests_data[key] = items
+	transform_chest_resource_to_item_data()
 
 func add_item_to_target(item: ItemData, target: Array[ItemData]) -> void:
 	var found_item = find_item_by_name(item.item_name, target)
@@ -124,3 +119,11 @@ func update_time(day_index, hour, minutes):
 	current_day = day_index
 	current_hour = hour
 	current_minutes = minutes
+
+func transform_chest_resource_to_item_data():
+	for key in chests_data:
+		var resources = chests_data[key]
+		var items: Array[ItemData] = []
+		for resource in resources:
+			items.append(resource)
+		chests_data[key] = items

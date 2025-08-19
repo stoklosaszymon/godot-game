@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 250
 const STOP_DISTANCE = 4.0
-const DIRECTION_SWITCH_THRESHOLD = 0.3  # radians ~17°
+const DIRECTION_SWITCH_THRESHOLD = 0.3
 
 @onready var _animated_sprite = $MovementSprite
 @onready var colision = $CollisionShape2D
@@ -11,41 +11,24 @@ var mouse_held := false
 var target_position := Vector2.ZERO
 var anim_name := "bottom"
 var last_direction = null
-var last_transparent_wall_coords: Vector2i = Vector2i(-1, -1)
 var is_idling: bool = false
+var tilemap
 
 @onready var camera = $Camera2D
-
-var hand_offsets := {
-	"bottom": Vector2(10, -120),
-	"bottom-left": Vector2(-33, -113),
-	"bottom-right": Vector2(40, -133),
-	"left": Vector2(-60, -136),
-	"right": Vector2(40, -156),
-	"top": Vector2(-30, -183),
-	"top-left": Vector2(-56, -156),
-	"top-right": Vector2(13, -180),
-}
 
 func _init():
 	GameManager.player = self
 
 func _ready():
+	tilemap = get_node("../../Map/Terrain")
 	AnimationManager.frames = _animated_sprite
 	AnimationManager.setWalkSprite()
-	anim_name = "bottom"
 	_animated_sprite.play(anim_name)
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			var hovered_control = get_viewport().gui_get_hovered_control()
-			if hovered_control != null:
-				mouse_held = hovered_control.name == "TextureRect"
-			else:
-				mouse_held = true
-		else:
-			mouse_held = false
+		var hovered_control = get_viewport().gui_get_hovered_control()
+		mouse_held = event.pressed and (hovered_control == null or hovered_control.name == "TextureRect")
 
 func _physics_process(_delta: float) -> void:
 	if mouse_held:
@@ -135,7 +118,7 @@ func leave_footprint():
 	get_parent().add_child(footprint)
 
 func is_on_sand() -> bool:
-	var tilemap = get_node("../../Map/Terrain")
+	var tilemap = tilemap
 	if tilemap:
 		var cell = tilemap.local_to_map(global_position)
 		var tile_data = tilemap.get_cell_tile_data(cell)

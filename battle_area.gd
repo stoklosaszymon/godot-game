@@ -20,7 +20,7 @@ func place_units():
 		unit.original_scene = unit_data
 		unit.team = "player"
 		
-		var rand_x = randi_range(-3, 3)
+		var rand_x = randi_range(-2, 2)
 		var rand_y = randi_range(-2, 2)
 		
 		if unit.team == "player":
@@ -37,7 +37,7 @@ func place_enemy_units():
 		unit.original_scene = unit_data
 		unit.team = "enemy"
 		
-		var rand_x = randi_range(-3, 3)
+		var rand_x = randi_range(-2, 2)
 		var rand_y = randi_range(-2, 2)
 		
 		var grid_pos = tile_offset_enemy + Vector2i(rand_x, rand_y)
