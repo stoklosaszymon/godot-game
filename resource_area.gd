@@ -21,3 +21,12 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_in_range = null
+
+
+func _on_mouse_entered() -> void:
+	if PlayerState.has_tool("Pickaxe"):
+		CursorManager.set_cursor_hand()
+
+
+func _on_mouse_exited() -> void:
+	CursorManager.set_cursor_arrow()

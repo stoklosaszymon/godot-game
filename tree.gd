@@ -52,3 +52,12 @@ func _on_overlap_body_entered(body: Node2D) -> void:
 func _on_overlap_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		player_overlapped = false
+
+
+func _on_area_2d_mouse_entered() -> void:
+	if PlayerState.has_tool("Axe"):
+		CursorManager.set_cursor_hand()
+
+
+func _on_area_2d_mouse_exited() -> void:
+	CursorManager.set_cursor_arrow()
