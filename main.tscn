@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://r422wmaa0ybb"]
+[gd_scene load_steps=18 format=3 uid="uid://r422wmaa0ybb"]
 
 [ext_resource type="Script" uid="uid://ccohqjaqmhevs" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clrab3y8cs2xd" path="res://sun.tscn" id="2_7mycd"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ctlps1r44actj" path="res://rain.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://b42ebxs57sd3p" path="res://archer_unit.tscn" id="13_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://cvhpuhiunrgo" path="res://barracks.tscn" id="14_yaehf"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -148,6 +149,14 @@ scale = Vector2(1.5, 1.5)
 dir = "SW"
 recruit_id = "recruit_id_2"
 unit = ExtResource("13_2cqfq")
+
+[node name="Barracks" parent="MainScene/GameObjects" instance=ExtResource("14_yaehf")]
+position = Vector2(359, -913)
+rotation = -0.191986
+scale = Vector2(2, 2)
+skew = 0.10821
+dir = "SW"
+recruit_id = "recruit_id_3"
 
 [node name="Sun" parent="MainScene" instance=ExtResource("2_7mycd")]
 position = Vector2(636, 4)

@@ -113,6 +113,7 @@ var resource_textures := {
 var recruitment_buildings: Dictionary[String, int] = {
 	"recruit_id_1": 2,
 	"recruit_id_2": 3,
+	"recruit_id_3": 1,
 }
 
 func update_time(day_index, hour, minutes):

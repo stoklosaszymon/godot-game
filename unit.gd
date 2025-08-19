@@ -172,7 +172,7 @@ func start_attack():
 	update_attack_animation()
 
 func apply_attack_damage():
-	if is_instance_valid(target) and not target.is_dead:
+	if is_instance_valid(target) and not target.is_dead and not is_dead:
 		var dist = global_position.distance_to(target.global_position)
 		if dist <= attack_range:
 			target.hp -= dmg

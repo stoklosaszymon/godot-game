@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1owq"]
-size = Vector2(174.343, 170.715)
+size = Vector2(167.687, 144.668)
 
 [node name="BaseBarracks" type="StaticBody2D"]
 script = ExtResource("1_k1owq")

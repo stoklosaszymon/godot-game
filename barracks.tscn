@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvhpuhiunrgo"]
+
+[ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="1_0rfcj"]
+[ext_resource type="PackedScene" uid="uid://b1fc1uckw2l3s" path="res://squire_unit.tscn" id="2_8m6ji"]
+[ext_resource type="Texture2D" uid="uid://c8j18wovtuts8" path="res://Assets/Buildings/baracks.png" id="2_agf3t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m6ji"]
+atlas = ExtResource("2_agf3t")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x317l"]
+atlas = ExtResource("2_agf3t")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn8pw"]
+atlas = ExtResource("2_agf3t")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4s3fg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m6ji")
+}],
+"loop": true,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x317l")
+}],
+"loop": true,
+"name": &"SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn8pw")
+}],
+"loop": true,
+"name": &"SW",
+"speed": 5.0
+}]
+
+[node name="Barracks" instance=ExtResource("1_0rfcj")]
+unit = ExtResource("2_8m6ji")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_4s3fg")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0.732278, 43.3048)
