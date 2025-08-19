@@ -13,20 +13,22 @@ var time_passed := 0.0
 const COLOR_NIGHT := Color(0.1, 0.1, 0.2, 1.0)
 const COLOR_SUNRISE_SUNSET := Color(0.5, 0.2, 0.1, 1.0)
 const COLOR_DAY := Color(0.8, 0.4, 0.5, 1.0)
-var day_count := 0
 
 func _ready():
-	var start_time_percent := 0.25
-	time_passed = day_length * start_time_percent
+	var start_time_percent = 0.25
+	if GameManager.world_time > 0.0:
+		time_passed = GameManager.world_time
+	else:
+		time_passed = day_length * start_time_percent
 	var angle_deg = lerp(START_ANGLE, END_ANGLE, start_time_percent)
 	sun.rotation_degrees = angle_deg
 
 func _process(delta):
 	var prev_time = time_passed
 	time_passed += delta
+	GameManager.world_time = time_passed
 	
 	if int(prev_time / day_length) < int(time_passed / day_length):
-		day_count += 1
 		new_day()
 
 	var day_index = int(time_passed / day_length)

@@ -1,8 +1,8 @@
 extends Node
 
 var previous_scene_path: String = ""
-var player_spawn_node: String = "PlayerSpawnPoint"
-var player_return_node: String = "PlayerReturnPoint"
+var player_spawn_node: String = "MainScene/PlayerSpawnPoint"
+var player_return_node: String = "MainScene/PlayerReturnPoint"
 var battle_scene: PackedScene = load("res://battle_area.tscn")
 var current_enemy: Node = null;
 	
@@ -34,13 +34,19 @@ func go_to(scene_path: String, use_return_point := false, return_path := "") -> 
 		var minimap = load("res://mini_map.tscn").instantiate()
 		GameManager.minimap = minimap
 		new_scene.add_child(minimap)
-
-
+	
+	if !GameManager.hud:
+		var hud = load("res://hud.tscn").instantiate()
+		GameManager.hud = hud
+		new_scene.add_child(hud)
+	
+	var sun = load("res://sun.tscn").instantiate()
+	new_scene.add_child(sun)
 
 	if spawn_point:
 		GameManager.player.global_position = spawn_point.global_position
 
-	new_scene.get_node("GameObjects").add_child(GameManager.player)
+	new_scene.get_node("MainScene/GameObjects").add_child(GameManager.player)
 
 func go_back():
 	if previous_scene_path == "":

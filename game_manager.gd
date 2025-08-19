@@ -3,18 +3,21 @@ extends Node
 var player : Node = null
 var main_map : Node = null
 var battle_instance: Node = null
+var inventory: Node = null
+var hud: Node = null
+var minimap: Node = null
 
 var previous_scene_path = "res://main.tscn"
 var directional_light: DirectionalLight2D = null
-var inventory: Node = null
+
 var target_inventory: Node = null
 var target_inventory_id = null
 var curently_gathered: Node = null
-var hud: Node = null
-var minimap: Node = null
+
 var current_day = 0;
-var current_hour = 0;
+var current_hour = 8;
 var current_minutes = 0;
+var world_time: float = 0.0
 
 var chests_data: Dictionary[String, Array] = {
 	"chest_id_1": [
@@ -42,6 +45,12 @@ var world_enemy_data: Dictionary[String, Array] = {
 		load("res://unit.tscn").duplicate(),
 		load("res://unit.tscn").duplicate(),
 		load("res://unit.tscn").duplicate(),
+	],
+	"enemy_id_4": [
+		load("res://squire_unit.tscn").duplicate(),
+		load("res://squire_unit.tscn").duplicate(),
+		load("res://squire_unit.tscn").duplicate(),
+		load("res://squire_unit.tscn").duplicate(),
 	],
 }
 

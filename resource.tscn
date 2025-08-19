@@ -19,11 +19,6 @@ point_count = 3
 z_index = 1
 script = ExtResource("1_psx28")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-24, 9, -22, 24, 17, 27, 28, 17, 24, 1)
-
 [node name="ResourceArea" type="Area2D" parent="."]
 script = ExtResource("1_cpix3")
 

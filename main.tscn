@@ -27,7 +27,7 @@ script = ExtResource("2_w48qg")
 position = Vector2(1098, -1378)
 
 [node name="PlayerStartPoint" type="Marker2D" parent="MainScene"]
-position = Vector2(-557, 568)
+position = Vector2(1039, -1120)
 
 [node name="Map" parent="MainScene" instance=ExtResource("3_1bvp3")]
 
@@ -130,6 +130,10 @@ enemy_id = "enemy_id_3"
 [node name="WorldEnemy2" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
 position = Vector2(2750, -207)
 enemy_id = "enemy_id_2"
+
+[node name="WorldEnemy4" parent="MainScene/GameObjects" instance=ExtResource("10_ycdy4")]
+position = Vector2(1906, -1620)
+enemy_id = "enemy_id_4"
 
 [node name="BaseBarracks" parent="MainScene/GameObjects" instance=ExtResource("12_vivmo")]
 position = Vector2(1022, -521)
