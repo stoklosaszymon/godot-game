@@ -24,13 +24,9 @@ func _ready():
 	sun.rotation_degrees = angle_deg
 
 func _process(delta):
-	var prev_time = time_passed
 	time_passed += delta
 	GameManager.world_time = time_passed
 	
-	if int(prev_time / day_length) < int(time_passed / day_length):
-		new_day()
-
 	var day_index = int(time_passed / day_length)
 	var t = fmod(time_passed, day_length) / day_length
 	var hour = int(t * 24.0)
@@ -39,30 +35,35 @@ func _process(delta):
 
 	var angle_deg = lerp(START_ANGLE, END_ANGLE, t)
 	sun.rotation_degrees = angle_deg
-
 	sun.height = lerp(0.2, 0.9, t)
 
-	var normalized_angle_for_brightness = remap(angle_deg, START_ANGLE, END_ANGLE, 0.0, PI)
-	var brightness = clamp(sin(normalized_angle_for_brightness), 0.0, 1.0)
-	sun.energy = brightness * 1.5
-
+	var hour_of_day = t * 24.0
+	var brightness: float
 	var sun_color: Color
 
-	if angle_deg < 0:
-		var progress = remap(angle_deg, START_ANGLE, 0.0, 0.0, 1.0)
+	if hour_of_day < 5.0 or hour_of_day >= 23.0:
+		brightness = 0.0
+		sun_color = COLOR_NIGHT
+	elif hour_of_day < 7.0:
+		var progress = (hour_of_day - 5.0) / 2.0
+		brightness = progress
 		sun_color = COLOR_NIGHT.lerp(COLOR_SUNRISE_SUNSET, progress)
-	elif angle_deg < 90:
-		var progress = remap(angle_deg, 0.0, 90.0, 0.0, 1.0)
-		sun_color = COLOR_SUNRISE_SUNSET.lerp(COLOR_DAY, progress)
-	elif angle_deg < 180:
-		var progress = remap(angle_deg, 90.0, 180.0, 0.0, 1.0)
-		sun_color = COLOR_DAY.lerp(COLOR_SUNRISE_SUNSET, progress)
+	elif hour_of_day < 18.0:
+		brightness = 1.0
+		if hour_of_day < 12.0:
+			var progress = (hour_of_day - 7.0) / 5.0
+			sun_color = COLOR_SUNRISE_SUNSET.lerp(COLOR_DAY, progress)
+		else:
+			var progress = (hour_of_day - 12.0) / 6.0
+			sun_color = COLOR_DAY.lerp(COLOR_SUNRISE_SUNSET, progress)
 	else:
-		var progress = remap(angle_deg, 180.0, END_ANGLE, 0.0, 1.0)
+		var progress = (hour_of_day - 18.0) / 5.0
+		brightness = 1.0 - progress
 		sun_color = COLOR_SUNRISE_SUNSET.lerp(COLOR_NIGHT, progress)
 
+	sun.energy = brightness * 1.5
 	sun.color = sun_color
-	
+
 	if canvas_modulate:
 		var modulate_color = COLOR_NIGHT.lerp(Color(1, 1, 1), brightness)
 		canvas_modulate.color = modulate_color
