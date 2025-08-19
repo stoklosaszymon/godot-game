@@ -72,6 +72,7 @@ func start_battle(enemy):
 	if battle_scene:
 		GameManager.battle_instance = battle_scene.instantiate()
 		GameManager.battle_instance.enemy_units = enemy.units
+		GameManager.battle_instance.enemy_id = enemy.enemy_id
 		get_tree().current_scene.add_child(GameManager.battle_instance)
 		GameManager.battle_instance.global_position = Vector2.ZERO
 

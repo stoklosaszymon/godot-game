@@ -8,6 +8,9 @@ var units = []
 
 func _ready() -> void:
 	units = GameManager.world_enemy_data[enemy_id].duplicate()
+	if units.is_empty():
+		queue_free()
+		return
 	var unit_instance = units[0].instantiate()
 	var unit_sprite = unit_instance.get_node("Idle") as AnimatedSprite2D
 	if unit_sprite:

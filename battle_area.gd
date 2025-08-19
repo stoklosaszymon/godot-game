@@ -4,7 +4,7 @@ extends Node2D
 @onready var units = $Units
 
 @export var enemy_units = []
-
+var enemy_id = "enemy_id_1"
 	
 func _ready() -> void:
 	place_units()
@@ -64,15 +64,20 @@ func _process(_delta: float) -> void:
 		battle_finished(true)
 
 func battle_finished(is_win: bool):
-	save_remaining_units()
+	if is_win:
+		save_remaining_units(PlayerState.units)
+		GameManager.world_enemy_data[enemy_id].clear()
+	else:
+		PlayerState.units.clear()
+		save_remaining_units(GameManager.world_enemy_data[enemy_id])
 	clean_up_battle_area()
 	SceneTransition.finish_battle(is_win)
 
-func save_remaining_units():
-	PlayerState.units.clear()
+func save_remaining_units(units_array):
+	units_array.clear()
 	for unit in units.get_children():
 		if not unit.is_dead and unit.original_scene:
-			PlayerState.units.append(unit.original_scene)
+			units_array.append(unit.original_scene)
 		unit.queue_free()
 
 func _on_button_pressed() -> void:
