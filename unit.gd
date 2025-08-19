@@ -185,7 +185,7 @@ func die():
 	update_death_animation()
 	$CollisionShape2D.disabled = true
 	$Area2D/CollisionShape2D.disabled = true
-	queue_free()
+	#queue_free()
 
 
 func update_ui():

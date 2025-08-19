@@ -7,8 +7,11 @@ func _ready() -> void:
 	hit_frames = [5]
 	
 func fire_at_enemy():
+	if not is_instance_valid(target):
+		return
+		
 	var dist = global_position.distance_to(target.global_position)
-	if is_instance_valid(target) and dist <= attack_range:
+	if dist <= attack_range:
 		var proj = projectile_scene.instantiate()
 		get_tree().current_scene.add_child(proj)
 		proj.launch(global_position, target, self)
