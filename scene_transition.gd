@@ -90,6 +90,8 @@ func finish_battle(is_win: bool):
 		GameManager.battle_instance.queue_free()
 		GameManager.battle_instance = null
 	
+	current_enemy.retreive_units()
+	
 	if is_win and is_instance_valid(current_enemy):
 		current_enemy.defeat()
 

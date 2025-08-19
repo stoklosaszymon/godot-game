@@ -7,7 +7,7 @@ extends Node2D
 var units = []
 
 func _ready() -> void:
-	units = GameManager.world_enemy_data[enemy_id].duplicate()
+	retreive_units()
 	if units.is_empty():
 		queue_free()
 		return
@@ -25,3 +25,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func defeat():
 	queue_free()
+
+func retreive_units():
+	units = GameManager.world_enemy_data[enemy_id].duplicate()

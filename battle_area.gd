@@ -34,6 +34,7 @@ func place_enemy_units():
 	
 	for unit_data in enemy_units:
 		var unit = unit_data.instantiate()
+		unit.original_scene = unit_data
 		unit.team = "enemy"
 		
 		var rand_x = randi_range(-3, 3)
@@ -65,16 +66,21 @@ func _process(_delta: float) -> void:
 
 func battle_finished(is_win: bool):
 	if is_win:
+		print("win")
 		save_remaining_units(PlayerState.units)
 		GameManager.world_enemy_data[enemy_id].clear()
 	else:
-		PlayerState.units.clear()
+		print("lost")
 		save_remaining_units(GameManager.world_enemy_data[enemy_id])
+		print("remeining: ", enemy_id, " with ", GameManager.world_enemy_data[enemy_id].size(), " units")
+		PlayerState.units.clear()
+
 	clean_up_battle_area()
 	SceneTransition.finish_battle(is_win)
 
 func save_remaining_units(units_array):
 	units_array.clear()
+	print("units left: ", units.get_children().size())
 	for unit in units.get_children():
 		if not unit.is_dead and unit.original_scene:
 			units_array.append(unit.original_scene)
