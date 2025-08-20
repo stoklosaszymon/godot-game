@@ -7,7 +7,7 @@ func _ready() -> void:
 	hit_frames = [5]
 	
 func fire_at_enemy():
-	if not is_instance_valid(target):
+	if not is_instance_valid(target) or target.is_dead:
 		return
 		
 	var dist = global_position.distance_to(target.global_position)

@@ -12,36 +12,39 @@ func _ready() -> void:
 	place_enemy_units()
 	get_tree().paused = true
 
+func get_screen_width() -> int:
+	return get_viewport_rect().size.x
+
 func place_units():
-	var tile_offset_player := Vector2i(0, 8)
+	var tile_offset_player := Vector2i(-1 * get_screen_width(), 0)
 	
 	for unit_data in PlayerState.units:
 		var unit = unit_data.instantiate()
 		unit.original_scene = unit_data
 		unit.team = "player"
 		
-		var rand_x = randi_range(-2, 2)
-		var rand_y = randi_range(-2, 2)
+		var rand_x = randi_range(0, 0)
+		var rand_y = randi_range(-500, 500)
 		
 		if unit.team == "player":
 			var grid_pos = tile_offset_player + Vector2i(rand_x, rand_y)
-			unit.global_position = Utility.grid_to_iso(grid_pos)
+			unit.global_position = grid_pos
 		
 		units.add_child(unit)
 
 func place_enemy_units():
-	var tile_offset_enemy := Vector2i(0, -8)
+	var tile_offset_enemy :=  Vector2i(get_screen_width(), 0)
 	
 	for unit_data in enemy_units:
 		var unit = unit_data.instantiate()
 		unit.original_scene = unit_data
 		unit.team = "enemy"
 		
-		var rand_x = randi_range(-2, 2)
-		var rand_y = randi_range(-2, 2)
+		var rand_x = randi_range(0, 0)
+		var rand_y = randi_range(-500, 500)
 		
 		var grid_pos = tile_offset_enemy + Vector2i(rand_x, rand_y)
-		unit.global_position = Utility.grid_to_iso(grid_pos)
+		unit.global_position = grid_pos
 		
 		units.add_child(unit)
 

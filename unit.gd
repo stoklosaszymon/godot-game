@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_attacking:
 		velocity = Vector2.ZERO
-		move_and_slide()
+		#move_and_slide()
 		return
 
 	var dist = global_position.distance_to(target.global_position)

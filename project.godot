@@ -25,6 +25,10 @@ CursorManager="*res://cursor_manager.gd"
 AnimationManager="*res://animation_manager.gd"
 Utility="*res://utility.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Adventure-game"

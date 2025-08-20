@@ -33,8 +33,10 @@ position = Vector2(-4.76837e-07, -15)
 shape = SubResource("RectangleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 script = ExtResource("10_1kp85")
+min_zoom = Vector2(0.5, 0.5)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-2.85714, -2.85714)
