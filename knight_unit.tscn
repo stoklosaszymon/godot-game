@@ -4047,7 +4047,6 @@ animations = [{
 script = ExtResource("2_64afy")
 hp = 30
 dmg = 15
-attack_range = 250.0
 speed = 150.0
 
 [node name="Walk" parent="." index="0"]

@@ -43,14 +43,17 @@ y_sort_enabled = true
 [node name="Canvas" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="Canvas"]
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -20.0
+offset_top = -45.0
 offset_right = 20.0
-offset_bottom = 23.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 
 [node name="Start" type="Button" parent="Canvas"]
 process_mode = 3
