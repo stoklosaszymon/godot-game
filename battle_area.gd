@@ -6,6 +6,7 @@ extends Node2D
 @export var enemy_units = []
 var enemy_id = "enemy_id_1"
 var player_finished = false
+var spacing = 150
 	
 func _ready() -> void:
 	place_units()
@@ -18,16 +19,13 @@ func get_screen_width() -> int:
 func place_units():
 	var tile_offset_player := Vector2i(-1 * get_screen_width(), 0)
 	
-	for unit_data in PlayerState.units:
-		var unit = unit_data.instantiate()
-		unit.original_scene = unit_data
+	for i in range(PlayerState.units.size()):
+		var unit = PlayerState.units[i].instantiate()
+		unit.original_scene = PlayerState.units[i]
 		unit.team = "player"
 		
-		var rand_x = randi_range(0, 0)
-		var rand_y = randi_range(-500, 500)
-		
 		if unit.team == "player":
-			var grid_pos = tile_offset_player + Vector2i(rand_x, rand_y)
+			var grid_pos = tile_offset_player + Vector2i(0, -500 + i * spacing)
 			unit.global_position = grid_pos
 		
 		units.add_child(unit)
@@ -35,15 +33,12 @@ func place_units():
 func place_enemy_units():
 	var tile_offset_enemy :=  Vector2i(get_screen_width(), 0)
 	
-	for unit_data in enemy_units:
-		var unit = unit_data.instantiate()
-		unit.original_scene = unit_data
+	for i in range(enemy_units.size()):
+		var unit = enemy_units[i].instantiate()
+		unit.original_scene = enemy_units[i]
 		unit.team = "enemy"
 		
-		var rand_x = randi_range(0, 0)
-		var rand_y = randi_range(-500, 500)
-		
-		var grid_pos = tile_offset_enemy + Vector2i(rand_x, rand_y)
+		var grid_pos = tile_offset_enemy + Vector2i(0, -500 + i * spacing)
 		unit.global_position = grid_pos
 		
 		units.add_child(unit)
