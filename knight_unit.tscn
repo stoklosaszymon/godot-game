@@ -325,7 +325,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_27bwj")
 }],
-"loop": true,
+"loop": false,
 "name": &"E",
 "speed": 5.0
 }, {
@@ -357,7 +357,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rp355")
 }],
-"loop": true,
+"loop": false,
 "name": &"N",
 "speed": 5.0
 }, {
@@ -389,7 +389,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g468x")
 }],
-"loop": true,
+"loop": false,
 "name": &"NE",
 "speed": 5.0
 }, {
@@ -421,7 +421,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_75y7p")
 }],
-"loop": true,
+"loop": false,
 "name": &"NW",
 "speed": 5.0
 }, {
@@ -453,7 +453,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1dw2x")
 }],
-"loop": true,
+"loop": false,
 "name": &"S",
 "speed": 5.0
 }, {
@@ -485,7 +485,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d3mg0")
 }],
-"loop": true,
+"loop": false,
 "name": &"SE",
 "speed": 5.0
 }, {
@@ -517,7 +517,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jed6d")
 }],
-"loop": true,
+"loop": false,
 "name": &"SW",
 "speed": 5.0
 }, {
@@ -549,7 +549,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qimta")
 }],
-"loop": true,
+"loop": false,
 "name": &"W",
 "speed": 5.0
 }]
@@ -4047,12 +4047,11 @@ animations = [{
 script = ExtResource("2_64afy")
 hp = 30
 dmg = 15
-speed = 150.0
+speed = 450.0
 
 [node name="Walk" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_vhdxu")
-animation = &"SW"
-frame = 3
+animation = &"W"
 frame_progress = 0.0
 
 [node name="Attack" parent="." index="1"]

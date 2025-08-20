@@ -7,41 +7,42 @@ extends Node2D
 var enemy_id = "enemy_id_1"
 var player_finished = false
 var spacing = 150
+var min_map_h = -1000
+var max_map_h = 1000
+var x_offset = 300
 	
 func _ready() -> void:
-	place_units()
-	place_enemy_units()
+	place_units(PlayerState.units, "player", false)
+	place_units(enemy_units, "enemy", true)
 	get_tree().paused = true
 
 func get_screen_width() -> int:
 	return get_viewport_rect().size.x
 
-func place_units():
-	var tile_offset_player := Vector2i(-1 * get_screen_width(), 0)
-	
-	for i in range(PlayerState.units.size()):
-		var unit = PlayerState.units[i].instantiate()
-		unit.original_scene = PlayerState.units[i]
-		unit.team = "player"
-		
-		if unit.team == "player":
-			var grid_pos = tile_offset_player + Vector2i(0, -500 + i * spacing)
-			unit.global_position = grid_pos
-		
+func place_units(units_list: Array, team: String, is_enemy: bool) -> void:
+	var base_offset := Vector2i(
+		(get_screen_width() + x_offset) * (1 if is_enemy else -1),
+		0
+	)
+
+	for i in range(units_list.size()):
+		var unit = units_list[i].instantiate()
+		unit.original_scene = units_list[i]
+		unit.team = team
+
+		var items_per_column = int((max_map_h - min_map_h) / spacing) + 1
+		var column = int(i / items_per_column)
+		if is_enemy:
+			column *= -1
+		var row = i % items_per_column
+
+		var x_spacing = column * 150
+		var y_spacing = row * spacing
+
+		var grid_pos = base_offset + Vector2i(x_spacing, min_map_h + y_spacing)
+		unit.global_position = grid_pos
 		units.add_child(unit)
 
-func place_enemy_units():
-	var tile_offset_enemy :=  Vector2i(get_screen_width(), 0)
-	
-	for i in range(enemy_units.size()):
-		var unit = enemy_units[i].instantiate()
-		unit.original_scene = enemy_units[i]
-		unit.team = "enemy"
-		
-		var grid_pos = tile_offset_enemy + Vector2i(0, -500 + i * spacing)
-		unit.global_position = grid_pos
-		
-		units.add_child(unit)
 
 func _process(_delta: float) -> void:
 	var player_left_units = 0

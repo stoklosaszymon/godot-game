@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var dmg: int = 5
 @export var attack_range: float = 200.0  
 @export var speed: float = 200.0        
-@export var separation_strength: float = 100.0 
-@export var separation_distance: float = 100.0
+@export var separation_strength: float = 150.0 
+@export var separation_distance: float = 150.0
 @export var stuck_time_limit: float = 2.0     
 @export var stuck_distance_threshold: float = 1.0
 
@@ -39,6 +39,7 @@ func _ready():
 	setup_navigation()
 	setup_collision()
 	set_closest_enemy_target()
+	set_animation_spped()
 
 func setup_navigation():
 	navigation_agent.avoidance_enabled = true
@@ -67,14 +68,14 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if is_dead: return
 
-	if target == null: 
+	if target == null or target.is_dead: 
 		update_idle_animation()
 		is_attacking = false
 		return
 	
 	if is_attacking:
 		velocity = Vector2.ZERO
-		#move_and_slide()
+		move_and_slide()
 		return
 
 	var dist = global_position.distance_to(target.global_position)
@@ -280,3 +281,8 @@ func _on_attack_frame_changed() -> void:
 
 func attack_effect():
 	pass
+
+func set_animation_spped():
+	attack_sprite.speed_scale = 2.0
+	walk_sprite.speed_scale = 2.0
+	death_sprite.speed_scale = 2.0
