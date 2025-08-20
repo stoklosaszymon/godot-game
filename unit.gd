@@ -66,8 +66,15 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if is_dead: return
+
 	if target == null: 
 		update_idle_animation()
+		is_attacking = false
+		return
+	
+	if is_attacking:
+		velocity = Vector2.ZERO
+		move_and_slide()
 		return
 
 	var dist = global_position.distance_to(target.global_position)
@@ -164,6 +171,9 @@ func separate_from_allies() -> Vector2:
 
 
 func start_attack():
+	if is_attacking: 
+		return
+		
 	velocity = Vector2.ZERO
 	if !is_attacking:
 		direction = (target.global_position - global_position).normalized()
@@ -259,6 +269,7 @@ func get_direction_name(dir: Vector2) -> String:
 
 func _on_attack_animation_finished() -> void:
 	is_attacking = false
+	attack_sprite.frame = 0
 
 
 func _on_attack_frame_changed() -> void:
