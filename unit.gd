@@ -38,7 +38,7 @@ func _ready():
 	last_position = global_position
 	setup_navigation()
 	setup_collision()
-	set_closest_enemy_target()
+	set_target()
 	set_animation_spped()
 
 func setup_navigation():
@@ -62,7 +62,7 @@ func _process(_delta: float) -> void:
 
 	update_ui()
 	validate_target()
-	set_closest_enemy_target()
+	set_target()
 
 
 func _physics_process(delta: float) -> void:
@@ -92,14 +92,14 @@ func _physics_process(delta: float) -> void:
 func validate_target():
 	if not is_instance_valid(target) or target.is_dead:
 		target = null
-		set_closest_enemy_target()
+		set_target()
 
-func set_closest_enemy_target(skip: Node = null):
+func set_target(skip: Node = null):
 	var closest_enemy: Node = null
 	var closest_dist := INF
 
 	for child in get_parent().get_children():
-		if not is_valid_enemy(child, skip):
+		if not is_valid_target(child, skip):
 			continue
 
 		var dist = global_position.distance_to(child.global_position)
@@ -112,7 +112,7 @@ func set_closest_enemy_target(skip: Node = null):
 		navigation_agent.target_position = find_attack_position()
 
 
-func is_valid_enemy(node: Node, skip: Node) -> bool:
+func is_valid_target(node: Node, skip: Node) -> bool:
 	return (
 		node != self
 		and is_instance_valid(node)
@@ -149,7 +149,7 @@ func check_if_stuck(delta: float):
 	
 	if stuck_timer >= stuck_time_limit:
 		stuck_timer = 0.0
-		set_closest_enemy_target(target)
+		set_target(target)
 
 
 func find_attack_position() -> Vector2:
@@ -281,6 +281,7 @@ func _on_attack_frame_changed() -> void:
 
 func attack_effect():
 	pass
+
 
 func set_animation_spped():
 	attack_sprite.speed_scale = 2.0

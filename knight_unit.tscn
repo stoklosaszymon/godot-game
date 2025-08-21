@@ -4045,7 +4045,7 @@ animations = [{
 
 [node name="Knight" instance=ExtResource("1_hkllg")]
 script = ExtResource("2_64afy")
-hp = 30
+hp = 300
 dmg = 15
 speed = 450.0
 
