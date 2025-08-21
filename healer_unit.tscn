@@ -4609,13 +4609,13 @@ frame_progress = 0.0
 
 [node name="Attack" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_3y6c3")
-animation = &"W"
-frame = 20
-frame_progress = 0.227793
+animation = &"E"
+frame = 21
+frame_progress = 1.0
 
 [node name="Idle" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_bb834")
-animation = &"SW"
+frame_progress = 0.157327
 
 [node name="Death" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_g50l4")

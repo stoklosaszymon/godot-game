@@ -11,6 +11,7 @@ var units: = [
 	load("res://healer_unit.tscn").duplicate(),
 	load("res://healer_unit.tscn").duplicate(),
 	load("res://knight_unit.tscn").duplicate(),
+	load("res://knight_unit.tscn").duplicate(),
 ]
 
 var equipped_item: ItemData = null:

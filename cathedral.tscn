@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://odw17isa4u5n"]
+
+[ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="1_o714k"]
+[ext_resource type="PackedScene" uid="uid://daehrf8hinx3k" path="res://healer_unit.tscn" id="2_1o600"]
+[ext_resource type="Texture2D" uid="uid://hfqo1tm8hixn" path="res://Assets/Buildings/cathedral.png" id="2_xtd8s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o600"]
+atlas = ExtResource("2_xtd8s")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qvry"]
+atlas = ExtResource("2_xtd8s")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xx64"]
+atlas = ExtResource("2_xtd8s")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4bodn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o600")
+}],
+"loop": true,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qvry")
+}],
+"loop": true,
+"name": &"SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xx64")
+}],
+"loop": true,
+"name": &"SW",
+"speed": 5.0
+}]
+
+[node name="Cathedral" instance=ExtResource("1_o714k")]
+unit = ExtResource("2_1o600")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_4bodn")

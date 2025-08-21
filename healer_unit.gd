@@ -8,8 +8,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	print("team: ", team, " name: ", name, " targeting: ", target)
-	
 
 func set_target(skip: Node = null):
 	var lowest_ally: Node = null
@@ -63,4 +61,5 @@ func heal_effect():
 
 
 func attack_effect():
-	heal_effect()
+	if is_instance_valid(target): 
+		heal_effect()
