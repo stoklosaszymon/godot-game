@@ -47,4 +47,12 @@ animations = [{
 unit = ExtResource("2_1o600")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_4bodn")
+animation = &"SE"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-3.77769, 41.9279)
+
+[node name="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-106, 38, 8, 126, 96, 68, -34, -20)

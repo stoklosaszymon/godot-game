@@ -14,7 +14,7 @@ func fire_at_enemy():
 	if dist <= attack_range and not is_dead:
 		var proj = projectile_scene.instantiate()
 		get_tree().current_scene.add_child(proj)
-		proj.launch(global_position, target, self)
+		proj.launch(global_position, target, self, dmg)
 
 func attack_effect():
 	fire_at_enemy()

@@ -11,10 +11,14 @@ var direction: Vector2
 var dmg = 5.0
 var who_sent: Node2D = null
 var in_air = false                 
+var target = null
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 
-func launch(from_pos: Vector2, enemy: Node2D, own: Node2D):
+func launch(from_pos: Vector2, enemy: Node2D, own: Node2D, damage):
+	target = enemy
+	sprite.play("projectile")
+	dmg = damage
 	who_sent = own
 	if who_sent.team == "player":
 		set_collision_layer_value(2, true)
@@ -42,6 +46,10 @@ func _physics_process(delta: float) -> void:
 	
 	if t >= 1.0:
 		in_air = false
+	
+	if not is_target_valid(target) or target.is_dead:
+		queue_free()
+	
 
 func is_target_valid(target):
 	return is_instance_valid(target) and target.get("hp") and target.get("team")

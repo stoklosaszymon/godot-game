@@ -42,6 +42,7 @@ func apply_attack_damage():
 		if dist <= attack_range:
 			target.hp += dmg
 	is_attacking = false
+	target = null
 
 
 func heal_effect():

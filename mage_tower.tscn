@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://74iphl5gfkfi"]
+
+[ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="1_bw28l"]
+[ext_resource type="PackedScene" uid="uid://sx18845pnof5" path="res://mage.tscn" id="2_1g8cr"]
+[ext_resource type="Texture2D" uid="uid://bjsxi4x2mogx6" path="res://Assets/Buildings/mage_tower.png" id="2_7qb67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g8cr"]
+atlas = ExtResource("2_7qb67")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8wef"]
+atlas = ExtResource("2_7qb67")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwyxw"]
+atlas = ExtResource("2_7qb67")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe4n5"]
+atlas = ExtResource("2_7qb67")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogbm1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g8cr")
+}],
+"loop": true,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8wef")
+}],
+"loop": true,
+"name": &"SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwyxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe4n5")
+}],
+"loop": true,
+"name": &"SW",
+"speed": 5.0
+}]
+
+[node name="MageTower" instance=ExtResource("1_bw28l")]
+unit = ExtResource("2_1g8cr")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ogbm1")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(1.38138, 65.6792)
+rotation = 1.5708
+scale = Vector2(1, 1)
+
+[node name="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-46, 31, -46, 101, 45, 98, 43, 29)

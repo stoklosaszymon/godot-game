@@ -275,8 +275,9 @@ func _on_attack_animation_finished() -> void:
 
 func _on_attack_frame_changed() -> void:
 	if attack_sprite and attack_sprite.frame in hit_frames:
-		apply_attack_damage()
 		attack_effect()
+		apply_attack_damage()
+
 
 
 func attack_effect():
