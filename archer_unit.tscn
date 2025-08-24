@@ -882,3 +882,4 @@ animation = &"SW"
 [node name="Idle" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_tywwk")
 animation = &"N"
+frame_progress = 0.0

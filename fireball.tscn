@@ -1,7 +1,8 @@
-[gd_scene load_steps=65 format=3 uid="uid://duypcbmtescdi"]
+[gd_scene load_steps=66 format=3 uid="uid://duypcbmtescdi"]
 
 [ext_resource type="PackedScene" uid="uid://brggamv1bs8gb" path="res://projectile.tscn" id="1_sf4mh"]
 [ext_resource type="Texture2D" uid="uid://b3bpntcruwuqh" path="res://Assets/Units/Mage/fireball.png" id="2_olwj8"]
+[ext_resource type="Script" uid="uid://b77eg5xx2xff4" path="res://fireball.gd" id="2_wdani"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdani"]
 atlas = ExtResource("2_olwj8")
@@ -439,7 +440,7 @@ animations = [{
 }]
 
 [node name="Fireball" instance=ExtResource("1_sf4mh")]
-speed = 1200.0
+script = ExtResource("2_wdani")
 
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(-9, 0)

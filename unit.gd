@@ -36,24 +36,8 @@ var original_scene: PackedScene = null
 func _ready():
 	max_hp = hp
 	last_position = global_position
-	setup_navigation()
 	setup_collision()
-	set_target()
 	set_animation_spped()
-
-func setup_navigation():
-	navigation_agent.avoidance_enabled = true
-	navigation_agent.radius = 100
-	navigation_agent.max_neighbors = 10
-	navigation_agent.time_horizon = 1.0
-
-func setup_collision():
-	if team == "player":
-		set_collision_mask_value(3, true)
-		set_collision_layer_value(3, true)
-	elif team == "enemy":
-		set_collision_mask_value(2, true)
-		set_collision_layer_value(2, true)
 
 
 func _process(_delta: float) -> void:
@@ -61,7 +45,6 @@ func _process(_delta: float) -> void:
 	if hp <= 0: die()
 
 	update_ui()
-	validate_target()
 	set_target()
 
 
@@ -87,12 +70,10 @@ func _physics_process(delta: float) -> void:
 
 	if !is_attacking:
 		check_if_stuck(delta)
-
-
-func validate_target():
-	if not is_instance_valid(target) or target.is_dead:
+	
+	if target.is_dead:
 		target = null
-		set_target()
+
 
 func set_target(skip: Node = null):
 	var closest_enemy: Node = null
@@ -196,11 +177,12 @@ func die():
 	update_death_animation()
 	$CollisionShape2D.disabled = true
 	$Area2D/CollisionShape2D.disabled = true
+	var effect = get_node_or_null("Burning")
+	if effect:
+		effect.queue_free()
 	#queue_free()
 
 
-func update_ui():
-	hp_label.text = str(hp) + "/" + str(max_hp)
 
 
 func update_walk_animation_with_direction(world_dir: Vector2) -> void:
@@ -279,7 +261,6 @@ func _on_attack_frame_changed() -> void:
 		apply_attack_damage()
 
 
-
 func attack_effect():
 	pass
 
@@ -288,3 +269,16 @@ func set_animation_spped():
 	attack_sprite.speed_scale = 2.0
 	walk_sprite.speed_scale = 2.0
 	death_sprite.speed_scale = 2.0
+
+
+func update_ui():
+	hp_label.text = str(hp) + "/" + str(max_hp)
+
+
+func setup_collision():
+	if team == "player":
+		set_collision_mask_value(3, true)
+		set_collision_layer_value(3, true)
+	elif team == "enemy":
+		set_collision_mask_value(2, true)
+		set_collision_layer_value(2, true)

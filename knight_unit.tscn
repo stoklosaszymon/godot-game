@@ -4063,6 +4063,7 @@ frame_progress = 0.479979
 [node name="Idle" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_v5wex")
 animation = &"W"
+frame_progress = 0.0
 
 [node name="Death" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_0unkc")

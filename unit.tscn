@@ -2442,8 +2442,10 @@ sprite_frames = SubResource("SpriteFrames_wlp6l")
 animation = &"N"
 
 [node name="Idle" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_2chy1")
 animation = &"S"
+frame_progress = 0.838778
 
 [node name="Death" type="AnimatedSprite2D" parent="."]
 visible = false

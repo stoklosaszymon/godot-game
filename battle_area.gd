@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var label = $Canvas/Label
-@onready var units = $Units
+@onready var units_node = $Units
 
 @export var enemy_units = []
 var enemy_id = "enemy_id_1"
@@ -41,13 +41,13 @@ func place_units(units_list: Array, team: String, is_enemy: bool) -> void:
 
 		var grid_pos = base_offset + Vector2i(x_spacing, min_map_h + y_spacing)
 		unit.global_position = grid_pos
-		units.add_child(unit)
+		units_node.call_deferred("add_child", unit)
 
 
 func _process(_delta: float) -> void:
 	var player_left_units = 0
 	var enemy_left_units = 0
-	var units = units.get_children()
+	var units = units_node.get_children()
 	for unit in units:
 		if unit.get("team") && unit.team == 'player':
 			if !unit.is_dead:
@@ -85,8 +85,7 @@ func battle_finished(is_win: bool):
 
 func save_remaining_units(units_array):
 	units_array.clear()
-	print("units left: ", units.get_children().size())
-	for unit in units.get_children():
+	for unit in units_node.get_children():
 		if not unit.is_dead and unit.original_scene:
 			units_array.append(unit.original_scene)
 		unit.queue_free()
