@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dacgqbjh57ee7"]
+[gd_scene load_steps=6 format=3 uid="uid://dacgqbjh57ee7"]
 
 [ext_resource type="Script" uid="uid://dday3u3ti7qy7" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="PackedScene" uid="uid://d1r2njjjhux5e" path="res://movement/walk.tscn" id="3_ghijl"]
@@ -9,11 +9,6 @@ radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ct3r"]
 size = Vector2(85.8333, 164.286)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ij6vw"]
-vertices = PackedVector2Array(28.8906, 7.82812, 7.70312, 23.7188, -14.5938, 8.64844, 4.89844, -16.75)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-29, 11, 8, 36, 44, 9, 4, -32)])
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -37,11 +32,6 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 script = ExtResource("10_1kp85")
 min_zoom = Vector2(0.6, 0.6)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-2.85714, -2.85714)
-navigation_polygon = SubResource("NavigationPolygon_ij6vw")
-navigation_layers = 4
 
 [node name="MovementSprite" parent="." instance=ExtResource("3_ghijl")]
 z_as_relative = true
