@@ -13,11 +13,11 @@ var who_sent: Node2D = null
 var in_air = false                 
 var target = null
 
-@onready var sprite: AnimatedSprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 func launch(from_pos: Vector2, enemy: Node2D, own: Node2D, damage):
 	target = enemy
-	sprite.play("projectile")
+	#sprite.play("projectile")
 	dmg = damage
 	who_sent = own
 	if who_sent.team == "player":
@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	var ground_pos = start_pos.lerp(target_pos, t)
 	position = ground_pos
 	sprite.rotation = atan2(direction.y, direction.x)
+	#sprite.rotate(atan2(direction.y, direction.x))
 	
 	if t >= 1.0:
 		in_air = false
