@@ -97,5 +97,6 @@ func show_player(hide):
 	if GameManager.player:
 		GameManager.player.set_process_input(hide)
 		GameManager.player.set_physics_process(hide)
+		GameManager.player.camera.set_process_unhandled_input(hide)
 		GameManager.player.visible = hide
 		GameManager.player.camera.enabled = hide
