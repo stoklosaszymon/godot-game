@@ -2,10 +2,10 @@ extends CanvasLayer
 
 var is_inventory_open = false
 var minimap = "MiniMap"
-@onready var day = $Time/Day;
-@onready var time = $Time/Time
-@onready var wood_resource = $Resources/Wood
-@onready var gold_resource = $Resources/Gold
+@onready var day = $TopPanel/Time/Day;
+@onready var time = $TopPanel/Time/Time
+@onready var wood_resource = $TopPanel/Resources/Wood/Amount
+@onready var gold_resource = $TopPanel/Resources/Gold/Amount
 
 func _init() -> void:
 	if GameManager.hud == null:
@@ -45,5 +45,5 @@ func _on_texture_button_mouse_exited() -> void:
 	CursorManager.set_cursor_arrow()
 
 func update_resources():
-	wood_resource.text = "Wood: " + str(PlayerState.resources.wood)
-	gold_resource.text = "Gold: " + str(PlayerState.resources.gold)
+	wood_resource.text = str(PlayerState.resources.wood)
+	gold_resource.text = str(PlayerState.resources.gold)

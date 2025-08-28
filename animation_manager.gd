@@ -26,10 +26,7 @@ func _on_fishing_finished():
 func on_gathering_finished():
 	PlayerState.is_gathering = false
 	var resource_type = GameManager.curently_gathered.resource_type
-	GameManager.add_item_to_target(
-		ItemManager.resources[resource_type].duplicate(),
-		PlayerState.inventory
-	)
+	PlayerState.resources["wood"] += 100
 	GameManager.curently_gathered.take();
 
 func reset():

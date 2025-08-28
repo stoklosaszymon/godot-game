@@ -55,7 +55,7 @@ func _on_overlap_body_exited(body: Node2D) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	if PlayerState.has_tool("Axe"):
+	if PlayerState.has_tool("Axe") and amount > 0:
 		CursorManager.set_cursor_hand()
 
 

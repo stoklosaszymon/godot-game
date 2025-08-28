@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyfk3j2645din"]
+[gd_scene load_steps=7 format=3 uid="uid://dyfk3j2645din"]
 
 [ext_resource type="Script" uid="uid://v0f6r3662ccd" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://cttpwr04efk12" path="res://Assets/UI/backpack.png" id="2_64ctp"]
 [ext_resource type="Script" uid="uid://euwydrac4x17" path="res://use_slot.gd" id="3_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://bfdwou8c6gpwp" path="res://Assets/UI/coins_icon_64x.png" id="4_640wx"]
+[ext_resource type="Texture2D" uid="uid://bk2a6ecdv5hvt" path="res://Assets/UI/timber_icon_64.png" id="5_a2258"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8sq4i"]
 
@@ -58,56 +60,66 @@ size_flags_vertical = 3
 mouse_filter = 2
 texture = SubResource("CanvasTexture_8sq4i")
 
-[node name="Time" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -42.0
-offset_right = 42.0
-offset_bottom = 40.0
+[node name="TopPanel" type="PanelContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
 grow_horizontal = 2
 
-[node name="Day" type="Label" parent="Time"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -17.0
-offset_right = 18.0
-offset_bottom = 17.0
-grow_vertical = 2
+[node name="Time" type="HBoxContainer" parent="TopPanel"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Day" type="Label" parent="TopPanel/Time"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 
-[node name="Time" type="Label" parent="Time"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -17.0
-offset_bottom = 17.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="Time" type="Label" parent="TopPanel/Time"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 
-[node name="Resources" type="HBoxContainer" parent="."]
-offset_right = 398.0
-offset_bottom = 40.0
+[node name="Resources" type="HBoxContainer" parent="TopPanel"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 50
 
-[node name="Wood" type="Label" parent="Resources"]
+[node name="Gold" type="VFlowContainer" parent="TopPanel/Resources"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Resources/Gold"]
+layout_mode = 2
+texture = ExtResource("4_640wx")
+
+[node name="Amount" type="Label" parent="TopPanel/Resources/Gold"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2
 
-[node name="Gold" type="Label" parent="Resources"]
+[node name="Wood" type="VFlowContainer" parent="TopPanel/Resources"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Resources/Wood"]
+layout_mode = 2
+texture = ExtResource("5_a2258")
+
+[node name="Amount" type="Label" parent="TopPanel/Resources/Wood"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2
 
 [connection signal="mouse_entered" from="Backpack/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Backpack/TextureButton" to="." method="_on_texture_button_mouse_exited"]
