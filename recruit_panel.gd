@@ -34,3 +34,7 @@ func _on_button_pressed() -> void:
 		available_count -= 1;
 		PlayerState.resources["gold"] -= cost
 		GameManager.recruitment_buildings[building_id] = available_count
+
+
+func _on_close_pressed() -> void:
+	queue_free()
