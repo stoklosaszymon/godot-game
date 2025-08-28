@@ -243,6 +243,15 @@ var recruitment_buildings: Dictionary[String, int] = {
 	"recruit_id_4": 1,
 }
 
+var unit_costs: Dictionary[String, int] = {
+	"Unit": 100,
+	"Squire": 200,
+	"Knight": 500,
+	"Healer": 200,
+	"Archer": 100,
+	"Mage": 200
+}
+
 func update_time(day_index, hour, minutes):
 	current_day = day_index
 	current_hour = hour

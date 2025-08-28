@@ -16,7 +16,6 @@ var resources = {
 	"coal_ore" : load("res://resources/mining/coal_ore.tres"),
 	"ruby_ore" : load("res://resources/mining/ruby_ore.tres"),
 	"iron_bar" : load("res://resources/mining/iron_bar.tres"),
-	"log" : load("res://resources/wood/log.tres"),
 }
 
 var tools = {

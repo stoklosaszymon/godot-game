@@ -36,7 +36,24 @@ size_flags_vertical = 4
 position = Vector2(-6.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_rrt0y")
 
-[node name="Label" type="Label" parent="PanelContainer/Control"]
+[node name="Available" type="Label" parent="PanelContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = 68.5
+offset_right = 38.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Avaliable: "
+
+[node name="Cost" type="Label" parent="PanelContainer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Avaliable: "
+text = "Cost: "
 
 [node name="Button" type="Button" parent="PanelContainer"]
 layout_mode = 2
