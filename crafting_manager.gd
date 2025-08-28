@@ -2,8 +2,13 @@ extends Node
 
 var recipes := {
 	"iron ore": {
-		"output": "iron bar",
-		"quantity": 1,
+		"output": load("res://resources/mining/iron_bar.tres"),
+		"output_quantity": 1,
+		"input_quantity": 1,
+	},
+	"gold ore": {
+		"output": "gold",
+		"output_quantity": 1000,
 		"input_quantity": 1,
 	},
 }

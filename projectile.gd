@@ -43,7 +43,6 @@ func _physics_process(delta: float) -> void:
 	var ground_pos = start_pos.lerp(target_pos, t)
 	position = ground_pos
 	sprite.rotation = atan2(direction.y, direction.x)
-	#sprite.rotate(atan2(direction.y, direction.x))
 	
 	if t >= 1.0:
 		in_air = false

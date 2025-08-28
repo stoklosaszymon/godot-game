@@ -7,8 +7,8 @@
 script = ExtResource("2_5hhbj")
 item_name = "ruby ore"
 icon = ExtResource("1_d4qqn")
-is_usable = true
 is_equipable = false
+is_resource = true
 equip_effect = ""
 unequip_effect = ""
 quantity = 1

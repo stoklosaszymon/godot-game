@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxv51l5t0xeux"]
+[gd_scene load_steps=8 format=3 uid="uid://bxv51l5t0xeux"]
 
 [ext_resource type="PackedScene" uid="uid://yb3faesxg4vw" path="res://slot.tscn" id="1_8fjim"]
 [ext_resource type="Script" uid="uid://ci5ndm4j1c6q7" path="res://building_panel.gd" id="1_n76fn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n76fn"]
-content_margin_left = 20.0
-content_margin_right = 20.0
-bg_color = Color(0, 0, 0, 0.490196)
+[ext_resource type="StyleBox" uid="uid://d2wn0yghp8gre" path="res://grid_styles.tres" id="2_y4p1q"]
+[ext_resource type="Script" uid="uid://bp36lqocskn6l" path="res://crafting_slot.gd" id="3_rrbxh"]
+[ext_resource type="Texture2D" uid="uid://b7lf8t834wrl5" path="res://Assets/UI/arrow.png" id="5_ollwf"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_n76fn"]
 action = &"close"
@@ -22,9 +20,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
+offset_left = -160.5
 offset_top = -97.5
-offset_right = 128.0
+offset_right = 160.5
 offset_bottom = 97.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -38,17 +36,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_n76fn")
+theme_override_styles/panel = ExtResource("2_y4p1q")
 
-[node name="Slot" parent="PanelContainer" instance=ExtResource("1_8fjim")]
+[node name="SlotsContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Slot" parent="PanelContainer/SlotsContainer" instance=ExtResource("1_8fjim")]
+custom_minimum_size = Vector2(80, 70)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+script = ExtResource("3_rrbxh")
 
-[node name="Slot2" parent="PanelContainer" instance=ExtResource("1_8fjim")]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/SlotsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_ollwf")
+stretch_mode = 3
+
+[node name="Slot2" parent="PanelContainer/SlotsContainer" instance=ExtResource("1_8fjim")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+script = ExtResource("3_rrbxh")
 
 [node name="Craft" type="Button" parent="PanelContainer"]
 layout_mode = 2

@@ -50,4 +50,6 @@ func torch_equiped():
 	GameManager.player.add_child(item_scene)
 	
 func torch_removed():
-	GameManager.player.get_node("Torch").queue_free()
+	var torch_node = GameManager.player.get_node_or_null("Torch")
+	if torch_node:
+		torch_node.queue_free()

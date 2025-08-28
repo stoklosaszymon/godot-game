@@ -7,8 +7,8 @@
 script = ExtResource("1_wds2x")
 item_name = "Pole"
 icon = ExtResource("1_q20gt")
-is_usable = true
 is_equipable = true
+is_resource = false
 equip_effect = ""
 unequip_effect = ""
 quantity = 1

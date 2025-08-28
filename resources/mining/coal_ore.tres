@@ -7,8 +7,8 @@
 script = ExtResource("2_1nfts")
 item_name = "coal ore"
 icon = ExtResource("1_fjn1i")
-is_usable = true
 is_equipable = false
+is_resource = true
 equip_effect = ""
 unequip_effect = ""
 quantity = 1

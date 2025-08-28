@@ -7,8 +7,8 @@
 script = ExtResource("1_6hsnh")
 item_name = "Pickaxe"
 icon = ExtResource("1_8pnp1")
-is_usable = true
 is_equipable = true
+is_resource = false
 equip_effect = ""
 unequip_effect = ""
 quantity = 1

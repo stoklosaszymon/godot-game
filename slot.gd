@@ -5,8 +5,6 @@ extends Control
 		item_data = new_item_data
 		update_visuals()
 		
-var dragged_item = null;
-		
 signal item_dropped_on_slot(drag_data, item_data)
 
 func _ready() -> void:
@@ -29,10 +27,6 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 			"source_slot_node": self
 		}
 		
-		if item_data.is_equipable:
-			drag_data["is_equipable"] = true
-			
-		dragged_item = item_data
 		return drag_data
 	return null
 
@@ -43,7 +37,6 @@ func _drop_data(_at_position: Vector2, data: Variant):
 	if data is Dictionary and data.has("item_data"):
 		item_dropped_on_slot.emit(self, data)
 
-		
 func update_visuals():
 	if item_data:
 		$VBoxContainer/ItemImg.texture = item_data.icon
