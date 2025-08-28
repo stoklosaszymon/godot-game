@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvhpuhiunrgo"]
+[gd_scene load_steps=9 format=3 uid="uid://cvhpuhiunrgo"]
 
 [ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="1_0rfcj"]
 [ext_resource type="PackedScene" uid="uid://b1fc1uckw2l3s" path="res://squire_unit.tscn" id="2_8m6ji"]
@@ -43,6 +43,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_agf3t"]
+radius = 103.392
+
 [node name="Barracks" instance=ExtResource("1_0rfcj")]
 unit = ExtResource("2_8m6ji")
 
@@ -50,4 +53,7 @@ unit = ExtResource("2_8m6ji")
 sprite_frames = SubResource("SpriteFrames_4s3fg")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0.732278, 43.3048)
+position = Vector2(-9, 55)
+rotation = -2.27067
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_agf3t")

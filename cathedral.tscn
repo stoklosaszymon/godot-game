@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://odw17isa4u5n"]
+[gd_scene load_steps=9 format=3 uid="uid://odw17isa4u5n"]
 
 [ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="1_o714k"]
 [ext_resource type="PackedScene" uid="uid://daehrf8hinx3k" path="res://healer_unit.tscn" id="2_1o600"]
@@ -43,6 +43,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1o600"]
+radius = 100.419
+
 [node name="Cathedral" instance=ExtResource("1_o714k")]
 unit = ExtResource("2_1o600")
 
@@ -52,7 +55,9 @@ sprite_frames = SubResource("SpriteFrames_4bodn")
 animation = &"SE"
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-3.77769, 41.9279)
+position = Vector2(2, 54)
+rotation = -2.27067
+shape = SubResource("CircleShape2D_1o600")
 
 [node name="CollisionPolygon2D" parent="." index="2"]
 polygon = PackedVector2Array(-106, 38, 8, 126, 96, 68, -34, -20)

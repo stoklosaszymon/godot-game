@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://74iphl5gfkfi"]
+[gd_scene load_steps=10 format=3 uid="uid://74iphl5gfkfi"]
 
 [ext_resource type="PackedScene" uid="uid://bky8swe7uhf05" path="res://base_barracks.tscn" id="1_bw28l"]
 [ext_resource type="PackedScene" uid="uid://sx18845pnof5" path="res://mage.tscn" id="2_1g8cr"]
@@ -50,6 +50,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qb67"]
+radius = 71.0862
+
 [node name="MageTower" instance=ExtResource("1_bw28l")]
 unit = ExtResource("2_1g8cr")
 
@@ -57,8 +60,9 @@ unit = ExtResource("2_1g8cr")
 sprite_frames = SubResource("SpriteFrames_ogbm1")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(1.38138, 65.6792)
+position = Vector2(-1.49998, 67)
 rotation = 1.5708
+shape = SubResource("CircleShape2D_7qb67")
 
 [node name="CollisionPolygon2D" parent="." index="2"]
 polygon = PackedVector2Array(-46, 31, -46, 101, 45, 98, 43, 29)
