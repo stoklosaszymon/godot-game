@@ -4045,9 +4045,9 @@ animations = [{
 
 [node name="Knight" instance=ExtResource("1_hkllg")]
 script = ExtResource("2_64afy")
-hp = 300
-dmg = 15
-speed = 450.0
+hp = 50
+dmg = 25
+speed = 350.0
 
 [node name="Walk" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_vhdxu")

@@ -178,6 +178,9 @@ var world_enemy_data: Dictionary[String, Array] = {
 	"enemy_id_5": [
 		load("res://knight_unit.tscn").duplicate(),
 	],
+	"enemy_id_6": [
+		load("res://monsters/troll.tscn").duplicate(),
+	]
 }
 
 func _init() -> void:
@@ -240,7 +243,8 @@ var recruitment_buildings: Dictionary[String, int] = {
 	"recruit_id_1": 2,
 	"recruit_id_2": 3,
 	"recruit_id_3": 1,
-	"recruit_id_4": 1,
+	"recruit_id_4": 2,
+	"recruit_id_5": 2
 }
 
 var unit_costs: Dictionary[String, int] = {

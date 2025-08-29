@@ -34,7 +34,11 @@ func place_units(units_list: Array, team: String, is_enemy: bool) -> void:
 		var column = int(i / items_per_column)
 		if is_enemy:
 			column *= -1
-		var row = i % items_per_column
+
+		var row_in_column = i % items_per_column
+		var middle = items_per_column / 2
+		var offset = int((row_in_column + 1) / 2) * (1 if row_in_column % 2 == 1 else -1)
+		var row = middle + offset
 
 		var x_spacing = column * 150
 		var y_spacing = row * spacing

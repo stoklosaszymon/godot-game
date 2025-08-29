@@ -257,8 +257,8 @@ func _on_attack_animation_finished() -> void:
 
 func _on_attack_frame_changed() -> void:
 	if attack_sprite and attack_sprite.frame in hit_frames:
-		attack_effect()
 		apply_attack_damage()
+		attack_effect()
 
 
 func attack_effect():
@@ -266,9 +266,9 @@ func attack_effect():
 
 
 func set_animation_spped():
-	attack_sprite.speed_scale = 2.0
-	walk_sprite.speed_scale = 2.0
-	death_sprite.speed_scale = 2.0
+	attack_sprite.speed_scale = 1.0
+	walk_sprite.speed_scale = 1.0
+	death_sprite.speed_scale = 1.0
 
 
 func update_ui():
