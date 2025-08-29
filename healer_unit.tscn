@@ -4599,7 +4599,8 @@ animations = [{
 [node name="Healer" instance=ExtResource("1_knbcy")]
 script = ExtResource("2_r4io2")
 hp = 5
-attack_range = 1200.0
+dmg = 15
+attack_range = 2000.0
 speed = 200.0
 
 [node name="Walk" parent="." index="0"]

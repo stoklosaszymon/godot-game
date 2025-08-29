@@ -58,6 +58,7 @@ unit = ExtResource("2_1g8cr")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ogbm1")
+animation = &"SE"
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(-1.49998, 67)

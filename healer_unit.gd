@@ -41,6 +41,7 @@ func apply_attack_damage():
 		var dist = global_position.distance_to(target.global_position)
 		if dist <= attack_range:
 			target.hp += dmg
+			heal_effect()
 	is_attacking = false
 	target = null
 
@@ -61,6 +62,7 @@ func heal_effect():
 	tween.tween_callback(circle.queue_free)
 
 
-func attack_effect():
-	if is_instance_valid(target): 
-		heal_effect()
+func set_animation_spped():
+	attack_sprite.speed_scale = 2.0
+	walk_sprite.speed_scale = 1.0
+	death_sprite.speed_scale = 1.0

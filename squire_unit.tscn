@@ -3486,8 +3486,7 @@ animations = [{
 [node name="Squire" instance=ExtResource("1_3vo5h")]
 script = ExtResource("2_4jlb2")
 hp = 20
-attack_range = 150.0
-speed = 550.0
+speed = 350.0
 
 [node name="Walk" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_1mvnk")

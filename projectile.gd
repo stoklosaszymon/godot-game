@@ -17,7 +17,6 @@ var target = null
 
 func launch(from_pos: Vector2, enemy: Node2D, own: Node2D, damage):
 	target = enemy
-	#sprite.play("projectile")
 	dmg = damage
 	who_sent = own
 	if who_sent.team == "player":

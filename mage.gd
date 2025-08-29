@@ -26,3 +26,8 @@ func _on_attack_frame_changed() -> void:
 	if attack_sprite.frame in hit_frames and not is_dead:
 		fire_at_enemy()
 		apply_attack_damage()
+
+func set_animation_spped():
+	attack_sprite.speed_scale = 2.0
+	walk_sprite.speed_scale = 1.0
+	death_sprite.speed_scale = 1.0
